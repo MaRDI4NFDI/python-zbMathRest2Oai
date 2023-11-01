@@ -9,8 +9,8 @@ build-backend = "setuptools.build_meta"
 name = "zbmath_rest2oai"
 description = "convert from custom api to oai-pmh api"
 dynamic = ["version"]
-requires = [
-    "requests",
+dependencies = [
+    "requests"
 ]
 [project.optional-dependencies]
 test = [
