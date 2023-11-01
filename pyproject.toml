@@ -15,7 +15,6 @@ test = [
     "black",
     "flake8",
     "isort",
-    "pytest",
     "radon",
     "flake8_polyfill",
     "coverage",
