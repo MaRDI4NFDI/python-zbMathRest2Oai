@@ -2,80 +2,90 @@ import json
 
 import requests
 
-testXML = """
-<resource xsi:schemaLocation="http://datacite.org/schema/kernel-4 http://schema.datacite.org/meta/kernel-4/metadata.xsd">
-   <identifier identifierType="DOI">10.5072/38238</identifier>
-   <creators>
-      <creator>
-         <creatorName>Admin, Admin</creatorName>
-         <givenName>Admin</givenName>
-         <familyName>Admin</familyName>
-         <nameIdentifier schemeURI="http://orcid.org/" nameIdentifierScheme="ORCID">1231-1231-1111</nameIdentifier>
-         <affiliation>FIZ Karlsruhe</affiliation>
-      </creator>
-   </creators>
-   <titles>
-      <title>Test zur Publikation 12072018</title>
-      <title titleType="Subtitle">Dies ist der Untertitel</title>
-   </titles>
-   <publisher>FIZ Karlsruhe</publisher>
-   <dates>
-      <date dateType="Created">2018</date>
-   </dates>
-   <publicationYear>2018</publicationYear>
-   <subjects>
-      <subject>Verkehrskunde</subject>
-      <subject>Verkehr, Schild, Warnung</subject>
-   </subjects>
-   <resourceType resourceTypeGeneral="Dataset"></resourceType>
-   <rightsList>
-      <rights>CC BY 4.0 Attribution</rights>
-   </rightsList>
-   <contributors>
-      <contributor contributorType="RightsHolder">
-         <contributorName>FIZ Karlsruhe</contributorName>
-      </contributor>
-      <contributor contributorType="DataCurator">
-         <contributorName>Müller, Hansi</contributorName>
-         <affiliation></affiliation>
-      </contributor>
-   </contributors>
-   <descriptions>
-      <description descriptionType="Abstract">In diesem Projekt geht es um die Untersuchung von fa-sfadsfdsfsddddddddddd</description>
-      <description descriptionType="TechnicalInfo">Laxer XCV</description>
-      <description descriptionType="Other">statistische Normierun</description>
-      <description descriptionType="Other">Hier stehen...</description>
-   </descriptions>
-   <language>
-          en
-        </language>
-   <alternateIdentifiers>
-      <alternateIdentifier alternateIdentifierType="1234567489777">Interne Nummer</alternateIdentifier>
-   </alternateIdentifiers>
-   <relatedIdentifiers>
-      <relatedIdentifier relatedIdentifierType="DOI" relationType="IsSupplementTo">10.1001/456456</relatedIdentifier>
-   </relatedIdentifiers>
-   <geoLocations>
-      <geoLocation>
-         <geoLocationPoint>
-            <pointLongitude>49.0</pointLongitude>
-            <pointLatitude>49.0</pointLatitude>
-         </geoLocationPoint>
-      </geoLocation>
-   </geoLocations>
-   <fundingReferences>
-      <fundingReference>
-         <funderName>Deutsche Forschungsgemeinschaft</funderName>
-         <funderIdentifier funderIdentifierType="Crossref Funder ID">501100001659</funderIdentifier>
-      </fundingReference>
-   </fundingReferences>
-   <sizes>
-      <size></size>
-   </sizes>
-   <formats>
-      <format>application/zip</format>
-   </formats>
-</resource>
+testXML = """<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:radarDataset xmlns="http://radar-service.eu/schemas/descriptive/radar/v09/radar-elements" xmlns:ns2="http://radar-service.eu/schemas/descriptive/radar/v09/radar-dataset">
+    <identifier identifierType="DOI">10.5072/38236</identifier>
+    <alternateIdentifiers>
+        <alternateIdentifier alternateIdentifierType="1234567489777">Interne Nummer</alternateIdentifier>
+    </alternateIdentifiers>
+    <relatedIdentifiers>
+        <relatedIdentifier relatedIdentifierType="DOI" relationType="IsSupplementTo">10.1001/456456</relatedIdentifier>
+    </relatedIdentifiers>
+    <creators>
+        <creator>
+            <creatorName>Admin, Admin</creatorName>
+            <givenName>Admin</givenName>
+            <familyName>Admin</familyName>
+            <nameIdentifier schemeURI="http://orcid.org/" nameIdentifierScheme="ORCID">1231-1231-1111</nameIdentifier>
+            <creatorAffiliation>FIZ Karlsruhe</creatorAffiliation>
+        </creator>
+    </creators>
+    <contributors>
+        <contributor contributorType="DataCurator">
+            <contributorName>Müller, Hansi</contributorName>
+            <givenName>Hansi</givenName>
+            <familyName>Müller</familyName>
+        </contributor>
+    </contributors>
+    <title>Test zur Publikation 12072018</title>
+    <additionalTitles>
+        <additionalTitle additionalTitleType="Subtitle">Dies ist der Untertitel</additionalTitle>
+    </additionalTitles>
+    <descriptions>
+        <description descriptionType="Abstract">In diesem Projekt geht es um die Untersuchung von fa-sfadsfdsfsddddddddddd</description>
+    </descriptions>
+    <keywords>
+        <keyword>Verkehr, Schild, Warnung</keyword>
+    </keywords>
+    <publishers>
+        <publisher>FIZ Karlsruhe</publisher>
+    </publishers>
+    <productionYear>2018</productionYear>
+    <publicationYear>2018</publicationYear>
+    <language>eng</language>
+    <subjectAreas>
+        <subjectArea>
+            <controlledSubjectAreaName>Other</controlledSubjectAreaName>
+            <additionalSubjectAreaName>Verkehrskunde</additionalSubjectAreaName>
+        </subjectArea>
+    </subjectAreas>
+    <resource resourceType="Dataset"></resource>
+    <geoLocations>
+        <geoLocation>
+            <geoLocationPoint>
+                <latitude>49.0</latitude>
+                <longitude>49.0</longitude>
+            </geoLocationPoint>
+        </geoLocation>
+    </geoLocations>
+    <dataSources>
+        <dataSource dataSourceDetail="Instrument">Laxer XCV</dataSource>
+    </dataSources>
+    <software>
+        <softwareType type="Resource Production">
+            <softwareName softwareVersion="1.01.010111">Excel</softwareName>
+            <alternativeSoftwareName alternativeSoftwareVersion="10.10.10">Tabellenfix</alternativeSoftwareName>
+        </softwareType>
+    </software>
+    <processing>
+        <dataProcessing>statistische Normierun</dataProcessing>
+    </processing>
+    <rights>
+        <controlledRights>CC BY 4.0 Attribution</controlledRights>
+    </rights>
+    <rightsHolders>
+        <rightsHolder>FIZ Karlsruhe</rightsHolder>
+    </rightsHolders>
+    <relatedInformations>
+        <relatedInformation relatedInformationType="Zugehörige Informationne">Hier stehen...</relatedInformation>
+    </relatedInformations>
+    <fundingReferences>
+        <fundingReference>
+            <funderName>Deutsche Forschungsgemeinschaft</funderName>
+            <funderIdentifier type="CrossRefFunder">501100001659</funderIdentifier>
+        </fundingReference>
+    </fundingReferences>
+</ns2:radarDataset>
 """
 
 url = "https://www.w3schools.com/python/demopage.php"
@@ -84,7 +94,7 @@ files = {
         None,
         json.dumps(
             {
-                "identifier": "10.5072/38238",
+                "identifier": "10.5072/38236",
                 "deleteFlag": False,
                 "ingestFormat": "radar",
             }
@@ -93,8 +103,9 @@ files = {
     ),
     "content": (None, testXML),
 }
-x = requests.delete('http://localhost:8081/oai-backend/item/10.5072%2F38238')
+# x = requests.delete('http://localhost:8081/oai-backend/item/10.5072%2F38238')
 x = requests.post("http://localhost:8081/oai-backend/item", files=files)
-x = requests.get('http://localhost:8081/oai-backend/item/10.5072%2F38238')
-
 print(x.text)
+
+# x = requests.get('http://localhost:8081/oai-backend/item/10.5072%2F38236')
+
