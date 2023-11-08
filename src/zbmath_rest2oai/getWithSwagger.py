@@ -1,6 +1,6 @@
 import swagger_client
+
 from zbmath_rest2oai.xml_writer import create_document
-from xml.dom import minidom
 
 api_instance = swagger_client.DocumentApi(swagger_client.ApiClient())
 res = api_instance.get_document_by_zbmath_id_document_id_get(id="6383667")
@@ -25,6 +25,7 @@ ron.setAttributeNS(
     "http://www.w3.org/2001/XMLSchema-instance",
 )
 
+
 def append_text_child(xmld, parent, name, value):
     """
     Creates new text node and appends it to parent
@@ -33,12 +34,13 @@ def append_text_child(xmld, parent, name, value):
     :param name:
     :param value:
     """
-    x_elem = xmld.createElement(f"zbmath:{0}".format(name))
+    x_elem = xmld.createElement(f"zbmath:{name}")
     text = xmld.createTextNode(str(value))
     x_elem.appendChild(text)
     parent.appendChild(x_elem)
     return parent
 
-final_xml = append_text_child(xmld, ron, 'id', (res.result.id))
+
+final_xml = append_text_child(xmld, ron, "id", res.result.id)
 
 print(final_xml.toprettyxml())
