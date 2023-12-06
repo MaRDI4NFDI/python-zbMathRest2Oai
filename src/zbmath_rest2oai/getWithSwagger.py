@@ -73,7 +73,14 @@ def func_get_doc_to_xml(obj, xml):
             elif obj[i] is None:
                 xml = append_text_child(xmld, xml, xml.lastChild.nodeName, 'missing')
             elif type(obj[i]) in [str,int]:
-                xml = append_text_child(xmld, xml, xml.lastChild.nodeName, obj[i])
+                parent_name = xml.lastChild.nodeName
+                if parent_name.endswith('s'):
+                    parent_name = parent_name[:-1]
+
+                if xml._get_lastChild().nodeName == parent_name:
+                    xml = append_text_child(xmld, xml, parent_name, obj[i])
+                else:
+                    xml = append_text_child(xmld, xml._get_lastChild(), parent_name, obj[i])
             elif type(obj[i]) in all_iter_list:
                 func_get_doc_to_xml(obj[i], xml)
             else:
@@ -94,10 +101,8 @@ def func_get_doc_to_xml(obj, xml):
                 func_get_doc_to_xml(obj[key], xml)
     return xml
 
-print(func_get_doc_to_xml(res.result, ron).toprettyxml())
+final_xml = func_get_doc_to_xml(res.result, ron)
 
-
-
-
+print(final_xml.toprettyxml())
 
 
