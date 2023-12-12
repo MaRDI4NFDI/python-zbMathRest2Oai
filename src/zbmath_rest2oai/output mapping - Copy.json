@@ -1,0 +1,84 @@
+{
+    "_codes": [
+        "author_ids"
+    ],
+      
+        
+      "_code":[ "author_id"
+    ],
+    
+    
+    "_name": [  "author"
+     
+    ],
+    
+    "_document_type": ["document_type"
+     ],
+    
+    "_title": [ "document_title"
+     ],
+
+    
+
+    "_id": [ "document_id"
+
+    ],
+    
+    "_identifier": ["doi"
+    ],
+   
+    "_keywords": ["keywords"
+     
+    ],
+      "_keyword": ["keyword"
+    ], 
+    
+    "_languages": ["language"
+    ],
+      
+    "_pages": ["pagination"
+    ],
+    
+    "_year": ["publication_year"
+    ],
+    
+    "_source": ["source"
+    ],
+    
+    "spelling": ["_author_code"
+    ],
+    
+    "reviewer_id": ["reviewer_id"
+    ],
+
+    "_sign": ["review_sign"
+    ],
+    
+    "_text": ["review_text"
+    ],
+    
+    "_contribution_type": ["review_type"
+    ],
+    
+     
+      "_id": ["document_id"
+    ],
+      
+      "_publisher": ["serial_publisher"
+    ],
+    
+      "_title": ["serial_title"
+    ],
+
+       
+        "_text": ["text"
+    ],
+        "_document_id": ["ref_id"
+    ],
+      "_msc": ["ref_classification"
+          
+        ]
+        
+      
+    
+  }
