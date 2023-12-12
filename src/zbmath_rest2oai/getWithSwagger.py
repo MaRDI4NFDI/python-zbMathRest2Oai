@@ -7,7 +7,6 @@ res = api_instance.get_document_by_zbmath_id_document_id_get(id="6383667")
 doc = res.result
 xmld = create_document(doc)
 
-#print(res.result)
 
 ron = xmld.createElement("oai_zb_preview:zbmath")
 ron.setAttributeNS(
@@ -35,70 +34,75 @@ def append_text_child(xmld, parent, name, value):
     :param name:
     :param value:
     """
-    x_elem = xmld.createElement(f"zbmath:{name}")
+    string_name = name
+    if "zbmath:" not in name:
+        string_name = f"zbmath:{name}"
+    x_elem = xmld.createElement(string_name)
     text = xmld.createTextNode(str(value))
     x_elem.appendChild(text)
     parent.appendChild(x_elem)
     return parent
 
 
-final_xml = append_text_child(xmld, ron, "id", res.result.id)
-#print(final_xml)
+def func_get_doc_to_xml(obj, xml):
+    swagger_client_dicttype_list = [swagger_client.models.all_ofzbmath_api_data_models_display_documents_result_id_result.AllOfzbmathApiDataModelsDisplayDocumentsResultIDResult,
+                                    swagger_client.models.all_of_document_contributors.AllOfDocumentContributors,
+                                    swagger_client.models.zbmath_api_data_models_display_documents_submodels_author.ZbmathApiDataModelsDisplayDocumentsSubmodelsAuthor,
+                                    swagger_client.models.editorial_contribution.EditorialContribution,
+                                    swagger_client.models.all_of_editorial_contribution_reviewer.AllOfEditorialContributionReviewer,
+                                    swagger_client.models.all_of_document_language.AllOfDocumentLanguage,
+                                    swagger_client.models.link.Link,
+                                    swagger_client.models.msc.MSC,
+                                    swagger_client.models.reference.Reference,
+                                    swagger_client.models.all_of_reference_zbmath.AllOfReferenceZbmath,
+                                    swagger_client.models.all_of_document_source.AllOfDocumentSource,
+                                    swagger_client.models.series.Series,
+                                    swagger_client.models.all_of_document_title.AllOfDocumentTitle,
+                                    swagger_client.models.zbmath_api_data_models_display_documents_submodels_issn.ZbmathApiDataModelsDisplayDocumentsSubmodelsISSN]
 
-def func_json_keys(json_part, l):
+    all_iter_list = [list, dict]
+    all_iter_list.extend(swagger_client_dicttype_list)
 
-    if json_part is None:
-        print(json_part)
-        return l
+    if type(obj) in swagger_client_dicttype_list:
+        obj = obj.__dict__
 
-    elif str(json_part).startswith('{'):
-        try:
-            print('test_dict')
-            index = json_part.__dict__.keys()
-            json_part = json_part.__dict__
-        except:
-            print('test1')
-            index = json_part
+    if type(obj) == list:
+        for i in range(len(obj)):
+            if obj[i]==[]:
+                xml = append_text_child(xmld, xml, xml.lastChild.nodeName, 'missing')
+            elif obj[i] is None:
+                xml = append_text_child(xmld, xml, xml.lastChild.nodeName, 'missing')
+            elif type(obj[i]) in [str,int]:
+                parent_name = xml.lastChild.nodeName
+                if parent_name.endswith('s'):
+                    parent_name = parent_name[:-1]
 
-        if type(json_part) == dict:
-            for elem in index:
-                #print('call func')
-                if type(json_part[elem]) in [str, int, float, None]:
-                    l.append([str(elem), json_part[elem]])
-                #elif json_part[elem] == list():
-                    #continue
-
-                elif str(json_part[elem]).startswith('{'):
-                    func_json_keys(json_part[elem], l)
+                if xml._get_lastChild().nodeName == parent_name:
+                    xml = append_text_child(xmld, xml, parent_name, obj[i])
                 else:
-                    print('UNKNOWN TYPE')
-                    print(type(json_part[elem]))
-                    print(json_part[elem])
-                    func_json_keys(json_part[elem], l)
-            return l
+                    xml = append_text_child(xmld, xml._get_lastChild(), parent_name, obj[i])
+            elif type(obj[i]) in all_iter_list:
+                func_get_doc_to_xml(obj[i], xml)
+            else:
+                print("WARNING")
+                print(obj[i])
 
-    elif str(json_part).startswith('['):
-        try:
-            print('test_list')
-            #json_part = str(json_part).split(',')
-        except:
-            print('test_list_except')
 
-        for i in range(len(json_part)):
-            # print('call func')
-            if type(json_part[i]) in [str, int, float, None]:
-                l.append(json_part[i])
-            elif str(json_part[i]).startswith('{'):
-                func_json_keys(json_part[i], l)
-        return l
+    if type(obj) == dict:
+        for key in obj.keys():
+            if obj[key]==[]:
+                xml = append_text_child(xmld, xml, key, 'missing')
+            elif obj[key] is None:
+                xml = append_text_child(xmld, xml, key, 'missing')
+            elif type(obj[key]) in [str,int]:
+                xml = append_text_child(xmld, xml, key, obj[key])
+            elif type(obj[key]) in all_iter_list:
+                xml = append_text_child(xmld, xml, key, "")
+                func_get_doc_to_xml(obj[key], xml)
+    return xml
 
-    else:
-        return l
-
-l0=[]
-infos_list = func_json_keys(res, l0)
-#print(infos_list)
-for j in infos_list:
-    final_xml = append_text_child(xmld, final_xml, j[0], j[1])
+final_xml = func_get_doc_to_xml(res.result, ron)
 
 print(final_xml.toprettyxml())
+
+
