@@ -1,7 +1,11 @@
 import swagger_client
-
+import json
 from zbmath_rest2oai.xml_writer import create_document
 
+import json
+import re
+with open('/home/maxence/myvenv/python-zbMathRest2Oai/src/zbmath_rest2oai/output mapping - Copy.json') as f:
+    d = json.load(f)
 api_instance = swagger_client.DocumentApi(swagger_client.ApiClient())
 res = api_instance.get_document_by_zbmath_id_document_id_get(id="6383667")
 doc = res.result
@@ -68,12 +72,17 @@ def func_get_doc_to_xml(obj, xml):
 
     if type(obj) == list:
         for i in range(len(obj)):
+            parent_name = xml.lastChild.nodeName
+
+            str_no_zbmath_parent_name = re.sub("zbmath:", "", parent_name)
+            if str_no_zbmath_parent_name in d.keys():
+                parent_name = parent_name.replace(str_no_zbmath_parent_name, d[str_no_zbmath_parent_name][0])
+
             if obj[i]==[]:
-                xml = append_text_child(xmld, xml, xml.lastChild.nodeName, 'missing')
+                xml = append_text_child(xmld, xml, parent_name, 'missing')
             elif obj[i] is None:
-                xml = append_text_child(xmld, xml, xml.lastChild.nodeName, 'missing')
+                xml = append_text_child(xmld, xml, parent_name, 'missing')
             elif type(obj[i]) in [str,int]:
-                parent_name = xml.lastChild.nodeName
                 if parent_name.endswith('s'):
                     parent_name = parent_name[:-1]
 
