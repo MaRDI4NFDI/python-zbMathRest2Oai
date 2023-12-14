@@ -67,17 +67,17 @@ def func_get_doc_to_xml(obj, xml):
     all_iter_list = [list, dict]
     all_iter_list.extend(swagger_client_dicttype_list)
 
+    nodes_names_not_to_add = ['_position','_series_id','_prefix','_number', '_type', '_states', 'discriminator', '_biographic_references']
     if type(obj) in swagger_client_dicttype_list:
         obj = obj.__dict__
 
     if type(obj) == list:
         for i in range(len(obj)):
             parent_name = xml.lastChild.nodeName
-
             str_no_zbmath_parent_name = re.sub("zbmath:", "", parent_name)
+
             if str_no_zbmath_parent_name in d.keys():
                 parent_name = parent_name.replace(str_no_zbmath_parent_name, d[str_no_zbmath_parent_name][0])
-
             if obj[i]==[]:
                 xml = append_text_child(xmld, xml, parent_name, 'missing')
             elif obj[i] is None:
@@ -98,20 +98,44 @@ def func_get_doc_to_xml(obj, xml):
 
 
     if type(obj) == dict:
-        for key in obj.keys():
-            if obj[key]==[]:
-                xml = append_text_child(xmld, xml, key, 'missing')
-            elif obj[key] is None:
-                xml = append_text_child(xmld, xml, key, 'missing')
-            elif type(obj[key]) in [str,int]:
-                xml = append_text_child(xmld, xml, key, obj[key])
-            elif type(obj[key]) in all_iter_list:
-                xml = append_text_child(xmld, xml, key, "")
-                func_get_doc_to_xml(obj[key], xml)
+        new_obj = dict()
+        for key_init in obj.keys():
+            if key_init in d.keys():
+                if key_init == '_code':
+                    if xml.lastChild.nodeName=='zbmath:ref_classification':
+                        new_obj[d[key_init][1]] = obj[key_init]
+                    else:
+                        new_obj[d[key_init][0]] = obj[key_init]
+                else:
+                    new_obj[d[key_init][0]] = obj[key_init]
+            else:
+                new_obj[key_init] = obj[key_init]
+        for key in new_obj.keys():
+            if key not in nodes_names_not_to_add:
+                if new_obj[key]==[]:
+                    xml = append_text_child(xmld, xml, key, 'missing')
+                elif new_obj[key] is None:
+                    xml = append_text_child(xmld, xml, key, 'missing')
+                elif type(new_obj[key]) in [str,int]:
+                    xml = append_text_child(xmld, xml, key, new_obj[key])
+                elif type(new_obj[key]) in all_iter_list:
+                    xml = append_text_child(xmld, xml, key, "")
+                    func_get_doc_to_xml(new_obj[key], xml)
+            else:
+                continue
     return xml
 
 final_xml = func_get_doc_to_xml(res.result, ron)
 
-print(final_xml.toprettyxml())
 
+l= final_xml.childNodes
+list_nodes_remove = []
+for i in range(len(l)):
+    if l[i].localName in ['_contributors','_authors', '_aliases', '_checked']:
+        list_nodes_remove.append(l[i])
+
+for node in list_nodes_remove:
+    final_xml.removeChild(node)
+
+print(final_xml.toprettyxml())
 
