@@ -17,8 +17,7 @@
     
     "_title": [ "document_title"
      ],
-
-    
+    "_author_code":["reviewer_id"],
 
     "_id": [ "document_id"
 
@@ -48,7 +47,7 @@
     "spelling": ["_author_code"
     ],
     
-    "reviewer_id": ["reviewer_id"
+    "_reviewer_id": ["reviewer"
     ],
 
     "_sign": ["review_sign"
@@ -75,9 +74,10 @@
     ],
         "_document_id": ["ref_id"
     ],
-      "_msc": ["ref_classification"
+      "_msc": ["ref_classifications"
           
-        ]
+        ],
+    "_zbmath": ["references"]
         
       
     
