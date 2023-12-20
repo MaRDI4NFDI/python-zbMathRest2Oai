@@ -77,7 +77,11 @@
       "_msc": ["ref_classifications"
           
         ],
-    "_zbmath": ["reference_codes"]
+    "_zbmath": ["reference_codes"],
+
+    "_references" : ["references"],
+
+    "_editorial_contributions": ["review"]
         
       
     
