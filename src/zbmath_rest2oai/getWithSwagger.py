@@ -74,17 +74,8 @@ def func_get_doc_to_xml(obj, xml):
     if type(obj) == list:
         for i in range(len(obj)):
 
-
-            if xml.lastChild.nodeName in ["zbmath:author_ids","zbmath:author_id", "zbmath:review" ]:
+            if xml.lastChild.nodeName in ["zbmath:author_ids","zbmath:author_id", "zbmath:review","zbmath:keywords","zbmath:keyword" ]:
                 parent_name = xml.lastChild.nodeName
-            elif xml.lastChild.nodeName in ["zbmath:keywords","zbmath:keyword"]:
-                parent_name = xml.lastChild.nodeName
-            elif xml.nodeName == "oai_zb_preview:zbmath":
-                parent_name = xml.nodeName
-
-            elif xml.nodeName.startswith("zbmath:"):
-                parent_name = xml.nodeName
-
             else:
                 parent_name = xml.nodeName
 
@@ -94,10 +85,10 @@ def func_get_doc_to_xml(obj, xml):
 
             if str_no_zbmath_parent_name in d.keys():
                 parent_name = parent_name.replace(str_no_zbmath_parent_name, d[str_no_zbmath_parent_name][0])
-            if obj[i]==[]:
+            if obj[i] == [] or obj[i] is None:
+                print(xml.nodeName)
                 xml = append_text_child(xmld, xml, parent_name, 'missing')
-            elif obj[i] is None:
-                xml = append_text_child(xmld, xml, parent_name, 'missing')
+
             elif type(obj[i]) in [str,int]:
                 if parent_name in ['zbmath:ref_classifications', 'zbmath:ref_id', 'zbmath:_doi', 'zbmath:text']:
                     if xml.getElementsByTagName('zbmath:reference') != []:
@@ -111,11 +102,11 @@ def func_get_doc_to_xml(obj, xml):
 
 
                     if xml._get_lastChild().nodeName == parent_name :
-                        print(parent_name + ' == ' + xml._get_lastChild().nodeName )
+                        #print(parent_name + ' == ' + xml._get_lastChild().nodeName )
                         xml = append_text_child(xmld, xml, parent_name, obj[i])
 
                     else:
-                        print(parent_name + ' vs ' + xml._get_lastChild().nodeName )
+                        #print(parent_name + ' vs ' + xml._get_lastChild().nodeName )
                         xml = append_text_child(xmld, xml.lastChild, parent_name, obj[i])
 
 
@@ -143,23 +134,27 @@ def func_get_doc_to_xml(obj, xml):
 
         for key in new_obj.keys():
             if key not in nodes_names_not_to_add:
-                if new_obj[key]==[]:
-                    xml = append_text_child(xmld, xml, key, 'missing')
-                elif new_obj[key] is None:
-                    xml = append_text_child(xmld, xml, key, 'missing')
-                elif type(new_obj[key]) in [str,int]:
-                    if type(new_obj[key]) == str:
-                        if 'P. D. T. A.' in new_obj[key]:
-                            print(key)
+
+                if type(new_obj[key]) in [str,int, [], None]:
                     if key in ['ref_classifications', 'ref_id', '_doi', '_text']:
                         b = xml.getElementsByTagName('zbmath:reference')
                         b = [s for s in b if not b == '']
+
                         if len(b)!=0:
                             xml = append_text_child(xmld, b[-1], key, new_obj[key])
-                    else:
-                        print(key, xml.nodeName, xml.lastChild.nodeName)
 
+                    elif type(new_obj[key]) in [[], None]:
+                        xml = append_text_child(xmld, xml, key, 'missing')
+                    else:
+                        print(xml.nodeName)
+                        print(key)
+                        print('')
+                        b = xml.getElementsByTagName('zbmath:reference')
+                        b = [s for s in b if not b == '']
+                        if xml.nodeName == 'zbmath:references':
+                            xml = append_text_child(xmld, b[-1], key, new_obj[key])
                         xml = append_text_child(xmld, xml, key, new_obj[key])
+
 
                 elif type(new_obj[key]) in all_iter_list:
                     if type(new_obj[key]) not in [list,dict]:
@@ -167,32 +162,48 @@ def func_get_doc_to_xml(obj, xml):
 
                     if type(new_obj[key]) ==dict:
 
-                        if  xml.nodeName != 'zbmath:reference' and '_author_codes' in new_obj[key].keys():
-                            xml = append_text_child(xmld, xml.getElementsByTagName('zbmath:references')[-1], 'reference', "")
+                        l_values = [node.nodeName for node in xml.childNodes]
+                        l_values.sort()
 
-
-                        elif '_msc' in new_obj[key].keys():
-
-                            l_values = [node.nodeName for node in xml.childNodes]
-                            l_values.sort()
-                            print(l_values)
-                            if len(list(set(l_values))) < len(l_values):
+                        if len(list(set(l_values))) < len(l_values):
+                            if xml.nodeName=="zbmath:reference":
                                 xml = xml.parentNode
                                 xml = append_text_child(xmld, xml, 'reference', "")
-                                xml = append_text_child(xmld, xml.lastChild, key, "")
+                            elif xml.nodeName=="zbmath:references":
+                                xml = append_text_child(xmld, xml, 'reference', "")
                             else:
-                                xml = append_text_child(xmld, xml, key, "")
+                                print(xml.nodeName)
                         elif xml.lastChild is not None:
+                            print(xml.nodeName)
                             if xml.lastChild.nodeName == "zbmath:review":
+                                xml = append_text_child(xmld, xml.lastChild, key, "")
+
+                            if xml.lastChild.nodeName == "zbmath:reference":
                                 xml = append_text_child(xmld, xml.lastChild, key, "")
                         else:
 
                             xml = append_text_child(xmld, xml, key, "")
-                    if type(new_obj[key]) == list:
-                        xml = append_text_child(xmld, xml, key, "")
-                        if key == 'references':
-                            xml = append_text_child(xmld, xml, 'reference', "")
 
+                    if type(new_obj[key]) == list:
+                        if key == 'references':
+                            xml = append_text_child(xmld, xml, 'references', "")
+                            xml = append_text_child(xmld, xml.lastChild, 'reference', "")
+
+                        elif key in ['ref_classifications', "_author_codes"] and xml.getElementsByTagName('zbmath:reference')!= []:
+
+                            xml = append_text_child(xmld, xml.getElementsByTagName('zbmath:reference')[-1], key, "")
+
+
+                        elif xml.nodeName == 'zbmath:reference':
+                            a = xml.childNodes
+                            h = [node.nodeName for node in a]
+                            if 'zbmath:'+key in h:
+                                xml = xml.parentNode
+                                xml = append_text_child(xmld, xml, 'reference', "")
+                                xml = append_text_child(xmld, xml.lastChild, key, "")
+                                xml = xml.lastChild
+                        else:
+                            xml = append_text_child(xmld, xml, key, "")
 
                 func_get_doc_to_xml(new_obj[key], xml)
     return xml
@@ -207,18 +218,18 @@ l= final_xml.childNodes
 
 ## STRATEGY TO SOLVE the situation with inner indentation. IF elem in Happening node, append child and recurs func ELSE, happend node normally
 ##
-list_nodes_remove = []
-for i in range(len(l)):
-    if l[i].localName in ['_contributors','_authors', '_aliases', '_checked', '_author_references', '_reviewer', '_editors', '_author_codes']:
-        list_nodes_remove.append(l[i])
+#list_nodes_remove = []
+#for i in range(len(l)):
+#    if l[i].localName in ['_contributors','_authors', '_aliases', '_checked', '_author_references', '_reviewer', '_editors', '_author_codes']:
+#        list_nodes_remove.append(l[i])
 
-for node in list_nodes_remove:
-    final_xml.removeChild(node)
+#for node in list_nodes_remove:
+#    final_xml.removeChild(node)
 
-print(final_xml.toprettyxml())
+print(final_xml.parentNode.parentNode.toprettyxml())
 
-print(res.result)
-#print(dir(final_xml))
+#print(res.result)
+
 
 
 
