@@ -155,17 +155,13 @@ def func_get_doc_to_xml(obj, xml):
                                 xml = append_text_child(xmld, xml, 'reference', "")
                                 xml = xml.lastChild
 
-                        print("HHEHREEEE")
-                        print(xml.nodeName)
                         xml = append_text_child(xmld, xml, key, new_obj[key])
 
 
                     elif type(new_obj[key]) in [[], None]:
                         xml = append_text_child(xmld, xml, key, 'missing')
                     else:
-                        print('HEREE33')
-                        print(key)
-                        print(new_obj[key])
+
                         if xml.nodeName == 'zbmath:references':
                             b = xml.getElementsByTagName('zbmath:reference')
                             b = [s for s in b if not b == '']
@@ -193,9 +189,8 @@ def func_get_doc_to_xml(obj, xml):
                             elif xml.nodeName=="zbmath:references":
                                 xml = append_text_child(xmld, xml, 'reference', "")
                             else:
-                                print("HERE0" + xml.nodeName)
+                                print(xml.nodeName)
                         elif xml.lastChild is not None:
-                            #print(xml.nodeName)
                             if xml.lastChild.nodeName == "zbmath:review":
                                 xml = append_text_child(xmld, xml.lastChild, key, "")
 
@@ -241,7 +236,6 @@ def func_get_doc_to_xml(obj, xml):
                             if xml.nodeName == "oai_zb_preview:zbmath":
                                 xml = append_text_child(xmld, xml, key, "")
                             if xml.nodeName == "zbmath:references":
-                                #xml = xml.lastChild
                                 xml = append_text_child(xmld, xml.lastChild, key, "")
 
                         else:
