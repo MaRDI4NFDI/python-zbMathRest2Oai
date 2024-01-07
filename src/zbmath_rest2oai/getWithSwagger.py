@@ -71,7 +71,7 @@ def func_get_doc_to_xml(obj, xml):
     if type(obj) in swagger_client_dicttype_list:
         obj = obj.__dict__
 
-    if type(obj) == list:
+    if type(obj) is list:
         for i in range(len(obj)):
 
             if xml.lastChild.nodeName in ["zbmath:author_ids","zbmath:author_id", "zbmath:review","zbmath:keywords","zbmath:keyword"]:
@@ -118,7 +118,7 @@ def func_get_doc_to_xml(obj, xml):
                 func_get_doc_to_xml(obj[i], xml)
 
 
-    if type(obj) == dict:
+    if type(obj) is dict:
         new_obj = dict()
         for key_init in obj.keys():
             if key_init in d.keys():
@@ -177,7 +177,7 @@ def func_get_doc_to_xml(obj, xml):
                     if type(new_obj[key]) not in [list,dict]:
                         new_obj[key] = new_obj[key].__dict__
 
-                    if type(new_obj[key]) ==dict:
+                    if type(new_obj[key]) is dict:
 
                         l_values = [node.nodeName for node in xml.childNodes]
                         l_values.sort()
@@ -200,7 +200,7 @@ def func_get_doc_to_xml(obj, xml):
 
                             xml = append_text_child(xmld, xml, key, "")
 
-                    if type(new_obj[key]) == list:
+                    if type(new_obj[key]) is list:
                         if key == 'references':
                             xml = append_text_child(xmld, xml, 'references', "")
                             xml = append_text_child(xmld, xml.lastChild, 'reference', "")
