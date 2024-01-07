@@ -119,7 +119,7 @@ def func_get_doc_to_xml(obj, xml):
 
 
     if type(obj) is dict:
-        new_obj = dict()
+        new_obj = {}
         for key_init in obj.keys():
             if key_init in d.keys():
                 if key_init == '_code':
