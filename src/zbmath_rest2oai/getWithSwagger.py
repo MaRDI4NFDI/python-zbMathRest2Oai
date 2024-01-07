@@ -3,7 +3,6 @@ import json
 from zbmath_rest2oai.xml_writer import create_document
 
 import json
-import re
 with open('C:/Users/maz/PycharmProjects/myenv-zbmathopen/python-zbMathRest2Oai/src/zbmath_rest2oai/output mapping - Copy.json') as f:
     d = json.load(f)
 api_instance = swagger_client.DocumentApi(swagger_client.ApiClient())
