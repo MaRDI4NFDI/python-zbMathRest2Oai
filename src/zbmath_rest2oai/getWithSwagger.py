@@ -1,31 +1,12 @@
+import os.path
+
 import swagger_client
 from zbmath_rest2oai.xml_writer import create_document
 
 import json
 
-with open('./output mapping - Copy.json') as f:
+with open(os.path.join(os.path.dirname(__file__), './output mapping - Copy.json')) as f:
     d = json.load(f)
-api_instance = swagger_client.DocumentApi(swagger_client.ApiClient())
-res = api_instance.get_document_by_zbmath_id_document_id_get(id="6383667")
-doc = res.result
-root_doc = create_document(doc)
-
-ron = root_doc.createElement("oai_zb_preview:zbmath")
-ron.setAttributeNS(
-    "xmls",
-    "xmlns:oai_zb_preview",
-    "https://zbmath.org/OAI/2.0/oai_zb_preview/",
-)
-ron.setAttributeNS(
-    "xmls",
-    "xmlns:zbmath",
-    "https://zbmath.org/zbmath/elements/1.0/",
-)
-ron.setAttributeNS(
-    "xmls",
-    "xmlns:xsi",
-    "http://www.w3.org/2001/XMLSchema-instance",
-)
 
 
 def append_text_child(xmld, parent, name, value):
@@ -46,7 +27,7 @@ def append_text_child(xmld, parent, name, value):
     return parent
 
 
-def func_get_doc_to_xml(obj, xml):
+def func_get_doc_to_xml(obj, xml, root_doc):
     swagger_client_dicttype_list = [
         swagger_client.models.all_ofzbmath_api_data_models_display_documents_result_id_result.AllOfzbmathApiDataModelsDisplayDocumentsResultIDResult,
         swagger_client.models.all_of_document_contributors.AllOfDocumentContributors,
@@ -116,7 +97,7 @@ def func_get_doc_to_xml(obj, xml):
                     print(0)
 
             elif type(obj[i]) in all_iter_list:
-                func_get_doc_to_xml(obj[i], xml)
+                func_get_doc_to_xml(obj[i], xml, root_doc)
 
     if type(obj) is dict:
         new_obj = {}
@@ -240,50 +221,39 @@ def func_get_doc_to_xml(obj, xml):
                         else:
                             xml = append_text_child(root_doc, xml, key, "")
 
-                func_get_doc_to_xml(new_obj[key], xml)
+                func_get_doc_to_xml(new_obj[key], xml, root_doc)
     return xml
 
 
-final_xml = func_get_doc_to_xml(res.result, ron)
+def get_final_xml(de: str):
+    api_instance = swagger_client.DocumentApi(swagger_client.ApiClient())
+    res = api_instance.get_document_by_zbmath_id_document_id_get(id=de)
+    doc = res.result
+    root_doc = create_document(doc)
 
-l = final_xml.childNodes
+    ron = root_doc.createElement("oai_zb_preview:zbmath")
+    ron.setAttributeNS(
+        "xmls",
+        "xmlns:oai_zb_preview",
+        "https://zbmath.org/OAI/2.0/oai_zb_preview/",
+    )
+    ron.setAttributeNS(
+        "xmls",
+        "xmlns:zbmath",
+        "https://zbmath.org/zbmath/elements/1.0/",
+    )
+    ron.setAttributeNS(
+        "xmls",
+        "xmlns:xsi",
+        "http://www.w3.org/2001/XMLSchema-instance",
+    )
+    return func_get_doc_to_xml(
+        res.result,
+        ron,
+        root_doc
+    )
 
-# print([node.nodeName for node in l])
-# print(final_xml.getElementsByTagName('zbmath:references'))
-####
 
-## STRATEGY TO SOLVE the situation with inner indentation. IF elem in Happening node, append child and recurs func ELSE, happend node normally
-##
-# list_nodes_remove = []
-# for i in range(len(l)):
-#    if l[i].localName in ['_contributors','_authors', '_aliases', '_checked', '_author_references', '_reviewer', '_editors', '_author_codes']:
-#        list_nodes_remove.append(l[i])
-
-# for node in list_nodes_remove:
-#    final_xml.removeChild(node)
+final_xml = get_final_xml("6383667")
 
 print(final_xml.parentNode.parentNode.toprettyxml())
-
-### PART OF THE CODE TO SORT THE FINAL XML
-ron1 = root_doc.createElement("oai_zb_preview:zbmath")
-ron1.setAttributeNS(
-    "xmls",
-    "xmlns:oai_zb_preview",
-    "https://zbmath.org/OAI/2.0/oai_zb_preview/",
-)
-ron1.setAttributeNS(
-    "xmls",
-    "xmlns:zbmath",
-    "https://zbmath.org/zbmath/elements/1.0/",
-)
-ron1.setAttributeNS(
-    "xmls",
-    "xmlns:xsi",
-    "http://www.w3.org/2001/XMLSchema-instance",
-)
-
-# sorted_dict = dict(sorted(dict(zip([i.localName for i in l],l)).items()))
-# for key in sorted_dict.keys():
-#    ron1.appendChild(sorted_dict[key])
-
-# print(ron1.toprettyxml())
