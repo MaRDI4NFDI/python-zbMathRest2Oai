@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="UTF-8" ?>
 <root>
   <result>
     <biographic_references/>
@@ -63,7 +62,7 @@
     <references>
       <doi/>
       <position>1</position>
-      <text>P. D. T. A. Elliott and H. Halberstam, &#x27;&#x27;A conjecture in prime number theory,&#x27;&#x27; in Symposia Mathematica, Vol. IV, London: Academic Press, 1970, pp. 59-72.</text>
+      <text>P. D. T. A. Elliott and H. Halberstam, ''A conjecture in prime number theory,'' in Symposia Mathematica, Vol. IV, London: Academic Press, 1970, pp. 59-72.</text>
       <zbmath>
         <author_codes>elliott.peter-d-t-a</author_codes>
         <author_codes>halberstam.heini</author_codes>
@@ -78,7 +77,7 @@
     <references>
       <doi>10.2307/1971450</doi>
       <position>2</position>
-      <text>J. Friedlander and A. Granville, &#x27;&#x27;Limitations to the equi-distribution of primes. I,&#x27;&#x27; Ann. of Math., vol. 129, iss. 2, pp. 363-382, 1989.</text>
+      <text>J. Friedlander and A. Granville, ''Limitations to the equi-distribution of primes. I,'' Ann. of Math., vol. 129, iss. 2, pp. 363-382, 1989.</text>
       <zbmath>
         <author_codes>friedlander.john-b</author_codes>
         <author_codes>granville.andrew-j</author_codes>
@@ -94,7 +93,7 @@
     <references>
       <doi>10.1112/plms/pdn046</doi>
       <position>3</position>
-      <text>D. A. Goldston, S. W. Graham, J. Pintz, and C. Y. Yildirim, &#x27;&#x27;Small gaps between products of two primes,&#x27;&#x27; Proc. Lond. Math. Soc., vol. 98, iss. 3, pp. 741-774, 2009.</text>
+      <text>D. A. Goldston, S. W. Graham, J. Pintz, and C. Y. Yildirim, ''Small gaps between products of two primes,'' Proc. Lond. Math. Soc., vol. 98, iss. 3, pp. 741-774, 2009.</text>
       <zbmath>
         <author_codes>graham.sidney-w</author_codes>
         <author_codes>yildirim.cem-yalcin</author_codes>
@@ -111,7 +110,7 @@
     <references>
       <doi>10.7169/facm/1229442618</doi>
       <position>4</position>
-      <text>D. A. Goldston, J. Pintz, and C. Y. Yildirim, &#x27;&#x27;Primes in tuples. III. On the difference \(p_{n+\nu}-p_n\),&#x27;&#x27; Funct. Approx. Comment. Math., vol. 35, pp. 79-89, 2006.</text>
+      <text>D. A. Goldston, J. Pintz, and C. Y. Yildirim, ''Primes in tuples. III. On the difference \(p_{n+\nu}-p_n\),'' Funct. Approx. Comment. Math., vol. 35, pp. 79-89, 2006.</text>
       <zbmath>
         <author_codes>yildirim.cem-yalcin</author_codes>
         <author_codes>pintz.janos</author_codes>
@@ -127,7 +126,7 @@
     <references>
       <doi>10.4007/annals.2009.170.819</doi>
       <position>5</position>
-      <text>D. A. Goldston, J. Pintz, and C. Y. Yildirim, &#x27;&#x27;Primes in tuples. I,&#x27;&#x27; Ann. of Math., vol. 170, iss. 2, pp. 819-862, 2009.</text>
+      <text>D. A. Goldston, J. Pintz, and C. Y. Yildirim, ''Primes in tuples. I,'' Ann. of Math., vol. 170, iss. 2, pp. 819-862, 2009.</text>
       <zbmath>
         <author_codes>yildirim.cem-yalcin</author_codes>
         <author_codes>pintz.janos</author_codes>
@@ -144,7 +143,7 @@
     <references>
       <doi>10.1112/plms/pdm010</doi>
       <position>6</position>
-      <text>D. A. Goldston and C. Y. Yildirim, &#x27;&#x27;Higher correlations of divisor sums related to primes. III. Small gaps between primes,&#x27;&#x27; Proc. Lond. Math. Soc., vol. 95, iss. 3, pp. 653-686, 2007.</text>
+      <text>D. A. Goldston and C. Y. Yildirim, ''Higher correlations of divisor sums related to primes. III. Small gaps between primes,'' Proc. Lond. Math. Soc., vol. 95, iss. 3, pp. 653-686, 2007.</text>
       <zbmath>
         <author_codes>yildirim.cem-yalcin</author_codes>
         <author_codes>goldston.daniel-alan</author_codes>
@@ -195,7 +194,7 @@
     <references>
       <doi>10.4007/annals.2014.179.3.7</doi>
       <position>9</position>
-      <text>Y. Zhang, &#x27;&#x27;Bounded gaps between primes,&#x27;&#x27; Ann. of Math., vol. 179, iss. 3, pp. 1121-1174, 2014.</text>
+      <text>Y. Zhang, ''Bounded gaps between primes,'' Ann. of Math., vol. 179, iss. 3, pp. 1121-1174, 2014.</text>
       <zbmath>
         <author_codes>zhang.yitang.1</author_codes>
         <document_id>6302171</document_id>
@@ -255,21 +254,6 @@
     </title>
     <year>2015</year>
     <zbmath_url>https://zbmath.org/6383667</zbmath_url>
-    <data_source>
-      <biographic_references>ELASTIC</biographic_references>
-      <contributors>ELASTIC</contributors>
-      <document_type>ELASTIC</document_type>
-      <editorial_contributions>ELASTIC</editorial_contributions>
-      <id>ELASTIC</id>
-      <keywords>ELASTIC</keywords>
-      <language>ELASTIC</language>
-      <links>ELASTIC</links>
-      <msc>ELASTIC</msc>
-      <references>ELASTIC</references>
-      <states>ELASTIC</states>
-      <title>ELASTIC</title>
-      <year>ELASTIC</year>
-    </data_source>
   </result>
   <status>
     <execution>successful request</execution>
