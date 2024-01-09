@@ -10,6 +10,7 @@ name = "zbmath_rest2oai"
 description = "convert from custom api to oai-pmh api"
 dynamic = ["version"]
 dependencies = [
+    "dict2xml",
     "requests",
     "swagger_client @ git+https://github.com/zbMATHOpen/zbRestApiClient.git"
 ]
