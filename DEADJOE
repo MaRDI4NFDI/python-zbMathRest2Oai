@@ -1,0 +1,83 @@
+
+*** These modified files were found in JOE when it aborted on Wed Dec 13 12:34:57 2023
+*** JOE was aborted because the terminal closed
+
+*** File '* Shell 1 *'
+
+Type joehelp for editor shell commands
+
+maxence@dogppol:~/myvenv/python-zbMathRest2Oai$ bash
+maxence@dogppol:~/myvenv/python-zbMathRest2Oai$ ls
+[1m[34m'json mapping'[m   LICENSE   pyproject.toml   README.md   requirements.txt   setup.py   [1m[34msrc[m   test_init.py
+maxence@dogppol:~/myvenv/python-zbMathRest2Oai$ 
+*** File '(Unnamed)'
+/home/maxence/myvenv/python-zbMathRest2Oai/.git/MERGE_MSG
+* Startup Log *
+* Shell 1 *
+
+*** File '/home/maxence/myvenv/python-zbMathRest2Oai/.git/MERGE_MSG'
+
+OS
+
+Merge branch 'main' of github.com:MaRDI4NFDI/python-zbMathRest2Oai
+# Please enter a commit message to explain why this merge is necessary,
+# especially if it merges an updated upstream into a topic branch.
+#
+# Lines starting with '#' will be ignored, and an empty message aborts
+# the commit.
+
+*** File '* Startup Log *'
+Processing '/etc/joe/editorrc'...
+Processing '/etc/joe/ftyperc'...
+Finished processing /etc/joe/ftyperc
+Finished processing /etc/joe/editorrc
+
+*** These modified files were found in JOE when it aborted on Wed Dec 13 12:34:57 2023
+*** JOE was aborted by UNIX signal 1
+
+*** File '(Unnamed)'
+/home/maxence/myvenv/python-zbMathRest2Oai/.git/MERGE_MSG
+* Startup Log *
+* Shell 1 *
+
+*** File '/home/maxence/myvenv/python-zbMathRest2Oai/.git/MERGE_MSG'
+
+OS
+
+Merge branch 'main' of github.com:MaRDI4NFDI/python-zbMathRest2Oai
+# Please enter a commit message to explain why this merge is necessary,
+# especially if it merges an updated upstream into a topic branch.
+#
+# Lines starting with '#' will be ignored, and an empty message aborts
+# the commit.
+
+*** File '* Startup Log *'
+Processing '/etc/joe/editorrc'...
+Processing '/etc/joe/ftyperc'...
+Finished processing /etc/joe/ftyperc
+Finished processing /etc/joe/editorrc
+
+*** These modified files were found in JOE when it aborted on Wed Dec 13 12:34:57 2023
+*** JOE was aborted by UNIX signal 1
+
+*** File '(Unnamed)'
+/home/maxence/myvenv/python-zbMathRest2Oai/.git/MERGE_MSG
+* Startup Log *
+* Shell 1 *
+
+*** File '/home/maxence/myvenv/python-zbMathRest2Oai/.git/MERGE_MSG'
+
+OS
+
+Merge branch 'main' of github.com:MaRDI4NFDI/python-zbMathRest2Oai
+# Please enter a commit message to explain why this merge is necessary,
+# especially if it merges an updated upstream into a topic branch.
+#
+# Lines starting with '#' will be ignored, and an empty message aborts
+# the commit.
+
+*** File '* Startup Log *'
+Processing '/etc/joe/editorrc'...
+Processing '/etc/joe/ftyperc'...
+Finished processing /etc/joe/ftyperc
+Finished processing /etc/joe/editorrc
