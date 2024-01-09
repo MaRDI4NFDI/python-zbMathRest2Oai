@@ -17,10 +17,10 @@ class PlainXmlTest(unittest.TestCase):
                 'ratio_mode': 'accurate'
             })
             essentials = list(filter(lambda e: not isinstance(e, MoveNode), diff))
-            self.assertLessEqual(len(essentials), 333)
+            self.assertLessEqual(len(essentials), 97)
             diff_text = main.diff_texts(expected_string, real_string, {
                 'ratio_mode': 'accurate'
-            }, formatter=formatting.XMLFormatter())
+            }, formatter=formatting.XMLFormatter(normalize=formatting.WS_BOTH))
             print(diff_text)
 
 
