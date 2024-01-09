@@ -15,7 +15,7 @@ def final_xml2(de):
     json['result']['states'] = states
     return (
         dict2xml.Converter(wrap="root")
-        .build(r.json(), closed_tags_for=[
+        .build(json, closed_tags_for=[
             [], '', [None], None
         ])
     )

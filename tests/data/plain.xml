@@ -27,6 +27,7 @@
       <contribution_type>review</contribution_type>
     </editorial_contributions>
     <id>6383667</id>
+    <identifier>1306.11073</identifier>
     <keywords>prime number</keywords>
     <keywords>small gap</keywords>
     <keywords>sieve method</keywords>
@@ -235,16 +236,9 @@
       <source>Ann. Math. (2) 181, No. 1, 383-413 (2015).</source>
     </source>
     <states>
-      <node>s</node>
-      <node>item with single author</node>
-    </states>
-    <states>
-      <node>r</node>
-      <node>item has references</node>
-    </states>
-    <states>
-      <node>c</node>
-      <node>is cited</node>
+            <c>is cited</c>
+            <r>item has references</r>
+            <s>item with single author</s>
     </states>
     <title>
       <addition/>
@@ -257,10 +251,10 @@
   </result>
   <status>
     <execution>successful request</execution>
-    <execution_bool>true</execution_bool>
+        <execution_bool>True</execution_bool>
     <internal_code>ok</internal_code>
-    <query_execution_time_in_seconds>0.04320859909057617</query_execution_time_in_seconds>
+    <query_execution_time_in_seconds>0</query_execution_time_in_seconds>
     <status_code>200</status_code>
-    <time_stamp>2024-01-08 15:25:14.541364</time_stamp>
+    <time_stamp>0</time_stamp>
   </status>
 </root>
