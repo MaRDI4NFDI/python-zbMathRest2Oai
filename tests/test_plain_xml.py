@@ -22,10 +22,11 @@ class PlainXmlTest(unittest.TestCase):
         with open(ref_location) as f:
             expected_string = f.read()
             diff = main.diff_texts(expected_string, real_string, {
-                'ratio_mode': 'accurate'
+                'ratio_mode': 'fast',
+                'F': 1,
             })
             essentials = list(filter(lambda e: not isinstance(e, MoveNode), diff))
-            self.assertLessEqual(len(essentials), 13)
+            self.assertLessEqual(len(essentials), 0)
 
 
 if __name__ == '__main__':

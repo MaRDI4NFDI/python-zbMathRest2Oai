@@ -2,29 +2,29 @@
   <result>
     <biographic_references/>
     <contributors>
+      <author_references/>
       <authors>
         <aliases/>
         <checked>1</checked>
         <codes>maynard.james</codes>
         <name>Maynard, James</name>
       </authors>
-      <author_references/>
       <editors/>
     </contributors>
     <document_type>journal article</document_type>
     <editorial_contributions>
+      <contribution_type>review</contribution_type>
       <reviewer>
         <author_code>siaulys.jonas</author_code>
-        <reviewer_id>11807</reviewer_id>
         <name>Jonas Šiaulys</name>
+        <reviewer_id>11807</reviewer_id>
         <sign>Jonas Šiaulys (Vilnius)</sign>
       </reviewer>
-      <text>The prime \(k\)-tuples and small gaps between prime numbers are considered. Using a refinement of the Goldston-Pintz-Yildirim sieve method [\textit{D. A. Goldston} et al., Ann. Math. (2) 170, No. 2, 819--862 (2009; Zbl 1207.11096)] the author proves, for instance, the following estimates
-\[
- \liminf_{n\to\infty}\,(p_{n+m}-p_n)\ll m^3\text{{e}}^{4m}, \quad \liminf_{n\to\infty}\,(p_{n+1}-p_n)\leq 600
-\]
- with an absolute constant in sign \(\ll\). Here \(m\) is a natural number, and \(p_{\,l}\) denote the \(l\)-th prime number.</text>
-      <contribution_type>review</contribution_type>
+      <text>The prime \(k\)-tuples and small gaps between prime numbers are considered. Using a refinement of the Goldston-Pintz-Yildirim sieve method [\textit{D. A. Goldston} et al., Ann. Math. (2) 170, No. 2, 819--862 (2009; Zbl 1207.11096)] the author proves, for instance, the following estimates 
+      \[
+       \liminf_{n\to\infty}\,(p_{n+m}-p_n)\ll m^3\text{{e}}^{4m}, \quad \liminf_{n\to\infty}\,(p_{n+1}-p_n)\leq 600
+      \]
+       with an absolute constant in sign \(\ll\). Here \(m\) is a natural number, and \(p_{\,l}\) denote the \(l\)-th prime number.</text>
     </editorial_contributions>
     <id>6383667</id>
     <identifier>1306.11073</identifier>
@@ -37,9 +37,10 @@
     <keywords>symmetric polynomial</keywords>
     <keywords>symmetric matrix</keywords>
     <language>
-      <languages>English</languages>
       <addition/>
+      <languages>English</languages>
     </language>
+    <license/>
     <links>
       <identifier>10.4007/annals.2015.181.1.7</identifier>
       <type>doi</type>
@@ -236,9 +237,9 @@
       <source>Ann. Math. (2) 181, No. 1, 383-413 (2015).</source>
     </source>
     <states>
-            <c>is cited</c>
-            <r>item has references</r>
-            <s>item with single author</s>
+      <c>is cited</c>
+      <r>item has references</r>
+      <s>item with single author</s>
     </states>
     <title>
       <addition/>
@@ -251,7 +252,7 @@
   </result>
   <status>
     <execution>successful request</execution>
-        <execution_bool>True</execution_bool>
+    <execution_bool>True</execution_bool>
     <internal_code>ok</internal_code>
     <query_execution_time_in_seconds>0</query_execution_time_in_seconds>
     <status_code>200</status_code>
