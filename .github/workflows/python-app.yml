@@ -11,6 +11,8 @@ on:
 
 permissions:
   contents: read
+env:
+  OAI_BASIC_PASSWORD: ${{ secrets.OAI_BASIC_PASSWORD }}
 
 jobs:
   build:
