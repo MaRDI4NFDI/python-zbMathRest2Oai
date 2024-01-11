@@ -2,8 +2,8 @@ import json
 
 import requests
 
-with open('final.xml', 'w') as f:
-    testXML = f.read('final.xml')
+with open('final.xml', 'r') as f:
+    testXML = f.read()
 
 url = "https://www.w3schools.com/python/demopage.php"
 files = {
@@ -21,7 +21,8 @@ files = {
     "content": (None, testXML),
 }
 # x = requests.delete('http://localhost:8081/oai-backend/item/10.5072%2F38238')
-x = requests.post("http://localhost:8081/oai-backend/item", files=files)
+#x = requests.post("http://localhost:8081/oai-backend/item", files=files)
+x = requests.post("http://172.20.0.28:8081/oai-backend/item", files=files)
 print(x.text)
 
 # x = requests.get('http://localhost:8081/oai-backend/item/10.5072%2F38236')
