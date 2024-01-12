@@ -1,7 +1,9 @@
 import json
 
 import requests
+import os
 
+from requests.auth import HTTPBasicAuth
 with open('final.xml', 'r') as f:
     testXML = f.read()
 
@@ -11,7 +13,7 @@ files = {
         None,
         json.dumps(
             {
-                "identifier": "10.5072/38236",
+                "identifier": "10.5072/38231",
                 "deleteFlag": False,
                 "ingestFormat": "radar",
             }
@@ -22,7 +24,8 @@ files = {
 }
 # x = requests.delete('http://localhost:8081/oai-backend/item/10.5072%2F38238')
 #x = requests.post("http://localhost:8081/oai-backend/item", files=files)
-x = requests.post("http://172.20.0.28:8081/oai-backend/item", files=files)
+basic = HTTPBasicAuth('swmath', os.environ.get('OAI_BASIC_PASSWORD'))
+x = requests.post("http://oai-input.portal.mardi4nfdi.de/oai-backend/item", files=files , auth=basic)
 print(x.text)
 
 # x = requests.get('http://localhost:8081/oai-backend/item/10.5072%2F38236')
