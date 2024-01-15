@@ -4,8 +4,10 @@ import requests
 import os
 
 from requests.auth import HTTPBasicAuth
-with open('final.xml', 'r') as f:
-    testXML = f.read()
+
+from zbmath_rest2oai import getAsXml
+
+testXML = getAsXml.final_xml2("6383667")
 
 url = "https://www.w3schools.com/python/demopage.php"
 files = {
@@ -13,7 +15,7 @@ files = {
         None,
         json.dumps(
             {
-                "identifier": "10.5072/38231",
+                "identifier": "6383667",
                 "deleteFlag": False,
                 "ingestFormat": "radar",
             }
