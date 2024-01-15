@@ -1,12 +1,14 @@
 import dict2xml
+import requests
 
 
 def final_xml2(de):
-    import requests
 
     headers = {'Accept': 'application/json'}
 
     r = requests.get('https://api.zbmath.org/v1/document/' + de, headers=headers)
+    if r.status_code != 200:
+        raise Exception(f"Unexpected response with status code {r.status_code}: {r.text}")
     json = r.json()
     # Bugfix as the sates are lists of lists which has no canonical XML mapping
     states = {}
