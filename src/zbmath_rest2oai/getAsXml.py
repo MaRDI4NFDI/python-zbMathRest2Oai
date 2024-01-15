@@ -22,6 +22,3 @@ def final_xml2(de):
             [], '', [None], None
         ])
     )
-
-with open('final.xml', 'w') as f:
-    f.write(final_xml2("6383667"))
