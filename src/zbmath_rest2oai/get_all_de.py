@@ -1,3 +1,5 @@
+import sys
+
 import requests
 import csv
 
@@ -15,7 +17,7 @@ def get_all_de():
             try:
                 final_xml2(de)
             except Exception as error:
-                print(de, error)
+                print(de, error, file=sys.stderr)
 
 
 if __name__ == '__main__':
