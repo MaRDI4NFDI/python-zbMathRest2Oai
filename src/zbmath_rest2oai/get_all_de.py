@@ -3,10 +3,11 @@ import sys
 import requests
 import csv
 
-from zbmath_rest2oai.getAsXml import final_xml2
+from zbmath_rest2oai.writeOai import write_oai
 
 # from https://stackoverflow.com/a/38677619/9215209
 CSV_URL = 'https://github.com/MaRDI4NFDI/python-zbMathRest2Oai/releases/download/test/all_de_240115.csv'
+
 
 
 def get_all_de():
@@ -15,7 +16,7 @@ def get_all_de():
         for row in csv.reader(lines):
             de = row[0]
             try:
-                final_xml2(de)
+                write_oai(de)
             except Exception as error:
                 print(de, error, file=sys.stderr)
 
