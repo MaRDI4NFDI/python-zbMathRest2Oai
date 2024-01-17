@@ -29,11 +29,10 @@ def write_oai(x):
     #x = requests.post("http://localhost:8081/oai-backend/item", files=files)
     basic = HTTPBasicAuth('swmath', os.environ.get('OAI_BASIC_PASSWORD'))
     x = requests.post("http://oai-input.portal.mardi4nfdi.de/oai-backend/item", files=files , auth=basic)
-    if r.status_code != 200:
-        raise Exception(f"Unexpected response with status code {r.status_code}: {r.text}")
+    if x.status_code != 200:
+        raise Exception(f"Unexpected response with status code {x.status_code}: {x.text}")
     else:
-        return
-    print(x.text)
+        return x.text
 
 # x = requests.get('http://localhost:8081/oai-backend/item/10.5072%2F38236')
 
