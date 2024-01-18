@@ -8,7 +8,7 @@ from requests.auth import HTTPBasicAuth
 from zbmath_rest2oai import getAsXml
 
 def write_oai(x):
-    testXML = getAsXml.final_xml2(*x)
+    testXML = getAsXml.final_xml2(x)
 
     url = "https://www.w3schools.com/python/demopage.php"
     files = {
@@ -16,7 +16,7 @@ def write_oai(x):
             None,
             json.dumps(
                 {
-                    "identifier": "6383667",
+                    "identifier": x,
                     "deleteFlag": False,
                     "ingestFormat": "radar",
                 }
