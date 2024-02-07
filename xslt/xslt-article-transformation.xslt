@@ -35,6 +35,16 @@
  <xsl:value-of  select="root/result/editorial_contributions/reviewer/author_code"/>
  </zbmath:reviewer_id>
         </reviewer>
+    <zbmath:zbl_id>
+<xsl:value-of select="root/result/identifier"/>
+</zbmath:zbl_id>
+   <zbmath:keywords>
+          <xsl:for-each select="root/result/keywords">
+            <zbmath:keyword>
+              <xsl:value-of select="."/>
+            </zbmath:keyword>
+          </xsl:for-each>
+        </zbmath:keywords>
 </oai_zb_preview>
 </xsl:template>
 </xsl:stylesheet>
