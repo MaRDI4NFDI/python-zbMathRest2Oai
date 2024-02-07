@@ -17,10 +17,10 @@ dependencies = [
 [project.optional-dependencies]
 test = [
     "black",
+    "coverage",
     "flake8",
     "isort",
     "pytest",
-    "pytest-cov",
     "radon",
     "flake8_polyfill",
     "coverage",
