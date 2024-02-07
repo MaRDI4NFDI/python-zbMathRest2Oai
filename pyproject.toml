@@ -20,6 +20,7 @@ test = [
     "flake8",
     "isort",
     "pytest",
+    "pytest-cov",
     "radon",
     "flake8_polyfill",
     "coverage",
