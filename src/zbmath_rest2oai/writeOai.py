@@ -7,10 +7,9 @@ from requests.auth import HTTPBasicAuth
 
 from zbmath_rest2oai import getAsXml
 
-def write_oai(x):
-    testXML = getAsXml.final_xml2(x)
 
-    url = "https://www.w3schools.com/python/demopage.php"
+def write_oai(x):
+    test_xml = getAsXml.final_xml2(x)
     files = {
         "item": (
             None,
@@ -18,21 +17,16 @@ def write_oai(x):
                 {
                     "identifier": x,
                     "deleteFlag": False,
-                    "ingestFormat": "radar",
+                    "ingestFormat": "zbmath_rest_api",
                 }
             ),
             "application/json",
         ),
-        "content": (None, testXML),
+        "content": (None, test_xml),
     }
-    # x = requests.delete('http://localhost:8081/oai-backend/item/10.5072%2F38238')
-    #x = requests.post("http://localhost:8081/oai-backend/item", files=files)
     basic = HTTPBasicAuth('swmath', os.environ.get('OAI_BASIC_PASSWORD'))
-    x = requests.post("http://oai-input.portal.mardi4nfdi.de/oai-backend/item", files=files , auth=basic)
+    x = requests.post("http://oai-input.portal.mardi4nfdi.de/oai-backend/item", files=files, auth=basic)
     if x.status_code != 200:
         raise Exception(f"Unexpected response with status code {x.status_code}: {x.text}")
     else:
         return x.text
-
-# x = requests.get('http://localhost:8081/oai-backend/item/10.5072%2F38236')
-
