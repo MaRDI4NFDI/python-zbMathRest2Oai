@@ -1,8 +1,10 @@
 import os
-import unittest
 import re
-from xmldiff import main, formatting
+import unittest
+
+from xmldiff import main
 from xmldiff.actions import MoveNode
+
 from zbmath_rest2oai import getAsXml
 
 
