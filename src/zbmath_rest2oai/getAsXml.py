@@ -2,11 +2,11 @@ import dict2xml
 import requests
 
 
-def final_xml2(de):
+def final_xml2(de, api_source):
 
     headers = {'Accept': 'application/json'}
-
-    r = requests.get('https://api.zbmath.org/v1/document/' + de, headers=headers)
+    api_source='https://api.zbmath.org/v1/document/'
+    r = requests.get(api_source + de, headers=headers)
     if r.status_code != 200:
         raise Exception(f"Unexpected response with status code {r.status_code}: {r.text}")
     json = r.json()
