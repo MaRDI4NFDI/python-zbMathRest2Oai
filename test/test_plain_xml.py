@@ -10,7 +10,7 @@ from zbmath_rest2oai import getAsXml
 
 class PlainXmlTest(unittest.TestCase):
     def test_similarity(self):
-        real_string = getAsXml.final_xml2("6383667")
+        real_string = getAsXml.final_xml2("6383667", 'https://api.zbmath.org/v1/document/')
         real_string = re.sub(
             '<query_execution_time_in_seconds>0.\\d+</query_execution_time_in_seconds>',
             '<query_execution_time_in_seconds>0</query_execution_time_in_seconds>',
