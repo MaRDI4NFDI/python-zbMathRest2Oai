@@ -27,14 +27,14 @@
         <zbmath:review_type>
           <xsl:value-of select="root/result/editorial_contributions/contribution_type"/>
         </zbmath:review_type>
-        <reviewer>
+        <zbmath:reviewer>
         <zbmath:reviewer>
             <xsl:value-of select="root/result/editorial_contributions/reviewer/reviewer_id"/>
           </zbmath:reviewer>
      <zbmath:reviewer_id>
  <xsl:value-of  select="root/result/editorial_contributions/reviewer/author_code"/>
  </zbmath:reviewer_id>
-        </reviewer>
+        </zbmath:reviewer>
     <zbmath:zbl_id>
 <xsl:value-of select="root/result/identifier"/>
 </zbmath:zbl_id>
@@ -45,6 +45,30 @@
             </zbmath:keyword>
           </xsl:for-each>
         </zbmath:keywords>
+     <zbmath:serial_publisher>
+<xsl:value-of select="root/result/publisher"/>
+</zbmath:serial_publisher>
+    <zbmath:serial_title>
+<xsl:value-of select="root/result/title"/>
+ </zbmath:serial_title>
+<zbmath:doi>
+<xsl:value-of select="root/result/identifier"/>
+</zbmath:doi>
+<zbmath:reference>
+ <zbmath:text>
+<xsl:value-of select="root/result/text"/>
+ </zbmath:text>
+<zbmath:ref_id>
+<xsl:value-of select="root/result/document_id"/>
+</zbmath:ref_id>
+<zbmath:ref_classification>
+<xsl:value-of select="root/result/msc"/>
+</zbmath:ref_classification>
+<zbmath:ref_classification>
+<xsl:value-of select="root/result/msc"/>
+</zbmath:ref_classification>
+</zbmath:reference>
+
 </oai_zb_preview>
 </xsl:template>
 </xsl:stylesheet>
