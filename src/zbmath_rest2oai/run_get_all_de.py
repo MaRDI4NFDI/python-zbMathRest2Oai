@@ -1,4 +1,4 @@
-from zbmath_rest2oai.get_all_de import get_all_de
+from zbmath_rest2oai.get_all_de_documents import get_all_de
 
 
 if __name__ == '__main__':
