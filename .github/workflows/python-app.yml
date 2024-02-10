@@ -39,3 +39,7 @@ jobs:
       run: |
         coverage run -m pytest
         coverage report -m
+    - name: Test & publish code coverage
+      uses: paambaati/codeclimate-action@v5.0.0
+      env:
+        CC_TEST_REPORTER_ID: ${{secrets.CC_TEST_REPORTER_ID}}
