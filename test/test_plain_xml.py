@@ -20,7 +20,7 @@ class PlainXmlTest(unittest.TestCase):
             '<time_stamp>0</time_stamp>',
             real_string)
 
-        ref_location = os.path.join(os.path.dirname(__file__), './data/plain.xml')
+        ref_location = os.path.join(os.path.dirname(__file__), 'data/articles/plain.xml')
         with open(ref_location) as f:
             expected_string = f.read()
             diff = main.diff_texts(expected_string, real_string, {
