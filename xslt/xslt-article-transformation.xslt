@@ -18,6 +18,21 @@
     <zbmath:review_language>
 <xsl:value-of select="root/result/editorial_contributions/language/languages"/>
 </zbmath:review_language>
+    <zbmath:pagination>
+<xsl:value-of select="root/result/pages"/>
+</zbmath:pagination>
+<zbmath:publication_year>
+<xsl:value-of select="root/result/year"/>
+</zbmath:publication_year>
+<zbmath:source>
+<xsl:value-of select="root/result/source"/>
+</zbmath:source>
+<zbmath:spelling>
+<xsl:value-of select="root/result/name"/>
+</zbmath:spelling>
+        <zbmath:zbl_id>
+<xsl:value-of select="root/result/identifier"/>
+</zbmath:zbl_id>
       <zbmath:review_sign>
             <xsl:value-of select="root/result/editorial_contributions/reviewer/sign"/>
           </zbmath:review_sign>
@@ -35,9 +50,6 @@
  <xsl:value-of  select="root/result/editorial_contributions/reviewer/author_code"/>
  </zbmath:reviewer_id>
         </zbmath:reviewer>
-    <zbmath:zbl_id>
-<xsl:value-of select="root/result/identifier"/>
-</zbmath:zbl_id>
    <zbmath:keywords>
           <xsl:for-each select="root/result/keywords">
             <zbmath:keyword>
