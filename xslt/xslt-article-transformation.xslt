@@ -77,6 +77,15 @@
 <xsl:value-of select="root/result/msc"/>
 </zbmath:ref_classification>
 </zbmath:reference>
+
+
+
+
+
+
+
+
+
 </oai_zb_preview>
 </xsl:template>
 </xsl:stylesheet>
