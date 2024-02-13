@@ -5,6 +5,9 @@
     <zbmath:identifier>
         <xsl:value-of select="root/result/id"/>
     </zbmath:identifier>
+    <zbmath:creator>
+        <xsl:value-of select="root/result/authors"/>
+    </zbmath:creator>
 </resource>
 </xsl:template>
 </xsl:stylesheet>
