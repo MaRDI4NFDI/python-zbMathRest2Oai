@@ -8,6 +8,9 @@
     <zbmath:creator>
         <xsl:value-of select="root/result/authors"/>
     </zbmath:creator>
+    <zbmath:title>
+        <xsl:value-of select="root/result/name"/>
+    </zbmath:title>
 </resource>
 </xsl:template>
 </xsl:stylesheet>
