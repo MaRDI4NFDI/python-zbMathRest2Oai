@@ -16,6 +16,10 @@
         <xsl:value-of select="root/result/description"/>
     </zbmath:description>
 
+     <zbmath:publisher>
+        <xsl:value-of select="root/result/homepage"/>
+    </zbmath:publisher>
+
 
     <xsl:for-each select="root/result/classification">
         <subject><xsl:value-of select="."/></subject>
