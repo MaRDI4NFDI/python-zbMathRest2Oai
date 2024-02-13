@@ -57,12 +57,31 @@
             </zbmath:keyword>
           </xsl:for-each>
         </zbmath:keywords>
+    <zbmath:serial>
      <zbmath:serial_publisher>
 <xsl:value-of select="root/result/publisher"/>
 </zbmath:serial_publisher>
     <zbmath:serial_title>
 <xsl:value-of select="root/result/title"/>
  </zbmath:serial_title>
+    </zbmath:serial>
+    <zbmath:references>
+<zbmath_reference>
+<zbmath:text>
+<xsl:value-of select="root/result/references/text"/>
+ </zbmath:text>
+<zbmath:ref_id>
+<xsl:value-of select="root/result/references/document_id"/>
+ </zbmath:ref_id>
+   <zbmath:ref_classifications>
+          <xsl:for-each select="root/result/references/msc">
+            <zbmath:ref_classification>
+              <xsl:value-of select="."/>
+            </zbmath:ref_classification>
+          </xsl:for-each>
+        </zbmath:ref_classifications>
+</zbmath_reference>
+</zbmath:references>
 <zbmath:doi>
 <xsl:value-of select="root/result/identifier"/>
 </zbmath:doi>
