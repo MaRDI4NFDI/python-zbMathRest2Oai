@@ -15,6 +15,11 @@
     <zbmath:description>
         <xsl:value-of select="root/result/description"/>
     </zbmath:description>
+
+
+    <xsl:for-each select="root/result/classification">
+        <subject><xsl:value-of select="."/></subject>
+      </xsl:for-each>
 </resource>
 </xsl:template>
 </xsl:stylesheet>
