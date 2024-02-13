@@ -11,6 +11,10 @@
     <zbmath:title>
         <xsl:value-of select="root/result/name"/>
     </zbmath:title>
+
+    <zbmath:description>
+        <xsl:value-of select="root/result/description"/>
+    </zbmath:description>
 </resource>
 </xsl:template>
 </xsl:stylesheet>
