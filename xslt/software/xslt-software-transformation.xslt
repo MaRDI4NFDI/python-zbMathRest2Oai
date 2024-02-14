@@ -44,8 +44,4 @@
 
 </resource>
 </xsl:template>
-     <xsl:template match="creator">
-
-             </xsl:template>
-
 </xsl:stylesheet>
