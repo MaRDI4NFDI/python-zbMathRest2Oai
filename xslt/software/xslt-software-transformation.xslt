@@ -6,9 +6,10 @@
     <identifier identifierType="swMATHid">
         <xsl:value-of select="root/result/id"/>
     </identifier>
-    <creator>
+    <creators>
         <xsl:value-of select="root/result/authors"/>
-    </creator>
+
+    </creators>
     <title>
         <xsl:value-of select="root/result/name"/>
     </title>
@@ -43,4 +44,8 @@
 
 </resource>
 </xsl:template>
+     <xsl:template match="creator">
+
+             </xsl:template>
+
 </xsl:stylesheet>
