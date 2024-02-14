@@ -10,11 +10,11 @@
         <author_id><xsl:value-of select="."/></author_id>
       </xsl:for-each>
       </author_ids>
-     <classifications>
+      <zbmath:classifications>
        <xsl:for-each select="root/result/msc/code">
-        <classification><xsl:value-of select="."/></classification>
+        <zbmath:classification><xsl:value-of select="."/></zbmath:classification>
       </xsl:for-each>
-      </classifications>
+      </zbmath:classifications>
     <zbmath:review_language>
 <xsl:value-of select="root/result/editorial_contributions/language/languages"/>
 </zbmath:review_language>
@@ -50,13 +50,11 @@
  <xsl:value-of  select="root/result/editorial_contributions/reviewer/author_code"/>
  </zbmath:reviewer_id>
         </zbmath:reviewer>
-   <zbmath:keywords>
-          <xsl:for-each select="root/result/keywords">
-            <zbmath:keyword>
-              <xsl:value-of select="."/>
-            </zbmath:keyword>
-          </xsl:for-each>
-        </zbmath:keywords>
+       <zbmath:keywords>
+       <xsl:for-each select="root/result/keywords">
+        <zbmath:keyword><xsl:value-of select="."/></zbmath:keyword>
+      </xsl:for-each>
+      </zbmath:keywords>
     <zbmath:serial>
      <zbmath:serial_publisher>
 <xsl:value-of select="root/result/publisher"/>
