@@ -42,6 +42,10 @@
         <relatedIdentifier><xsl:value-of select="."/></relatedIdentifier>
       </xsl:for-each>
 
+    <xsl:for-each select="root/result/standard_articles/id">
+        <relatedIdentifier relationType="IsReferencedBy"><xsl:value-of select="."/></relatedIdentifier>
+      </xsl:for-each>
+
 </resource>
 </xsl:template>
 </xsl:stylesheet>
