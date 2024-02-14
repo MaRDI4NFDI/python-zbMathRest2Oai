@@ -3,7 +3,7 @@
 <xsl:template match="/">
 <resource>
 
-    <identifier>
+    <identifier identifierType="swMATHid">
         <xsl:value-of select="root/result/id"/>
     </identifier>
     <creator>
