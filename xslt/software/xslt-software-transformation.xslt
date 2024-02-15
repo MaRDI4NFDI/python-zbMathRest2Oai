@@ -37,6 +37,10 @@
     <xsl:for-each select="root/result/classification">
         <subject><xsl:value-of select="."/></subject>
       </xsl:for-each>
+
+        <subject>
+            <xsl:value-of select="root/result/keywords"/>
+        </subject>
      </subjects>
     <xsl:for-each select="root/result/related_software/id">
         <relatedIdentifier><xsl:value-of select="."/></relatedIdentifier>
