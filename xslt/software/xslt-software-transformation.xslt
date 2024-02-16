@@ -32,6 +32,20 @@
         </xsl:otherwise>
     </xsl:choose>
 
+    <xsl:choose>
+        <xsl:when test= "root/result/license_terms != ''">
+            <!-- will be instantiated for item #1 and item #2 -->
+            <rights>
+            <xsl:value-of select="root/result/license_terms"/>
+            </rights>
+        </xsl:when>
+        <xsl:otherwise>
+            <rights>
+                <xsl:value-of select="concat('No',' license')" />
+             </rights>
+        </xsl:otherwise>
+    </xsl:choose>
+
 
     <subjects>
     <xsl:for-each select="root/result/classification">
