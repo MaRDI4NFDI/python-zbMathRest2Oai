@@ -9,7 +9,7 @@ from zbmath_rest2oai import getAsXml
 
 
 def write_oai(x, api_source):
-    test_xml = getAsXml.final_xml2(x,api_source)
+    test_xml = getAsXml.final_xml2(x, api_source)
     files = {
         "item": (
             None,
@@ -30,3 +30,9 @@ def write_oai(x, api_source):
         raise Exception(f"Unexpected response with status code {x.status_code}: {x.text}")
     else:
         return x.text
+
+
+if __name__ == '__main__':
+    import sys
+
+    write_oai(sys.argv[1], sys.argv[2])
