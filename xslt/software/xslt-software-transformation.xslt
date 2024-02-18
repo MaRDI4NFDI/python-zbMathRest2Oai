@@ -18,6 +18,7 @@
         <xsl:value-of select="root/result/description"/>
     </description>
 
+
     <xsl:choose>
         <xsl:when test= "root/result/source_code != ''">
             <!-- will be instantiated for item #1 and item #2 -->
@@ -64,6 +65,9 @@
         <relatedIdentifier relationType="IsReferencedBy"><xsl:value-of select="."/></relatedIdentifier>
       </xsl:for-each>
 
+      <relatedIdentifier relationType="IsDescribedBy">
+        <xsl:value-of disable-output-escaping="yes" select="concat('https://orms.mfo.de/project@terms=', '&amp;', 'id=' , root/result/orms_id, '.html')"/>
+    </relatedIdentifier>
 </resource>
 </xsl:template>
 </xsl:stylesheet>
