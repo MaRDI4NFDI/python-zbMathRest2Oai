@@ -18,16 +18,16 @@
     <classification>86</classification>
     <classification>90</classification>
     <classification>92</classification>
-    <dependencies></dependencies>
+    <dependencies/>
     <description>zbMATH Open Web Interface contents unavailable due to conflicting licenses.</description>
     <homepage>http://crd-legacy.lbl.gov/~xiaoye/SuperLU/</homepage>
     <id>2</id>
     <keywords>orms</keywords>
-    <license_terms></license_terms>
+    <license_terms/>
     <name>SuperLU-DIST</name>
-    <operating_systems></operating_systems>
+    <operating_systems/>
     <orms_id>265</orms_id>
-    <programming_languages></programming_languages>
+    <programming_languages/>
     <related_software>
       <id>4013</id>
       <name>MUMPS</name>
@@ -108,9 +108,9 @@
       <id>17483</id>
       <name>STRUMPACK</name>
     </related_software>
-    <source_code></source_code>
+    <source_code/>
     <standard_articles>
-      <authors></authors>
+      <authors/>
       <id>2187846</id>
       <source>zbMATH Open Web Interface contents unavailable due to conflicting licenses.</source>
       <title>zbMATH Open Web Interface contents unavailable due to conflicting licenses.</title>
@@ -122,8 +122,8 @@
     <execution>successful request</execution>
     <execution_bool>True</execution_bool>
     <internal_code>ok</internal_code>
-    <query_execution_time_in_seconds>0.07225203514099121</query_execution_time_in_seconds>
+    <query_execution_time_in_seconds>0.07555723190307617</query_execution_time_in_seconds>
     <status_code>200</status_code>
-    <time_stamp>2024-02-09 12:49:18.259135</time_stamp>
+    <time_stamp>2024-02-18 14:36:29.831699</time_stamp>
   </status>
 </root>
