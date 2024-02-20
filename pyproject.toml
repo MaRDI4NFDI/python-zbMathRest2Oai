@@ -26,7 +26,8 @@ test = [
     "requests_mock",
     "python-dateutil",
     "pytest-coverage",
-    "xmldiff"
+    "xmldiff",
+    "lxml"
 ]
 
 [tool.setuptools]
