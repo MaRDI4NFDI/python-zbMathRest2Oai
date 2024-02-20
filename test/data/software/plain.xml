@@ -122,8 +122,6 @@
     <execution>successful request</execution>
     <execution_bool>True</execution_bool>
     <internal_code>ok</internal_code>
-    
     <status_code>200</status_code>
-    
   </status>
 </root>
