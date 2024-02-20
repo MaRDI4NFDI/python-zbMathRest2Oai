@@ -19,21 +19,14 @@ class PlainXmlTest(unittest.TestCase):
             '<time_stamp>[\\d\\-: .]+</time_stamp>',
             '',
             real_string)
-        xml_string = [line for line in xml_string.splitlines() if line.strip() != '']
-        xml_string = '\n'.join(xml_string)
+        real_string = [line for line in real_string.splitlines() if line.strip() != '']
+        real_string = '\n'.join(real_string)
 
         ref_location = os.path.join(os.path.dirname(__file__), 'data/software/plain.xml')
         with open(ref_location) as f:
             expected_string = f.read()
 
-            expected_string = re.sub(
-                '<query_execution_time_in_seconds>0.\\d+</query_execution_time_in_seconds>',
-                '<query_execution_time_in_seconds>0</query_execution_time_in_seconds>',
-                expected_string)
-            expected_string = re.sub(
-                '<time_stamp>[\\d\\-: .]+</time_stamp>',
-                '<time_stamp>0</time_stamp>',
-                expected_string)
+
 
             diff = main.diff_texts(expected_string, real_string, {
                 'ratio_mode': 'fast',
