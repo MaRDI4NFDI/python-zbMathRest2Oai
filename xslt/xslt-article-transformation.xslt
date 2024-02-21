@@ -83,6 +83,17 @@
 <zbmath:doi>
 <xsl:value-of select="root/result/identifier"/>
 </zbmath:doi>
+
+    <zbmath:links_arxiv>
+        <xsl:for-each select="root/result/links">
+            <xsl:if test="type='arxiv'">
+            <xsl:text>https://arxiv.org/abs/</xsl:text>
+        <xsl:value-of select="identifier"/>
+             </xsl:if>
+        </xsl:for-each>
+
+</zbmath:links_arxiv>
+
 <zbmath:reference>
  <zbmath:text>
 <xsl:value-of select="root/result/text"/>
@@ -95,5 +106,20 @@
 </zbmath:ref_classification>
 </zbmath:reference>
 </oai_zb_preview>
+
 </xsl:template>
+
+
+
+
+<!-- Match the links element -->
+<xsl:template match="links-arxiv">
+    <zbmath:links xmlns:zbmath="http://example.com/zbmath">
+        <zbmath:link>
+            <xsl:text>https://arxiv.org/abs/</xsl:text>
+            <xsl:value-of select="identifier"/>
+        </zbmath:link>
+    </zbmath:links>
+</xsl:template>
+
 </xsl:stylesheet>
