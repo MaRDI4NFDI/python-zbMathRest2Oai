@@ -122,6 +122,8 @@
     <execution>successful request</execution>
     <execution_bool>True</execution_bool>
     <internal_code>ok</internal_code>
+    <query_execution_time_in_seconds>0</query_execution_time_in_seconds>
     <status_code>200</status_code>
+    <time_stamp>0</time_stamp>
   </status>
 </root>
