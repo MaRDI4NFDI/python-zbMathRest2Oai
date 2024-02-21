@@ -13,11 +13,11 @@ class PlainXmlTest(unittest.TestCase):
         real_string = getAsXml.final_xml2("2", 'https://api.zbmath.org/v1/software/_search?search_string=si%3A')
         real_string  = re.sub(
             '<query_execution_time_in_seconds>0.\\d+</query_execution_time_in_seconds>',
-            '',
+            '<query_execution_time_in_seconds>0</query_execution_time_in_seconds>',
             real_string)
         real_string = re.sub(
             '<time_stamp>[\\d\\-: .]+</time_stamp>',
-            '',
+            '<time_stamp>0</time_stamp>',
             real_string)
         real_string = [line for line in real_string.splitlines() if line.strip() != '']
         real_string = '\n'.join(real_string)
