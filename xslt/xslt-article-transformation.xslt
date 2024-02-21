@@ -109,9 +109,6 @@
 
 </xsl:template>
 
-
-
-
 <!-- Match the links element -->
 <xsl:template match="links-arxiv">
     <zbmath:links xmlns:zbmath="http://example.com/zbmath">
@@ -121,5 +118,22 @@
         </zbmath:link>
     </zbmath:links>
 </xsl:template>
+ <!-- i was trying alot to have the result as a link but i did not come yet with a final satisfying result
+  this is the actual output when i implement both parts of codes
+   1311.4600
+      arxiv
 
+
+
+      10.4007/annals.2015.181.1.7
+      doi
+      -->
+    <xsl:template match="links-doi">
+    <zbmath:links xmlns:zbmath="http://example.com/zbmath">
+        <zbmath:link>
+            <xsl:text>https://doi.org/</xsl:text>
+            <xsl:value-of select="identifier"/>
+        </zbmath:link>
+    </zbmath:links>
+</xsl:template>
 </xsl:stylesheet>
