@@ -11,8 +11,7 @@ xml_string = re.sub(
     '<time_stamp>[\\d\\-: .]+</time_stamp>',
     '',
     xml_string)
-xml_string = [line for line in xml_string.splitlines() if line.strip() != '']
-xml_string = '\n'.join(xml_string)
+
 print(xml_string)
 if __name__ == '__main__':
     with open(sys.argv[3], 'w') as f:
