@@ -59,9 +59,9 @@
     <zbmath:spelling>
    <xsl:value-of select="root/result/contributors/authors/name"/>
     </zbmath:spelling>
-    <zbmath:zbmathl_id>
+    <zbmath:zbl_id>
       <xsl:value-of select="root/result/identifier"/>
-    </zbmath:zbmathl_id>
+    </zbmath:zbl_id>
     <zbmath:review>
      <zbmath:review_sign>
             <xsl:value-of select="root/result/editorial_contributions/reviewer/sign"/>
