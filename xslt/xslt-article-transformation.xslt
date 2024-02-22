@@ -96,7 +96,13 @@
                             <xsl:when test="type = 'arxiv'">
                                 <xsl:value-of select="concat('https://arxiv.org/abs/', identifier)"/>
                             </xsl:when>
-                            <!-- Add additional cases here -->
+                             <xsl:when test="type = 'euclid'">
+                                <xsl:value-of select="concat('https://projecteuclid.org/euclid.', identifier)"/>
+                            </xsl:when>
+                            <xsl:when test="type = 'crelle'">
+                                <xsl:value-of select="concat('https://www.digizeitschriften.de/dms/resolveppn/?PPN=', identifier)"/>
+                            </xsl:when>
+
                         </xsl:choose>
                     </zbmath:link>
                 </xsl:for-each>
