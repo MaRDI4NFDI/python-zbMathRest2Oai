@@ -38,7 +38,7 @@
   <language>en</language>
   <resourceType resourceTypeGeneral="Software"/>
   <alternateIdentifiers>
-    <alternateIdentifier alternateIdentifierType="url">https://zenodo.org/record/7635478</alternateIdentifier>
+    <alternateIdentifier alternateIdentifierType="url">https://zbmath.org/software/?q=si%3A2</alternateIdentifier>
   </alternateIdentifiers>
   <relatedIdentifiers>
     <relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementTo" resourceTypeGeneral="Software">https://github.com/jpadfield/dynamic-modelling/tree/v1.4</relatedIdentifier>
