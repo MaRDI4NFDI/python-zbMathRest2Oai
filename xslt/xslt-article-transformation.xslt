@@ -3,7 +3,8 @@
                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                 xmlns:oai_zbmath_preview="https://zbmath.org/OAI/2.0/oai_zbmath_preview/"
                 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-                xmlns:zbmath="https://zbmath.org/zbmath/elements/1.0/">
+                xmlns:zbmath="https://zbmath.org/zbmath/elements/1.0/"
+                exclude-result-prefixes="xsi oai_zb_preview">
 
 
 <xsl:output method="xml" indent="yes"/>
@@ -102,7 +103,12 @@
                             <xsl:when test="type = 'crelle'">
                                 <xsl:value-of select="concat('https://www.digizeitschriften.de/dms/resolveppn/?PPN=', identifier)"/>
                             </xsl:when>
-
+                                <xsl:when test="type = 'emis'">
+                                    <xsl:value-of select="concat('http://www.emis.de/', identifier)"/>
+                            </xsl:when>
+                            <xsl:when test="type = 'eudml'">
+                                <xsl:value-of select="concat('https://eudml.org/doc/', identifier)"/>
+                            </xsl:when>
                         </xsl:choose>
                     </zbmath:link>
                 </xsl:for-each>
