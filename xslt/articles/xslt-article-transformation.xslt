@@ -107,12 +107,13 @@
       </xsl:for-each>
     </zbmath:references>
        <zbmath:links>
-                <xsl:for-each select="root/result/links">
+                <xsl:for-each select="root/result/links[type != 'doi']">
                     <zbmath:link>
                         <xsl:choose>
+                            <!-- Removed for backwards compatibility
                             <xsl:when test="type = 'doi'">
                                 <xsl:value-of select="concat('https://doi.org/', identifier)"/>
-                            </xsl:when>
+                            </xsl:when>-->
                             <xsl:when test="type = 'arxiv'">
                                 <xsl:value-of select="concat('https://arxiv.org/abs/', identifier)"/>
                             </xsl:when>
