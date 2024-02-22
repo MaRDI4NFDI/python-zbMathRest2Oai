@@ -109,6 +109,12 @@
                             <xsl:when test="type = 'eudml'">
                                 <xsl:value-of select="concat('https://eudml.org/doc/', identifier)"/>
                             </xsl:when>
+                             <xsl:when test="type = 'vixra'">
+                                <xsl:value-of select="concat('http://www.vixra.org/abs/', identifier)"/>
+                            </xsl:when>
+                            <xsl:when test="type = 'numdam'">
+                                <xsl:value-of select="concat('http://www.numdam.org/item?id=', identifier)"/>
+                            </xsl:when>
                         </xsl:choose>
                     </zbmath:link>
                 </xsl:for-each>
