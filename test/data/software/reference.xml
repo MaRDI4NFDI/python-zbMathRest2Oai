@@ -12,15 +12,25 @@
   <titles>
     <title>SuperLU-DIST</title>
   </titles>
-  <publisher>Zenodo</publisher>
-  <publicationYear>2023</publicationYear>
+  <publisher>swMATH</publisher>
+  <publicationYear></publicationYear>
   <subjects>
-    <subject>mermaid.js</subject>
-    <subject>Interoperability</subject>
-    <subject>FAIR</subject>
-    <subject>Dynamic</subject>
-    <subject>Online Tool</subject>
-    <subject>Modelling</subject>
+    <subject>35</subject>
+    <subject>65</subject>
+    <subject>68</subject>
+    <subject>74</subject>
+    <subject>76</subject>
+    <subject>05</subject>
+    <subject>15</subject>
+    <subject>60</subject>
+    <subject>78</subject>
+    <subject>80</subject>
+    <subject>81</subject>
+    <subject>82</subject>
+    <subject>85</subject>
+    <subject>86</subject>
+    <subject>90</subject>
+    <subject>92</subject>
   </subjects>
   <contributors>
     <contributor contributorType="Other">
