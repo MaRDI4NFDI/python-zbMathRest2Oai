@@ -32,18 +32,6 @@
     <subject>90</subject>
     <subject>92</subject>
   </subjects>
-  <contributors>
-    <contributor contributorType="Other">
-      <contributorName>Wim Fremout</contributorName>
-      <nameIdentifier nameIdentifierScheme="ORCID" schemeURI="http://orcid.org/">0000-0002-1684-377X</nameIdentifier>
-      <affiliation>KIK-IRPA</affiliation>
-    </contributor>
-    <contributor contributorType="Other">
-      <contributorName>Sophia Sotiropoulou</contributorName>
-      <nameIdentifier nameIdentifierScheme="ORCID" schemeURI="http://orcid.org/">0000-0001-9146-8474</nameIdentifier>
-      <affiliation>FORTH</affiliation>
-    </contributor>
-  </contributors>
   <dates>
     <date dateType="Issued">2023-02-13</date>
   </dates>
