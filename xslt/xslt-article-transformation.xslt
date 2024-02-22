@@ -121,6 +121,9 @@
                             <xsl:when test="type = 'lni'">
                                 <xsl:value-of select="concat('http://subs.emis.de/', identifier)"/>
                             </xsl:when>
+                            <xsl:when test="type = 'mathnetru'">
+                                <xsl:value-of select="concat('http://mathnet.ru/', identifier)"/>
+                            </xsl:when>
                         </xsl:choose>
                     </zbmath:link>
                 </xsl:for-each>
