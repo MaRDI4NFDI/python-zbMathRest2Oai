@@ -42,13 +42,6 @@
   </alternateIdentifiers>
 
 
-  <descriptions>
-    <description descriptionType="Abstract">&lt;p&gt;This is an interactive live modelling system which can automatically convert simple tab separated triples or JSON-LD (experimental) into graphical models using the &lt;a href="https://mermaid-js.github.io/mermaid"&gt;mermaid library&lt;/a&gt;. General updates and improvements have been carried out, with the addition of an improved process of submitting data with a URL, moving from the old Graph model type to the new Flowchart type, adding options to link directly to SubGraphs. The compression of data within bookmark URLs has been updated and an option for the direct creation of png version of models has been added.&lt;/p&gt;
-
-&lt;p&gt;Instructions: Several worked examples, including some simple instructions relating to how this system works are included in the interactive web site: &lt;a href="https://research.ng-london.org.uk/modelling/"&gt;dynamic modelling&lt;/a&gt;, with all of the related code presented in &lt;a href="https://github.com/jpadfield/dynamic-modelling"&gt;GitHub&lt;/a&gt;.&lt;/p&gt;</description>
-    <description descriptionType="Other">A live version of this tool can be found at: https://research.ng-london.org.uk/modelling/</description>
-    <description descriptionType="Other">{"references": ["Joseph Padfield, Orla Delaney, &amp; Anna Amat Alberti. (2022). D5.16 Report on making heritage science data FAIR (Open data in Heritage Science and Archaeology) (v1.0). Zenodo. https://doi.org/10.5281/zenodo.6779595", "Padfield, Joseph, Fremont, Wim, Schmidle, Wolfgang, &amp; Sotiropoulou, Sophia. (2022). Interim report on documentation of instrument parameters and analysis protocols across access platforms, and metadata requirements (1.2). Zenodo. https://doi.org/10.5281/zenodo.7101169"]}</description>
-  </descriptions>
   <fundingReferences>
     <fundingReference>
       <funderName>European Commission</funderName>
