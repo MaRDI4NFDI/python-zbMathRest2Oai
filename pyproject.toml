@@ -12,11 +12,11 @@ dynamic = ["version"]
 dependencies = [
     "dict2xml",
     "requests",
-    "swagger_client @ git+https://github.com/zbMATHOpen/zbRestApiClient.git"
 ]
 [project.optional-dependencies]
 test = [
     "black",
+    "coverage",
     "flake8",
     "isort",
     "pytest",
@@ -26,7 +26,8 @@ test = [
     "requests_mock",
     "python-dateutil",
     "pytest-coverage",
-    "xmldiff"
+    "xmldiff",
+    "lxml"
 ]
 
 [tool.setuptools]

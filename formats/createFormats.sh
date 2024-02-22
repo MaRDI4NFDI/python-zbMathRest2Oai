@@ -8,4 +8,8 @@ curl --noproxy '*' -X POST -H 'Content-Type: application/json' -H  "Authorizatio
 printf "\n\nCreate Format datacite\n\n"
 curl --noproxy '*' -X POST -H 'Content-Type: application/json' -H  "Authorization: Basic $AUTH" -i 'https://oai-input.portal.mardi4nfdi.de/oai-backend/format' --data '{"metadataPrefix":"oai_zb_preview","schemaLocation":"https://zbmath.org/OAI/2.0/oai_zb_preview/","schemaNamespace":"https://zbmath.org/zbmath/elements/1.0/","identifierXpath":""}'
 printf "\n\n Read all formats\n\n"
+curl --noproxy '*' -X POST -H 'Content-Type: application/json' -H  "Authorization: Basic $AUTH" -i 'https://oai-input.portal.mardi4nfdi.de/oai-backend/format' --data '{"metadataPrefix":"zbmath_rest_api","schemaLocation":"https://github.com/MaRDI4NFDI/python-zbMathRest2Oai/blob/main/tests/data/plain.xml","schemaNamespace":"https://github.com/MaRDI4NFDI/python-zbMathRest2Oai/blob/main/tests/data/","identifierXpath":""}'
+printf "\n\nCreate Format zbmath_rest_api\n\n"
+
+
 curl --noproxy '*' -X GET -H  "Authorization: Basic $AUTH"  'https://oai-input.portal.mardi4nfdi.de/oai-backend/format'
