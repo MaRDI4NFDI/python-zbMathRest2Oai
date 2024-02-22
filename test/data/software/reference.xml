@@ -40,14 +40,7 @@
   <alternateIdentifiers>
     <alternateIdentifier alternateIdentifierType="url">https://zbmath.org/software/?q=si%3A2</alternateIdentifier>
   </alternateIdentifiers>
-  <relatedIdentifiers>
-    <relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementTo" resourceTypeGeneral="Software">https://github.com/jpadfield/dynamic-modelling/tree/v1.4</relatedIdentifier>
-    <relatedIdentifier relatedIdentifierType="URL" relationType="Compiles" resourceTypeGeneral="Other">https://research.ng-london.org.uk/modelling</relatedIdentifier>
-    <relatedIdentifier relatedIdentifierType="DOI" relationType="IsVersionOf">10.5281/zenodo.4724103</relatedIdentifier>
-    <relatedIdentifier relatedIdentifierType="URL" relationType="IsPartOf">https://zenodo.org/communities/871034</relatedIdentifier>
-    <relatedIdentifier relatedIdentifierType="URL" relationType="IsPartOf">https://zenodo.org/communities/e-rihs</relatedIdentifier>
-    <relatedIdentifier relatedIdentifierType="URL" relationType="IsPartOf">https://zenodo.org/communities/sshoc</relatedIdentifier>
-  </relatedIdentifiers>
+
   <version>v1.4</version>
   <rightsList>
     <rights rightsURI="https://opensource.org/licenses/GPL-3.0">GNU General Public License v3.0 or later</rights>
