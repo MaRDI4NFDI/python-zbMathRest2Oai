@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <xsl:stylesheet version="1.0"
                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-                xmlns:oai_zbmath_preview="https://zbmath.org/OAI/2.0/oai_zbmath_preview/"
+                xmlns:oai_zb_preview="https://zbmath.org/OAI/2.0/oai_zbmath_preview/"
                 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
                 xmlns:zbmath="https://zbmath.org/zbmath/elements/1.0/"
                 exclude-result-prefixes="xsi oai_zb_preview">
@@ -9,7 +9,7 @@
 
 <xsl:output method="xml" indent="yes"/>
 <xsl:template match="/">
-  <oai_zbmath_preview>
+  <oai_zb_preview:zbmath>
     <zbmath:author>
       <xsl:value-of select="root/result/contributors/authors/name"/>
     </zbmath:author>
@@ -162,6 +162,6 @@
         we replaced the data with the string 'zbMATH Open Web Interface contents
         unavailable due to conflicting licenses.'
     </zbmath:rights>
-  </oai_zbmath_preview>
+  </oai_zb_preview:zbmath>
 </xsl:template>
 </xsl:stylesheet>

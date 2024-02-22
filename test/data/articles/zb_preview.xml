@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><oai_zbmath_preview xmlns:zbmath="https://zbmath.org/zbmath/elements/1.0/" xmlns:oai_zbmath_preview="https://zbmath.org/OAI/2.0/oai_zbmath_preview/">
+<?xml version="1.0" encoding="UTF-8"?><oai_zb_preview:zbmath xmlns:zbmath="https://zbmath.org/zbmath/elements/1.0/" xmlns:oai_zb_preview="https://zbmath.org/OAI/2.0/oai_zbmath_preview/">
     <zbmath:author>Maynard, James</zbmath:author>
     <zbmath:author_ids>
         <zbmath:author_id>maynard.james</zbmath:author_id>
@@ -143,4 +143,4 @@
         we replaced the data with the string 'zbMATH Open Web Interface contents
         unavailable due to conflicting licenses.'
     </zbmath:rights>
-</oai_zbmath_preview>
+</oai_zb_preview:zbmath>
