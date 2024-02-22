@@ -42,24 +42,5 @@
   </alternateIdentifiers>
 
 
-  <fundingReferences>
-    <fundingReference>
-      <funderName>European Commission</funderName>
-      <funderIdentifier funderIdentifierType="Crossref Funder ID">10.13039/100010661</funderIdentifier>
-      <awardNumber awardURI="info:eu-repo/grantAgreement/EC/H2020/654028/">654028</awardNumber>
-      <awardTitle>Integrated Platform for the European Research Infrastructure ON Cultural Heritage</awardTitle>
-    </fundingReference>
-    <fundingReference>
-      <funderName>European Commission</funderName>
-      <funderIdentifier funderIdentifierType="Crossref Funder ID">10.13039/100010661</funderIdentifier>
-      <awardNumber awardURI="info:eu-repo/grantAgreement/EC/H2020/871034/">871034</awardNumber>
-      <awardTitle>Integrating Platforms for the European Research Infrastructure ON Heritage Science</awardTitle>
-    </fundingReference>
-    <fundingReference>
-      <funderName>European Commission</funderName>
-      <funderIdentifier funderIdentifierType="Crossref Funder ID">10.13039/100010661</funderIdentifier>
-      <awardNumber awardURI="info:eu-repo/grantAgreement/EC/H2020/823782/">823782</awardNumber>
-      <awardTitle>Social Sciences &amp; Humanities Open Cloud</awardTitle>
-    </fundingReference>
-  </fundingReferences>
+
 </resource>
