@@ -115,6 +115,12 @@
                             <xsl:when test="type = 'numdam'">
                                 <xsl:value-of select="concat('http://www.numdam.org/item?id=', identifier)"/>
                             </xsl:when>
+                             <xsl:when test="type = 'gallica'">
+                                <xsl:value-of select="concat('http://gallica.bnf.fr/ark:/', identifier)"/>
+                            </xsl:when>
+                            <xsl:when test="type = 'lni'">
+                                <xsl:value-of select="concat('http://subs.emis.de/', identifier)"/>
+                            </xsl:when>
                         </xsl:choose>
                     </zbmath:link>
                 </xsl:for-each>
