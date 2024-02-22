@@ -41,7 +41,6 @@
     <alternateIdentifier alternateIdentifierType="url">https://zbmath.org/software/?q=si%3A2</alternateIdentifier>
   </alternateIdentifiers>
 
-  <version>v1.4</version>
 
   <descriptions>
     <description descriptionType="Abstract">&lt;p&gt;This is an interactive live modelling system which can automatically convert simple tab separated triples or JSON-LD (experimental) into graphical models using the &lt;a href="https://mermaid-js.github.io/mermaid"&gt;mermaid library&lt;/a&gt;. General updates and improvements have been carried out, with the addition of an improved process of submitting data with a URL, moving from the old Graph model type to the new Flowchart type, adding options to link directly to SubGraphs. The compression of data within bookmark URLs has been updated and an option for the direct creation of png version of models has been added.&lt;/p&gt;
