@@ -124,6 +124,9 @@
                             <xsl:when test="type = 'mathnetru'">
                                 <xsl:value-of select="concat('http://mathnet.ru/', identifier)"/>
                             </xsl:when>
+                            <xsl:otherwise>
+                                <xsl:value-of select="identifier"/>
+                            </xsl:otherwise>
                         </xsl:choose>
                     </zbmath:link>
                 </xsl:for-each>
