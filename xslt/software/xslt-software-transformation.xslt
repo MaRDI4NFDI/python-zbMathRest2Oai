@@ -18,7 +18,9 @@
     <description>
         <xsl:value-of select="root/result/description"/>
     </description>
-
+    <publicationYear>
+        <xsl:value-of select="root/result/standard_articles/year"/>
+    </publicationYear>
 
     <xsl:choose>
         <xsl:when test= "root/result/source_code != ''">

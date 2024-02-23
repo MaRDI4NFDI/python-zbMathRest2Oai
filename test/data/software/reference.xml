@@ -5,7 +5,7 @@
   <titles>
     <title>SuperLU-DIST</title>
   </titles>
-  <publicationYear></publicationYear>
+  <publicationYear>2003</publicationYear>
   <subjects>
     <subject>35</subject>
     <subject>65</subject>
@@ -23,6 +23,7 @@
     <subject>86</subject>
     <subject>90</subject>
     <subject>92</subject>
+    <subject>orms</subject>
   </subjects>
   <dates>
     <date dateType="Issued">2003</date>
