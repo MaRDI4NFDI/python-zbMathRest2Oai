@@ -2,10 +2,9 @@
 <resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://datacite.org/schema/kernel-4" xsi:schemaLocation="http://datacite.org/schema/kernel-4 http://schema.datacite.org/meta/kernel-4.1/metadata.xsd">
   <identifier identifierType="swMATH">2</identifier>
   <creators>Li, X.S., Demmel, J.W.</creators>
-    <titles>
+  <titles>
     <title>SuperLU-DIST</title>
-    </titles>
-  <publisher>swMATH</publisher>
+  </titles>
   <publicationYear></publicationYear>
   <subjects>
     <subject>35</subject>
