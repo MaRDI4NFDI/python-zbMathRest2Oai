@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsl:stylesheet version="1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns="http://datacite.org/schema/kernel-4"  >
+<xsl:stylesheet version="1.0"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                xsi:schemaLocation="http://datacite.org/schema/kernel-4 http://schema.datacite.org/meta/kernel-4.1/metadata.xsd"
+                xmlns="http://datacite.org/schema/kernel-4"  >
 <xsl:template match="/">
-<resource>
-
+<resource xsi:schemaLocation="http://datacite.org/schema/kernel-4 http://schema.datacite.org/meta/kernel-4.1/metadata.xsd">
     <identifier identifierType="swMATH">
         <xsl:value-of select="root/result/id"/>
+
     </identifier>
     <creators>
         <xsl:value-of select="root/result/authors"/>
@@ -82,4 +86,5 @@
   </alternateIdentifiers>
 </resource>
 </xsl:template>
+
 </xsl:stylesheet>
