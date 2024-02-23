@@ -58,8 +58,11 @@
             <xsl:value-of select="root/result/keywords"/>
         </subject>
      </subjects>
-    <xsl:for-each select="root/result/related_software/id">
-        <relatedIdentifier><xsl:value-of select="."/></relatedIdentifier>
+    <xsl:for-each select="root/result/related_software">
+        <related_software>
+        <id><xsl:value-of select="id"/></id>
+            <name><xsl:value-of select="name"/></name>
+        </related_software>
       </xsl:for-each>
 
     <xsl:for-each select="root/result/standard_articles/id">
