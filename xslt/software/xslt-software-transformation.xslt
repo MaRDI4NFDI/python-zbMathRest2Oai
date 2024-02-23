@@ -76,7 +76,7 @@
         <relatedIdentifier relationType="IsReferencedBy"><xsl:value-of select="."/></relatedIdentifier>
       </xsl:for-each>
       <relatedIdentifier relationType="IsDescribedBy">
-        <xsl:value-of disable-output-escaping="yes" select="concat('https://orms.mfo.de/project@terms=', '&amp;', 'id=' , root/result/orms_id, '.html')"/>
+        <xsl:value-of disable-output-escaping="yes" select="concat('https://orms.mfo.de/project@', 'id=' , root/result/orms_id, '.html')"/>
     </relatedIdentifier>
 <alternateIdentifiers>
 
