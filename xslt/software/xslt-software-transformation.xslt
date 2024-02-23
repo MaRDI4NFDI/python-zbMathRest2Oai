@@ -10,10 +10,11 @@
         <xsl:value-of select="root/result/authors"/>
 
     </creators>
-    <title>
-        <xsl:value-of select="root/result/name"/>
-    </title>
-
+    <titles>
+        <title>
+            <xsl:value-of select="root/result/name"/>
+        </title>
+    </titles>
     <description>
         <xsl:value-of select="root/result/description"/>
     </description>
