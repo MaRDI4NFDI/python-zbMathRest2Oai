@@ -115,6 +115,8 @@
     <name>STRUMPACK</name>
   </related_software>
   <description>zbMATH Open Web Interface contents unavailable due to conflicting licenses.</description>
+  <contributor contributorType="HostingInstitution">http://crd-legacy.lbl.gov/~xiaoye/SuperLU/</contributor>
+
   <rightsList>
      <rights>No license</rights>
   </rightsList>
