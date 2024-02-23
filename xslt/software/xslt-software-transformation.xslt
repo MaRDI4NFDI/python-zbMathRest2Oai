@@ -10,6 +10,7 @@
         <xsl:value-of select="root/result/authors"/>
 
     </creators>
+    <resourceType resourceTypeGeneral="Software"/>
     <titles>
         <title>
             <xsl:value-of select="root/result/name"/>
