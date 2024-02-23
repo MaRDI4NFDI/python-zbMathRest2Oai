@@ -1,15 +1,8 @@
-
-import os
-import re
 import unittest
 
 import lxml.etree as ET
 from xmldiff import main
 from xmldiff.actions import MoveNode
-from xml.dom.minidom import parse
-
-
-expected_string1 = ET.tostring(ET.parse('test/data/software/reference.xml'))
 
 
 class PlainXmlTest(unittest.TestCase):
@@ -18,8 +11,8 @@ class PlainXmlTest(unittest.TestCase):
         xslt = ET.parse('xslt/software/xslt-software-transformation.xslt')
         transform = ET.XSLT(xslt)
         newdom = transform(dom)
-        real_string = ET.tostring(newdom, pretty_print=True, encoding='utf8').decode().replace('&', '&amp;')
-        print(ET.tostring(newdom, pretty_print=True, xml_declaration=True, encoding='utf8').decode().replace('&', '&amp;'))
+        real_string = ET.tostring(newdom, pretty_print=True, encoding='utf8').decode()
+        # print(ET.tostring(newdom, pretty_print=True, xml_declaration=True, encoding='utf8').decode())
 
         expected_string = ET.tostring(ET.parse('test/data/software/reference.xml'))
 
