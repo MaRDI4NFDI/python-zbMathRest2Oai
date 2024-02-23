@@ -71,10 +71,15 @@
     <xsl:for-each select="root/result/standard_articles/id">
         <relatedIdentifier relationType="IsReferencedBy"><xsl:value-of select="."/></relatedIdentifier>
       </xsl:for-each>
-
+<alternateIdentifiers>
       <relatedIdentifier relationType="IsDescribedBy">
         <xsl:value-of disable-output-escaping="yes" select="concat('https://orms.mfo.de/project@terms=', '&amp;', 'id=' , root/result/orms_id, '.html')"/>
     </relatedIdentifier>
+
+    <alternateIdentifier alternateIdentifierType="url">
+        <xsl:value-of disable-output-escaping="yes" select="concat('https://zbmath.org/software/?q=si%3A',root/result/id)" />
+    </alternateIdentifier>
+  </alternateIdentifiers>
 </resource>
 </xsl:template>
 </xsl:stylesheet>
