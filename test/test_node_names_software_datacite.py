@@ -18,8 +18,8 @@ class PlainXmlTest(unittest.TestCase):
         xslt = ET.parse('xslt/software/xslt-software-transformation.xslt')
         transform = ET.XSLT(xslt)
         newdom = transform(dom)
-        real_string = ET.tostring(newdom, pretty_print=True).decode().replace('&', '&amp;')
-        print(real_string)
+        real_string = ET.tostring(newdom, pretty_print=True, encoding='utf8').decode().replace('&', '&amp;')
+        print(ET.tostring(newdom, pretty_print=True, xml_declaration=True, encoding='utf8').decode().replace('&', '&amp;'))
 
         expected_string = ET.tostring(ET.parse('test/data/software/reference.xml'))
 
