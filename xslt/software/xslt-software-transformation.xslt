@@ -33,7 +33,7 @@
              </contributor>
         </xsl:otherwise>
     </xsl:choose>
-
+<rightsList>
     <xsl:choose>
         <xsl:when test= "root/result/license_terms != ''">
             <!-- will be instantiated for item #1 and item #2 -->
@@ -48,7 +48,7 @@
         </xsl:otherwise>
     </xsl:choose>
 
-
+</rightsList>
     <subjects>
     <xsl:for-each select="root/result/classification">
         <subject><xsl:value-of select="."/></subject>
