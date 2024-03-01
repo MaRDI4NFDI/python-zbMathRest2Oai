@@ -52,6 +52,14 @@ to a suitable form for DataCite
       </title>
     </titles>
   </xsl:template>
-
+  <!-- adding the publisher and publication Year -->
+<xsl:template match="source">
+    <publisher>
+        <xsl:value-of select="series/publisher"/>
+    </publisher>
+    <publicationYear>
+        <xsl:value-of select="series/year"/>
+    </publicationYear>
+</xsl:template>
 </xsl:stylesheet>
 
