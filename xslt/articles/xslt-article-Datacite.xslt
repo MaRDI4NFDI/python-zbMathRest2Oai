@@ -39,9 +39,19 @@ to a suitable form for DataCite
     </creators>
 
   </xsl:template>
+  <!-- adding the title node -->
+    <xsl:template match="root">
+    <xsl:copy>
+      <xsl:apply-templates/>
+    </xsl:copy>
+  </xsl:template>
+  <xsl:template match="title">
+    <titles>
+      <title xml:lang="en">
+        <xsl:value-of select="title"/>
+      </title>
+    </titles>
+  </xsl:template>
 
 </xsl:stylesheet>
 
-<!-- this part of code is only as a Test to separate the name node into to two nodes
-Given and Family name , identifier , which suits the Datacite schema
--->
