@@ -8,10 +8,7 @@ from requests.auth import HTTPBasicAuth
 from zbmath_rest2oai import getAsXml
 
 
-def write_oai(x, api_source):
-    prefix='oai:zbmath.org:'
-    if 'software' in api_source:
-        prefix='oai:swmath.org:'
+def write_oai(x, api_source, prefix):
     test_xml = getAsXml.final_xml2(x, api_source)
     files = {
         "item": (
@@ -38,4 +35,4 @@ def write_oai(x, api_source):
 if __name__ == '__main__':
     import sys
 
-    write_oai(sys.argv[1], sys.argv[2])
+    write_oai(sys.argv[1], sys.argv[2], sys.argv[3])
