@@ -9,13 +9,16 @@ from zbmath_rest2oai import getAsXml
 
 
 def write_oai(x, api_source):
+    prefix='oai:zbmath.org:'
+    if 'software' in api_source:
+        prefix='oai:swmath.org:'
     test_xml = getAsXml.final_xml2(x, api_source)
     files = {
         "item": (
             None,
             json.dumps(
                 {
-                    "identifier": x,
+                    "identifier": prefix+x,
                     "deleteFlag": False,
                     "ingestFormat": "zbmath_rest_api",
                 }
