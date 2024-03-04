@@ -12,9 +12,14 @@
       <editors/>
     </contributors>
     <database>Zbl</database>
-    <document_type>journal article</document_type>
+    <datestamp>2015-01-06 14:15:02</datestamp>
+    <document_type>
+      <code>j</code>
+      <description>journal article</description>
+    </document_type>
     <editorial_contributions>
       <contribution_type>review</contribution_type>
+      <language>English</language>
       <reviewer>
         <author_code>siaulys.jonas</author_code>
         <name>Jonas Šiaulys</name>
@@ -255,6 +260,7 @@
     <execution>successful request</execution>
     <execution_bool>True</execution_bool>
     <internal_code>ok</internal_code>
+    <nr_total_results/>
     <query_execution_time_in_seconds>0</query_execution_time_in_seconds>
     <status_code>200</status_code>
     <time_stamp>0</time_stamp>
