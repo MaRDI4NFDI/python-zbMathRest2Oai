@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?><oai_zb_preview:zbmath xmlns:zbmath="https://zbmath.org/zbmath/elements/1.0/" xmlns:oai_zb_preview="https://zbmath.org/OAI/2.0/oai_zbmath_preview/">
+    <zbmath:author>Maynard, James</zbmath:author>
+    <zbmath:author_ids>
+        <zbmath:author_id>maynard.james</zbmath:author_id>
+    </zbmath:author_ids>
+    <zbmath:classifications>
+        <zbmath:classification>11N05</zbmath:classification>
+        <zbmath:classification>11N36</zbmath:classification>
+    </zbmath:classifications>
+    <zbmath:document_id>6383667</zbmath:document_id>
+    <zbmath:document_title>Small gaps between primes</zbmath:document_title>
+    <zbmath:document_type>journal article</zbmath:document_type>
+    <zbmath:doi>10.4007/annals.2015.181.1.7</zbmath:doi>
+    <zbmath:keywords>
+        <zbmath:keyword>prime number</zbmath:keyword>
+        <zbmath:keyword>small gap</zbmath:keyword>
+        <zbmath:keyword>sieve method</zbmath:keyword>
+        <zbmath:keyword>\(k\)-tuples conjecture</zbmath:keyword>
+        <zbmath:keyword>admissible set</zbmath:keyword>
+        <zbmath:keyword>Selberg sieve</zbmath:keyword>
+        <zbmath:keyword>symmetric polynomial</zbmath:keyword>
+        <zbmath:keyword>symmetric matrix</zbmath:keyword>
+    </zbmath:keywords>
+    <zbmath:language>English</zbmath:language>
+    <zbmath:pagination>383-413</zbmath:pagination>
+    <zbmath:publication_year>2015</zbmath:publication_year>
+    <zbmath:source>Ann. Math. (2) 181, No. 1, 383-413 (2015).</zbmath:source>
+    <zbmath:spelling>Maynard, James</zbmath:spelling>
+    <zbmath:zbl_id>1306.11073</zbmath:zbl_id>
+    <zbmath:review>
+        <zbmath:review_sign>Jonas Šiaulys (Vilnius)</zbmath:review_sign>
+        <zbmath:review_text>The prime \(k\)-tuples and small gaps between prime numbers are considered. Using a refinement of the Goldston-Pintz-Yildirim sieve method [\textit{D. A. Goldston} et al., Ann. Math. (2) 170, No. 2, 819--862 (2009; Zbl 1207.11096)] the author proves, for instance, the following estimates 
+      \[
+       \liminf_{n\to\infty}\,(p_{n+m}-p_n)\ll m^3\text{{e}}^{4m}, \quad \liminf_{n\to\infty}\,(p_{n+1}-p_n)\leq 600
+      \]
+       with an absolute constant in sign \(\ll\). Here \(m\) is a natural number, and \(p_{\,l}\) denote the \(l\)-th prime number.</zbmath:review_text>
+        <zbmath:review_type>review</zbmath:review_type>
+        <zbmath:reviewer>11807</zbmath:reviewer>
+        <zbmath:reviewer_id>siaulys.jonas</zbmath:reviewer_id>
+    </zbmath:review>
+    <zbmath:serial>
+        <zbmath:serial_publisher>Princeton University, Mathematics Department, Princeton, NJ</zbmath:serial_publisher>
+        <zbmath:serial_title>Annals of Mathematics. Second Series</zbmath:serial_title>
+    </zbmath:serial>
+    <zbmath:references>
+        <zbmath:reference>
+            <zbmath:text>P. D. T. A. Elliott and H. Halberstam, ''A conjecture in prime number theory,'' in Symposia Mathematica, Vol. IV, London: Academic Press, 1970, pp. 59-72.</zbmath:text>
+            <zbmath:ref_id>3377327</zbmath:ref_id>
+            <zbmath:ref_classifications>
+                <zbmath:ref_classification>11N35</zbmath:ref_classification>
+                <zbmath:ref_classification>11N13</zbmath:ref_classification>
+            </zbmath:ref_classifications>
+        </zbmath:reference>
+        <zbmath:reference>
+            <zbmath:text>J. Friedlander and A. Granville, ''Limitations to the equi-distribution of primes. I,'' Ann. of Math., vol. 129, iss. 2, pp. 363-382, 1989.</zbmath:text>
+            <zbmath:ref_id>4097497</zbmath:ref_id>
+            <zbmath:ref_classifications>
+                <zbmath:ref_classification>11N05</zbmath:ref_classification>
+                <zbmath:ref_classification>11N13</zbmath:ref_classification>
+                <zbmath:ref_classification>11N35</zbmath:ref_classification>
+            </zbmath:ref_classifications>
+        </zbmath:reference>
+        <zbmath:reference>
+            <zbmath:text>D. A. Goldston, S. W. Graham, J. Pintz, and C. Y. Yildirim, ''Small gaps between products of two primes,'' Proc. Lond. Math. Soc., vol. 98, iss. 3, pp. 741-774, 2009.</zbmath:text>
+            <zbmath:ref_id>5551831</zbmath:ref_id>
+            <zbmath:ref_classifications>
+                <zbmath:ref_classification>11N25</zbmath:ref_classification>
+                <zbmath:ref_classification>11N36</zbmath:ref_classification>
+            </zbmath:ref_classifications>
+        </zbmath:reference>
+        <zbmath:reference>
+            <zbmath:text>D. A. Goldston, J. Pintz, and C. Y. Yildirim, ''Primes in tuples. III. On the difference \(p_{n+\nu}-p_n\),'' Funct. Approx. Comment. Math., vol. 35, pp. 79-89, 2006.</zbmath:text>
+            <zbmath:ref_id>5135166</zbmath:ref_id>
+            <zbmath:ref_classifications>
+                <zbmath:ref_classification>11N05</zbmath:ref_classification>
+                <zbmath:ref_classification>11N13</zbmath:ref_classification>
+            </zbmath:ref_classifications>
+        </zbmath:reference>
+        <zbmath:reference>
+            <zbmath:text>D. A. Goldston, J. Pintz, and C. Y. Yildirim, ''Primes in tuples. I,'' Ann. of Math., vol. 170, iss. 2, pp. 819-862, 2009.</zbmath:text>
+            <zbmath:ref_id>5610431</zbmath:ref_id>
+            <zbmath:ref_classifications>
+                <zbmath:ref_classification>11N05</zbmath:ref_classification>
+                <zbmath:ref_classification>11N36</zbmath:ref_classification>
+                <zbmath:ref_classification>11N13</zbmath:ref_classification>
+            </zbmath:ref_classifications>
+        </zbmath:reference>
+        <zbmath:reference>
+            <zbmath:text>D. A. Goldston and C. Y. Yildirim, ''Higher correlations of divisor sums related to primes. III. Small gaps between primes,'' Proc. Lond. Math. Soc., vol. 95, iss. 3, pp. 653-686, 2007.</zbmath:text>
+            <zbmath:ref_id>5170700</zbmath:ref_id>
+            <zbmath:ref_classifications>
+                <zbmath:ref_classification>11N05</zbmath:ref_classification>
+                <zbmath:ref_classification>11N37</zbmath:ref_classification>
+            </zbmath:ref_classifications>
+        </zbmath:reference>
+        <zbmath:reference>
+            <zbmath:text>D. H. J. Polymath, New equidistribution estimates of Zhang type, and bounded gaps between primes.</zbmath:text>
+            <zbmath:ref_id>6587992</zbmath:ref_id>
+            <zbmath:ref_classifications>
+                <zbmath:ref_classification>11N35</zbmath:ref_classification>
+                <zbmath:ref_classification>11N05</zbmath:ref_classification>
+            </zbmath:ref_classifications>
+        </zbmath:reference>
+        <zbmath:reference>
+            <zbmath:text>A. Selberg, Collected Papers. Vol. II, New York: Springer-Verlag, 1991.</zbmath:text>
+            <zbmath:ref_id>195021</zbmath:ref_id>
+            <zbmath:ref_classifications>
+                <zbmath:ref_classification>11-03</zbmath:ref_classification>
+                <zbmath:ref_classification>01A75</zbmath:ref_classification>
+                <zbmath:ref_classification>32-03</zbmath:ref_classification>
+                <zbmath:ref_classification>11M06</zbmath:ref_classification>
+                <zbmath:ref_classification>11M41</zbmath:ref_classification>
+                <zbmath:ref_classification>11N35</zbmath:ref_classification>
+                <zbmath:ref_classification>11N36</zbmath:ref_classification>
+                <zbmath:ref_classification>11F72</zbmath:ref_classification>
+                <zbmath:ref_classification>32N05</zbmath:ref_classification>
+                <zbmath:ref_classification>32N15</zbmath:ref_classification>
+            </zbmath:ref_classifications>
+        </zbmath:reference>
+        <zbmath:reference>
+            <zbmath:text>Y. Zhang, ''Bounded gaps between primes,'' Ann. of Math., vol. 179, iss. 3, pp. 1121-1174, 2014.</zbmath:text>
+            <zbmath:ref_id>6302171</zbmath:ref_id>
+            <zbmath:ref_classifications>
+                <zbmath:ref_classification>11N05</zbmath:ref_classification>
+                <zbmath:ref_classification>11N13</zbmath:ref_classification>
+                <zbmath:ref_classification>11N35</zbmath:ref_classification>
+                <zbmath:ref_classification>11N36</zbmath:ref_classification>
+                <zbmath:ref_classification>11L07</zbmath:ref_classification>
+            </zbmath:ref_classifications>
+        </zbmath:reference>
+    </zbmath:references>
+    <zbmath:links>
+        <zbmath:link>https://arxiv.org/abs/1311.4600</zbmath:link>
+    </zbmath:links>
+    <zbmath:rights>Content generated by zbMATH Open, such as reviews,
+        classifications, software, or author disambiguation data,
+        are distributed under CC-BY-SA 4.0. This defines the license for the
+        whole dataset, which also contains non-copyrighted bibliographic
+        metadata and reference data derived from I4OC (CC0). Note that the API
+        only provides a subset of the data in the zbMATH Open Web interface. In
+        several cases, third-party information, such as abstracts, cannot be
+        made available under a suitable license through the API. In those cases,
+        we replaced the data with the string 'zbMATH Open Web Interface contents
+        unavailable due to conflicting licenses.'
+    </zbmath:rights>
+</oai_zb_preview:zbmath>

@@ -1,84 +1,121 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://datacite.org/schema/kernel-4" xsi:schemaLocation="http://datacite.org/schema/kernel-4 http://schema.datacite.org/meta/kernel-4.1/metadata.xsd">
-  <identifier identifierType="DOI">10.5281/ZENODO.7635478</identifier>
-  <creators>
-    <creator>
-      <creatorName>Joseph Padfield</creatorName>
-      <nameIdentifier nameIdentifierScheme="ORCID" schemeURI="http://orcid.org/">0000-0002-2572-6428</nameIdentifier>
-      <affiliation>The National Gallery</affiliation>
-    </creator>
-  </creators>
+  <identifier identifierType="swMATH">2</identifier>
+  <creators>Li, X.S., Demmel, J.W.</creators>
   <titles>
-    <title>Dynamic Modeller - Improved data handling</title>
+    <title>SuperLU-DIST</title>
   </titles>
-  <publisher>Zenodo</publisher>
-  <publicationYear>2023</publicationYear>
+  <publicationYear>2003</publicationYear>
   <subjects>
-    <subject>mermaid.js</subject>
-    <subject>Interoperability</subject>
-    <subject>FAIR</subject>
-    <subject>Dynamic</subject>
-    <subject>Online Tool</subject>
-    <subject>Modelling</subject>
+    <subject>35</subject>
+    <subject>65</subject>
+    <subject>68</subject>
+    <subject>74</subject>
+    <subject>76</subject>
+    <subject>05</subject>
+    <subject>15</subject>
+    <subject>60</subject>
+    <subject>78</subject>
+    <subject>80</subject>
+    <subject>81</subject>
+    <subject>82</subject>
+    <subject>85</subject>
+    <subject>86</subject>
+    <subject>90</subject>
+    <subject>92</subject>
+    <subject>orms</subject>
   </subjects>
-  <contributors>
-    <contributor contributorType="Other">
-      <contributorName>Wim Fremout</contributorName>
-      <nameIdentifier nameIdentifierScheme="ORCID" schemeURI="http://orcid.org/">0000-0002-1684-377X</nameIdentifier>
-      <affiliation>KIK-IRPA</affiliation>
-    </contributor>
-    <contributor contributorType="Other">
-      <contributorName>Sophia Sotiropoulou</contributorName>
-      <nameIdentifier nameIdentifierScheme="ORCID" schemeURI="http://orcid.org/">0000-0001-9146-8474</nameIdentifier>
-      <affiliation>FORTH</affiliation>
-    </contributor>
-  </contributors>
-  <dates>
-    <date dateType="Issued">2023-02-13</date>
-  </dates>
-  <language>en</language>
+
   <resourceType resourceTypeGeneral="Software"/>
   <alternateIdentifiers>
-    <alternateIdentifier alternateIdentifierType="url">https://zenodo.org/record/7635478</alternateIdentifier>
+    <alternateIdentifier alternateIdentifierType="url">https://zbmath.org/software/?q=si%3A2</alternateIdentifier>
   </alternateIdentifiers>
-  <relatedIdentifiers>
-    <relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementTo" resourceTypeGeneral="Software">https://github.com/jpadfield/dynamic-modelling/tree/v1.4</relatedIdentifier>
-    <relatedIdentifier relatedIdentifierType="URL" relationType="Compiles" resourceTypeGeneral="Other">https://research.ng-london.org.uk/modelling</relatedIdentifier>
-    <relatedIdentifier relatedIdentifierType="DOI" relationType="IsVersionOf">10.5281/zenodo.4724103</relatedIdentifier>
-    <relatedIdentifier relatedIdentifierType="URL" relationType="IsPartOf">https://zenodo.org/communities/871034</relatedIdentifier>
-    <relatedIdentifier relatedIdentifierType="URL" relationType="IsPartOf">https://zenodo.org/communities/e-rihs</relatedIdentifier>
-    <relatedIdentifier relatedIdentifierType="URL" relationType="IsPartOf">https://zenodo.org/communities/sshoc</relatedIdentifier>
-  </relatedIdentifiers>
-  <version>v1.4</version>
-  <rightsList>
-    <rights rightsURI="https://opensource.org/licenses/GPL-3.0">GNU General Public License v3.0 or later</rights>
-    <rights rightsURI="info:eu-repo/semantics/openAccess">Open Access</rights>
-  </rightsList>
-  <descriptions>
-    <description descriptionType="Abstract">&lt;p&gt;This is an interactive live modelling system which can automatically convert simple tab separated triples or JSON-LD (experimental) into graphical models using the &lt;a href="https://mermaid-js.github.io/mermaid"&gt;mermaid library&lt;/a&gt;. General updates and improvements have been carried out, with the addition of an improved process of submitting data with a URL, moving from the old Graph model type to the new Flowchart type, adding options to link directly to SubGraphs. The compression of data within bookmark URLs has been updated and an option for the direct creation of png version of models has been added.&lt;/p&gt;
 
-&lt;p&gt;Instructions: Several worked examples, including some simple instructions relating to how this system works are included in the interactive web site: &lt;a href="https://research.ng-london.org.uk/modelling/"&gt;dynamic modelling&lt;/a&gt;, with all of the related code presented in &lt;a href="https://github.com/jpadfield/dynamic-modelling"&gt;GitHub&lt;/a&gt;.&lt;/p&gt;</description>
-    <description descriptionType="Other">A live version of this tool can be found at: https://research.ng-london.org.uk/modelling/</description>
-    <description descriptionType="Other">{"references": ["Joseph Padfield, Orla Delaney, &amp; Anna Amat Alberti. (2022). D5.16 Report on making heritage science data FAIR (Open data in Heritage Science and Archaeology) (v1.0). Zenodo. https://doi.org/10.5281/zenodo.6779595", "Padfield, Joseph, Fremont, Wim, Schmidle, Wolfgang, &amp; Sotiropoulou, Sophia. (2022). Interim report on documentation of instrument parameters and analysis protocols across access platforms, and metadata requirements (1.2). Zenodo. https://doi.org/10.5281/zenodo.7101169"]}</description>
-  </descriptions>
-  <fundingReferences>
-    <fundingReference>
-      <funderName>European Commission</funderName>
-      <funderIdentifier funderIdentifierType="Crossref Funder ID">10.13039/100010661</funderIdentifier>
-      <awardNumber awardURI="info:eu-repo/grantAgreement/EC/H2020/654028/">654028</awardNumber>
-      <awardTitle>Integrated Platform for the European Research Infrastructure ON Cultural Heritage</awardTitle>
-    </fundingReference>
-    <fundingReference>
-      <funderName>European Commission</funderName>
-      <funderIdentifier funderIdentifierType="Crossref Funder ID">10.13039/100010661</funderIdentifier>
-      <awardNumber awardURI="info:eu-repo/grantAgreement/EC/H2020/871034/">871034</awardNumber>
-      <awardTitle>Integrating Platforms for the European Research Infrastructure ON Heritage Science</awardTitle>
-    </fundingReference>
-    <fundingReference>
-      <funderName>European Commission</funderName>
-      <funderIdentifier funderIdentifierType="Crossref Funder ID">10.13039/100010661</funderIdentifier>
-      <awardNumber awardURI="info:eu-repo/grantAgreement/EC/H2020/823782/">823782</awardNumber>
-      <awardTitle>Social Sciences &amp; Humanities Open Cloud</awardTitle>
-    </fundingReference>
-  </fundingReferences>
+  <related_software>
+    <id>4013</id>
+    <name>MUMPS</name>
+  </related_software>
+  <related_software>
+    <id>4012</id>
+    <name>PETSc</name>
+  </related_software>
+  <related_software>
+    <id>930</id>
+    <name>SuperLU</name>
+  </related_software>
+  <related_software>
+    <id>4629</id>
+    <name>SparseMatrix</name>
+  </related_software>
+  <related_software>
+    <id>503</id>
+    <name>LAPACK</name>
+  </related_software>
+  <related_software>
+    <id>679</id>
+    <name>PARDISO</name>
+  </related_software>
+  <related_software>
+    <id>426</id>
+    <name>hypre</name>
+  </related_software>
+  <related_software>
+    <id>989</id>
+    <name>UMFPACK</name>
+  </related_software>
+  <related_software>
+    <id>4089</id>
+    <name>METIS</name>
+  </related_software>
+  <related_software>
+    <id>4028</id>
+    <name>Trilinos</name>
+  </related_software>
+  <related_software>
+    <id>830</id>
+    <name>ScaLAPACK</name>
+  </related_software>
+  <related_software>
+    <id>4827</id>
+    <name>mctoolbox</name>
+  </related_software>
+  <related_software>
+    <id>6749</id>
+    <name>WSMP</name>
+  </related_software>
+  <related_software>
+    <id>3216</id>
+    <name>BLAS</name>
+  </related_software>
+  <related_software>
+    <id>418</id>
+    <name>HSL</name>
+  </related_software>
+  <related_software>
+    <id>8067</id>
+    <name>ML</name>
+  </related_software>
+  <related_software>
+    <id>2780</id>
+    <name>SPIKE</name>
+  </related_software>
+  <related_software>
+    <id>6496</id>
+    <name>MPI</name>
+  </related_software>
+  <related_software>
+    <id>9043</id>
+    <name>MFEM</name>
+  </related_software>
+  <related_software>
+    <id>17483</id>
+    <name>STRUMPACK</name>
+  </related_software>
+  <description>zbMATH Open Web Interface contents unavailable due to conflicting licenses.</description>
+  <contributor contributorType="HostingInstitution">http://crd-legacy.lbl.gov/~xiaoye/SuperLU/</contributor>
+  <relatedIdentifier relationType="IsReferencedBy">2187846</relatedIdentifier>
+  <relatedIdentifier relationType="IsDescribedBy">https://orms.mfo.de/project@id=265.html</relatedIdentifier>
+  <rightsList>
+     <rights>No license</rights>
+  </rightsList>
 </resource>

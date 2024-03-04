@@ -1,23 +1,31 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:datacite="http://datacite.org/schema/kernel-4" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:zbmath="https://zbmath.org/zbmath/elements/1.0/">
+<?xml version="1.0" encoding="utf-8"?>
+<xsl:stylesheet version="1.0"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                xsi:schemaLocation="http://datacite.org/schema/kernel-4 http://schema.datacite.org/meta/kernel-4.1/metadata.xsd"
+                xmlns="http://datacite.org/schema/kernel-4"  >
 <xsl:template match="/">
-<resource>
-
-    <identifier identifierType="swMATHid">
+<resource xsi:schemaLocation="http://datacite.org/schema/kernel-4 http://schema.datacite.org/meta/kernel-4.1/metadata.xsd">
+    <identifier identifierType="swMATH">
         <xsl:value-of select="root/result/id"/>
+
     </identifier>
     <creators>
         <xsl:value-of select="root/result/authors"/>
 
     </creators>
-    <title>
-        <xsl:value-of select="root/result/name"/>
-    </title>
-
+    <resourceType resourceTypeGeneral="Software"/>
+    <titles>
+        <title>
+            <xsl:value-of select="root/result/name"/>
+        </title>
+    </titles>
     <description>
         <xsl:value-of select="root/result/description"/>
     </description>
-
+    <publicationYear>
+        <xsl:value-of select="root/result/standard_articles/year"/>
+    </publicationYear>
 
     <xsl:choose>
         <xsl:when test= "root/result/source_code != ''">
@@ -32,7 +40,7 @@
              </contributor>
         </xsl:otherwise>
     </xsl:choose>
-
+<rightsList>
     <xsl:choose>
         <xsl:when test= "root/result/license_terms != ''">
             <!-- will be instantiated for item #1 and item #2 -->
@@ -47,7 +55,7 @@
         </xsl:otherwise>
     </xsl:choose>
 
-
+</rightsList>
     <subjects>
     <xsl:for-each select="root/result/classification">
         <subject><xsl:value-of select="."/></subject>
@@ -57,17 +65,26 @@
             <xsl:value-of select="root/result/keywords"/>
         </subject>
      </subjects>
-    <xsl:for-each select="root/result/related_software/id">
-        <relatedIdentifier><xsl:value-of select="."/></relatedIdentifier>
+    <xsl:for-each select="root/result/related_software">
+        <related_software>
+        <id><xsl:value-of select="id"/></id>
+            <name><xsl:value-of select="name"/></name>
+        </related_software>
       </xsl:for-each>
 
     <xsl:for-each select="root/result/standard_articles/id">
         <relatedIdentifier relationType="IsReferencedBy"><xsl:value-of select="."/></relatedIdentifier>
       </xsl:for-each>
-
       <relatedIdentifier relationType="IsDescribedBy">
-        <xsl:value-of disable-output-escaping="yes" select="concat('https://orms.mfo.de/project@terms=', '&amp;', 'id=' , root/result/orms_id, '.html')"/>
+        <xsl:value-of disable-output-escaping="yes" select="concat('https://orms.mfo.de/project@', 'id=' , root/result/orms_id, '.html')"/>
     </relatedIdentifier>
+<alternateIdentifiers>
+
+    <alternateIdentifier alternateIdentifierType="url">
+        <xsl:value-of disable-output-escaping="yes" select="concat('https://zbmath.org/software/?q=si%3A',root/result/id)" />
+    </alternateIdentifier>
+  </alternateIdentifiers>
 </resource>
 </xsl:template>
+
 </xsl:stylesheet>
