@@ -1,6 +1,6 @@
 <!-- this is a new xslt file to start the transformation from plain.xml
 to a suitable form for DataCite
--->
+ -->
 
 
 <?xml version="1.0" encoding="UTF-8"?>
@@ -10,9 +10,14 @@ to a suitable form for DataCite
 
   <xsl:template match="root">
     <xsl:copy>
-
+<!-- editing this part again to make it better for the whole file -->
       <xsl:apply-templates select="result/links"/>
       <xsl:apply-templates select="result/contributors/authors"/>
+         <xsl:apply-templates select="result/title"/>
+      <xsl:apply-templates select="result/publisher"/>
+      <xsl:apply-templates select="result/year"/>
+      <xsl:apply-templates select="result/document_type"/>
+
     </xsl:copy>
   </xsl:template>
 
@@ -55,11 +60,20 @@ to a suitable form for DataCite
   <!-- adding the publisher and publication Year -->
 <xsl:template match="source">
     <publisher>
-        <xsl:value-of select="series/publisher"/>
+        <xsl:value-of select="."/>
     </publisher>
+  </xsl:template>
+  <xsl:template match="source">
     <publicationYear>
-        <xsl:value-of select="series/year"/>
+        <xsl:value-of select="."/>
     </publicationYear>
 </xsl:template>
+  <!-- adding the resourceType node -->
+    <xsl:template match="document_type">
+    <resourceType resourceTypeGeneral="JournalArticle">
+      <xsl:value-of select="."/>
+    </resourceType>
+  </xsl:template>
 </xsl:stylesheet>
+
 
