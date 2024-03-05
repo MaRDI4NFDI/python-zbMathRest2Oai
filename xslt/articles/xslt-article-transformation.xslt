@@ -59,6 +59,9 @@
     <zbmath:spelling>
    <xsl:value-of select="root/result/contributors/authors/name"/>
     </zbmath:spelling>
+      <zbmath:time>
+   <xsl:value-of select="root/result/datestamp"/>
+    </zbmath:time>
     <zbmath:zbl_id>
       <xsl:value-of select="root/result/identifier"/>
     </zbmath:zbl_id>
