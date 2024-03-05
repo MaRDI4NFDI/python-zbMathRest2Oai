@@ -30,7 +30,7 @@
       <xsl:value-of select="root/result/title/title"/>
     </zbmath:document_title>
     <zbmath:document_type>
-      <xsl:value-of select="root/result/document_type"/>
+      <xsl:value-of select="root/result/document_type/code"/>
     </zbmath:document_type>
     <zbmath:doi>
       <xsl:value-of select="root/result/links[./type='doi']/identifier"/>
