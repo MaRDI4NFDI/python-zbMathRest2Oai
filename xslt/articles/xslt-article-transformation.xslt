@@ -66,6 +66,9 @@
       <xsl:value-of select="root/result/identifier"/>
     </zbmath:zbl_id>
     <zbmath:review>
+        <zbmath:review_language>
+          <xsl:value-of select="root/result/editorial_contributions/language"/>
+        </zbmath:review_language>
      <zbmath:review_sign>
             <xsl:value-of select="root/result/editorial_contributions/reviewer/sign"/>
           </zbmath:review_sign>
