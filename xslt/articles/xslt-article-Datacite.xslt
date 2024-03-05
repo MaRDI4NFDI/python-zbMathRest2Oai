@@ -1,6 +1,6 @@
 <!-- this is a new xslt file to start the transformation from plain.xml
 to a suitable form for DataCite
- -->
+-->
 
 
 <?xml version="1.0" encoding="UTF-8"?>
@@ -14,9 +14,10 @@ to a suitable form for DataCite
       <xsl:apply-templates select="result/links"/>
       <xsl:apply-templates select="result/contributors/authors"/>
          <xsl:apply-templates select="result/title"/>
-      <xsl:apply-templates select="result/publisher"/>
-      <xsl:apply-templates select="result/year"/>
+      <xsl:apply-templates select="result/source/series/publisher"/>
+      <xsl:apply-templates select="result/source/series/year"/>
       <xsl:apply-templates select="result/document_type"/>
+        <xsl:apply-templates select="result/editorial_contributions/text"/>
 
     </xsl:copy>
   </xsl:template>
@@ -57,22 +58,31 @@ to a suitable form for DataCite
       </title>
     </titles>
   </xsl:template>
+    <!-- adding the resourceType node -->
+     <xsl:template match="document_type">
+    <resourceType resourceTypeGeneral="JournalArticle">
+      <xsl:value-of select="."/>
+    </resourceType>
+  </xsl:template>
   <!-- adding the publisher and publication Year -->
-<xsl:template match="source">
+<xsl:template match="publisher">
     <publisher>
         <xsl:value-of select="."/>
     </publisher>
   </xsl:template>
-  <xsl:template match="source">
+  <xsl:template match="year">
     <publicationYear>
         <xsl:value-of select="."/>
     </publicationYear>
 </xsl:template>
-  <!-- adding the resourceType node -->
-    <xsl:template match="document_type">
-    <resourceType resourceTypeGeneral="JournalArticle">
-      <xsl:value-of select="."/>
-    </resourceType>
+
+   <!-- adding the description node -->
+      <xsl:template match="text">
+    <descriptions>
+      <description xml:lang="en" descriptionType="TechnicalInfo">
+        <xsl:value-of select="."/>
+      </description>
+    </descriptions>
   </xsl:template>
 </xsl:stylesheet>
 
