@@ -2,10 +2,10 @@ import dict2xml
 import requests
 
 
-def final_xml2(de, api_source):
+def final_xml2(api_source):
 
     headers = {'Accept': 'application/json'}
-    r = requests.get(api_source + de, headers=headers)
+    r = requests.get(api_source, headers=headers)
     if r.status_code != 200:
         raise Exception(f"Unexpected response with status code {r.status_code}: {r.text}")
     json = r.json()
