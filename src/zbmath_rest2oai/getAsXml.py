@@ -11,7 +11,8 @@ def final_xml2(api_source):
     json = r.json()
     # Bugfix as the sates are lists of lists which has no canonical XML mapping
     if type(json['result'])==dict:
-
+        for ident in json['result'].keys():
+            print(json['result'][ident])
         states = {}
         for lst in json['result']['states']:
             [k, v] = lst
