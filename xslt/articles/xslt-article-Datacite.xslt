@@ -7,10 +7,15 @@
     <creators>
       <xsl:apply-templates select="root/result/contributors/authors"/>
     </creators>
+      <relatedItems>
 <xsl:apply-templates select="root/result/title"/>
  <xsl:apply-templates select="root/result/document_type"/>
 <xsl:apply-templates select="root/result/source/series/publisher"/>
 <xsl:apply-templates select="root/result/source/series/year"/>
+        <xsl:apply-templates select="root/result/source/series/volume"/>
+  <xsl:apply-templates select="root/result/source/series/issue"/>
+ <xsl:apply-templates select="root/result/source/pages"/>
+      </relatedItems>
 <descriptions>
 <xsl:apply-templates select="root/result/editorial_contributions/text"/>
 </descriptions>
@@ -18,6 +23,7 @@
  <xsl:apply-templates select="root/result/references/zbmath"/>
       <xsl:apply-templates select="root/result/references/text"/>
       <xsl:apply-templates select="root/result/keywords"/>
+
       </subjects>
   </xsl:template>
   <xsl:template match="links">
@@ -87,6 +93,28 @@
       <xsl:value-of select="."/>
     </subject>
   </xsl:template>
+    <xsl:template match="pages">
+  <xsl:variable name="pagesText" select="normalize-space(.)"/>
+  <xsl:variable name="firstPage" select="substring-before($pagesText, '-')"/>
+  <xsl:variable name="lastPage" select="substring-after($pagesText, '-')"/>
+  <firstPage>
+    <xsl:value-of select="$firstPage"/>
+  </firstPage>
+  <lastPage>
+    <xsl:value-of select="$lastPage"/>
+  </lastPage>
+</xsl:template>
+
+<xsl:template match="volume">
+    <volume>
+        <xsl:value-of select="."/>
+    </volume>
+    </xsl:template>
+<xsl:template match="issue">
+    <issue>
+        <xsl:value-of select="."/>
+    </issue>
+</xsl:template>
 </xsl:stylesheet>
 <!-- adding the references , keywords and msc's in the subjects node and editing the whole xslt file
 in a better way -->
