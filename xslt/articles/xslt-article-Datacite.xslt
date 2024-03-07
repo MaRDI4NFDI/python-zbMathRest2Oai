@@ -116,6 +116,42 @@
     </issue>
 </xsl:template>
 </xsl:stylesheet>
-<!-- adding the references , keywords and msc's in the subjects node and editing the whole xslt file
-in a better way -->
+<!-- commenting out this part of code because it needs to be further discussed
+<xsl:template match="links">
+
+  <xsl:choose>
+    <xsl:when test="type = 'doi'">
+      <relatedIdentifier relatedIdentifierType="doi" relationType="IsCitedBy" resourceTypeGeneral="article">
+
+        <xsl:value-of select="identifier"/>
+      </relatedIdentifier>
+    </xsl:when>
+     <xsl:when test="type = 'arxiv'">
+      <relatedIdentifier relatedIdentifierType="arxiv" relationType="IsCitedBy" resourceTypeGeneral="article">
+
+        <xsl:value-of select="identifier"/>
+      </relatedIdentifier>
+    </xsl:when>
+    <xsl:when test="type = 'mathnetru'">
+      <relatedIdentifier relatedIdentifierType="mathnetru" relationType="IsCitedBy" resourceTypeGeneral="article">
+
+        <xsl:value-of select="identifier"/>
+      </relatedIdentifier>
+    </xsl:when>
+    <xsl:when test="type = 'lni'">
+      <relatedIdentifier relatedIdentifierType="lni" relationType="IsCitedBy" resourceTypeGeneral="article">
+
+        <xsl:value-of select="identifier"/>
+      </relatedIdentifier>
+    </xsl:when>
+
+    <xsl:otherwise>
+      <relatedIdentifier relatedIdentifierType="type" relationType="IsCitedBy" resourceTypeGeneral="article">
+      <xsl:value-of select="type">
+      <relatedIdentifier>
+    </xsl:otherwise>
+  </xsl:choose>
+</xsl:template>
+-->
+
 
