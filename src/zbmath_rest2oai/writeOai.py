@@ -35,4 +35,4 @@ def write_oai(api_source, prefix):
 if __name__ == '__main__':
     import sys
 
-    write_oai(sys.argv[1], sys.argv[2], sys.argv[3])
+    write_oai(sys.argv[1], sys.argv[2])

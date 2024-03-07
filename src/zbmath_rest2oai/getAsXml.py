@@ -1,6 +1,6 @@
 import dict2xml
 import requests
-
+import sys
 
 def final_xml2(api_source):
 
@@ -26,3 +26,7 @@ def final_xml2(api_source):
             [], '', [None], None
         ])
     )
+
+if __name__ == "__main__":
+    final_xml2(sys.argv[1])
+

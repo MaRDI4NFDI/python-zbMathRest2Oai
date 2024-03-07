@@ -13,5 +13,3 @@ def get_all_de(api_source, prefix):
         write_oai(api_source, prefix)
     except Exception as error:
         print(error, file=sys.stderr)
-
-
