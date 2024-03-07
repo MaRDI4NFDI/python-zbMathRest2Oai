@@ -9,23 +9,14 @@ def final_xml2(api_source):
     if r.status_code != 200:
         raise Exception(f"Unexpected response with status code {r.status_code}: {r.text}")
     json = r.json()
-    # Bugfix as the sates are lists of lists which has no canonical XML mapping
-    if type(json['result'])==dict:
-        for ident in json['result'].keys():
-            print(json['result'][ident])
-        states = {}
-        for lst in json['result']['states']:
-            [k, v] = lst
-            states[k] = v
-        json['result']['states'] = states
+    dict_math_entities= dict()
+    for i in range(len(json["result"])):
+        dict_math_entities[json["result"][i]["id"]]=dict2xml.Converter(wrap="root").build(json["result"][i], closed_tags_for=[[], '', [None], None])
+    #print(dict_math_entities)
+    # Bugfix as the sates are lists of lists which has no canonical XML mapping`
     # End of fix
-    return (
-        dict2xml.Converter(wrap="root")
-        .build(json, closed_tags_for=[
-            # Bugfix for wired XML output such as the string None or </>
-            [], '', [None], None
-        ])
-    )
+    return dict_math_entities
+    
 
 if __name__ == "__main__":
     final_xml2(sys.argv[1])
