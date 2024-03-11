@@ -5,7 +5,8 @@ import sys
 
 def apply_zbmath_api_fixes(result):
     if result.get('datestamp'):
-        result['datestamp'] = result['datestamp'].replace('0001-01-01T00:00:00Z', '0001-01-01T00:00:00')
+        result['datestamp'] = (result['datestamp'].
+                               replace('0001-01-01T00:00:00Z', '0001-01-01T00:00:00'))
     old_states = result.get('states')
     if old_states is None:
         return
