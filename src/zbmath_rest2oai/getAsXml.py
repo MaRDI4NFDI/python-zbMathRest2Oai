@@ -3,7 +3,9 @@ import requests
 import sys
 
 
-def fix_states(result):
+def apply_zbmath_api_fixes(result):
+    if result.get('datestamp'):
+        result['datestamp'] = result['datestamp'].replace('0001-01-01T00:00:00Z', '0001-01-01T00:00:00')
     old_states = result.get('states')
     if old_states is None:
         return
@@ -22,7 +24,7 @@ def final_xml2(api_source):
     json = r.json()
     dict_math_entities = dict()
     for result in json["result"]:
-        fix_states(result)
+        apply_zbmath_api_fixes(result)
         dict_math_entities[result["id"]] = Converter(wrap="root").build(
             result,
             closed_tags_for=[[], '', [None], None])
