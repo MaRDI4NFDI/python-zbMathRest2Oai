@@ -1,5 +1,4 @@
 <root>
-  <result>
     <articles_count>103</articles_count>
     <authors>Li, X.S., Demmel, J.W.</authors>
     <classification>35</classification>
@@ -29,102 +28,92 @@
     <orms_id>265</orms_id>
     <programming_languages/>
     <related_software>
-      <id>4013</id>
-      <name>MUMPS</name>
+        <id>4013</id>
+        <name>MUMPS</name>
     </related_software>
     <related_software>
-      <id>4012</id>
-      <name>PETSc</name>
+        <id>4012</id>
+        <name>PETSc</name>
     </related_software>
     <related_software>
-      <id>930</id>
-      <name>SuperLU</name>
+        <id>930</id>
+        <name>SuperLU</name>
     </related_software>
     <related_software>
-      <id>4629</id>
-      <name>SparseMatrix</name>
+        <id>4629</id>
+        <name>SparseMatrix</name>
     </related_software>
     <related_software>
-      <id>503</id>
-      <name>LAPACK</name>
+        <id>503</id>
+        <name>LAPACK</name>
     </related_software>
     <related_software>
-      <id>679</id>
-      <name>PARDISO</name>
+        <id>679</id>
+        <name>PARDISO</name>
     </related_software>
     <related_software>
-      <id>426</id>
-      <name>hypre</name>
+        <id>426</id>
+        <name>hypre</name>
     </related_software>
     <related_software>
-      <id>989</id>
-      <name>UMFPACK</name>
+        <id>989</id>
+        <name>UMFPACK</name>
     </related_software>
     <related_software>
-      <id>4089</id>
-      <name>METIS</name>
+        <id>4089</id>
+        <name>METIS</name>
     </related_software>
     <related_software>
-      <id>4028</id>
-      <name>Trilinos</name>
+        <id>4028</id>
+        <name>Trilinos</name>
     </related_software>
     <related_software>
-      <id>830</id>
-      <name>ScaLAPACK</name>
+        <id>830</id>
+        <name>ScaLAPACK</name>
     </related_software>
     <related_software>
-      <id>4827</id>
-      <name>mctoolbox</name>
+        <id>4827</id>
+        <name>mctoolbox</name>
     </related_software>
     <related_software>
-      <id>6749</id>
-      <name>WSMP</name>
+        <id>6749</id>
+        <name>WSMP</name>
     </related_software>
     <related_software>
-      <id>3216</id>
-      <name>BLAS</name>
+        <id>3216</id>
+        <name>BLAS</name>
     </related_software>
     <related_software>
-      <id>418</id>
-      <name>HSL</name>
+        <id>418</id>
+        <name>HSL</name>
     </related_software>
     <related_software>
-      <id>8067</id>
-      <name>ML</name>
+        <id>8067</id>
+        <name>ML</name>
     </related_software>
     <related_software>
-      <id>2780</id>
-      <name>SPIKE</name>
+        <id>2780</id>
+        <name>SPIKE</name>
     </related_software>
     <related_software>
-      <id>6496</id>
-      <name>MPI</name>
+        <id>6496</id>
+        <name>MPI</name>
     </related_software>
     <related_software>
-      <id>9043</id>
-      <name>MFEM</name>
+        <id>9043</id>
+        <name>MFEM</name>
     </related_software>
     <related_software>
-      <id>17483</id>
-      <name>STRUMPACK</name>
+        <id>17483</id>
+        <name>STRUMPACK</name>
     </related_software>
     <source_code/>
     <standard_articles>
-      <authors/>
-      <id>2187846</id>
-      <source>zbMATH Open Web Interface contents unavailable due to conflicting licenses.</source>
-      <title>zbMATH Open Web Interface contents unavailable due to conflicting licenses.</title>
-      <year>2003</year>
+        <authors/>
+        <id>2187846</id>
+        <source>zbMATH Open Web Interface contents unavailable due to conflicting licenses.</source>
+        <title>zbMATH Open Web Interface contents unavailable due to conflicting licenses.</title>
+        <year>2003</year>
     </standard_articles>
     <zbmath_url>https://zbmath.org/software/2</zbmath_url>
-  </result>
-  <status>
-    <execution>successful request</execution>
-    <execution_bool>True</execution_bool>
-    <internal_code>ok</internal_code>
-    <nr_total_results>1</nr_total_results>
-    <query_execution_time_in_seconds>0</query_execution_time_in_seconds>
-    <status_code>200</status_code>
-    <time_stamp>0</time_stamp>
-  </status>
 </root>
