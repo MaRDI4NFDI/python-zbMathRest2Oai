@@ -3,6 +3,17 @@ import requests
 import sys
 
 
+def fix_states(result):
+    old_states = result.get('states')
+    if old_states is None:
+        return
+    states = {}
+    for lst in old_states:
+        [k, v] = lst
+        states[k] = v
+    result['states'] = states
+
+
 def final_xml2(api_source):
     headers = {'Accept': 'application/json'}
     r = requests.get(api_source, headers=headers)
@@ -11,6 +22,7 @@ def final_xml2(api_source):
     json = r.json()
     dict_math_entities = dict()
     for result in json["result"]:
+        fix_states(result)
         dict_math_entities[result["id"]] = Converter(wrap="root").build(
             result,
             closed_tags_for=[[], '', [None], None])
