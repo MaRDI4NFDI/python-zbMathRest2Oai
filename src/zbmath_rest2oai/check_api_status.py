@@ -23,7 +23,7 @@ def process_row(row):
     de = row[0]
     r = requests.get('https://api.zbmath.org/v1/document/' + de, headers=headers)
     if r.status_code != 200:
-        print(f"Unexpected response with status code {r.status_code}: {r.text}")
+        print(f"Unexpected response with status code {r.status_code} for de {de}: {r.text}")
 
 
 if __name__ == '__main__':
