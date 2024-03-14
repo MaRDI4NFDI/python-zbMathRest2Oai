@@ -11,41 +11,41 @@
 <xsl:template match="/">
   <oai_zb_preview:zbmath>
     <zbmath:author>
-      <xsl:value-of select="root/result/contributors/authors/name"/>
+      <xsl:value-of select="root/contributors/authors/name"/>
     </zbmath:author>
     <zbmath:author_ids>
       <zbmath:author_id>
-        <xsl:value-of select="root/result/contributors/authors/codes"/>
+        <xsl:value-of select="root/contributors/authors/codes"/>
       </zbmath:author_id>
     </zbmath:author_ids>
     <zbmath:classifications>
-       <xsl:for-each select="root/result/msc/code">
+       <xsl:for-each select="root/msc/code">
         <zbmath:classification><xsl:value-of select="."/></zbmath:classification>
       </xsl:for-each>
       </zbmath:classifications>
     <zbmath:document_id>
-      <xsl:value-of select="root/result/id"/>
+      <xsl:value-of select="root/id"/>
     </zbmath:document_id>
     <zbmath:document_title>
-      <xsl:value-of select="root/result/title/title"/>
+      <xsl:value-of select="root/title/title"/>
     </zbmath:document_title>
     <zbmath:document_type>
-      <xsl:value-of select="root/result/document_type/code"/>
+      <xsl:value-of select="root/document_type/code"/>
     </zbmath:document_type>
     <zbmath:doi>
-      <xsl:value-of select="root/result/links[./type='doi']/identifier"/>
+      <xsl:value-of select="root/links[./type='doi']/identifier"/>
     </zbmath:doi>
     <zbmath:keywords>
-      <xsl:for-each select="root/result/keywords">
+      <xsl:for-each select="root/keywords">
         <zbmath:keyword>
           <xsl:value-of select="."/>
         </zbmath:keyword>
       </xsl:for-each>
     </zbmath:keywords>
     <zbmath:language>
-      <xsl:value-of select="root/result/language/languages"/>
+      <xsl:value-of select="root/language/languages"/>
     </zbmath:language>
- <xsl:for-each select = "root/result/source">
+ <xsl:for-each select = "root/source">
     <zbmath:pagination>
       <xsl:value-of select="pages"/>
     </zbmath:pagination>
@@ -57,44 +57,44 @@
     </zbmath:source>
   </xsl:for-each>
     <zbmath:spelling>
-   <xsl:value-of select="root/result/contributors/authors/name"/>
+   <xsl:value-of select="root/contributors/authors/name"/>
     </zbmath:spelling>
       <zbmath:time>
-   <xsl:value-of select="root/result/datestamp"/>
+   <xsl:value-of select="root/datestamp"/>
     </zbmath:time>
     <zbmath:zbl_id>
-      <xsl:value-of select="root/result/identifier"/>
+      <xsl:value-of select="root/identifier"/>
     </zbmath:zbl_id>
     <zbmath:review>
         <zbmath:review_language>
-          <xsl:value-of select="root/result/editorial_contributions/language"/>
+          <xsl:value-of select="root/editorial_contributions/language"/>
         </zbmath:review_language>
      <zbmath:review_sign>
-            <xsl:value-of select="root/result/editorial_contributions/reviewer/sign"/>
+            <xsl:value-of select="root/editorial_contributions/reviewer/sign"/>
           </zbmath:review_sign>
          <zbmath:review_text>
-          <xsl:value-of select="root/result/editorial_contributions/text"/>
+          <xsl:value-of select="root/editorial_contributions/text"/>
          </zbmath:review_text>
         <zbmath:review_type>
-          <xsl:value-of select="root/result/editorial_contributions/contribution_type"/>
+          <xsl:value-of select="root/editorial_contributions/contribution_type"/>
         </zbmath:review_type>
         <zbmath:reviewer>
-            <xsl:value-of select="root/result/editorial_contributions/reviewer/reviewer_id"/>
+            <xsl:value-of select="root/editorial_contributions/reviewer/reviewer_id"/>
           </zbmath:reviewer>
         <zbmath:reviewer_id>
-      <xsl:value-of  select="root/result/editorial_contributions/reviewer/author_code"/>
+      <xsl:value-of  select="root/editorial_contributions/reviewer/author_code"/>
         </zbmath:reviewer_id>
     </zbmath:review>
     <zbmath:serial>
      <zbmath:serial_publisher>
-<xsl:value-of select="root/result/source/series/publisher"/>
+<xsl:value-of select="root/source/series/publisher"/>
 </zbmath:serial_publisher>
     <zbmath:serial_title>
-<xsl:value-of select="root/result/source/series/title"/>
+<xsl:value-of select="root/source/series/title"/>
  </zbmath:serial_title>
     </zbmath:serial>
 <zbmath:references>
-      <xsl:for-each select="root/result/references">
+      <xsl:for-each select="root/references">
         <zbmath:reference>
           <zbmath:text>
             <xsl:value-of select="text"/>
@@ -113,7 +113,7 @@
       </xsl:for-each>
     </zbmath:references>
        <zbmath:links>
-                <xsl:for-each select="root/result/links[type != 'doi']">
+                <xsl:for-each select="root/links[type != 'doi']">
                     <zbmath:link>
                         <xsl:choose>
                             <!-- Removed for backwards compatibility
