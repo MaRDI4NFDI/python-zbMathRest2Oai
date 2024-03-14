@@ -1,121 +1,119 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<resource
-        xsi:schemaLocation="http://datacite.org/schema/kernel-4 http://schema.datacite.org/meta/kernel-4.1/metadata.xsd"
-        xmlns="http://datacite.org/schema/kernel-4" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-    <identifier identifierType="swMATH">2</identifier>
-    <creators>Li, X.S., Demmel, J.W.</creators>
-    <resourceType resourceTypeGeneral="Software"/>
-    <titles>
-        <title>SuperLU-DIST</title>
-    </titles>
-    <description>zbMATH Open Web Interface contents unavailable due to conflicting licenses.</description>
-    <publicationYear>2003</publicationYear>
-    <contributor contributorType="HostingInstitution">http://crd-legacy.lbl.gov/~xiaoye/SuperLU/</contributor>
-    <rightsList>
-        <rights>No license</rights>
-    </rightsList>
-    <subjects>
-        <subject>35</subject>
-        <subject>65</subject>
-        <subject>68</subject>
-        <subject>74</subject>
-        <subject>76</subject>
-        <subject>05</subject>
-        <subject>15</subject>
-        <subject>60</subject>
-        <subject>78</subject>
-        <subject>80</subject>
-        <subject>81</subject>
-        <subject>82</subject>
-        <subject>85</subject>
-        <subject>86</subject>
-        <subject>90</subject>
-        <subject>92</subject>
-        <subject>orms</subject>
-    </subjects>
-    <related_software>
-        <id>4013</id>
-        <name>MUMPS</name>
-    </related_software>
-    <related_software>
-        <id>4012</id>
-        <name>PETSc</name>
-    </related_software>
-    <related_software>
-        <id>930</id>
-        <name>SuperLU</name>
-    </related_software>
-    <related_software>
-        <id>4629</id>
-        <name>SparseMatrix</name>
-    </related_software>
-    <related_software>
-        <id>503</id>
-        <name>LAPACK</name>
-    </related_software>
-    <related_software>
-        <id>679</id>
-        <name>PARDISO</name>
-    </related_software>
-    <related_software>
-        <id>426</id>
-        <name>hypre</name>
-    </related_software>
-    <related_software>
-        <id>989</id>
-        <name>UMFPACK</name>
-    </related_software>
-    <related_software>
-        <id>4089</id>
-        <name>METIS</name>
-    </related_software>
-    <related_software>
-        <id>4028</id>
-        <name>Trilinos</name>
-    </related_software>
-    <related_software>
-        <id>830</id>
-        <name>ScaLAPACK</name>
-    </related_software>
-    <related_software>
-        <id>4827</id>
-        <name>mctoolbox</name>
-    </related_software>
-    <related_software>
-        <id>6749</id>
-        <name>WSMP</name>
-    </related_software>
-    <related_software>
-        <id>3216</id>
-        <name>BLAS</name>
-    </related_software>
-    <related_software>
-        <id>418</id>
-        <name>HSL</name>
-    </related_software>
-    <related_software>
-        <id>8067</id>
-        <name>ML</name>
-    </related_software>
-    <related_software>
-        <id>2780</id>
-        <name>SPIKE</name>
-    </related_software>
-    <related_software>
-        <id>6496</id>
-        <name>MPI</name>
-    </related_software>
-    <related_software>
-        <id>9043</id>
-        <name>MFEM</name>
-    </related_software>
-    <related_software>
-        <id>17483</id>
-        <name>STRUMPACK</name>
-    </related_software>
-    <relatedIdentifier relationType="IsReferencedBy">2187846</relatedIdentifier>
-    <relatedIdentifier relationType="IsDescribedBy">https://orms.mfo.de/project@id=265.html</relatedIdentifier>
-    <alternateIdentifiers>
-        <alternateIdentifier alternateIdentifierType="url">https://zbmath.org/software/?q=si%3A2</alternateIdentifier>
-    </alternateIdentifiers>
+<?xml version='1.0' encoding='utf8'?>
+<resource xmlns="http://datacite.org/schema/kernel-4" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://datacite.org/schema/kernel-4 http://schema.datacite.org/meta/kernel-4.1/metadata.xsd">
+  <identifier identifierType="swMATH">2</identifier>
+  <creators>Li, X.S., Demmel, J.W.</creators>
+  <resourceType resourceTypeGeneral="Software"/>
+  <titles>
+    <title>SuperLU-DIST</title>
+  </titles>
+  <description>zbMATH Open Web Interface contents unavailable due to conflicting licenses.</description>
+  <publicationYear>2003</publicationYear>
+  <contributor contributorType="HostingInstitution">http://crd-legacy.lbl.gov/~xiaoye/SuperLU/</contributor>
+  <rightsList>
+    <rights>No license</rights>
+  </rightsList>
+  <subjects>
+    <subject>35</subject>
+    <subject>65</subject>
+    <subject>68</subject>
+    <subject>74</subject>
+    <subject>76</subject>
+    <subject>05</subject>
+    <subject>15</subject>
+    <subject>60</subject>
+    <subject>78</subject>
+    <subject>80</subject>
+    <subject>81</subject>
+    <subject>82</subject>
+    <subject>85</subject>
+    <subject>86</subject>
+    <subject>90</subject>
+    <subject>92</subject>
+    <subject>orms</subject>
+  </subjects>
+  <related_software>
+    <id>4013</id>
+    <name>MUMPS</name>
+  </related_software>
+  <related_software>
+    <id>4012</id>
+    <name>PETSc</name>
+  </related_software>
+  <related_software>
+    <id>930</id>
+    <name>SuperLU</name>
+  </related_software>
+  <related_software>
+    <id>4629</id>
+    <name>SparseMatrix</name>
+  </related_software>
+  <related_software>
+    <id>503</id>
+    <name>LAPACK</name>
+  </related_software>
+  <related_software>
+    <id>679</id>
+    <name>PARDISO</name>
+  </related_software>
+  <related_software>
+    <id>426</id>
+    <name>hypre</name>
+  </related_software>
+  <related_software>
+    <id>4028</id>
+    <name>Trilinos</name>
+  </related_software>
+  <related_software>
+    <id>989</id>
+    <name>UMFPACK</name>
+  </related_software>
+  <related_software>
+    <id>4089</id>
+    <name>METIS</name>
+  </related_software>
+  <related_software>
+    <id>830</id>
+    <name>ScaLAPACK</name>
+  </related_software>
+  <related_software>
+    <id>4827</id>
+    <name>mctoolbox</name>
+  </related_software>
+  <related_software>
+    <id>6749</id>
+    <name>WSMP</name>
+  </related_software>
+  <related_software>
+    <id>3216</id>
+    <name>BLAS</name>
+  </related_software>
+  <related_software>
+    <id>9043</id>
+    <name>MFEM</name>
+  </related_software>
+  <related_software>
+    <id>7818</id>
+    <name>Scotch</name>
+  </related_software>
+  <related_software>
+    <id>418</id>
+    <name>HSL</name>
+  </related_software>
+  <related_software>
+    <id>8067</id>
+    <name>ML</name>
+  </related_software>
+  <related_software>
+    <id>2780</id>
+    <name>SPIKE</name>
+  </related_software>
+  <related_software>
+    <id>6496</id>
+    <name>MPI</name>
+  </related_software>
+  <relatedIdentifier relationType="IsReferencedBy">2187846</relatedIdentifier>
+  <relatedIdentifier relationType="IsDescribedBy">https://orms.mfo.de/project@id=265.html</relatedIdentifier>
+  <alternateIdentifiers>
+    <alternateIdentifier alternateIdentifierType="url">https://zbmath.org/software/?q=si%3A2</alternateIdentifier>
+  </alternateIdentifiers>
 </resource>
