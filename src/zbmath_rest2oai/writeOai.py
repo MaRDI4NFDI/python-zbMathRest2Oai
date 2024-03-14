@@ -14,7 +14,9 @@ def write_oai(api_source, prefix):
         files = {"item": (None, json.dumps({"identifier": prefix+str(identifier),"deleteFlag": False,"ingestFormat": "zbmath_rest_api",}),"application/json",),"content": (None, test_xml[identifier]),}
         basic = HTTPBasicAuth('swmath', os.environ.get('OAI_BASIC_PASSWORD'))
         x = requests.post("http://oai-input.portal.mardi4nfdi.de/oai-backend/item", files=files, auth=basic)
-        if x.status_code != 200:
+        if x.status_code == 409:
+            continue
+        elif x.status_code != 200:
             raise Exception(f"Unexpected response with status code {x.status_code}: {x.text}")
         else:
             return x.text
