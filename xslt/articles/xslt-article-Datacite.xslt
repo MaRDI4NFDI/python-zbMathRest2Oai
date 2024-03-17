@@ -1,8 +1,13 @@
 
-<?xml version="1.0" encoding="UTF-8"?>
-<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+<?xml version="1.0" encoding="utf-8"?>
+<xsl:stylesheet version="1.0"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                xsi:schemaLocation="http://datacite.org/schema/kernel-4 http://schema.datacite.org/meta/kernel-4.1/metadata.xsd"
+                xmlns="http://datacite.org/schema/kernel-4">
   <xsl:output method="xml" indent="yes"/>
   <xsl:template match="/">
+      <resource xsi:schemaLocation="http://datacite.org/schema/kernel-4 http://schema.datacite.org/meta/kernel-4.1/metadata.xsd">
     <xsl:apply-templates select="root/result/links"/>
     <creators>
       <xsl:apply-templates select="root/result/contributors/authors"/>
@@ -25,6 +30,7 @@
       <xsl:apply-templates select="root/result/keywords"/>
 
       </subjects>
+      </resource>
   </xsl:template>
   <xsl:template match="links">
     <identifier identifierType="{type}">
