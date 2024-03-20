@@ -21,6 +21,7 @@
   <xsl:apply-templates select="root/result/source/series/issue"/>
  <xsl:apply-templates select="root/result/source/pages"/>
       </relatedItems>
+
 <descriptions>
 <xsl:apply-templates select="root/result/editorial_contributions/text"/>
 </descriptions>
@@ -30,6 +31,10 @@
       <xsl:apply-templates select="root/result/keywords"/>
 
       </subjects>
+
+          <relatedIdentifiers>
+                  <xsl:apply-templates select="root/result/references/doi"/>
+               </relatedIdentifiers>
       </resource>
   </xsl:template>
   <xsl:template match="links">
@@ -121,7 +126,16 @@
         <xsl:value-of select="."/>
     </issue>
 </xsl:template>
+     <xsl:template match="references/doi">
+    <!-- Transform <doi> value to desired format -->
+    <xsl:variable name="doiParts" select="tokenize(., '/')" />
+    <relatedIdentifier relatedIdentifierType="DOI" relationType="IsCitedBy" resourceTypeGeneral="Journal Article">
+      <xsl:value-of select="concat($doiParts[1], '/', $doiParts[2])" />
+    </relatedIdentifier>
+  </xsl:template>
 </xsl:stylesheet>
+
+
 <!-- commenting out this part of code because it needs to be further discussed
 <xsl:template match="links">
 
@@ -159,5 +173,4 @@
   </xsl:choose>
 </xsl:template>
 -->
-
 
