@@ -126,14 +126,40 @@
         <xsl:value-of select="."/>
     </issue>
 </xsl:template>
-     <xsl:template match="references/doi">
-    <!-- Transform <doi> value to desired format -->
-    <xsl:variable name="doiParts" select="tokenize(., '/')" />
-    <relatedIdentifier relatedIdentifierType="DOI" relationType="IsCitedBy" resourceTypeGeneral="Journal Article">
-      <xsl:value-of select="concat($doiParts[1], '/', $doiParts[2])" />
-    </relatedIdentifier>
-  </xsl:template>
+
+<xsl:template match="references/*">
+
+  <xsl:variable name="identifierType">
+    <xsl:choose>
+      <xsl:when test="self::doi">DOI</xsl:when>
+      <xsl:when test="self::arxiv">arXiv</xsl:when>
+      <xsl:when test="self::mathnetru">MathNetRu</xsl:when>
+      <xsl:when test="self::lni">LNI</xsl:when>
+      <!-- Add more conditions for additional types as needed -->
+    </xsl:choose>
+  </xsl:variable>
+
+  <xsl:variable name="identifierValue" select="." />
+
+  <relatedIdentifier relatedIdentifierType="{$identifierType}" relationType="IsCitedBy" resourceTypeGeneral="Journal Article">
+    <xsl:choose>
+      <xsl:when test="$identifierType = 'DOI'">
+        <xsl:variable name="doiParts" select="tokenize($identifierValue, '/')" />
+        <xsl:value-of select="concat($doiParts[1], '/', $doiParts[2])" />
+      </xsl:when>
+      <xsl:otherwise>
+        <xsl:value-of select="$identifierValue" />
+      </xsl:otherwise>
+    </xsl:choose>
+  </relatedIdentifier>
+
+</xsl:template>
+    <!-- i am still not pretty sure if this is what could be 100% helpful to enrich our identifiers -->
+
 </xsl:stylesheet>
+
+
+
 
 
 <!-- commenting out this part of code because it needs to be further discussed
@@ -158,7 +184,7 @@
         <xsl:value-of select="identifier"/>
       </relatedIdentifier>
     </xsl:when>
-    <xsl:when test="type = 'lni'">
+    <xsl:when test="type = 'cd'">
       <relatedIdentifier relatedIdentifierType="lni" relationType="IsCitedBy" resourceTypeGeneral="article">
 
         <xsl:value-of select="identifier"/>

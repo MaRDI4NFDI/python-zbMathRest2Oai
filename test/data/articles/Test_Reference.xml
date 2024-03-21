@@ -1,0 +1,85 @@
+<resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xmlns="http://datacite.org/schema/kernel-4"
+          xsi:schemaLocation="http://datacite.org/schema/kernel-4 http://schema.datacite.org/meta/kernel-4.1/metadata.xsd">
+   <identifier identifierType="doi">10.4007/annals.2015.181.1.7</identifier>
+   <identifier identifierType="arxiv">1311.4600</identifier>
+   <creators>
+      <creator>
+         <creatorName nameType="Personal">James, Maynard</creatorName>
+         <givenName>Maynard</givenName>
+         <familyName>James</familyName>
+      </creator>
+   </creators>
+   <relatedItems>
+      <titles>
+         <title xml:lang="en">Small gaps between primes</title>
+      </titles>
+      <resourceType resourceTypeGeneral="JournalArticle">journal article</resourceType>
+      <publisher>Princeton University, Mathematics Department, Princeton, NJ</publisher>
+      <publicationYear>2015</publicationYear>
+      <volume>181</volume>
+      <issue>1</issue>
+      <firstPage>383</firstPage>
+      <lastPage>413</lastPage>
+   </relatedItems>
+   <descriptions>
+      <subject>The prime \(k\)-tuples and small gaps between prime numbers are considered. Using a refinement of the Goldston-Pintz-Yildirim sieve method [\textit{D. A. Goldston} et al., Ann. Math. (2) 170, No. 2, 819--862 (2009; Zbl 1207.11096)] the author proves, for instance, the following estimates
+      \[
+       \liminf_{n\to\infty}\,(p_{n+m}-p_n)\ll m^3\text{{e}}^{4m}, \quad \liminf_{n\to\infty}\,(p_{n+1}-p_n)\leq 600
+      \]
+       with an absolute constant in sign \(\ll\). Here \(m\) is a natural number, and \(p_{\,l}\) denote the \(l\)-th prime number.</subject>
+   </descriptions>
+   <relatedIdentifiers>
+<relatedIdentifier relatedIdentifierType="DOI" relationType="IsCitedBy" resourceTypeGeneral="JournalArticle">10.2307/1971450</relatedIdentifier>
+</relatedIdentifiers>
+   <subjects>
+      <subjectScheme classificationCode="11N35"/>
+      <subjectScheme classificationCode="11N13"/>
+      <subjectScheme classificationCode="11N05"/>
+      <subjectScheme classificationCode="11N13"/>
+      <subjectScheme classificationCode="11N35"/>
+      <subjectScheme classificationCode="11N25"/>
+      <subjectScheme classificationCode="11N36"/>
+      <subjectScheme classificationCode="11N05"/>
+      <subjectScheme classificationCode="11N13"/>
+      <subjectScheme classificationCode="11N05"/>
+      <subjectScheme classificationCode="11N36"/>
+      <subjectScheme classificationCode="11N13"/>
+      <subjectScheme classificationCode="11N05"/>
+      <subjectScheme classificationCode="11N37"/>
+      <subjectScheme classificationCode="11N35"/>
+      <subjectScheme classificationCode="11N05"/>
+      <subjectScheme classificationCode="11-03"/>
+      <subjectScheme classificationCode="01A75"/>
+      <subjectScheme classificationCode="32-03"/>
+      <subjectScheme classificationCode="11M06"/>
+      <subjectScheme classificationCode="11M41"/>
+      <subjectScheme classificationCode="11N35"/>
+      <subjectScheme classificationCode="11N36"/>
+      <subjectScheme classificationCode="11F72"/>
+      <subjectScheme classificationCode="32N05"/>
+      <subjectScheme classificationCode="32N15"/>
+      <subjectScheme classificationCode="11N05"/>
+      <subjectScheme classificationCode="11N13"/>
+      <subjectScheme classificationCode="11N35"/>
+      <subjectScheme classificationCode="11N36"/>
+      <subjectScheme classificationCode="11L07"/>
+      <subject>P. D. T. A. Elliott and H. Halberstam, ''A conjecture in prime number theory,'' in Symposia Mathematica, Vol. IV, London: Academic Press, 1970, pp. 59-72.</subject>
+      <subject>J. Friedlander and A. Granville, ''Limitations to the equi-distribution of primes. I,'' Ann. of Math., vol. 129, iss. 2, pp. 363-382, 1989.</subject>
+      <subject>D. A. Goldston, S. W. Graham, J. Pintz, and C. Y. Yildirim, ''Small gaps between products of two primes,'' Proc. Lond. Math. Soc., vol. 98, iss. 3, pp. 741-774, 2009.</subject>
+      <subject>D. A. Goldston, J. Pintz, and C. Y. Yildirim, ''Primes in tuples. III. On the difference \(p_{n+\nu}-p_n\),'' Funct. Approx. Comment. Math., vol. 35, pp. 79-89, 2006.</subject>
+      <subject>D. A. Goldston, J. Pintz, and C. Y. Yildirim, ''Primes in tuples. I,'' Ann. of Math., vol. 170, iss. 2, pp. 819-862, 2009.</subject>
+      <subject>D. A. Goldston and C. Y. Yildirim, ''Higher correlations of divisor sums related to primes. III. Small gaps between primes,'' Proc. Lond. Math. Soc., vol. 95, iss. 3, pp. 653-686, 2007.</subject>
+      <subject>D. H. J. Polymath, New equidistribution estimates of Zhang type, and bounded gaps between primes.</subject>
+      <subject>A. Selberg, Collected Papers. Vol. II, New York: Springer-Verlag, 1991.</subject>
+      <subject>Y. Zhang, ''Bounded gaps between primes,'' Ann. of Math., vol. 179, iss. 3, pp. 1121-1174, 2014.</subject>
+      <subject>prime number</subject>
+      <subject>small gap</subject>
+      <subject>sieve method</subject>
+      <subject>\(k\)-tuples conjecture</subject>
+      <subject>admissible set</subject>
+      <subject>Selberg sieve</subject>
+      <subject>symmetric polynomial</subject>
+      <subject>symmetric matrix</subject>
+   </subjects>
+</resource>
