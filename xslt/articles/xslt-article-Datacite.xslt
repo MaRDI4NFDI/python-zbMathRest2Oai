@@ -127,7 +127,7 @@
     </issue>
 </xsl:template>
 
-<xsl:template match="references/*">
+<xsl:template match="references/doi">
 
   <xsl:variable name="identifierType">
     <xsl:choose>
