@@ -1,6 +1,5 @@
-<resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-          xmlns="http://datacite.org/schema/kernel-4"
-          xsi:schemaLocation="http://datacite.org/schema/kernel-4 http://schema.datacite.org/meta/kernel-4.1/metadata.xsd">
+<?xml version="1.0" encoding="utf-8"?>
+<resource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://datacite.org/schema/kernel-4 http://schema.datacite.org/meta/kernel-4/metadata.xsd" xmlns="http://datacite.org/schema/kernel-4">
    <identifier identifierType="doi">10.4007/annals.2015.181.1.7</identifier>
    <identifier identifierType="arxiv">1311.4600</identifier>
    <creators>
@@ -22,16 +21,9 @@
       <firstPage>383</firstPage>
       <lastPage>413</lastPage>
    </relatedItems>
-   <descriptions>
-      <subject>The prime \(k\)-tuples and small gaps between prime numbers are considered. Using a refinement of the Goldston-Pintz-Yildirim sieve method [\textit{D. A. Goldston} et al., Ann. Math. (2) 170, No. 2, 819--862 (2009; Zbl 1207.11096)] the author proves, for instance, the following estimates
-      \[
-       \liminf_{n\to\infty}\,(p_{n+m}-p_n)\ll m^3\text{{e}}^{4m}, \quad \liminf_{n\to\infty}\,(p_{n+1}-p_n)\leq 600
-      \]
-       with an absolute constant in sign \(\ll\). Here \(m\) is a natural number, and \(p_{\,l}\) denote the \(l\)-th prime number.</subject>
-   </descriptions>
-   <relatedIdentifiers>
-<relatedIdentifier relatedIdentifierType="DOI" relationType="IsCitedBy" resourceTypeGeneral="JournalArticle">10.2307/1971450</relatedIdentifier>
-</relatedIdentifiers>
+    <descriptions>
+    <description xml:lang="en" descriptionType="TechnicalInfo">The prime \(k\)-tuples and small gaps between prime numbers are considered. Using a refinement of the Goldston-Pintz-Yildirim sieve method [\textit{D. A. Goldston} et al., Ann. Math. (2) 170, No. 2, 819--862 (2009; Zbl 1207.11096)] the author proves, for instance, the following estimates \[ \liminf_{n\to\infty}\,(p_{n+m}-p_n)\ll m^3\text{{e}}^{4m}, \quad \liminf_{n\to\infty}\,(p_{n+1}-p_n)\leq 600 \] with an absolute constant in sign \(\ll\). Here \(m\) is a natural number, and \(p_{\,l}\) denote the \(l\)-th prime number.</description>
+  </descriptions>
    <subjects>
       <subjectScheme classificationCode="11N35"/>
       <subjectScheme classificationCode="11N13"/>
@@ -82,4 +74,5 @@
       <subject>symmetric polynomial</subject>
       <subject>symmetric matrix</subject>
    </subjects>
+
 </resource>
