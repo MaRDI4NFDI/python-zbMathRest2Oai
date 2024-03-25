@@ -1,10 +1,11 @@
 import unittest
-
+import os
 import lxml.etree as ET
 from xmldiff import main
 from xmldiff.actions import MoveNode
 
-
+if os.path.basename(os.getcwd())=='test':
+    os.chdir(os.path.dirname(os.getcwd()))
 class PlainXmlTest(unittest.TestCase):
     def test_similarity(self):
         dom = ET.parse('test/data/software/plain.xml')
