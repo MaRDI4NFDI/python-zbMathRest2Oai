@@ -74,5 +74,15 @@
       <subject>symmetric polynomial</subject>
       <subject>symmetric matrix</subject>
    </subjects>
-
+<relatedIdentifiers>
+      <relatedIdentifier relatedIdentifierType="DOI" relationType="IsCitedBy" resourceTypeGeneral="Journal Article">/</relatedIdentifier>
+      <relatedIdentifier relatedIdentifierType="DOI" relationType="IsCitedBy" resourceTypeGeneral="Journal Article">10.2307/1971450</relatedIdentifier>
+      <relatedIdentifier relatedIdentifierType="DOI" relationType="IsCitedBy" resourceTypeGeneral="Journal Article">10.1112/plms</relatedIdentifier>
+      <relatedIdentifier relatedIdentifierType="DOI" relationType="IsCitedBy" resourceTypeGeneral="Journal Article">10.7169/facm</relatedIdentifier>
+      <relatedIdentifier relatedIdentifierType="DOI" relationType="IsCitedBy" resourceTypeGeneral="Journal Article">10.4007/annals.2009.170.819</relatedIdentifier>
+      <relatedIdentifier relatedIdentifierType="DOI" relationType="IsCitedBy" resourceTypeGeneral="Journal Article">10.1112/plms</relatedIdentifier>
+      <relatedIdentifier relatedIdentifierType="DOI" relationType="IsCitedBy" resourceTypeGeneral="Journal Article">/</relatedIdentifier>
+      <relatedIdentifier relatedIdentifierType="DOI" relationType="IsCitedBy" resourceTypeGeneral="Journal Article">/</relatedIdentifier>
+      <relatedIdentifier relatedIdentifierType="DOI" relationType="IsCitedBy" resourceTypeGeneral="Journal Article">10.4007/annals.2014.179.3.7</relatedIdentifier>
+   </relatedIdentifiers>
 </resource>
