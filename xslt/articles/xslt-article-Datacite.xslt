@@ -31,6 +31,9 @@
                 <xsl:apply-templates select="root/result/references/text"/>
                 <xsl:apply-templates select="root/result/keywords"/>
             </subjects>
+             <relatedIdentifiers>
+                  <xsl:apply-templates select="root/result/references/doi"/>
+               </relatedIdentifiers>
          </resource>
          </xsl:template>
         <xsl:template match="links">
@@ -130,6 +133,25 @@
             <xsl:value-of select="."/>
         </issue>
        </xsl:template>
+<xsl:template match="references/doi">
+  <xsl:variable name="identifierType">
+    <xsl:choose>
+      <xsl:when test="self::doi">DOI</xsl:when>
+      <xsl:when test="self::arxiv">arXiv</xsl:when>
+      <xsl:when test="self::mathnetru">MathNetRu</xsl:when>
+      <xsl:when test="self::lni">LNI</xsl:when>
+    </xsl:choose>
+  </xsl:variable>
+
+  <xsl:variable name="identifierValue" select="." />
+
+  <relatedIdentifier relatedIdentifierType="{$identifierType}" relationType="IsCitedBy" resourceTypeGeneral="Journal Article">
+    <xsl:value-of select="substring-before($identifierValue, '/')" />
+    <xsl:text>/</xsl:text>
+    <xsl:value-of select="substring-before(substring-after($identifierValue, '/'), '/')" />
+  </relatedIdentifier>
+</xsl:template>
+
 
 </xsl:stylesheet>
 
