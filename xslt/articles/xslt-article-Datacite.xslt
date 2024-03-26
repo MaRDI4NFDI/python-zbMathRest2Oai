@@ -133,26 +133,24 @@
             <xsl:value-of select="."/>
         </issue>
        </xsl:template>
-<xsl:template match="references/doi">
-  <xsl:variable name="identifierType">
-    <xsl:choose>
-      <xsl:when test="self::doi">DOI</xsl:when>
-      <xsl:when test="self::arxiv">arXiv</xsl:when>
-      <xsl:when test="self::mathnetru">MathNetRu</xsl:when>
-      <xsl:when test="self::lni">LNI</xsl:when>
-    </xsl:choose>
-  </xsl:variable>
-
-  <xsl:variable name="identifierValue" select="." />
-
-  <relatedIdentifier relatedIdentifierType="{$identifierType}" relationType="IsCitedBy" resourceTypeGeneral="Journal Article">
-    <xsl:value-of select="substring-before($identifierValue, '/')" />
-    <xsl:text>/</xsl:text>
-    <xsl:value-of select="substring-before(substring-after($identifierValue, '/'), '/')" />
-  </relatedIdentifier>
-</xsl:template>
-
-
+    <xsl:template match="references/doi">
+        <xsl:variable name="identifierType">
+             <xsl:choose>
+            <xsl:when test="self::doi">DOI</xsl:when>
+            </xsl:choose>
+        </xsl:variable>
+        <xsl:variable name="identifierValue" select="." />
+        <xsl:choose>
+            <xsl:when test="not(normalize-space($identifierValue))">
+                <relatedIdentifier relatedIdentifierType="DOI" relationType="IsCitedBy" resourceTypeGeneral="Journal Article">/</relatedIdentifier>
+            </xsl:when>
+            <xsl:otherwise>
+                <relatedIdentifier relatedIdentifierType="{$identifierType}" relationType="IsCitedBy" resourceTypeGeneral="Journal Article">
+                    <xsl:value-of select="substring($identifierValue, 1, string-length($identifierValue) - 1)"/>
+                </relatedIdentifier>
+            </xsl:otherwise>
+        </xsl:choose>
+    </xsl:template>
 </xsl:stylesheet>
 
 
