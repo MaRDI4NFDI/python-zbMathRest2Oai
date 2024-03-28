@@ -8,3 +8,4 @@ Hint for a proper installation:
 
 _ point to the directory
 _ execute "pip install -e ."
+_ excute "pip install .[test]" to install the dependencies for the test

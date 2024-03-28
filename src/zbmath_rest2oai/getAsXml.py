@@ -1,27 +1,36 @@
-import dict2xml
+from dict2xml import Converter
 import requests
+import sys
 
 
-def final_xml2(de, api_source):
+def apply_zbmath_api_fixes(result):
+    if result.get('datestamp'):
+        result['datestamp'] = (result['datestamp'].
+                               replace('0001-01-01T00:00:00Z', '0001-01-01T00:00:00'))
+    old_states = result.get('states')
+    if old_states is None:
+        return
+    states = {}
+    for lst in old_states:
+        [k, v] = lst
+        states[k] = v
+    result['states'] = states
 
+
+def final_xml2(api_source):
     headers = {'Accept': 'application/json'}
-    r = requests.get(api_source + de, headers=headers)
+    r = requests.get(api_source, headers=headers)
     if r.status_code != 200:
         raise Exception(f"Unexpected response with status code {r.status_code}: {r.text}")
     json = r.json()
-    # Bugfix as the sates are lists of lists which has no canonical XML mapping
-    if type(json['result'])==dict:
+    dict_math_entities = dict()
+    for result in json["result"]:
+        apply_zbmath_api_fixes(result)
+        dict_math_entities[result["id"]] = Converter(wrap="root").build(
+            result,
+            closed_tags_for=[[], '', [None], None])
+    return dict_math_entities
 
-        states = {}
-        for lst in json['result']['states']:
-            [k, v] = lst
-            states[k] = v
-        json['result']['states'] = states
-    # End of fix
-    return (
-        dict2xml.Converter(wrap="root")
-        .build(json, closed_tags_for=[
-            # Bugfix for wired XML output such as the string None or </>
-            [], '', [None], None
-        ])
-    )
+
+if __name__ == "__main__":
+    final_xml2(sys.argv[1])
