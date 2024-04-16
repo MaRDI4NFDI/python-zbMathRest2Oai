@@ -25,6 +25,12 @@
     <description xml:lang="en" descriptionType="TechnicalInfo">The prime \(k\)-tuples and small gaps between prime numbers are considered. Using a refinement of the Goldston-Pintz-Yildirim sieve method [\textit{D. A. Goldston} et al., Ann. Math. (2) 170, No. 2, 819--862 (2009; Zbl 1207.11096)] the author proves, for instance, the following estimates \[ \liminf_{n\to\infty}\,(p_{n+m}-p_n)\ll m^3\text{{e}}^{4m}, \quad \liminf_{n\to\infty}\,(p_{n+1}-p_n)\leq 600 \] with an absolute constant in sign \(\ll\). Here \(m\) is a natural number, and \(p_{\,l}\) denote the \(l\)-th prime number.</description>
   </descriptions>
    <subjects>
+   <subject subjectScheme="msc2020" classificationCode="11N05"/>
+   <subject>Distribution of primes</subject>
+   <subject subjectScheme="msc2020" classificationCode="11N36"/>
+   <subject>Applications of sieve methods</subject>
+ </subjects>
+   <!--
       <subjectScheme classificationCode="11N35"/>
       <subjectScheme classificationCode="11N13"/>
       <subjectScheme classificationCode="11N05"/>
@@ -73,7 +79,7 @@
       <subject>Selberg sieve</subject>
       <subject>symmetric polynomial</subject>
       <subject>symmetric matrix</subject>
-   </subjects>
+   </subjects> -->
 <relatedIdentifiers>
       <relatedIdentifier relatedIdentifierType="DOI" relationType="IsCitedBy" resourceTypeGeneral="Journal Article">/</relatedIdentifier>
       <relatedIdentifier relatedIdentifierType="DOI" relationType="IsCitedBy" resourceTypeGeneral="Journal Article">10.2307/1971450</relatedIdentifier>
