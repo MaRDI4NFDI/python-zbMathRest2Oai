@@ -9,32 +9,34 @@
     <xsl:template match="/">
             <resource>
 
-            <xsl:apply-templates select="root/result/links"/>
+            <xsl:apply-templates select="root/links"/>
             <creators>
-                <xsl:apply-templates select="root/result/contributors/authors"/>
+                <xsl:apply-templates select="root/contributors/authors"/>
             </creators>
             <relatedItems>
-                <xsl:apply-templates select="root/result/title"/>
-                <xsl:apply-templates select="root/result/document_type"/>
-                <xsl:apply-templates select="root/result/source/series/publisher"/>
-                <xsl:apply-templates select="root/result/source/series/year"/>
-                <xsl:apply-templates select="root/result/source/series/volume"/>
-                <xsl:apply-templates select="root/result/source/series/issue"/>
-                <xsl:apply-templates select="root/result/source/pages"/>
+                <xsl:apply-templates select="root/title"/>
+                <xsl:apply-templates select="root/document_type/description"/>
+                <xsl:apply-templates select="root/source/series/publisher"/>
+                <xsl:apply-templates select="root/source/series/year"/>
+                <xsl:apply-templates select="root/source/series/volume"/>
+                <xsl:apply-templates select="root/source/series/issue"/>
+                <xsl:apply-templates select="root/source/pages"/>
             </relatedItems>
 
                 <descriptions>
-                <xsl:apply-templates select="root/result/editorial_contributions/text"/>
+                <xsl:apply-templates select="root/editorial_contributions/text"/>
                 </descriptions>
             <subjects>
-                <xsl:apply-templates select="root/result/references/zbmath"/>
-                <xsl:apply-templates select="root/result/references/text"/>
-                <xsl:apply-templates select="root/result/keywords"/>
+             <!--   this part is commented for meanwhile  <xsl:apply-templates select="root/references/zbmath"/>
+                <xsl:apply-templates select="root/references/text"/>
+                <xsl:apply-templates select="root/keywords"/> -->
+                <xsl:apply-templates select="root/msc"/>
             </subjects>
              <relatedIdentifiers>
-                  <xsl:apply-templates select="root/result/references/doi"/>
+                  <xsl:apply-templates select="root/references/doi"/>
                </relatedIdentifiers>
          </resource>
+
          </xsl:template>
         <xsl:template match="links">
         <identifier identifierType="{type}">
@@ -64,7 +66,7 @@
             </title>
         </titles>
         </xsl:template>
-        <xsl:template match="document_type">
+        <xsl:template match="description">
         <resourceType resourceTypeGeneral="JournalArticle">
             <xsl:value-of select="."/>
         </resourceType>
@@ -87,8 +89,20 @@
 
         </description>
         </xsl:template>
-
-
+    <xsl:template match="msc">
+    <subject>
+      <xsl:attribute name="subjectScheme">
+        <xsl:value-of select="scheme"/>
+      </xsl:attribute>
+      <xsl:attribute name="classificationCode">
+        <xsl:value-of select="code"/>
+      </xsl:attribute>
+    </subject>
+    <subject>
+      <xsl:value-of select="text"/>
+    </subject>
+    </xsl:template>
+<!--
         <xsl:template match="zbmath">
         <xsl:variable name="mscValues">
             <xsl:apply-templates select="msc"/>
@@ -101,13 +115,13 @@
                 <xsl:value-of select="."/>
             </xsl:attribute>
         </subjectScheme>
-        </xsl:template>
+        </xsl:template> -->
         <xsl:template match="keywords">
         <subject>
             <xsl:value-of select="."/>
         </subject>
         </xsl:template>
-      <xsl:template match="root/result/references/text">
+      <xsl:template match="root/references/text">
       <subject>
         <xsl:value-of select="."/>
       </subject>
@@ -152,9 +166,3 @@
         </xsl:choose>
     </xsl:template>
 </xsl:stylesheet>
-
-
-
-
-
-
