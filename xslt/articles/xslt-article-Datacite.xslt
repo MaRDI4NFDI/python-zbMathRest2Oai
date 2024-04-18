@@ -13,31 +13,27 @@
             <creators>
                 <xsl:apply-templates select="root/contributors/authors"/>
             </creators>
-            <relatedItems>
-                <xsl:apply-templates select="root/title"/>
+
+                <descriptions>
+                <xsl:apply-templates select="root/editorial_contributions/text"/>
+                </descriptions>
+                       <xsl:apply-templates select="root/title"/>
                 <xsl:apply-templates select="root/document_type/description"/>
                 <xsl:apply-templates select="root/source/series/publisher"/>
                 <xsl:apply-templates select="root/source/series/year"/>
                 <xsl:apply-templates select="root/source/series/volume"/>
                 <xsl:apply-templates select="root/source/series/issue"/>
                 <xsl:apply-templates select="root/source/pages"/>
-            </relatedItems>
-
-                <descriptions>
-                <xsl:apply-templates select="root/editorial_contributions/text"/>
-                </descriptions>
             <subjects>
-             <!--   this part is commented for meanwhile  <xsl:apply-templates select="root/references/zbmath"/>
-                <xsl:apply-templates select="root/references/text"/>
-                <xsl:apply-templates select="root/keywords"/> -->
                 <xsl:apply-templates select="root/msc"/>
+                <xsl:apply-templates select="root/keywords"/>
             </subjects>
-             <relatedIdentifiers>
-                  <xsl:apply-templates select="root/references/doi"/>
-               </relatedIdentifiers>
+             <relatedItems>
+            <xsl:apply-templates select="root/references"/>
+            </relatedItems>
          </resource>
-
          </xsl:template>
+
         <xsl:template match="links">
         <identifier identifierType="{type}">
             <xsl:value-of select="identifier"/>
@@ -102,22 +98,10 @@
       <xsl:value-of select="text"/>
     </subject>
     </xsl:template>
-<!--
-        <xsl:template match="zbmath">
-        <xsl:variable name="mscValues">
-            <xsl:apply-templates select="msc"/>
-        </xsl:variable>
-        <xsl:copy-of select="$mscValues"/>
-        </xsl:template>
-        <xsl:template match="msc">
-        <subjectScheme>
-            <xsl:attribute name="classificationCode">
-                <xsl:value-of select="."/>
-            </xsl:attribute>
-        </subjectScheme>
-        </xsl:template> -->
-        <xsl:template match="keywords">
-        <subject>
+
+
+       <xsl:template match="keywords">
+        <subject subjectScheme="keyword">
             <xsl:value-of select="."/>
         </subject>
         </xsl:template>
@@ -125,6 +109,7 @@
       <subject>
         <xsl:value-of select="."/>
       </subject>
+
       </xsl:template>
         <xsl:template match="pages">
         <xsl:variable name="pagesText" select="normalize-space(.)"/>
@@ -147,22 +132,54 @@
             <xsl:value-of select="."/>
         </issue>
        </xsl:template>
-    <xsl:template match="references/doi">
-        <xsl:variable name="identifierType">
-             <xsl:choose>
-            <xsl:when test="self::doi">DOI</xsl:when>
-            </xsl:choose>
-        </xsl:variable>
-        <xsl:variable name="identifierValue" select="." />
-        <xsl:choose>
-            <xsl:when test="not(normalize-space($identifierValue))">
-                <relatedIdentifier relatedIdentifierType="DOI" relationType="IsCitedBy" resourceTypeGeneral="Journal Article">/</relatedIdentifier>
-            </xsl:when>
-            <xsl:otherwise>
-                <relatedIdentifier relatedIdentifierType="{$identifierType}" relationType="IsCitedBy" resourceTypeGeneral="Journal Article">
-                    <xsl:value-of select="substring($identifierValue, 1, string-length($identifierValue) - 1)"/>
-                </relatedIdentifier>
-            </xsl:otherwise>
-        </xsl:choose>
-    </xsl:template>
+  <!-- Template to match references and transform into relatedItems -->
+  <xsl:template match="references">
+    <xsl:variable name="position" select="position()"/>
+
+      <relatedItem relatedItemType="Journal Article" relationType="Cites">
+        <relatedItemIdentifier relatedItemIdentifierType="DOI">
+          <xsl:value-of select="doi"/>
+        </relatedItemIdentifier>
+        <position>
+          <xsl:value-of select="position"/>
+        </position>
+        <titles>
+          <title>
+            <xsl:value-of select="text"/>
+          </title>
+        </titles>
+        <!-- Loop through contributors -->
+  <xsl:for-each select="zbmath/author_codes">
+          <contributors>
+            <contributor contributorType="Other">
+              <contributorName nameType="Personal">
+                <xsl:value-of select="."/>
+              </contributorName>
+              <givenName>
+                <xsl:value-of select="substring-before(., '.')"/>
+              </givenName>
+              <familyName>
+                <xsl:value-of select="substring-after(., '.')"/>
+              </familyName>
+            </contributor>
+          </contributors>
+         </xsl:for-each>
+        <!-- Related Item Identifier -->
+        <relatedItemIdentifier relationType="Cites">
+          <xsl:value-of select="zbmath/document_id"/>
+        </relatedItemIdentifier>
+        <!-- Subjects -->
+        <subjects>
+          <xsl:for-each select="zbmath/msc">
+            <subject subjectScheme="classificationCode">
+              <xsl:value-of select="."/>
+            </subject>
+          </xsl:for-each>
+        </subjects>
+        <!-- Publication Year -->
+        <publicationYear>
+          <xsl:value-of select="zbmath/year"/>
+        </publicationYear>
+      </relatedItem>
+  </xsl:template>
 </xsl:stylesheet>
