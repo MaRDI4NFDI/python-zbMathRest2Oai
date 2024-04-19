@@ -39,7 +39,7 @@ class PlainXmlTest(unittest.TestCase):
                 doi = elem.text.strip()
                 doi_prefix, doi_suffix = split_doi(doi)
                 if doi_prefix is not None:
-                    elem.text = f"{doi_prefix}/"
+                    elem.text = f"{doi_prefix}"
                     if doi_suffix:
                         elem.attrib["suffix"] = doi_suffix
         transform = ET.XSLT(xslt) # is it a reserved word
