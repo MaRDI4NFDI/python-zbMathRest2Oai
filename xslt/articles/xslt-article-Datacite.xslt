@@ -145,7 +145,7 @@
         </titles>
         <!-- Loop through contributors -->
           <contributors>
-  <xsl:for-each select="zbmath/author_codes">
+          <xsl:for-each select="zbmath/author_codes">
             <contributor contributorType="Other">
               <contributorName nameType="Personal">
                 <xsl:value-of select="."/>
@@ -164,13 +164,11 @@
           <xsl:value-of select="zbmath/document_id"/>
         </relatedItemIdentifier>
         <!-- Subjects -->
-        <subjects>
-          <xsl:for-each select="zbmath/msc">
-            <subject subjectScheme="classificationCode">
-              <xsl:value-of select="."/>
-            </subject>
+         <subjects>
+            <xsl:for-each select="zbmath/msc">
+           <subject subjectScheme="msc2020" classificationCode="{.}"/>
           </xsl:for-each>
-        </subjects>
+         </subjects>
         <!-- Publication Year -->
         <publicationYear>
           <xsl:value-of select="zbmath/year"/>
@@ -178,3 +176,4 @@
       </relatedItem>
   </xsl:template>
 </xsl:stylesheet>
+
