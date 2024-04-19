@@ -105,12 +105,7 @@
             <xsl:value-of select="."/>
         </subject>
         </xsl:template>
-      <xsl:template match="root/references/text">
-      <subject>
-        <xsl:value-of select="."/>
-      </subject>
 
-      </xsl:template>
         <xsl:template match="pages">
         <xsl:variable name="pagesText" select="normalize-space(.)"/>
         <xsl:variable name="firstPage" select="substring-before($pagesText, '-')"/>
@@ -149,8 +144,8 @@
           </title>
         </titles>
         <!-- Loop through contributors -->
-  <xsl:for-each select="zbmath/author_codes">
           <contributors>
+  <xsl:for-each select="zbmath/author_codes">
             <contributor contributorType="Other">
               <contributorName nameType="Personal">
                 <xsl:value-of select="."/>
@@ -162,8 +157,8 @@
                 <xsl:value-of select="substring-after(., '.')"/>
               </familyName>
             </contributor>
-          </contributors>
          </xsl:for-each>
+          </contributors>
         <!-- Related Item Identifier -->
         <relatedItemIdentifier relationType="Cites">
           <xsl:value-of select="zbmath/document_id"/>
