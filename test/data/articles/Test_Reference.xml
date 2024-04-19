@@ -1,5 +1,7 @@
+
 <resource xmlns="http://datacite.org/schema/kernel-4"
-          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://datacite.org/schema/kernel-4 http://schema.datacite.org/meta/kernel-4/metadata.xsd">
    <identifier identifierType="doi">10.4007/annals.2015.181.1.7</identifier>
    <identifier identifierType="arxiv">1311.4600</identifier>
    <creators>
@@ -49,8 +51,6 @@
                <givenName>elliott</givenName>
                <familyName>peter-d-t-a</familyName>
             </contributor>
-         </contributors>
-         <contributors>
             <contributor contributorType="Other">
                <contributorName nameType="Personal">halberstam.heini</contributorName>
                <givenName>halberstam</givenName>
@@ -58,9 +58,9 @@
             </contributor>
          </contributors>
          <relatedItemIdentifier relationType="Cites">3377327</relatedItemIdentifier>
-         <subjects>
-            <subject subjectScheme="classificationCode">11N35</subject>
-            <subject subjectScheme="classificationCode">11N13</subject>
+          <subjects>
+            <subject subjectScheme="msc2020" classificationCode="11N35"/>
+            <subject subjectScheme="msc2020" classificationCode="11N13"/>
          </subjects>
          <publicationYear>1970</publicationYear>
       </relatedItem>
@@ -76,8 +76,6 @@
                <givenName>friedlander</givenName>
                <familyName>john-b</familyName>
             </contributor>
-         </contributors>
-         <contributors>
             <contributor contributorType="Other">
                <contributorName nameType="Personal">granville.andrew-j</contributorName>
                <givenName>granville</givenName>
@@ -86,9 +84,9 @@
          </contributors>
          <relatedItemIdentifier relationType="Cites">4097497</relatedItemIdentifier>
          <subjects>
-            <subject subjectScheme="classificationCode">11N05</subject>
-            <subject subjectScheme="classificationCode">11N13</subject>
-            <subject subjectScheme="classificationCode">11N35</subject>
+            <subject subjectScheme="msc2020" classificationCode="11N05"/>
+            <subject subjectScheme="msc2020" classificationCode="11N13"/>
+            <subject subjectScheme="msc2020" classificationCode="11N35"/>
          </subjects>
          <publicationYear>1989</publicationYear>
       </relatedItem>
@@ -104,22 +102,16 @@
                <givenName>graham</givenName>
                <familyName>sidney-w</familyName>
             </contributor>
-         </contributors>
-         <contributors>
             <contributor contributorType="Other">
                <contributorName nameType="Personal">yildirim.cem-yalcin</contributorName>
                <givenName>yildirim</givenName>
                <familyName>cem-yalcin</familyName>
             </contributor>
-         </contributors>
-         <contributors>
             <contributor contributorType="Other">
                <contributorName nameType="Personal">goldston.daniel-alan</contributorName>
                <givenName>goldston</givenName>
                <familyName>daniel-alan</familyName>
             </contributor>
-         </contributors>
-         <contributors>
             <contributor contributorType="Other">
                <contributorName nameType="Personal">pintz.janos</contributorName>
                <givenName>pintz</givenName>
@@ -127,9 +119,9 @@
             </contributor>
          </contributors>
          <relatedItemIdentifier relationType="Cites">5551831</relatedItemIdentifier>
-         <subjects>
-            <subject subjectScheme="classificationCode">11N25</subject>
-            <subject subjectScheme="classificationCode">11N36</subject>
+          <subjects>
+            <subject subjectScheme="msc2020" classificationCode="11N25"/>
+            <subject subjectScheme="msc2020" classificationCode="11N36"/>
          </subjects>
          <publicationYear>2009</publicationYear>
       </relatedItem>
@@ -145,15 +137,11 @@
                <givenName>yildirim</givenName>
                <familyName>cem-yalcin</familyName>
             </contributor>
-         </contributors>
-         <contributors>
             <contributor contributorType="Other">
                <contributorName nameType="Personal">pintz.janos</contributorName>
                <givenName>pintz</givenName>
                <familyName>janos</familyName>
             </contributor>
-         </contributors>
-         <contributors>
             <contributor contributorType="Other">
                <contributorName nameType="Personal">goldston.daniel-alan</contributorName>
                <givenName>goldston</givenName>
@@ -162,8 +150,8 @@
          </contributors>
          <relatedItemIdentifier relationType="Cites">5135166</relatedItemIdentifier>
          <subjects>
-            <subject subjectScheme="classificationCode">11N05</subject>
-            <subject subjectScheme="classificationCode">11N13</subject>
+            <subject subjectScheme="msc2020" classificationCode="11N05"/>
+            <subject subjectScheme="msc2020" classificationCode="11N13"/>
          </subjects>
          <publicationYear>2006</publicationYear>
       </relatedItem>
@@ -179,15 +167,11 @@
                <givenName>yildirim</givenName>
                <familyName>cem-yalcin</familyName>
             </contributor>
-         </contributors>
-         <contributors>
             <contributor contributorType="Other">
                <contributorName nameType="Personal">pintz.janos</contributorName>
                <givenName>pintz</givenName>
                <familyName>janos</familyName>
             </contributor>
-         </contributors>
-         <contributors>
             <contributor contributorType="Other">
                <contributorName nameType="Personal">goldston.daniel-alan</contributorName>
                <givenName>goldston</givenName>
@@ -196,9 +180,9 @@
          </contributors>
          <relatedItemIdentifier relationType="Cites">5610431</relatedItemIdentifier>
          <subjects>
-            <subject subjectScheme="classificationCode">11N05</subject>
-            <subject subjectScheme="classificationCode">11N36</subject>
-            <subject subjectScheme="classificationCode">11N13</subject>
+            <subject subjectScheme="msc2020" classificationCode="11N05"/>
+            <subject subjectScheme="msc2020" classificationCode="11N36"/>
+            <subject subjectScheme="msc2020" classificationCode="11N13"/>
          </subjects>
          <publicationYear>2009</publicationYear>
       </relatedItem>
@@ -214,8 +198,6 @@
                <givenName>yildirim</givenName>
                <familyName>cem-yalcin</familyName>
             </contributor>
-         </contributors>
-         <contributors>
             <contributor contributorType="Other">
                <contributorName nameType="Personal">goldston.daniel-alan</contributorName>
                <givenName>goldston</givenName>
@@ -224,8 +206,8 @@
          </contributors>
          <relatedItemIdentifier relationType="Cites">5170700</relatedItemIdentifier>
          <subjects>
-            <subject subjectScheme="classificationCode">11N05</subject>
-            <subject subjectScheme="classificationCode">11N37</subject>
+            <subject subjectScheme="msc2020" classificationCode="11N05"/>
+            <subject subjectScheme="msc2020" classificationCode="11N37"/>
          </subjects>
          <publicationYear>2007</publicationYear>
       </relatedItem>
@@ -243,9 +225,9 @@
             </contributor>
          </contributors>
          <relatedItemIdentifier relationType="Cites">6587992</relatedItemIdentifier>
-         <subjects>
-            <subject subjectScheme="classificationCode">11N35</subject>
-            <subject subjectScheme="classificationCode">11N05</subject>
+        <subjects>
+            <subject subjectScheme="msc2020" classificationCode="11N35"/>
+            <subject subjectScheme="msc2020" classificationCode="11N05"/>
          </subjects>
          <publicationYear>2014</publicationYear>
       </relatedItem>
@@ -263,17 +245,17 @@
             </contributor>
          </contributors>
          <relatedItemIdentifier relationType="Cites">195021</relatedItemIdentifier>
-         <subjects>
-            <subject subjectScheme="classificationCode">11-03</subject>
-            <subject subjectScheme="classificationCode">01A75</subject>
-            <subject subjectScheme="classificationCode">32-03</subject>
-            <subject subjectScheme="classificationCode">11M06</subject>
-            <subject subjectScheme="classificationCode">11M41</subject>
-            <subject subjectScheme="classificationCode">11N35</subject>
-            <subject subjectScheme="classificationCode">11N36</subject>
-            <subject subjectScheme="classificationCode">11F72</subject>
-            <subject subjectScheme="classificationCode">32N05</subject>
-            <subject subjectScheme="classificationCode">32N15</subject>
+          <subjects>
+            <subject subjectScheme="msc2020" classificationCode="11-03"/>
+            <subject subjectScheme="msc2020" classificationCode="01A75"/>
+            <subject subjectScheme="msc2020" classificationCode="32-03"/>
+            <subject subjectScheme="msc2020" classificationCode="11M06"/>
+            <subject subjectScheme="msc2020" classificationCode="11M41"/>
+            <subject subjectScheme="msc2020" classificationCode="11N35"/>
+            <subject subjectScheme="msc2020" classificationCode="11N36"/>
+            <subject subjectScheme="msc2020" classificationCode="11F72"/>
+            <subject subjectScheme="msc2020" classificationCode="32N05"/>
+            <subject subjectScheme="msc2020" classificationCode="32N15"/>
          </subjects>
          <publicationYear>1991</publicationYear>
       </relatedItem>
@@ -292,11 +274,11 @@
          </contributors>
          <relatedItemIdentifier relationType="Cites">6302171</relatedItemIdentifier>
          <subjects>
-            <subject subjectScheme="classificationCode">11N05</subject>
-            <subject subjectScheme="classificationCode">11N13</subject>
-            <subject subjectScheme="classificationCode">11N35</subject>
-            <subject subjectScheme="classificationCode">11N36</subject>
-            <subject subjectScheme="classificationCode">11L07</subject>
+            <subject subjectScheme="msc2020" classificationCode="11N05"/>
+            <subject subjectScheme="msc2020" classificationCode="11N13"/>
+            <subject subjectScheme="msc2020" classificationCode="11N35"/>
+            <subject subjectScheme="msc2020" classificationCode="11N36"/>
+            <subject subjectScheme="msc2020" classificationCode="11L07"/>
          </subjects>
          <publicationYear>2014</publicationYear>
       </relatedItem>
