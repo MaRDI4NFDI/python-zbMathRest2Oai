@@ -39,22 +39,21 @@
             <xsl:value-of select="identifier"/>
         </identifier>
         </xsl:template>
-        <xsl:template match="authors">
-        <creator>
-            <xsl:variable name="givenName" select="substring-before(name, ', ')"/>
-            <xsl:variable name="familyName" select="substring-after(name, ', ')"/>
-
-            <creatorName nameType="Personal">
-                <xsl:value-of select="concat($familyName, ', ', $givenName)"/>
-            </creatorName>
-            <givenName>
-                <xsl:value-of select="$givenName"/>
-            </givenName>
-            <familyName>
-                <xsl:value-of select="$familyName"/>
-            </familyName>
-        </creator>
-        </xsl:template>
+         <xsl:template match="authors">
+    <creator>
+      <!-- Transform 'codes' element into 'creatorName' -->
+      <creatorName nameType="Personal">
+        <xsl:value-of select="codes"/>
+      </creatorName>
+      <!-- Split 'name' into 'givenName' and 'familyName' -->
+      <givenName>
+        <xsl:value-of select="substring-before(name, ', ')"/>
+      </givenName>
+      <familyName>
+        <xsl:value-of select="substring-after(name, ', ')"/>
+      </familyName>
+    </creator>
+  </xsl:template>
         <xsl:template match="title">
         <titles>
             <title xml:lang="en">
