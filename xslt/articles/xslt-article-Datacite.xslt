@@ -1,3 +1,5 @@
+<!-- XSLT code to transform the zbmath metadata acoording the metadata Scheme of Datacite
+Made by Shiraz Malla Mohamad member of zbmath Team-->
 <xsl:stylesheet version="1.0"
                 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
                 xmlns="http://datacite.org/schema/kernel-4"
