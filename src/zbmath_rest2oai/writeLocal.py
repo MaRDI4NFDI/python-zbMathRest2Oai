@@ -1,14 +1,11 @@
-import json
-
-import requests
+import sys
 import os
-
-from requests.auth import HTTPBasicAuth
+sys.path.append(os.getcwd())
 
 from zbmath_rest2oai import getAsXml
 
 
-def write_oai(api_source):
+def write_local(api_source):
     xml = getAsXml.final_xml2(api_source)
     with open('temp_folder_software_metadata/{}.xml'.format(apisource), "wb") as f:
         f.write(xml)
@@ -16,4 +13,4 @@ def write_oai(api_source):
 
 if __name__ == '__main__':
     import sys
-    write_oai(sys.argv[1])
+    write_local(sys.argv[1])
