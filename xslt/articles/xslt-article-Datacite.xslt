@@ -33,13 +33,16 @@
             </relatedItems>
          </resource>
          </xsl:template>
-
+<!-- Template for processing identifiers -->
         <xsl:template match="links">
+            <!-- Transform links into identifiers -->
         <identifier identifierType="{type}">
             <xsl:value-of select="identifier"/>
         </identifier>
         </xsl:template>
+    <!-- Template for processing authors -->
          <xsl:template match="authors">
+             <!-- Transform authors into creators -->
     <creator>
       <!-- Transform 'codes' element into 'creatorName' -->
       <creatorName nameType="Personal">
@@ -54,37 +57,49 @@
       </familyName>
     </creator>
   </xsl:template>
+    <!-- Template for processing titles -->
         <xsl:template match="title">
+            <!-- Transform titles into structured titles -->
         <titles>
             <title xml:lang="en">
                 <xsl:value-of select="title"/>
             </title>
         </titles>
         </xsl:template>
+    <!-- Template for processing description -->
         <xsl:template match="description">
+            <!-- Transform description with its  resourceType -->
         <resourceType resourceTypeGeneral="JournalArticle">
             <xsl:value-of select="."/>
         </resourceType>
         </xsl:template>
+    <!-- Template for processing publisher -->
         <xsl:template match="publisher">
+            <!-- Transform publisher -->
         <publisher>
             <xsl:value-of select="."/>
         </publisher>
         </xsl:template>
+     <!-- Template for processing publication year -->
         <xsl:template match="year">
+            <!-- Transform year -->
         <publicationYear>
             <xsl:value-of select="."/>
         </publicationYear>
         </xsl:template>
-
+<!-- Template for processing text node into description text with its subproperty -->
         <xsl:template match="text">
+            <!-- Transformation of  description text -->
         <description xml:lang="en" descriptionType="TechnicalInfo">
 
          <xsl:value-of select="normalize-space(.)"/>
 
         </description>
         </xsl:template>
+     <!-- Template for processing MSC node  (Mathematics Subject Classification)
+      transforming all its valuable nodes -->
     <xsl:template match="msc">
+        <!-- Transformaion of  MSC  -->
     <subject>
       <xsl:attribute name="subjectScheme">
         <xsl:value-of select="scheme"/>
@@ -98,14 +113,18 @@
     </subject>
     </xsl:template>
 
+<!-- Template for processing keywords it is also under the subject section with MSC'S
+with its own subjectscheme -->
 
        <xsl:template match="keywords">
+            <!-- Transformation of  keywords -->
         <subject subjectScheme="keyword">
             <xsl:value-of select="."/>
         </subject>
         </xsl:template>
-
+<!-- Template for processing pages -->
         <xsl:template match="pages">
+            <!-- Transformation of  pages separating our xml node into two nodes first and last page -->
         <xsl:variable name="pagesText" select="normalize-space(.)"/>
         <xsl:variable name="firstPage" select="substring-before($pagesText, '-')"/>
         <xsl:variable name="lastPage" select="substring-after($pagesText, '-')"/>
@@ -115,19 +134,33 @@
         <lastPage>
             <xsl:value-of select="$lastPage"/>
         </lastPage>
+            <!-- Template for processing volume -->
         </xsl:template>
+    <!-- Transformation of  volume -->
         <xsl:template match="volume">
         <volume>
             <xsl:value-of select="."/>
         </volume>
         </xsl:template>
+    <!-- Template for processing issue -->
         <xsl:template match="issue">
+            <!-- Transformation of issue-->
         <issue>
             <xsl:value-of select="."/>
         </issue>
+
        </xsl:template>
-  <!-- Template to match references and transform into relatedItems -->
+  <!-- Template to match references and transform into relatedItems
+  references has also two iportant sections
+  the first section has doi node and it is an important related identifier but it is not
+  available in all of references
+  the second part has the zbmath document_id which is our own identifier
+  and it is available in all of references -->
   <xsl:template match="references">
+      <!-- Transformation of  references
+       relateditem - relateditem identifier and related identifiers
+       using out all of our valuable references nodes in order to provide a perfect matching with Datacite-->
+
     <xsl:variable name="position" select="position()"/>
 
       <relatedItem relatedItemType="Journal Article" relationType="Cites">
@@ -142,7 +175,8 @@
             <xsl:value-of select="text"/>
           </title>
         </titles>
-        <!-- Loop through contributors -->
+        <!-- Loop through contributors
+        here we use the author_id or author_codes as identifiers-->
           <contributors>
           <xsl:for-each select="zbmath/author_codes">
             <contributor contributorType="Other">
@@ -158,7 +192,8 @@
             </contributor>
          </xsl:for-each>
           </contributors>
-        <!-- Related Item Identifier -->
+        <!-- Related Item Identifier  and here we use the document_id
+        which is the zbmath identifer as we mentioned above -->
         <relatedItemIdentifier relationType="Cites">
           <xsl:value-of select="zbmath/document_id"/>
         </relatedItemIdentifier>
