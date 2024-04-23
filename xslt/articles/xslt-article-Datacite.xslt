@@ -8,7 +8,9 @@
     <xsl:output method="xml" indent="yes"/>
     <xsl:template match="/">
             <resource>
-
+<!-- we have here the roots of the metadata : extracted from our plain.xml and then transformed to the file called
+Test_Reference.xml following the properties and subproperties of the metadata Schema of Datacite.
+below we can find every root and its matched node as well -->
             <xsl:apply-templates select="root/links"/>
             <creators>
                 <xsl:apply-templates select="root/contributors/authors"/>
