@@ -38,5 +38,5 @@ if __name__ == '__main__':
         sys.exit(1)
     api_source = sys.argv[1]
     prefix = sys.argv[2]
-    auth = ('swmath', '3Lye4iH5mdXcjDQipN9g')
-    write_oai(api_source, prefix, auth)
+
+
