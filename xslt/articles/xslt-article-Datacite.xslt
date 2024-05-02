@@ -161,57 +161,65 @@ with its own subjectscheme -->
   the second part has the zbmath document_id which is our own identifier
   and it is available in all of references -->
   <xsl:template match="references">
-      <!-- Transformation of  references
-       relateditem - relateditem identifier and related identifiers
-       using out all of our valuable references nodes in order to provide a perfect matching with Datacite-->
+    <!-- Transformation of references
+    relateditem - relateditem identifier and related identifiers
+    using out all of our valuable references nodes in order to provide a perfect matching with Datacite-->
 
     <xsl:variable name="position" select="position()"/>
 
-      <relatedItem relatedItemType="Journal Article" relationType="Cites">
-        <relatedItemIdentifier relatedItemIdentifierType="DOI">
-          <xsl:value-of select="doi"/>
-        </relatedItemIdentifier>
-        <position>
-          <xsl:value-of select="position"/>
-        </position>
-        <titles>
-          <title>
-            <xsl:value-of select="text"/>
-          </title>
-        </titles>
-        <!-- Loop through contributors
-        here we use the author_id or author_codes as identifiers-->
-          <contributors>
-          <xsl:for-each select="zbmath/author_codes">
-            <contributor contributorType="Other">
-              <contributorName nameType="Personal">
-                <xsl:value-of select="."/>
-              </contributorName>
-              <givenName>
-                <xsl:value-of select="substring-before(., '.')"/>
-              </givenName>
-              <familyName>
-                <xsl:value-of select="substring-after(., '.')"/>
-              </familyName>
-            </contributor>
-         </xsl:for-each>
-          </contributors>
-        <!-- Related Item Identifier  and here we use the document_id
-        which is the zbmath identifer as we mentioned above -->
-        <relatedItemIdentifier relationType="Cites">
-          <xsl:value-of select="zbmath/document_id"/>
-        </relatedItemIdentifier>
-        <!-- Subjects -->
-         <subjects>
-            <xsl:for-each select="zbmath/msc">
-           <subject subjectScheme="msc2020" classificationCode="{.}"/>
-          </xsl:for-each>
-         </subjects>
-        <!-- Publication Year -->
-        <publicationYear>
-          <xsl:value-of select="zbmath/year"/>
-        </publicationYear>
-      </relatedItem>
-  </xsl:template>
+    <!-- Select only the doi elements that have non-empty values -->
+    <xsl:variable name="nonEmptyDOIs" select="doi[normalize-space()]"/>
+
+    <!-- Check if there are any non-empty doi elements -->
+    <xsl:if test="$nonEmptyDOIs">
+        <xsl:for-each select="$nonEmptyDOIs">
+            <relatedItem relatedItemType="Journal Article" relationType="Cites">
+                <relatedItemIdentifier relatedItemIdentifierType="DOI">
+                    <xsl:value-of select="."/>
+                </relatedItemIdentifier>
+                <position>
+                    <xsl:value-of select="$position"/>
+                </position>
+                <titles>
+                    <title>
+                        <xsl:value-of select="../text"/>
+                    </title>
+                </titles>
+                <!-- Loop through contributors
+                here we use the author_id or author_codes as identifiers-->
+                <contributors>
+                    <xsl:for-each select="../zbmath/author_codes">
+                        <contributor contributorType="Other">
+                            <contributorName nameType="Personal">
+                                <xsl:value-of select="."/>
+                            </contributorName>
+                            <givenName>
+                                <xsl:value-of select="substring-before(., '.')"/>
+                            </givenName>
+                            <familyName>
+                                <xsl:value-of select="substring-after(., '.')"/>
+                            </familyName>
+                        </contributor>
+                    </xsl:for-each>
+                </contributors>
+                <!-- Related Item Identifier  and here we use the document_id
+                which is the zbmath identifer as we mentioned above -->
+                <relatedItemIdentifier relationType="Cites">
+                    <xsl:value-of select="../zbmath/document_id"/>
+                </relatedItemIdentifier>
+                <!-- Subjects -->
+                <subjects>
+                    <xsl:for-each select="../zbmath/msc">
+                        <subject subjectScheme="msc2020" classificationCode="{.}"/>
+                    </xsl:for-each>
+                </subjects>
+                <!-- Publication Year -->
+                <publicationYear>
+                    <xsl:value-of select="../zbmath/year"/>
+                </publicationYear>
+            </relatedItem>
+        </xsl:for-each>
+    </xsl:if>
+</xsl:template>
 </xsl:stylesheet>
 
