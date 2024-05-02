@@ -38,7 +38,7 @@
       <subject subjectScheme="keyword">symmetric polynomial</subject>
       <subject subjectScheme="keyword">symmetric matrix</subject>
    </subjects>
-   <relatedItems>
+   <relatedIdentifiers>
       <relatedItem relatedItemType="Journal Article" relationType="Cites">
          <relatedItemIdentifier relatedItemIdentifierType="DOI"/>
          <position>1</position>
@@ -282,5 +282,5 @@
          </subjects>
          <publicationYear>2014</publicationYear>
       </relatedItem>
-   </relatedItems>
+   </relatedIdentifiers>
 </resource>
