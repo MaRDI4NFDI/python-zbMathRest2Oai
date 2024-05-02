@@ -40,31 +40,6 @@
    </subjects>
    <relatedIdentifiers>
       <relatedItem relatedItemType="Journal Article" relationType="Cites">
-         <relatedItemIdentifier relatedItemIdentifierType="DOI"/>
-         <position>1</position>
-         <titles>
-            <title>P. D. T. A. Elliott and H. Halberstam, ''A conjecture in prime number theory,'' in Symposia Mathematica, Vol. IV, London: Academic Press, 1970, pp. 59-72.</title>
-         </titles>
-         <contributors>
-            <contributor contributorType="Other">
-               <contributorName nameType="Personal">elliott.peter-d-t-a</contributorName>
-               <givenName>elliott</givenName>
-               <familyName>peter-d-t-a</familyName>
-            </contributor>
-            <contributor contributorType="Other">
-               <contributorName nameType="Personal">halberstam.heini</contributorName>
-               <givenName>halberstam</givenName>
-               <familyName>heini</familyName>
-            </contributor>
-         </contributors>
-         <relatedItemIdentifier relationType="Cites">3377327</relatedItemIdentifier>
-          <subjects>
-            <subject subjectScheme="msc2020" classificationCode="11N35"/>
-            <subject subjectScheme="msc2020" classificationCode="11N13"/>
-         </subjects>
-         <publicationYear>1970</publicationYear>
-      </relatedItem>
-      <relatedItem relatedItemType="Journal Article" relationType="Cites">
          <relatedItemIdentifier relatedItemIdentifierType="DOI">10.2307/1971450</relatedItemIdentifier>
          <position>2</position>
          <titles>
@@ -210,54 +185,6 @@
             <subject subjectScheme="msc2020" classificationCode="11N37"/>
          </subjects>
          <publicationYear>2007</publicationYear>
-      </relatedItem>
-      <relatedItem relatedItemType="Journal Article" relationType="Cites">
-         <relatedItemIdentifier relatedItemIdentifierType="DOI"/>
-         <position>7</position>
-         <titles>
-            <title>D. H. J. Polymath, New equidistribution estimates of Zhang type, and bounded gaps between primes.</title>
-         </titles>
-         <contributors>
-            <contributor contributorType="Other">
-               <contributorName nameType="Personal">polymath.d-h-j</contributorName>
-               <givenName>polymath</givenName>
-               <familyName>d-h-j</familyName>
-            </contributor>
-         </contributors>
-         <relatedItemIdentifier relationType="Cites">6587992</relatedItemIdentifier>
-        <subjects>
-            <subject subjectScheme="msc2020" classificationCode="11N35"/>
-            <subject subjectScheme="msc2020" classificationCode="11N05"/>
-         </subjects>
-         <publicationYear>2014</publicationYear>
-      </relatedItem>
-      <relatedItem relatedItemType="Journal Article" relationType="Cites">
-         <relatedItemIdentifier relatedItemIdentifierType="DOI"/>
-         <position>8</position>
-         <titles>
-            <title>A. Selberg, Collected Papers. Vol. II, New York: Springer-Verlag, 1991.</title>
-         </titles>
-         <contributors>
-            <contributor contributorType="Other">
-               <contributorName nameType="Personal">selberg.atle</contributorName>
-               <givenName>selberg</givenName>
-               <familyName>atle</familyName>
-            </contributor>
-         </contributors>
-         <relatedItemIdentifier relationType="Cites">195021</relatedItemIdentifier>
-          <subjects>
-            <subject subjectScheme="msc2020" classificationCode="11-03"/>
-            <subject subjectScheme="msc2020" classificationCode="01A75"/>
-            <subject subjectScheme="msc2020" classificationCode="32-03"/>
-            <subject subjectScheme="msc2020" classificationCode="11M06"/>
-            <subject subjectScheme="msc2020" classificationCode="11M41"/>
-            <subject subjectScheme="msc2020" classificationCode="11N35"/>
-            <subject subjectScheme="msc2020" classificationCode="11N36"/>
-            <subject subjectScheme="msc2020" classificationCode="11F72"/>
-            <subject subjectScheme="msc2020" classificationCode="32N05"/>
-            <subject subjectScheme="msc2020" classificationCode="32N15"/>
-         </subjects>
-         <publicationYear>1991</publicationYear>
       </relatedItem>
       <relatedItem relatedItemType="Journal Article" relationType="Cites">
          <relatedItemIdentifier relatedItemIdentifierType="DOI">10.4007/annals.2014.179.3.7</relatedItemIdentifier>
