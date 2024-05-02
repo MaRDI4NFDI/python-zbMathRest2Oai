@@ -32,9 +32,9 @@ below we can find every root and its matched node as well -->
                 <xsl:apply-templates select="root/msc"/>
                 <xsl:apply-templates select="root/keywords"/>
             </subjects>
-             <relatedItems>
+             <relatedIdentifiers>
             <xsl:apply-templates select="root/references"/>
-            </relatedItems>
+            </relatedIdentifiers>
          </resource>
          </xsl:template>
 <!-- Template for processing identifiers -->
