@@ -8,6 +8,7 @@
 
 
 <xsl:output method="xml" indent="yes"/>
+<!-- this xslt file is made to map the plain.xml with reference.xml , within XSLT code -->
 <xsl:template match="/">
   <oai_zb_preview:zbmath>
     <zbmath:author>
@@ -152,7 +153,7 @@
                             </xsl:when>
                             <xsl:otherwise>
                                 <xsl:value-of select="identifier"/>
-                            </xsl:otherwise>
+                            </xsl:otherwise> <!-- reuse it for Datacite with a proper way for Datacite -->
                         </xsl:choose>
                     </zbmath:link>
                 </xsl:for-each>

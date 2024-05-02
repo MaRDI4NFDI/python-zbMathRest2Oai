@@ -23,7 +23,11 @@ def split_doi(doi):
             return match.group(1), doi.replace(match.group(1), '', 1).lstrip('/')
     return None, None
 
-os.chdir(r"C:\Users\smm\PycharmProjects\python-zbMathRest2Oai")
+#os.chdir(r"C:\Users\smm\PycharmProjects\python-zbMathRest2Oai")
+os.chdir("data")
+
+home_dir = os.path.expanduser("~")
+os.chdir(os.path.join(home_dir, "PycharmProjects", "python-zbMathRest2Oai"))
 class PlainXmlTest(unittest.TestCase):
     def test_similarity(self):
 
