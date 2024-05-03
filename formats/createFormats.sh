@@ -8,7 +8,7 @@ printf "\n\nCreate Format datacite\n\n"
 curl --noproxy '*' -X POST -H 'Content-Type: application/json' -H  "Authorization: Basic $AUTH" -i 'https://oai-input.portal.mardi4nfdi.de/oai-backend/format' --data '{"metadataPrefix":"datacite","schemaLocation":"https://schema.datacite.org/meta/kernel-4.0/metadata.xsd","schemaNamespace":"http://datacite.org/schema/kernel-4","identifierXpath":""}'
 
 printf "\n\nCreate Format datacite_swmath\n\n"
-curl --noproxy '*' -X POST -H 'Content-Type: application/json' -H  "Authorization: Basic $AUTH" -i 'https://oai-input.portal.mardi4nfdi.de/oai-backend/format' --data '{"metadataPrefix":"datacite","schemaLocation":"https://github.com/MaRDI4NFDI/python-zbMathRest2Oai/blob/main/test/data/software/swmath2datacite_software_schema.xsd,"schemaNamespace":"http://datacite.org/schema/kernel-4","identifierXpath":""}'
+curl --noproxy '*' -X POST -H 'Content-Type: application/json' -H  "Authorization: Basic $AUTH" -i 'https://oai-input.portal.mardi4nfdi.de/oai-backend/format' --data '{"metadataPrefix":"datacite_swmath","schemaLocation":"https://github.com/MaRDI4NFDI/python-zbMathRest2Oai/blob/main/test/data/software/swmath2datacite_software_schema.xsd","schemaNamespace":"http://datacite.org/schema/kernel-4","identifierXpath":""}'
 
 
 printf "\n\nCreate Format datacite\n\n"
