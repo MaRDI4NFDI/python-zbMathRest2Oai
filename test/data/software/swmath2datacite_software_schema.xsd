@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created with Liquid Technologies Online Tools 1.0 (https://www.liquid-technologies.com) -->
+<xs:schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://datacite.org/schema/kernel-4" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="schema1.xsd" namespace="http://www.w3.org/XML/1998/namespace" />
+  <xs:element name="resource">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" name="identifier">
+          <xs:complexType>
+            <xs:simpleContent>
+              <xs:extension base="xs:string">
+                <xs:attribute name="identifierType" type="xs:string" use="required" />
+              </xs:extension>
+            </xs:simpleContent>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="creators">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="creator">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="creatorName">
+                      <xs:complexType>
+                        <xs:simpleContent>
+                          <xs:extension base="xs:string">
+                            <xs:attribute name="nameType" type="xs:string" use="required" />
+                          </xs:extension>
+                        </xs:simpleContent>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="givenName" type="xs:string" />
+                    <xs:element name="familyName" type="xs:string" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="relatedItems">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="titles">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="title">
+                      <xs:complexType>
+                        <xs:simpleContent>
+                          <xs:extension base="xs:string">
+                            <xs:attribute ref="xml:lang" use="required" />
+                          </xs:extension>
+                        </xs:simpleContent>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="resourceType">
+                <xs:complexType>
+                  <xs:simpleContent>
+                    <xs:extension base="xs:string">
+                      <xs:attribute name="resourceTypeGeneral" type="xs:string" use="required" />
+                    </xs:extension>
+                  </xs:simpleContent>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="publisher" type="xs:string" />
+              <xs:element name="publicationYear" type="xs:unsignedShort" />
+              <xs:element name="volume" type="xs:unsignedByte" />
+              <xs:element name="issue" type="xs:unsignedByte" />
+              <xs:element name="firstPage" type="xs:unsignedShort" />
+              <xs:element name="lastPage" type="xs:unsignedShort" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="descriptions">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="subject" type="xs:string" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="relatedIdentifiers">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="relatedIdentifier">
+                <xs:complexType>
+                  <xs:simpleContent>
+                    <xs:extension base="xs:string">
+                      <xs:attribute name="relatedIdentifierType" type="xs:string" use="required" />
+                      <xs:attribute name="relationType" type="xs:string" use="required" />
+                      <xs:attribute name="resourceTypeGeneral" type="xs:string" use="required" />
+                    </xs:extension>
+                  </xs:simpleContent>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="subjects">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element maxOccurs="unbounded" name="subjectScheme">
+                <xs:complexType>
+                  <xs:attribute name="classificationCode" type="xs:string" use="required" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element maxOccurs="unbounded" name="subject" type="xs:string" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
