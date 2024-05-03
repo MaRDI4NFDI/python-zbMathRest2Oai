@@ -24,6 +24,8 @@ def final_xml2(api_source):
         raise Exception(f"Unexpected response with status code {r.status_code}: {r.text}")
     json = r.json()
     dict_math_entities = dict()
+    print(json['status'])
+    print(json['last_id'])
     for result in json["result"]:
         apply_zbmath_api_fixes(result)
         dict_math_entities[result["id"]] = Converter(wrap="root").build(
