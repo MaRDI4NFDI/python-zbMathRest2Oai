@@ -25,6 +25,9 @@ def final_xml2(api_source):
     json = r.json()
     dict_math_entities = dict()
     print(json['status'])
+    with open('last_id.txt','wa') as f:
+        f.write(json['last_id'])
+        f.close()
     print(json['last_id'])
     for result in json["result"]:
         apply_zbmath_api_fixes(result)
