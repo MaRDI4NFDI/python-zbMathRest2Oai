@@ -2,8 +2,5 @@
 
 #mkdir temp_folder_software_metadata
 echo 0 > last_id.txt
-mkdir temp_folder_software_metadata
-python3 run_write_local_all_software.py
-zip -r swmath_metadata.zip temp_folder_software_metadata/
-rm -r temp_folder_software_metadata
+python3 run_get_all_de_software.py
 rm last_id.txt
