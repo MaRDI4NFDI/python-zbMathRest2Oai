@@ -1,4 +1,3 @@
-from dict2xml import Converter
 import requests
 import sys
 
