@@ -8,6 +8,11 @@ if [ -f last_id.txt ]; then
   rm last_id.txt
   echo "last_id.txt deleted"
 fi
+if [ -f swmath_metadata.zip ]; then
+  echo "swmath_metadata.zip exists"
+  rm swmath_metadata.zip
+  echo "swmath_metadata.zip deleted"
+fi
 if [ -r temp_folder_software_metadata ]; then
   echo "temp_folder_software_metadata exists"
   rm -r temp_folder_software_metadata
