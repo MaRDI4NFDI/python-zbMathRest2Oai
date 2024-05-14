@@ -14,6 +14,8 @@ Made by Shiraz Malla Mohamad member of zbmath Team-->
 Test_Reference.xml following the properties and subproperties of the metadata Schema of Datacite.
 below we can find every root and its matched node as well -->
             <xsl:apply-templates select="root/links"/>
+                <xsl:apply-templates select="root/identifier"/>
+
             <creators>
                 <xsl:apply-templates select="root/contributors/authors"/>
             </creators>
@@ -42,6 +44,11 @@ below we can find every root and its matched node as well -->
             <!-- Transform links into identifiers -->
         <identifier identifierType="{type}">
             <xsl:value-of select="identifier"/>
+        </identifier>
+        </xsl:template>
+     <xsl:template match="identifier">
+        <identifier relatedIdentifierType="DOI" relationType="IsCitedBy">
+            <xsl:value-of select="."/>
         </identifier>
         </xsl:template>
     <!-- Template for processing authors -->
