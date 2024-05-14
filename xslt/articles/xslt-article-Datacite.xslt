@@ -211,9 +211,9 @@ with its own subjectscheme -->
                 <contributors>
                     <xsl:for-each select="../zbmath/author_codes">
                         <contributor contributorType="Other">
-                            <contributorName nameType="Personal">
-                                <xsl:value-of select="."/>
-                            </contributorName>
+                            <nameIdentifier schemeURI="https://orcid.org/" nameIdentifierScheme="ORCID">
+                           <xsl:value-of select="."/>
+                           </nameIdentifier>
                             <givenName>
                                 <xsl:value-of select="substring-before(., '.')"/>
                             </givenName>
