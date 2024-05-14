@@ -5,7 +5,14 @@
    <identifier identifierType="doi">10.4007/annals.2015.181.1.7</identifier>
    <identifier identifierType="arxiv">1311.4600</identifier>
    <identifier relatedIdentifierType="DOI" relationType="IsCitedBy">1306.11073</identifier>
-   <identifier relatedIdentifierType="DOI" relationType="Cites">6383667</identifier>
+    <alternateIdentifiers>
+      <identifier relatedIdentifierType="DOI" relationType="Cites">6383667</identifier>
+      <relatedIdentifier relatedIdentifierType="URL"
+                         relationType="HasMetadata"
+                         relatedMetadataScheme="DDI-L"
+                         schemeType="XSD"
+                         schemeURI="http://datacite.org/schema/kernel-4 https://schema.datacite.org/meta/kernel-4.1/metadata.xsd">https://zbmath.org/6383667</relatedIdentifier>
+   </alternateIdentifiers>
    <creators>
       <creator>
          <creatorName nameType="Personal">maynard.james</creatorName>
