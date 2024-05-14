@@ -5,6 +5,7 @@
    <identifier identifierType="doi">10.4007/annals.2015.181.1.7</identifier>
    <identifier identifierType="arxiv">1311.4600</identifier>
    <identifier relatedIdentifierType="DOI" relationType="IsCitedBy">1306.11073</identifier>
+   <identifier relatedIdentifierType="DOI" relationType="Cites">6383667</identifier>
    <creators>
       <creator>
          <creatorName nameType="Personal">maynard.james</creatorName>
@@ -48,7 +49,7 @@
          </titles>
          <contributors>
             <contributor contributorType="Other">
-               <contributorName nameType="Personal">friedlander.john-b</contributorName> //
+               <contributorName nameType="Personal">friedlander.john-b</contributorName>
                <givenName>friedlander</givenName>
                <familyName>john-b</familyName>
             </contributor>
@@ -171,7 +172,6 @@
          <contributors>
             <contributor contributorType="Other">
                <contributorName nameType="Personal">yildirim.cem-yalcin</contributorName>
-
                <givenName>yildirim</givenName>
                <familyName>cem-yalcin</familyName>
             </contributor>
