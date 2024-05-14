@@ -15,7 +15,10 @@ Test_Reference.xml following the properties and subproperties of the metadata Sc
 below we can find every root and its matched node as well -->
             <xsl:apply-templates select="root/links"/>
                 <xsl:apply-templates select="root/identifier"/>
+                <alternateIdentifiers>
                 <xsl:apply-templates select="root/id"/>
+                <xsl:apply-templates select="root/zbmath_url"/>
+                </alternateIdentifiers>
             <creators>
                 <xsl:apply-templates select="root/contributors/authors"/>
             </creators>
@@ -55,7 +58,13 @@ below we can find every root and its matched node as well -->
     <identifier relatedIdentifierType="DOI" relationType="Cites">
         <xsl:value-of select="."/>
     </identifier>
-</xsl:template>
+    </xsl:template>
+     <xsl:template match="zbmath_url">
+        <relatedIdentifier relatedIdentifierType="URL" relationType="HasMetadata" relatedMetadataScheme="DDI-L" schemeType="XSD" schemeURI="http://datacite.org/schema/kernel-4 https://schema.datacite.org/meta/kernel-4.1/metadata.xsd">
+            <xsl:value-of select="."/>
+        </relatedIdentifier>
+    </xsl:template>
+
     <!-- Template for processing authors -->
          <xsl:template match="authors">
              <!-- Transform authors into creators -->
