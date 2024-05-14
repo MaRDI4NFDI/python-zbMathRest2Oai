@@ -15,7 +15,7 @@ Test_Reference.xml following the properties and subproperties of the metadata Sc
 below we can find every root and its matched node as well -->
             <xsl:apply-templates select="root/links"/>
                 <xsl:apply-templates select="root/identifier"/>
-
+                <xsl:apply-templates select="root/id"/>
             <creators>
                 <xsl:apply-templates select="root/contributors/authors"/>
             </creators>
@@ -51,6 +51,11 @@ below we can find every root and its matched node as well -->
             <xsl:value-of select="."/>
         </identifier>
         </xsl:template>
+    <xsl:template match="id">
+    <identifier relatedIdentifierType="DOI" relationType="Cites">
+        <xsl:value-of select="."/>
+    </identifier>
+</xsl:template>
     <!-- Template for processing authors -->
          <xsl:template match="authors">
              <!-- Transform authors into creators -->
