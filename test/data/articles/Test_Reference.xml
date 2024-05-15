@@ -56,12 +56,12 @@
          </titles>
          <contributors>
             <contributor contributorType="Other">
-               <nameIdentifier schemeURI="https://orcid.org/" nameIdentifierScheme="ORCID">friedlander.john-b</nameIdentifier>
+               <nameIdentifier schemeURI="https://zbmath.org/" nameIdentifierScheme="zbMATH Author Code">friedlander.john-b</nameIdentifier>
                <givenName>friedlander</givenName>
                <familyName>john-b</familyName>
             </contributor>
             <contributor contributorType="Other">
-               <nameIdentifier schemeURI="https://orcid.org/" nameIdentifierScheme="ORCID">granville.andrew-j</nameIdentifier>
+               <nameIdentifier schemeURI="https://zbmath.org/" nameIdentifierScheme="zbMATH Author Code">granville.andrew-j</nameIdentifier>
                <givenName>granville</givenName>
                <familyName>andrew-j</familyName>
             </contributor>
@@ -82,22 +82,22 @@
          </titles>
          <contributors>
             <contributor contributorType="Other">
-               <nameIdentifier schemeURI="https://orcid.org/" nameIdentifierScheme="ORCID">graham.sidney-w</nameIdentifier>
+               <nameIdentifier schemeURI="https://zbmath.org/" nameIdentifierScheme="zbMATH Author Code">graham.sidney-w</nameIdentifier>
                <givenName>graham</givenName>
                <familyName>sidney-w</familyName>
             </contributor>
             <contributor contributorType="Other">
-               <nameIdentifier schemeURI="https://orcid.org/" nameIdentifierScheme="ORCID">yildirim.cem-yalcin</nameIdentifier>
+               <nameIdentifier schemeURI="https://zbmath.org/" nameIdentifierScheme="zbMATH Author Code">yildirim.cem-yalcin</nameIdentifier>
                <givenName>yildirim</givenName>
                <familyName>cem-yalcin</familyName>
             </contributor>
             <contributor contributorType="Other">
-               <nameIdentifier schemeURI="https://orcid.org/" nameIdentifierScheme="ORCID">goldston.daniel-alan</nameIdentifier>
+               <nameIdentifier schemeURI="https://zbmath.org/" nameIdentifierScheme="zbMATH Author Code">goldston.daniel-alan</nameIdentifier>
                <givenName>goldston</givenName>
                <familyName>daniel-alan</familyName>
             </contributor>
             <contributor contributorType="Other">
-               <nameIdentifier schemeURI="https://orcid.org/" nameIdentifierScheme="ORCID">pintz.janos</nameIdentifier>
+               <nameIdentifier schemeURI="https://zbmath.org/" nameIdentifierScheme="zbMATH Author Code">pintz.janos</nameIdentifier>
                <givenName>pintz</givenName>
                <familyName>janos</familyName>
             </contributor>
@@ -117,17 +117,17 @@
          </titles>
          <contributors>
             <contributor contributorType="Other">
-               <nameIdentifier schemeURI="https://orcid.org/" nameIdentifierScheme="ORCID">yildirim.cem-yalcin</nameIdentifier>
+               <nameIdentifier schemeURI="https://zbmath.org/" nameIdentifierScheme="zbMATH Author Code">yildirim.cem-yalcin</nameIdentifier>
                <givenName>yildirim</givenName>
                <familyName>cem-yalcin</familyName>
             </contributor>
             <contributor contributorType="Other">
-               <nameIdentifier schemeURI="https://orcid.org/" nameIdentifierScheme="ORCID">pintz.janos</nameIdentifier>
+               <nameIdentifier schemeURI="https://zbmath.org/" nameIdentifierScheme="zbMATH Author Code">pintz.janos</nameIdentifier>
                <givenName>pintz</givenName>
                <familyName>janos</familyName>
             </contributor>
             <contributor contributorType="Other">
-               <nameIdentifier schemeURI="https://orcid.org/" nameIdentifierScheme="ORCID">goldston.daniel-alan</nameIdentifier>
+               <nameIdentifier schemeURI="https://zbmath.org/" nameIdentifierScheme="zbMATH Author Code">goldston.daniel-alan</nameIdentifier>
                <givenName>goldston</givenName>
                <familyName>daniel-alan</familyName>
             </contributor>
@@ -147,17 +147,17 @@
          </titles>
          <contributors>
             <contributor contributorType="Other">
-               <nameIdentifier schemeURI="https://orcid.org/" nameIdentifierScheme="ORCID">yildirim.cem-yalcin</nameIdentifier>
+               <nameIdentifier schemeURI="https://zbmath.org/" nameIdentifierScheme="zbMATH Author Code">yildirim.cem-yalcin</nameIdentifier>
                <givenName>yildirim</givenName>
                <familyName>cem-yalcin</familyName>
             </contributor>
             <contributor contributorType="Other">
-               <nameIdentifier schemeURI="https://orcid.org/" nameIdentifierScheme="ORCID">pintz.janos</nameIdentifier>
+               <nameIdentifier schemeURI="https://zbmath.org/" nameIdentifierScheme="zbMATH Author Code">pintz.janos</nameIdentifier>
                <givenName>pintz</givenName>
                <familyName>janos</familyName>
             </contributor>
             <contributor contributorType="Other">
-               <nameIdentifier schemeURI="https://orcid.org/" nameIdentifierScheme="ORCID">goldston.daniel-alan</nameIdentifier>
+               <nameIdentifier schemeURI="https://zbmath.org/" nameIdentifierScheme="zbMATH Author Code">goldston.daniel-alan</nameIdentifier>
                <givenName>goldston</givenName>
                <familyName>daniel-alan</familyName>
             </contributor>
@@ -178,12 +178,12 @@
          </titles>
          <contributors>
             <contributor contributorType="Other">
-               <nameIdentifier schemeURI="https://orcid.org/" nameIdentifierScheme="ORCID">yildirim.cem-yalcin</nameIdentifier>
+               <nameIdentifier schemeURI="https://zbmath.org/" nameIdentifierScheme="zbMATH Author Code">yildirim.cem-yalcin</nameIdentifier>
                <givenName>yildirim</givenName>
                <familyName>cem-yalcin</familyName>
             </contributor>
             <contributor contributorType="Other">
-               <nameIdentifier schemeURI="https://orcid.org/" nameIdentifierScheme="ORCID">goldston.daniel-alan</nameIdentifier>
+               <nameIdentifier schemeURI="https://zbmath.org/" nameIdentifierScheme="zbMATH Author Code">goldston.daniel-alan</nameIdentifier>
                <givenName>goldston</givenName>
                <familyName>daniel-alan</familyName>
             </contributor>
@@ -203,7 +203,7 @@
          </titles>
          <contributors>
             <contributor contributorType="Other">
-               <nameIdentifier schemeURI="https://orcid.org/" nameIdentifierScheme="ORCID">zhang.yitang.1</nameIdentifier>
+               <nameIdentifier schemeURI="https://zbmath.org/" nameIdentifierScheme="zbMATH Author Code">zhang.yitang.1</nameIdentifier>
                <givenName>zhang</givenName>
                <familyName>yitang.1</familyName>
             </contributor>
