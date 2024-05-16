@@ -14,8 +14,9 @@ Made by Shiraz Malla Mohamad member of zbmath Team-->
 Test_Reference.xml following the properties and subproperties of the metadata Schema of Datacite.
 below we can find every root and its matched node as well -->
             <xsl:apply-templates select="root/links"/>
-                <xsl:apply-templates select="root/identifier"/>
+
                 <alternateIdentifiers>
+                    <xsl:apply-templates select="root/identifier"/>
                 <xsl:apply-templates select="root/id"/>
                 <xsl:apply-templates select="root/zbmath_url"/>
                 </alternateIdentifiers>
@@ -50,12 +51,12 @@ below we can find every root and its matched node as well -->
         </identifier>
         </xsl:template>
      <xsl:template match="identifier">
-        <identifier relatedIdentifierType="DOI" relationType="IsCitedBy">
+        <identifier relatedIdentifierType="zbmath_identifier" relationType="HasMetadata">
             <xsl:value-of select="."/>
         </identifier>
         </xsl:template>
     <xsl:template match="id">
-    <identifier relatedIdentifierType="DOI" relationType="Cites">
+    <identifier relatedIdentifierType="zbmath_document_id" relationType="HasMetadata">
         <xsl:value-of select="."/>
     </identifier>
     </xsl:template>
