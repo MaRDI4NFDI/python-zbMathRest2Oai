@@ -7,6 +7,8 @@ import re
 from xmldiff import main
 from xmldiff.actions import MoveNode
 
+if os.path.basename(os.getcwd())=='test':
+    os.chdir(os.path.dirname(os.getcwd()))
 # Function to split DOI into parts
 def split_doi(doi):
     # Define regular expression patterns for various DOI formats
@@ -23,14 +25,13 @@ def split_doi(doi):
             return match.group(1), doi.replace(match.group(1), '', 1).lstrip('/')
     return None, None
 
-os.chdir(r"C:\Users\smm\PycharmProjects\python-zbMathRest2Oai")
+
 class PlainXmlTest(unittest.TestCase):
     def test_similarity(self):
 
-        print(os.getcwd())
-        dom = ET.parse(r'test\data\articles\plain.xml')  #wthat is dom  plain.xml
+        dom = ET.parse('test/data/articles/plain.xml')  #wthat is dom  plain.xml
         print("input XML Document" , dom)
-        xslt = ET.parse(r'xslt\articles\xslt-article-Datacite.xslt')  #Datacite xslt
+        xslt = ET.parse('xslt/articles/xslt-article-Datacite.xslt')  #Datacite xslt
         print("here is xslt " , xslt)
 
         # Preprocess DOI values before transformation
@@ -54,9 +55,9 @@ class PlainXmlTest(unittest.TestCase):
         real_string = ET.tostring(newdom, pretty_print=True, encoding='utf8').decode()
         print("Transformed XML:", real_string)
         # print(ET.tostring(newdom, pretty_print=True, xml_declaration=True, encoding='utf8').decode())
-        expected_dom = ET.parse(r'test\data\articles\Test_Reference.xml')
+        expected_dom = ET.parse('test/data/articles/Test_Reference.xml')
 
-        expected_string = ET.tostring(ET.parse(r'test\data\articles\Test_Reference.xml')) #my Test_Reference  still needs a tiny work
+        expected_string = ET.tostring(ET.parse('test/data/articles/Test_Reference.xml')) #my Test_Reference  still needs a tiny work
         print("\nExpected XML:", expected_string)
         diff = main.diff_texts(expected_string, real_string, {
             'ratio_mode': 'fast', # is that for latency
