@@ -13,7 +13,7 @@ https://github.com/physikerwelt/xstlprocJ
 Point to the folder xstlprocJ, copy the files xslt-article-transformation.xslt and plain.xml, then execute the shell command:
 
 ```shell
-:~/xstlprocJ$ bash xsltprocJ xslt-article-transformation.xslt plain.xml
+:~/xstlprocJ$ bash xsltprocJ xslt-article-oai_zb_preview.xslt plain.xml
 Warning: at xsl:stylesheet on line 2 column 255 of xslt-article-transformation.xslt:
   Running an XSLT 1 stylesheet with an XSLT 2 processor
 
