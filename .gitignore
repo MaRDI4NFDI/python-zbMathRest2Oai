@@ -3,6 +3,9 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+#swMATH dataset
+src/zbmath_rest2oai/swmath_metadata.zip
+
 # C extensions
 *.so
 
