@@ -1,6 +1,8 @@
 import unittest
-
-from zbmath_rest2oai import oai_connection
+import os
+if os.path.basename(os.getcwd())=='test':
+    os.chdir(os.path.dirname(os.getcwd()))
+import oai_connection
 
 
 class PlainXmlTest(unittest.TestCase):
