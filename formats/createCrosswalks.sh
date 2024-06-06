@@ -5,7 +5,7 @@
 AUTH=$(echo -n "$OAI_BASIC_USER:$OAI_BASIC_PASSWORD" | base64)
 #Create Crosswalk from radar to oai_dc
 XSLT_JSON_ENCODED=`cat ../xslt/software/xslt-software-datacite.xslt | jq -Rsa .`
-curl --noproxy '*' -X POST -H 'Content-Type: application/json' -H  "Authorization: Basic $AUTH" -i 'https://oai-input.portal.mardi4nfdi.de/oai-backend/crosswalk' --data '{"name":"swmath2datacite","formatFrom":"zbmath_rest_api_software2","formatTo":"datacite_swmath","xsltStylesheet":'"$XSLT_JSON_ENCODED}"'}'
+curl --noproxy '*' -X POST -H 'Content-Type: application/json' -H  "Authorization: Basic $AUTH" -i 'https://oai-input.portal.mardi4nfdi.de/oai-backend/crosswalk' --data '{"name":"swmath2datacite2","formatFrom":"zbmath_rest_api_software2","formatTo":"datacite_swmath","xsltStylesheet":'"$XSLT_JSON_ENCODED}"'}'
 
 #Create Crosswalk from radar to datacite
 #XSLT_JSON_ENCODED=`cat RadarMD-v9-to-DataciteMD-v4_0.xslt | jq -Rsa .`
