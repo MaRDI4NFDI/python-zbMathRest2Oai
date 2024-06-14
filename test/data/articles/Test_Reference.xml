@@ -5,8 +5,8 @@
    <identifier identifierType="doi">10.4007/annals.2015.181.1.7</identifier>
    <identifier identifierType="arxiv">1311.4600</identifier>
     <alternateIdentifiers>
-       <identifier relatedIdentifierType="zbmath_identifier" relationType="HasMetadata">1306.11073</identifier>
-      <identifier relatedIdentifierType="zbmath_document_id" relationType="HasMetadata">6383667</identifier>
+       <alternateIdentifier alternateIdentifierType="zbmath_identifier">1306.11073</alternateIdentifier>
+      <alternateIdentifier alternateIdentifierType="zbmath_document_id">6383667</alternateIdentifier>
       <relatedIdentifier relatedIdentifierType="URL"
                          relationType="HasMetadata"
                          relatedMetadataScheme="DDI-L"
