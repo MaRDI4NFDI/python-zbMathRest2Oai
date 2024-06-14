@@ -51,14 +51,14 @@ below we can find every root and its matched node as well -->
         </identifier>
         </xsl:template>
      <xsl:template match="identifier">
-        <identifier relatedIdentifierType="zbmath_identifier" relationType="HasMetadata">
+        <alternateIdentifier alternateIdentifierType="zbmath_identifier">
             <xsl:value-of select="."/>
-        </identifier>
+        </alternateIdentifier>
         </xsl:template>
     <xsl:template match="id">
-    <identifier relatedIdentifierType="zbmath_document_id" relationType="HasMetadata">
+    <alternateIdentifier alternateIdentifierType="zbmath_document_id">
         <xsl:value-of select="."/>
-    </identifier>
+    </alternateIdentifier>
     </xsl:template>
      <xsl:template match="zbmath_url">
         <relatedIdentifier relatedIdentifierType="URL" relationType="HasMetadata" relatedMetadataScheme="DDI-L" schemeType="XSD" schemeURI="http://datacite.org/schema/kernel-4 https://schema.datacite.org/meta/kernel-4.1/metadata.xsd">
