@@ -51,12 +51,12 @@ below we can find every root and its matched node as well -->
         </identifier>
         </xsl:template>
      <xsl:template match="identifier">
-        <alternateIdentifier alternateIdentifierType="zbmath_identifier">
+        <alternateIdentifier alternateIdentifierType="zbMATH Identifier">
             <xsl:value-of select="."/>
         </alternateIdentifier>
         </xsl:template>
     <xsl:template match="id">
-    <alternateIdentifier alternateIdentifierType="zbmath_document_id">
+    <alternateIdentifier alternateIdentifierType="zbMATH Document ID">
         <xsl:value-of select="."/>
     </alternateIdentifier>
     </xsl:template>
