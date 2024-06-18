@@ -46,7 +46,7 @@ below we can find every root and its matched node as well -->
 <!-- Template for processing identifiers -->
         <xsl:template match="links">
             <!-- Transform links into identifiers -->
-        <identifier identifierType="{type}">
+        <identifier identifierType="{translate(type, 'abcdefghijklmnopqrstuvwxyz', 'ABCDEFGHIJKLMNOPQRSTUVWXYZ')}">
             <xsl:value-of select="identifier"/>
         </identifier>
         </xsl:template>
