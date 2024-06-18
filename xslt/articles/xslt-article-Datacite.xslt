@@ -116,7 +116,7 @@ below we can find every root and its matched node as well -->
 <!-- Template for processing text node into description text with its subproperty -->
         <xsl:template match="text">
             <!-- Transformation of  description text -->
-        <description xml:lang="en" descriptionType="TechnicalInfo">
+        <description xml:lang="en" descriptionType="Abstract">
 
          <xsl:value-of select="normalize-space(.)"/>
 
