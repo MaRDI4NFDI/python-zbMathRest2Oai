@@ -11,10 +11,10 @@ from zbmath_rest2oai import getAsXml
 def write_oai(api_source, prefix):
     test_xml = getAsXml.final_xml2(api_source)
     for identifier in test_xml.keys():
-        files = {"item": (None, json.dumps({"identifier": prefix+str(identifier),"deleteFlag": False,"ingestFormat": "zbmath_rest_api",}),"application/json",),"content": (None, test_xml[identifier]),}
+        files = {"item": (None, json.dumps({"identifier": prefix+str(identifier),"deleteFlag": False,"ingestFormat": "zbmath_rest_api_software",}),"application/json",),"content": (None, test_xml[identifier]),}
         basic = HTTPBasicAuth('swmath', os.environ.get('OAI_BASIC_PASSWORD'))
-        x = requests.post("http://oai-inpu:t.portal.mardi4nfdi.de/oai-backend/item", files=files, auth=basic)
-        print(x.status_code)
+        x = requests.post("http://oai-input.portal.mardi4nfdi.de/oai-backend/item", files=files, auth=basic)
+        print(prefix+str(identifier), x.status_code)
         if x.status_code == 409:
             continue
         elif x.status_code != 200:
