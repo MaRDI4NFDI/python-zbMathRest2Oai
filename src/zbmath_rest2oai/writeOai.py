@@ -13,7 +13,9 @@ def write_oai(api_source, prefix):
     for identifier in test_xml.keys():
         files = {"item": (None, json.dumps({"identifier": prefix+str(identifier),"deleteFlag": False,"ingestFormat": "zbmath_rest_api_software",}),"application/json",),"content": (None, test_xml[identifier]),}
         basic = HTTPBasicAuth('swmath', os.environ.get('OAI_BASIC_PASSWORD'))
-        x = requests.post("http://oai-input.portal.mardi4nfdi.de/oai-backend/item", files=files, auth=basic)
+        str_ulr="http://oai-input.portal.mardi4nfdi.de/oai-backend/item/"+prefix+str(identifier)
+        print(str_ulr)
+        x = requests.put(url=str_ulr, files=files, auth=basic)
         print(prefix+str(identifier), x.status_code)
         if x.status_code == 409:
             continue
