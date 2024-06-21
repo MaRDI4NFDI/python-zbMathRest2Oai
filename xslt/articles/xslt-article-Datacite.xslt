@@ -28,7 +28,6 @@ below we can find every root and its matched node as well -->
                 <xsl:apply-templates select="root/editorial_contributions/text"/>
                 </descriptions>
                        <xsl:apply-templates select="root/title"/>
-                <xsl:apply-templates select="root/document_type/description"/>
                 <xsl:apply-templates select="root/source/series/publisher"/>
                 <xsl:apply-templates select="root/source/series/year"/>
                 <xsl:apply-templates select="root/source/series/volume"/>
@@ -91,13 +90,6 @@ below we can find every root and its matched node as well -->
                 <xsl:value-of select="title"/>
             </title>
         </titles>
-        </xsl:template>
-    <!-- Template for processing description -->
-        <xsl:template match="description">
-            <!-- Transform description with its  resourceType -->
-        <resourceType resourceTypeGeneral="JournalArticle">
-            <xsl:value-of select="."/>
-        </resourceType>
         </xsl:template>
     <!-- Template for processing publisher -->
         <xsl:template match="publisher">
