@@ -202,9 +202,11 @@ with its own subjectscheme -->
                 <position>
                     <xsl:value-of select="$position"/>
                 </position>
-                <titles>
-                    <title>
-                        <xsl:value-of select="../text"/>
+              <titles>
+                  <title>
+                        <xsl:variable name="text" select="../text"/>
+                        <!-- Extract the text within the first and second single quotes -->
+                        <xsl:value-of select="substring-before(substring-after($text, &quot;''&quot;), &quot;''&quot;)"/>
                     </title>
                 </titles>
                 <!-- Loop through contributors
