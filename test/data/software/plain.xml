@@ -1,5 +1,5 @@
 <root>
-  <articles_count>103</articles_count>
+  <articles_count>107</articles_count>
   <authors>Li, X.S., Demmel, J.W.</authors>
   <classification>35</classification>
   <classification>65</classification>
@@ -36,12 +36,12 @@
     <name>PETSc</name>
   </related_software>
   <related_software>
-    <id>930</id>
-    <name>SuperLU</name>
-  </related_software>
-  <related_software>
     <id>4629</id>
     <name>SparseMatrix</name>
+  </related_software>
+  <related_software>
+    <id>930</id>
+    <name>SuperLU</name>
   </related_software>
   <related_software>
     <id>503</id>
@@ -56,16 +56,16 @@
     <name>hypre</name>
   </related_software>
   <related_software>
-    <id>4028</id>
-    <name>Trilinos</name>
-  </related_software>
-  <related_software>
     <id>989</id>
     <name>UMFPACK</name>
   </related_software>
   <related_software>
     <id>4089</id>
     <name>METIS</name>
+  </related_software>
+  <related_software>
+    <id>4028</id>
+    <name>Trilinos</name>
   </related_software>
   <related_software>
     <id>830</id>
@@ -80,12 +80,8 @@
     <name>WSMP</name>
   </related_software>
   <related_software>
-    <id>3216</id>
-    <name>BLAS</name>
-  </related_software>
-  <related_software>
-    <id>9043</id>
-    <name>MFEM</name>
+    <id>6496</id>
+    <name>MPI</name>
   </related_software>
   <related_software>
     <id>7818</id>
@@ -96,16 +92,20 @@
     <name>HSL</name>
   </related_software>
   <related_software>
+    <id>3216</id>
+    <name>BLAS</name>
+  </related_software>
+  <related_software>
+    <id>9043</id>
+    <name>MFEM</name>
+  </related_software>
+  <related_software>
+    <id>4218</id>
+    <name>ARPACK</name>
+  </related_software>
+  <related_software>
     <id>8067</id>
     <name>ML</name>
-  </related_software>
-  <related_software>
-    <id>2780</id>
-    <name>SPIKE</name>
-  </related_software>
-  <related_software>
-    <id>6496</id>
-    <name>MPI</name>
   </related_software>
   <source_code/>
   <standard_articles>
