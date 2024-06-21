@@ -5,8 +5,8 @@
     <authors>
       <aliases/>
       <checked>1</checked>
-      <codes>maynard.james</codes> zbmath identifier
-      <name>Maynard, James</name>   ORCID = alternateientifier
+      <codes>maynard.james</codes>
+      <name>Maynard, James</name>
     </authors>
     <editors/>
   </contributors>
@@ -19,13 +19,13 @@
   <editorial_contributions>
     <contribution_type>review</contribution_type>
     <language>English</language>
-    <reviewer> taking care about the reviwer as well.
-      <author_code>siaulys.jonas</author_code>   zbmath author code
+    <reviewer>
+      <author_code>siaulys.jonas</author_code>
       <name>Jonas Šiaulys</name>
       <reviewer_id>11807</reviewer_id>
       <sign>Jonas Šiaulys (Vilnius)</sign>
     </reviewer>
-    <text>The prime \(k\)-tuples and small gaps between prime numbers are considered. Using a refinement of the Goldston-Pintz-Yildirim sieve method [\textit{D. A. Goldston} et al., Ann. Math. (2) 170, No. 2, 819--862 (2009; Zbl 1207.11096)] the author proves, for instance, the following estimates 
+    <text>The prime \(k\)-tuples and small gaps between prime numbers are considered. Using a refinement of the Goldston-Pintz-Yildirim sieve method [\textit{D. A. Goldston} et al., Ann. Math. (2) 170, No. 2, 819--862 (2009; Zbl 1207.11096)] the author proves, for instance, the following estimates
     \[
      \liminf_{n\to\infty}\,(p_{n+m}-p_n)\ll m^3\text{{e}}^{4m}, \quad \liminf_{n\to\infty}\,(p_{n+1}-p_n)\leq 600
     \]
@@ -81,19 +81,19 @@
       <year>1970</year>
     </zbmath>
   </references>
-  <references> related item
-    <doi>10.2307/1971450</doi>  and its own identifier , references the article
+  <references>
+    <doi>10.2307/1971450</doi>
     <position>2</position>
     <text>J. Friedlander and A. Granville, ''Limitations to the equi-distribution of primes. I,'' Ann. of Math., vol. 129, iss. 2, pp. 363-382, 1989.</text>
     <zbmath>
       <author_codes>friedlander.john-b</author_codes>
       <author_codes>granville.andrew-j</author_codes>
-      <document_id>4097497</document_id> zbmath identifier , cites
+      <document_id>4097497</document_id>
       <msc>11N05</msc>
       <msc>11N13</msc>
       <msc>11N35</msc>
-      <prefix>Zbl</prefix> ?
-      <series_id>2531</series_id> ?
+      <prefix>Zbl</prefix>
+      <series_id>2531</series_id>
       <year>1989</year>
     </zbmath>
   </references>
