@@ -1,6 +1,5 @@
 import unittest
 import os
-
 if os.path.basename(os.getcwd())=='test':
     os.chdir(os.path.dirname(os.getcwd()))
 import oai_connection
