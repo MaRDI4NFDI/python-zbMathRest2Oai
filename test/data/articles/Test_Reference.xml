@@ -15,9 +15,10 @@
    </alternateIdentifiers>
    <creators>
       <creator>
-         <creatorName nameType="Personal">maynard.james</creatorName>
+         <creatorName nameType="Personal">Maynard, James</creatorName>
          <givenName>Maynard</givenName>
          <familyName>James</familyName>
+         <nameIdentifier schemeURI="https://zbmath.org/" nameIdentifierScheme="zbMATH Author Code">maynard.james</nameIdentifier>
       </creator>
    </creators>
    <descriptions>
