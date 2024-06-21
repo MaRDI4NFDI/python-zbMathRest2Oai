@@ -66,22 +66,22 @@ below we can find every root and its matched node as well -->
     </xsl:template>
 
     <!-- Template for processing authors -->
-         <xsl:template match="authors">
-             <!-- Transform authors into creators -->
-    <creator>
-      <!-- Transform 'codes' element into 'creatorName' -->
-      <creatorName nameType="Personal">
-        <xsl:value-of select="codes"/>
-      </creatorName>
-      <!-- Split 'name' into 'givenName' and 'familyName' -->
-      <givenName>
-        <xsl:value-of select="substring-before(name, ', ')"/>
-      </givenName>
-      <familyName>
-        <xsl:value-of select="substring-after(name, ', ')"/>
-      </familyName>
-    </creator>
-  </xsl:template>
+    <xsl:template match="authors">
+        <creator>
+            <creatorName nameType="Personal">
+                <xsl:value-of select="name"/>
+            </creatorName>
+            <givenName>
+                <xsl:value-of select="substring-before(name, ',')"/>
+            </givenName>
+            <familyName>
+                <xsl:value-of select="substring-after(name, ', ')"/>
+            </familyName>
+            <nameIdentifier schemeURI="https://zbmath.org/" nameIdentifierScheme="zbMATH Author Code">
+                <xsl:value-of select="codes"/>
+            </nameIdentifier>
+        </creator>
+    </xsl:template>
     <!-- Template for processing titles -->
         <xsl:template match="title">
             <!-- Transform titles into structured titles -->
