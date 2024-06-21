@@ -4,8 +4,10 @@ import lxml.etree as ET
 from xmldiff import main
 from xmldiff.actions import MoveNode
 
-if os.path.basename(os.getcwd())=='test':
+if os.path.basename(os.getcwd()) == 'test':
     os.chdir(os.path.dirname(os.getcwd()))
+
+
 class PlainXmlTest(unittest.TestCase):
     def test_similarity(self):
         dom = ET.parse('test/data/software/plain.xml')
@@ -13,7 +15,6 @@ class PlainXmlTest(unittest.TestCase):
         transform = ET.XSLT(xslt)
         newdom = transform(dom)
         real_string = ET.tostring(newdom, pretty_print=True, encoding='utf8').decode()
-        print(ET.tostring(newdom, pretty_print=True, xml_declaration=True, encoding='utf8').decode())
 
         expected_string = ET.tostring(ET.parse('test/data/software/reference.xml'))
 
@@ -22,7 +23,6 @@ class PlainXmlTest(unittest.TestCase):
             'F': 1,
         })
         essentials = list(filter(lambda e: not isinstance(e, MoveNode), diff))
-        print(essentials)
         self.assertLessEqual(len(essentials), 0)
 
 
