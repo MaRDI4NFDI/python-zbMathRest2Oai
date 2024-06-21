@@ -9,7 +9,7 @@ Made by Shiraz Malla Mohamad member of zbmath Team-->
                 exclude-result-prefixes="#default">
     <xsl:output method="xml" indent="yes"/>
     <xsl:template match="/">
-            <resource>
+            <resource xsi:schemaLocation="http://datacite.org/schema/kernel-4 http://schema.datacite.org/meta/kernel-4/metadata.xsd">
 <!-- we have here the roots of the metadata : extracted from our plain.xml and then transformed to the file called
 Test_Reference.xml following the properties and subproperties of the metadata Schema of Datacite.
 below we can find every root and its matched node as well -->
