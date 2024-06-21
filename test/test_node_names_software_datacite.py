@@ -11,7 +11,7 @@ if os.path.basename(os.getcwd()) == 'test':
 class PlainXmlTest(unittest.TestCase):
     def test_similarity(self):
         dom = ET.parse('test/data/software/plain.xml')
-        xslt = ET.parse('xslt/software/xslt-software-transformation.xslt')
+        xslt = ET.parse('xslt/software/xslt-software-datacite.xslt')
         transform = ET.XSLT(xslt)
         newdom = transform(dom)
         real_string = ET.tostring(newdom, pretty_print=True, encoding='utf8').decode()
