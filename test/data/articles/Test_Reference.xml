@@ -28,7 +28,8 @@
       <title xml:lang="en">Small gaps between primes</title>
    </titles>
    <relatedItems>
-      <relatedItem>
+      <relatedItem relationType="IsPublishedIn" relatedItemType="Book">
+         <relatedItemIdentifier relatedItemIdentifierType="ISSN">0003-486X</relatedItemIdentifier>
          <titles>
             <title>Annals of Mathematics. Second Series</title>
          </titles>
