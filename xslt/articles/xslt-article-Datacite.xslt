@@ -28,11 +28,9 @@ below we can find every root and its matched node as well -->
                 <xsl:apply-templates select="root/editorial_contributions/text"/>
                 </descriptions>
                        <xsl:apply-templates select="root/title"/>
-                <xsl:apply-templates select="root/source/series/publisher"/>
-                <xsl:apply-templates select="root/source/series/year"/>
-                <xsl:apply-templates select="root/source/series/volume"/>
-                <xsl:apply-templates select="root/source/series/issue"/>
-                <xsl:apply-templates select="root/source/pages"/>
+              <relatedItems>
+                <xsl:apply-templates select="root/source"/>
+            </relatedItems>
             <subjects>
                 <xsl:apply-templates select="root/msc"/>
                 <xsl:apply-templates select="root/keywords"/>
@@ -91,20 +89,47 @@ below we can find every root and its matched node as well -->
             </title>
         </titles>
         </xsl:template>
+     <!-- Template for processing source as relatedItem -->
+    <xsl:template match="source">
+        <relatedItem>
+            <!-- Process title -->
+            <titles>
+                <title>
+                    <xsl:value-of select="series/title"/>
+                </title>
+            </titles>
+            <!-- Process publisher -->
+            <publisher>
+                <xsl:value-of select="series/publisher"/>
+            </publisher>
+            <!-- Process publication year -->
+            <publicationYear>
+                <xsl:value-of select="series/year"/>
+            </publicationYear>
+            <!-- Process volume -->
+            <volume>
+                <xsl:value-of select="series/volume"/>
+            </volume>
+            <!-- Process issue -->
+            <issue>
+                <xsl:value-of select="series/issue"/>
+            </issue>
+            <!-- Process pages -->
+            <xsl:variable name="pagesText" select="normalize-space(pages)"/>
+            <xsl:variable name="firstPage" select="substring-before($pagesText, '-')"/>
+            <xsl:variable name="lastPage" select="substring-after($pagesText, '-')"/>
+            <firstPage>
+                <xsl:value-of select="$firstPage"/>
+            </firstPage>
+            <lastPage>
+                <xsl:value-of select="$lastPage"/>
+            </lastPage>
+        </relatedItem>
+    </xsl:template>
     <!-- Template for processing publisher -->
-        <xsl:template match="publisher">
-            <!-- Transform publisher -->
-        <publisher>
-            <xsl:value-of select="."/>
-        </publisher>
-        </xsl:template>
+
      <!-- Template for processing publication year -->
-        <xsl:template match="year">
-            <!-- Transform year -->
-        <publicationYear>
-            <xsl:value-of select="."/>
-        </publicationYear>
-        </xsl:template>
+
 <!-- Template for processing text node into description text with its subproperty -->
         <xsl:template match="text">
             <!-- Transformation of  description text -->
@@ -141,33 +166,7 @@ with its own subjectscheme -->
         </subject>
         </xsl:template>
 <!-- Template for processing pages -->
-        <xsl:template match="pages">
-            <!-- Transformation of  pages separating our xml node into two nodes first and last page -->
-        <xsl:variable name="pagesText" select="normalize-space(.)"/>
-        <xsl:variable name="firstPage" select="substring-before($pagesText, '-')"/>
-        <xsl:variable name="lastPage" select="substring-after($pagesText, '-')"/>
-        <firstPage>
-            <xsl:value-of select="$firstPage"/>
-        </firstPage>
-        <lastPage>
-            <xsl:value-of select="$lastPage"/>
-        </lastPage>
-            <!-- Template for processing volume -->
-        </xsl:template>
-    <!-- Transformation of  volume -->
-        <xsl:template match="volume">
-        <volume>
-            <xsl:value-of select="."/>
-        </volume>
-        </xsl:template>
-    <!-- Template for processing issue -->
-        <xsl:template match="issue">
-            <!-- Transformation of issue-->
-        <issue>
-            <xsl:value-of select="."/>
-        </issue>
 
-       </xsl:template>
   <!-- Template to match references and transform into relatedItems
   references has also two iportant sections
   the first section has doi node and it is an important related identifier but it is not
