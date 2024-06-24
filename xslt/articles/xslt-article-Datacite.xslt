@@ -146,19 +146,17 @@ below we can find every root and its matched node as well -->
      <!-- Template for processing MSC node  (Mathematics Subject Classification)
       transforming all its valuable nodes -->
     <xsl:template match="msc">
-        <!-- Transformaion of  MSC  -->
+        <!-- Transformaion of  MSC nodes   -->
     <subject>
-      <xsl:attribute name="subjectScheme">
-        <xsl:value-of select="scheme"/>
-      </xsl:attribute>
-      <xsl:attribute name="classificationCode">
-        <xsl:value-of select="code"/>
-      </xsl:attribute>
+        <xsl:attribute name="subjectScheme">
+            <xsl:value-of select="scheme"/>
+        </xsl:attribute>
+        <xsl:attribute name="classificationCode">
+            <xsl:value-of select="code"/>
+        </xsl:attribute>
+        <xsl:value-of select="text"/>
     </subject>
-    <subject>
-      <xsl:value-of select="text"/>
-    </subject>
-    </xsl:template>
+</xsl:template>
 
 <!-- Template for processing keywords it is also under the subject section with MSC'S
 with its own subjectscheme -->
