@@ -1,0 +1,5 @@
+requests~=2.32.3
+dict2xml~=1.7.5
+xmldiff~=2.7.0
+lxml~=5.2.2
+setuptools~=68.2.0
