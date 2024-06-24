@@ -91,7 +91,11 @@ below we can find every root and its matched node as well -->
         </xsl:template>
      <!-- Template for processing source as relatedItem -->
     <xsl:template match="source">
-        <relatedItem>
+         <relatedItem relationType="IsPublishedIn" relatedItemType="Book">
+        <!-- Select ISSN with type 'print' -->
+        <relatedItemIdentifier relatedItemIdentifierType="ISSN">
+            <xsl:value-of select="descendant::issn[type='print']/number"/>
+        </relatedItemIdentifier>
             <!-- Process title -->
             <titles>
                 <title>
