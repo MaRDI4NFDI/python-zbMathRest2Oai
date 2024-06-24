@@ -42,10 +42,8 @@
       </relatedItem>
    </relatedItems>
    <subjects>
-      <subject subjectScheme="msc2020" classificationCode="11N05"/>
-      <subject>Distribution of primes</subject>
-      <subject subjectScheme="msc2020" classificationCode="11N36"/>
-      <subject>Applications of sieve methods</subject>
+      <subject subjectScheme="msc2020" classificationCode="11N05">Distribution of primes</subject>
+      <subject subjectScheme="msc2020" classificationCode="11N36">Applications of sieve methods</subject>
       <subject subjectScheme="keyword">prime number</subject>
       <subject subjectScheme="keyword">small gap</subject>
       <subject subjectScheme="keyword">sieve method</subject>
