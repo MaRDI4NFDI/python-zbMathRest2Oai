@@ -27,12 +27,19 @@
    <titles>
       <title xml:lang="en">Small gaps between primes</title>
    </titles>
-   <publisher>Princeton University, Mathematics Department, Princeton, NJ</publisher>
-   <publicationYear>2015</publicationYear>
-   <volume>181</volume>
-   <issue>1</issue>
-   <firstPage>383</firstPage>
-   <lastPage>413</lastPage>
+   <relatedItems>
+      <relatedItem>
+         <titles>
+            <title>Annals of Mathematics. Second Series</title>
+         </titles>
+         <publisher>Princeton University, Mathematics Department, Princeton, NJ</publisher>
+         <publicationYear>2015</publicationYear>
+         <volume>181</volume>
+         <issue>1</issue>
+         <firstPage>383</firstPage>
+         <lastPage>413</lastPage>
+      </relatedItem>
+   </relatedItems>
    <subjects>
       <subject subjectScheme="msc2020" classificationCode="11N05"/>
       <subject>Distribution of primes</subject>
