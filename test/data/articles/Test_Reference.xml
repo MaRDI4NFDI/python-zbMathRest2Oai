@@ -6,7 +6,7 @@
    <identifier identifierType="arxiv">1311.4600</identifier>
     <alternateIdentifiers>
        <identifier relatedIdentifierType="zbmath_identifier" relationType="HasMetadata">1306.11073</identifier>
-      <identifier relatedIdentifierType="zbmath_document_id" relationType="HasMetadata">6383667</identifier>
+      <identifier relatedIdentifierType="zbmath_document_id" relationType="HasMetadata">Zbl 6383667</identifier>
       <relatedIdentifier relatedIdentifierType="URL"
                          relationType="HasMetadata"
                          relatedMetadataScheme="DDI-L"
