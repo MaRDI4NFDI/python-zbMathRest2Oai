@@ -54,7 +54,7 @@
       <subject subjectScheme="keyword">symmetric matrix</subject>
    </subjects>
    <relatedIdentifiers>
-      <relatedItem relatedItemType="Journal Article" relationType="Cites">
+      <relatedItem relatedItemType="JournalArticle" relationType="Cites">
          <relatedItemIdentifier relatedItemIdentifierType="DOI">10.2307/1971450</relatedItemIdentifier>
          <position>2</position>
          <titles>
@@ -80,7 +80,7 @@
          </subjects>
          <publicationYear>1989</publicationYear>
       </relatedItem>
-      <relatedItem relatedItemType="Journal Article" relationType="Cites">
+      <relatedItem relatedItemType="JournalArticle" relationType="Cites">
          <relatedItemIdentifier relatedItemIdentifierType="DOI">10.1112/plms/pdn046</relatedItemIdentifier>
          <position>3</position>
          <titles>
@@ -115,7 +115,7 @@
          </subjects>
          <publicationYear>2009</publicationYear>
       </relatedItem>
-      <relatedItem relatedItemType="Journal Article" relationType="Cites">
+      <relatedItem relatedItemType="JournalArticle" relationType="Cites">
          <relatedItemIdentifier relatedItemIdentifierType="DOI">10.7169/facm/1229442618</relatedItemIdentifier>
          <position>4</position>
          <titles>
@@ -145,7 +145,7 @@
          </subjects>
          <publicationYear>2006</publicationYear>
       </relatedItem>
-      <relatedItem relatedItemType="Journal Article" relationType="Cites">
+      <relatedItem relatedItemType="JournalArticle" relationType="Cites">
          <relatedItemIdentifier relatedItemIdentifierType="DOI">10.4007/annals.2009.170.819</relatedItemIdentifier>
          <position>5</position>
          <titles>
@@ -176,7 +176,7 @@
          </subjects>
          <publicationYear>2009</publicationYear>
       </relatedItem>
-      <relatedItem relatedItemType="Journal Article" relationType="Cites">
+      <relatedItem relatedItemType="JournalArticle" relationType="Cites">
          <relatedItemIdentifier relatedItemIdentifierType="DOI">10.1112/plms/pdm010</relatedItemIdentifier>
          <position>6</position>
          <titles>
@@ -201,7 +201,7 @@
          </subjects>
          <publicationYear>2007</publicationYear>
       </relatedItem>
-      <relatedItem relatedItemType="Journal Article" relationType="Cites">
+      <relatedItem relatedItemType="JournalArticle" relationType="Cites">
          <relatedItemIdentifier relatedItemIdentifierType="DOI">10.4007/annals.2014.179.3.7</relatedItemIdentifier>
          <position>9</position>
          <titles>
