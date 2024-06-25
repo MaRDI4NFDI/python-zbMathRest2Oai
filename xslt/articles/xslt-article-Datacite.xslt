@@ -188,7 +188,7 @@ with its own subjectscheme -->
     <!-- Check if there are any non-empty doi elements -->
     <xsl:if test="$nonEmptyDOIs">
         <xsl:for-each select="$nonEmptyDOIs">
-            <relatedItem relatedItemType="Journal Article" relationType="Cites">
+            <relatedItem relatedItemType="JournalArticle" relationType="Cites">
                 <relatedItemIdentifier relatedItemIdentifierType="DOI">
                     <xsl:value-of select="."/>
                 </relatedItemIdentifier>
