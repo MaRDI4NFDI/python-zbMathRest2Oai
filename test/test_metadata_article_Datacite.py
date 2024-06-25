@@ -1,10 +1,8 @@
-import unittest
-import sys
-
-print(sys.path)
 import os
-import lxml.etree as ET
 import re
+import unittest
+
+import lxml.etree as ET
 from xmldiff import main
 from xmldiff.actions import MoveNode
 

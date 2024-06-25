@@ -12,7 +12,6 @@ xml_string = re.sub(
     '<time_stamp>0</time_stamp>',
     xml_string)
 
-print(xml_string)
 if __name__ == '__main__':
     with open(sys.argv[3], 'w') as f:
 

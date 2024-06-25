@@ -15,5 +15,4 @@ while int(last_id) < 70000:
         last_id = str(max([int(x) for x in f.read().split(';')]))
         f.close()
         uri_request = 'https://api.zbmath.org/v1/software/_all?start_after={0}&results_per_request=500'.format(last_id)
-        print(uri_request)
         write_local(api_source=uri_request)
