@@ -27,7 +27,7 @@ def final_xml2(api_source,prefix):
         raise Exception(f"Unexpected response with status code {r.status_code}: {r.text}")
     json = r.json()
     dict_math_entities = dict()
-    if prefix=='Zbl':
+    if prefix=='Zbl ':
         filename = 'last_de.txt'
     else:
         filename = 'last_id.txt'

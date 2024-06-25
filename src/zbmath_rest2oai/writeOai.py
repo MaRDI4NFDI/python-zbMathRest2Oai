@@ -9,13 +9,13 @@ from requests.auth import HTTPBasicAuth
 from zbmath_rest2oai import getAsXml
 
 
-def write_oai(api_source, prefix):
+def write_oai(api_source, prefix,format):
     test_xml = getAsXml.final_xml2(api_source, prefix)
     for identifier in test_xml.keys():
         files = {"item": (None, json.dumps({
             "identifier": str(identifier),
             "deleteFlag": False,
-            "ingestFormat": "zbmath_rest_api"
+            "ingestFormat": format
         }), "application/json",), "content": (None, test_xml[identifier]), }
         basic = HTTPBasicAuth('swmath', os.environ.get('OAI_BASIC_PASSWORD'))
         str_ulr = "http://oai-input.portal.mardi4nfdi.de/oai-backend/item"
@@ -31,4 +31,4 @@ def write_oai(api_source, prefix):
 if __name__ == '__main__':
     import sys
 
-    write_oai(sys.argv[1], sys.argv[2])
+    write_oai(sys.argv[1], sys.argv[2],'	zbmath_rest_api_software')
