@@ -27,7 +27,11 @@ def final_xml2(api_source,prefix):
         raise Exception(f"Unexpected response with status code {r.status_code}: {r.text}")
     json = r.json()
     dict_math_entities = dict()
-    with open('last_id.txt', 'a') as f:
+    if prefix=='Zbl':
+        filename = 'last_de.txt'
+    else:
+        filename = 'last_id.txt'
+    with open(filename, 'a') as f:
         f.write(';' + str(json['status']['last_id']))
         f.close()
     for result in json["result"]:
