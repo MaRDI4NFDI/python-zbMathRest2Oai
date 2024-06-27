@@ -28,16 +28,14 @@ below we can find every root and its matched node as well -->
                 <xsl:apply-templates select="root/editorial_contributions/text"/>
                 </descriptions>
                        <xsl:apply-templates select="root/title"/>
-              <relatedItems>
                 <xsl:apply-templates select="root/source"/>
-            </relatedItems>
             <subjects>
                 <xsl:apply-templates select="root/msc"/>
                 <xsl:apply-templates select="root/keywords"/>
             </subjects>
-             <relatedIdentifiers>
+              <relatedItems>
             <xsl:apply-templates select="root/references"/>
-            </relatedIdentifiers>
+            </relatedItems>
          </resource>
          </xsl:template>
 <!-- Template for processing identifiers -->
@@ -175,11 +173,7 @@ with its own subjectscheme -->
   available in all of references
   the second part has the zbmath document_id which is our own identifier
   and it is available in all of references -->
-  <xsl:template match="references">
-    <!-- Transformation of references
-    relateditem - relateditem identifier and related identifiers
-    using out all of our valuable references nodes in order to provide a perfect matching with Datacite-->
-
+<xsl:template match="references">
     <xsl:variable name="position" select="position()"/>
 
     <!-- Select only the doi elements that have non-empty values -->
@@ -187,55 +181,49 @@ with its own subjectscheme -->
 
     <!-- Check if there are any non-empty doi elements -->
     <xsl:if test="$nonEmptyDOIs">
-        <xsl:for-each select="$nonEmptyDOIs">
-            <relatedItem relatedItemType="JournalArticle" relationType="Cites">
-                <relatedItemIdentifier relatedItemIdentifierType="DOI">
-                    <xsl:value-of select="."/>
-                </relatedItemIdentifier>
-                <position>
-                    <xsl:value-of select="$position"/>
-                </position>
-              <titles>
-                  <title>
-                        <xsl:variable name="text" select="../text"/>
-                        <!-- Extract the text within the first and second single quotes -->
-                        <xsl:value-of select="substring-before(substring-after($text, &quot;''&quot;), &quot;''&quot;)"/>
-                    </title>
-                </titles>
-                <!-- Loop through contributors
-                here we use the author_id or author_codes as identifiers-->
-                <contributors>
-                    <xsl:for-each select="../zbmath/author_codes">
-                        <contributor contributorType="Other">
-                            <nameIdentifier schemeURI="https://zbmath.org/"  nameIdentifierScheme="zbMATH Author Code" >
-                           <xsl:value-of select="."/>
-                           </nameIdentifier>
-                            <givenName>
-                                <xsl:value-of select="substring-before(., '.')"/>
-                            </givenName>
-                            <familyName>
-                                <xsl:value-of select="substring-after(., '.')"/>
-                            </familyName>
-                        </contributor>
-                    </xsl:for-each>
-                </contributors>
-                <!-- Related Item Identifier  and here we use the document_id
-                which is the zbmath identifer as we mentioned above -->
-                <relatedItemIdentifier relationType="Cites">
-                    <xsl:value-of select="../zbmath/document_id"/>
-                </relatedItemIdentifier>
-                <!-- Subjects -->
-                <subjects>
-                    <xsl:for-each select="../zbmath/msc">
-                        <subject subjectScheme="msc2020" classificationCode="{.}"/>
-                    </xsl:for-each>
-                </subjects>
-                <!-- Publication Year -->
-                <publicationYear>
-                    <xsl:value-of select="../zbmath/year"/>
-                </publicationYear>
-            </relatedItem>
-        </xsl:for-each>
+      <xsl:for-each select="$nonEmptyDOIs">
+        <relatedIdentifier relatedIdentifierType="DOI" relationType="Cites" resourceTypeGeneral="JournalArticle">
+          <xsl:value-of select="."/>
+        </relatedIdentifier>
+        <relatedItem>
+          <position>
+            <xsl:value-of select="$position"/>
+          </position>
+          <titles>
+            <title>
+              <xsl:variable name="text" select="../text"/>
+              <!-- Extract the text within the first and second single quotes -->
+              <xsl:value-of select="substring-before(substring-after($text, &quot;''&quot;), &quot;''&quot;)"/>
+            </title>
+          </titles>
+          <contributors>
+            <xsl:for-each select="../zbmath/author_codes">
+              <contributor contributorType="Other">
+                <nameIdentifier schemeURI="https://zbmath.org/" nameIdentifierScheme="zbMATH Author Code">
+                  <xsl:value-of select="."/>
+                </nameIdentifier>
+                <givenName>
+                  <xsl:value-of select="substring-before(., '.')"/>
+                </givenName>
+                <familyName>
+                  <xsl:value-of select="substring-after(., '.')"/>
+                </familyName>
+              </contributor>
+            </xsl:for-each>
+          </contributors>
+          <relatedItemIdentifier relationType="Cites">
+            <xsl:value-of select="../zbmath/document_id"/>
+          </relatedItemIdentifier>
+          <subjects>
+            <xsl:for-each select="../zbmath/msc">
+              <subject subjectScheme="msc2020" classificationCode="{.}"/>
+            </xsl:for-each>
+          </subjects>
+          <publicationYear>
+            <xsl:value-of select="../zbmath/year"/>
+          </publicationYear>
+        </relatedItem>
+      </xsl:for-each>
     </xsl:if>
-</xsl:template>
+  </xsl:template>
 </xsl:stylesheet>
