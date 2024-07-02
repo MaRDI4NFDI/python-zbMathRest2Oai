@@ -196,18 +196,24 @@ with its own subjectscheme -->
               <xsl:value-of select="substring-before(substring-after($text, &quot;''&quot;), &quot;''&quot;)"/>
             </title>
           </titles>
-          <contributors>
-            <xsl:for-each select="../zbmath/author_codes">
-              <contributor contributorType="Other">
-                <givenName>
-                  <xsl:value-of select="substring-before(., '.')"/>
-                </givenName>
-                <familyName>
-                  <xsl:value-of select="substring-after(., '.')"/>
-                </familyName>
-              </contributor>
-            </xsl:for-each>
-          </contributors>
+         <contributors>
+    <xsl:for-each select="../zbmath/author_codes">
+        <contributor contributorType="Other">
+            <givenName>
+                <xsl:value-of select="concat(
+                    translate(substring(translate(substring-after(., '.'), '0123456789.', ''), 1, 1), 'abcdefghijklmnopqrstuvwxyz', 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'),
+                    substring(translate(substring-after(., '.'), '0123456789.', ''), 2)
+                )"/>
+            </givenName>
+            <familyName>
+                <xsl:value-of select="concat(
+                    translate(substring(translate(substring-before(., '.'), '0123456789.', ''), 1, 1), 'abcdefghijklmnopqrstuvwxyz', 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'),
+                    substring(translate(substring-before(., '.'), '0123456789.', ''), 2)
+                )"/>
+            </familyName>
+        </contributor>
+    </xsl:for-each>
+</contributors>
           <relatedItemIdentifier relationType="Cites">
             <xsl:value-of select="../zbmath/document_id"/>
           </relatedItemIdentifier>
