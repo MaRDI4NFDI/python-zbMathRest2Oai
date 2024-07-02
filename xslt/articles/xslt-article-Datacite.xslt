@@ -32,6 +32,7 @@ below we can find every root and its matched node as well -->
             <subjects>
                 <xsl:apply-templates select="root/msc"/>
                 <xsl:apply-templates select="root/keywords"/>
+                <xsl:apply-templates select="root/references/zbmath"/>
             </subjects>
               <relatedItems>
             <xsl:apply-templates select="root/references"/>
@@ -155,7 +156,17 @@ below we can find every root and its matched node as well -->
         <xsl:value-of select="text"/>
     </subject>
 </xsl:template>
-
+<xsl:template match="zbmath">
+    <!-- Transformation of MSC nodes -->
+    <xsl:for-each select="msc">
+        <subject subjectScheme="msc2020">
+            <xsl:attribute name="classificationCode">
+                <xsl:value-of select="."/>
+            </xsl:attribute>
+            <xsl:value-of select="../prefix"/>
+        </subject>
+    </xsl:for-each>
+</xsl:template>
 <!-- Template for processing keywords it is also under the subject section with MSC'S
 with its own subjectscheme -->
 
@@ -217,11 +228,6 @@ with its own subjectscheme -->
           <relatedItemIdentifier relationType="Cites">
             <xsl:value-of select="../zbmath/document_id"/>
           </relatedItemIdentifier>
-          <subjects>
-            <xsl:for-each select="../zbmath/msc">
-              <subject subjectScheme="msc2020" classificationCode="{.}"/>
-            </xsl:for-each>
-          </subjects>
           <publicationYear>
             <xsl:value-of select="../zbmath/year"/>
           </publicationYear>
