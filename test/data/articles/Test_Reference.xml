@@ -50,6 +50,37 @@
       <subject subjectScheme="keyword">Selberg sieve</subject>
       <subject subjectScheme="keyword">symmetric polynomial</subject>
       <subject subjectScheme="keyword">symmetric matrix</subject>
+      <subject subjectScheme="msc2020" classificationCode="11N35">Zbl</subject>
+      <subject subjectScheme="msc2020" classificationCode="11N13">Zbl</subject>
+      <subject subjectScheme="msc2020" classificationCode="11N05">Zbl</subject>
+      <subject subjectScheme="msc2020" classificationCode="11N13">Zbl</subject>
+      <subject subjectScheme="msc2020" classificationCode="11N35">Zbl</subject>
+      <subject subjectScheme="msc2020" classificationCode="11N25">Zbl</subject>
+      <subject subjectScheme="msc2020" classificationCode="11N36">Zbl</subject>
+      <subject subjectScheme="msc2020" classificationCode="11N05">Zbl</subject>
+      <subject subjectScheme="msc2020" classificationCode="11N13">Zbl</subject>
+      <subject subjectScheme="msc2020" classificationCode="11N05">Zbl</subject>
+      <subject subjectScheme="msc2020" classificationCode="11N36">Zbl</subject>
+      <subject subjectScheme="msc2020" classificationCode="11N13">Zbl</subject>
+      <subject subjectScheme="msc2020" classificationCode="11N05">Zbl</subject>
+      <subject subjectScheme="msc2020" classificationCode="11N37">Zbl</subject>
+      <subject subjectScheme="msc2020" classificationCode="11N35">Zbl</subject>
+      <subject subjectScheme="msc2020" classificationCode="11N05">Zbl</subject>
+      <subject subjectScheme="msc2020" classificationCode="11-03">Zbl</subject>
+      <subject subjectScheme="msc2020" classificationCode="01A75">Zbl</subject>
+      <subject subjectScheme="msc2020" classificationCode="32-03">Zbl</subject>
+      <subject subjectScheme="msc2020" classificationCode="11M06">Zbl</subject>
+      <subject subjectScheme="msc2020" classificationCode="11M41">Zbl</subject>
+      <subject subjectScheme="msc2020" classificationCode="11N35">Zbl</subject>
+      <subject subjectScheme="msc2020" classificationCode="11N36">Zbl</subject>
+      <subject subjectScheme="msc2020" classificationCode="11F72">Zbl</subject>
+      <subject subjectScheme="msc2020" classificationCode="32N05">Zbl</subject>
+      <subject subjectScheme="msc2020" classificationCode="32N15">Zbl</subject>
+      <subject subjectScheme="msc2020" classificationCode="11N05">Zbl</subject>
+      <subject subjectScheme="msc2020" classificationCode="11N13">Zbl</subject>
+      <subject subjectScheme="msc2020" classificationCode="11N35">Zbl</subject>
+      <subject subjectScheme="msc2020" classificationCode="11N36">Zbl</subject>
+      <subject subjectScheme="msc2020" classificationCode="11L07">Zbl</subject>
    </subjects>
    <relatedItems>
       <relatedIdentifier relatedIdentifierType="DOI"
@@ -71,11 +102,6 @@
             </contributor>
          </contributors>
          <relatedItemIdentifier relationType="Cites">4097497</relatedItemIdentifier>
-         <subjects>
-            <subject subjectScheme="msc2020" classificationCode="11N05"/>
-            <subject subjectScheme="msc2020" classificationCode="11N13"/>
-            <subject subjectScheme="msc2020" classificationCode="11N35"/>
-         </subjects>
          <publicationYear>1989</publicationYear>
       </relatedItem>
       <relatedIdentifier relatedIdentifierType="DOI"
@@ -105,10 +131,6 @@
             </contributor>
          </contributors>
          <relatedItemIdentifier relationType="Cites">5551831</relatedItemIdentifier>
-         <subjects>
-            <subject subjectScheme="msc2020" classificationCode="11N25"/>
-            <subject subjectScheme="msc2020" classificationCode="11N36"/>
-         </subjects>
          <publicationYear>2009</publicationYear>
       </relatedItem>
       <relatedIdentifier relatedIdentifierType="DOI"
@@ -134,10 +156,6 @@
             </contributor>
          </contributors>
          <relatedItemIdentifier relationType="Cites">5135166</relatedItemIdentifier>
-         <subjects>
-            <subject subjectScheme="msc2020" classificationCode="11N05"/>
-            <subject subjectScheme="msc2020" classificationCode="11N13"/>
-         </subjects>
          <publicationYear>2006</publicationYear>
       </relatedItem>
       <relatedIdentifier relatedIdentifierType="DOI"
@@ -163,11 +181,6 @@
             </contributor>
          </contributors>
          <relatedItemIdentifier relationType="Cites">5610431</relatedItemIdentifier>
-         <subjects>
-            <subject subjectScheme="msc2020" classificationCode="11N05"/>
-            <subject subjectScheme="msc2020" classificationCode="11N36"/>
-            <subject subjectScheme="msc2020" classificationCode="11N13"/>
-         </subjects>
          <publicationYear>2009</publicationYear>
       </relatedItem>
       <relatedIdentifier relatedIdentifierType="DOI"
@@ -189,10 +202,6 @@
             </contributor>
          </contributors>
          <relatedItemIdentifier relationType="Cites">5170700</relatedItemIdentifier>
-         <subjects>
-            <subject subjectScheme="msc2020" classificationCode="11N05"/>
-            <subject subjectScheme="msc2020" classificationCode="11N37"/>
-         </subjects>
          <publicationYear>2007</publicationYear>
       </relatedItem>
       <relatedIdentifier relatedIdentifierType="DOI"
@@ -210,13 +219,6 @@
             </contributor>
          </contributors>
          <relatedItemIdentifier relationType="Cites">6302171</relatedItemIdentifier>
-         <subjects>
-            <subject subjectScheme="msc2020" classificationCode="11N05"/>
-            <subject subjectScheme="msc2020" classificationCode="11N13"/>
-            <subject subjectScheme="msc2020" classificationCode="11N35"/>
-            <subject subjectScheme="msc2020" classificationCode="11N36"/>
-            <subject subjectScheme="msc2020" classificationCode="11L07"/>
-         </subjects>
          <publicationYear>2014</publicationYear>
       </relatedItem>
    </relatedItems>
