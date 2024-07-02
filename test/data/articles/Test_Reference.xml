@@ -62,12 +62,12 @@
          </titles>
          <contributors>
             <contributor contributorType="Other">
-               <givenName>friedlander</givenName>
-               <familyName>john-b</familyName>
+                <givenName>John-b</givenName>
+               <familyName>Friedlander</familyName>
             </contributor>
             <contributor contributorType="Other">
-               <givenName>granville</givenName>
-               <familyName>andrew-j</familyName>
+               <givenName>Andrew-j</givenName>
+               <familyName>Granville</familyName>
             </contributor>
          </contributors>
          <relatedItemIdentifier relationType="Cites">4097497</relatedItemIdentifier>
@@ -88,20 +88,20 @@
          </titles>
          <contributors>
             <contributor contributorType="Other">
-               <givenName>graham</givenName>
-               <familyName>sidney-w</familyName>
+               <givenName>Sidney-w</givenName>
+               <familyName>Graham</familyName>
             </contributor>
             <contributor contributorType="Other">
-               <givenName>yildirim</givenName>
-               <familyName>cem-yalcin</familyName>
+                <givenName>Cem-yalcin</givenName>
+               <familyName>Yildirim</familyName>
             </contributor>
             <contributor contributorType="Other">
-               <givenName>goldston</givenName>
-               <familyName>daniel-alan</familyName>
+                 <givenName>Daniel-alan</givenName>
+               <familyName>Goldston</familyName>
             </contributor>
             <contributor contributorType="Other">
-               <givenName>pintz</givenName>
-               <familyName>janos</familyName>
+                 <givenName>Janos</givenName>
+               <familyName>Pintz</familyName>
             </contributor>
          </contributors>
          <relatedItemIdentifier relationType="Cites">5551831</relatedItemIdentifier>
@@ -121,16 +121,16 @@
          </titles>
          <contributors>
             <contributor contributorType="Other">
-               <givenName>yildirim</givenName>
-               <familyName>cem-yalcin</familyName>
+                <givenName>Cem-yalcin</givenName>
+               <familyName>Yildirim</familyName>
             </contributor>
             <contributor contributorType="Other">
-               <givenName>pintz</givenName>
-               <familyName>janos</familyName>
+               <givenName>Janos</givenName>
+               <familyName>Pintz</familyName>
             </contributor>
             <contributor contributorType="Other">
-               <givenName>goldston</givenName>
-               <familyName>daniel-alan</familyName>
+                 <givenName>Daniel-alan</givenName>
+               <familyName>Goldston</familyName>
             </contributor>
          </contributors>
          <relatedItemIdentifier relationType="Cites">5135166</relatedItemIdentifier>
@@ -150,16 +150,16 @@
          </titles>
          <contributors>
             <contributor contributorType="Other">
-               <givenName>yildirim</givenName>
-               <familyName>cem-yalcin</familyName>
+                  <givenName>Cem-yalcin</givenName>
+               <familyName>Yildirim</familyName>
             </contributor>
             <contributor contributorType="Other">
-               <givenName>pintz</givenName>
-               <familyName>janos</familyName>
+                 <givenName>Janos</givenName>
+               <familyName>Pintz</familyName>
             </contributor>
             <contributor contributorType="Other">
-               <givenName>goldston</givenName>
-               <familyName>daniel-alan</familyName>
+                 <givenName>Daniel-alan</givenName>
+               <familyName>Goldston</familyName>
             </contributor>
          </contributors>
          <relatedItemIdentifier relationType="Cites">5610431</relatedItemIdentifier>
@@ -180,12 +180,12 @@
          </titles>
          <contributors>
             <contributor contributorType="Other">
-               <givenName>yildirim</givenName>
-               <familyName>cem-yalcin</familyName>
+               <givenName>Cem-yalcin</givenName>
+               <familyName>Yildirim</familyName>
             </contributor>
             <contributor contributorType="Other">
-               <givenName>goldston</givenName>
-               <familyName>daniel-alan</familyName>
+               <givenName>Daniel-alan</givenName>
+               <familyName>Goldston</familyName>
             </contributor>
          </contributors>
          <relatedItemIdentifier relationType="Cites">5170700</relatedItemIdentifier>
@@ -205,8 +205,8 @@
          </titles>
          <contributors>
             <contributor contributorType="Other">
-               <givenName>zhang</givenName>
-               <familyName>yitang.1</familyName>
+               <givenName>Yitang</givenName>
+               <familyName>Zhang</familyName>
             </contributor>
          </contributors>
          <relatedItemIdentifier relationType="Cites">6302171</relatedItemIdentifier>
