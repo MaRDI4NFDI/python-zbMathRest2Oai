@@ -1,39 +1,60 @@
 import json
 import os
 
-import requests
+from timeit import default_timer as timer
+import asyncio
+import aiohttp
+from aiohttp import ClientSession
+
 from requests.auth import HTTPBasicAuth
 
 from zbmath_rest2oai import getAsXml
 
 
+async def post_item(session, url, files, auth):
+    async with session.post(url, data=files, auth=auth) as response:
+        if response.status not in [200, 409]:
+            raise Exception(f"Unexpected response with status code {response.status}: {await response.text()}")
+        return response
+
+
+async def async_write_oai(test_xml, ingest_format):
+    tasks = []
+    auth = aiohttp.BasicAuth('swmath', os.environ.get('OAI_BASIC_PASSWORD'))
+    url = "https://oai-input.portal.mardi4nfdi.de/oai-backend/item"
+
+    async with ClientSession() as session:
+        last_id = -1
+        records = 0
+        for identifier in test_xml.keys():
+            records += 1
+            last_id = identifier
+            data = aiohttp.FormData()
+            data.add_field('item', json.dumps({
+                "identifier": str(identifier),
+                "deleteFlag": False,
+                "ingestFormat": ingest_format
+            }), content_type='application/json')
+            data.add_field('content', test_xml[identifier], filename='dummy.xml')
+            tasks.append(post_item(session, url, data, auth))
+
+        await asyncio.gather(*tasks)
+
+    return records, last_id
+
+
 def write_oai(api_source, prefix, ingest_format):
-    last_id = -1
-    records = 0
     test_xml, time_rest = getAsXml.final_xml2(api_source, prefix)
-    time_oai = .0
-    for identifier in test_xml.keys():
-        records += 1
-        files = {"item": (None, json.dumps({
-            "identifier": str(identifier),
-            "deleteFlag": False,
-            "ingestFormat": ingest_format
-        }), "application/json",), "content": (None, test_xml[identifier]), }
-        basic = HTTPBasicAuth('swmath', os.environ.get('OAI_BASIC_PASSWORD'))
-        str_ulr = "https://oai-input.portal.mardi4nfdi.de/oai-backend/item"
-        x = requests.post(url=str_ulr, files=files, auth=basic)
-        if x.status_code not in [200, 409]:
-            raise Exception(f"Unexpected response with status code {x.status_code}: {x.text}")
-        time_oai += x.elapsed.total_seconds()
-        last_id = str(identifier)
+    start = timer()
+    records, last_id = asyncio.run(async_write_oai(test_xml, ingest_format))
 
     last_id = int(last_id.removeprefix(prefix))
     return {
-            'last_id': last_id,
-            'records': records,
-            'time_rest': time_rest,
-            'time_oai': time_oai
-            }
+        'last_id': last_id,
+        'records': records,
+        'time_rest': time_rest,
+        'time_oai': timer() - start
+    }
 
 
 if __name__ == '__main__':
