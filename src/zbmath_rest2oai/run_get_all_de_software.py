@@ -4,6 +4,6 @@ get_all(
         prefix='swmath',
         url='https://api.zbmath.org/v1/software/_all?start_after={0}&results_per_request=500',
         ingest_format='zbmath_rest_api_software',
-        state_property='last_software_id'
+        state_property='software'
     )
 

@@ -26,8 +26,8 @@ class State:
                 self.state = json.load(f)
         else:
             self.state = {
-                'last_software_id': 0,
-                'last_document_id': 0
+                'software': 0,
+                'document': 0
             }
 
     def _save_state(self):
@@ -51,6 +51,19 @@ class State:
     def set_state_var(self, key, value):
         with self._lock:
             self.state[key] = value
+
+    def update_state(self, kind, value):
+        with self._lock:
+            self.state[kind] = value['last_id']
+            del value['last_id']
+            key_perf = kind + '_perf'
+            if key_perf not in self.state:
+                self.state[key_perf] = {}
+            for key in value:
+                if key not in self.state[key_perf]:
+                    self.state[key_perf][key] = value[key]
+                else:
+                    self.state[key_perf][key] += value[key]
 
     def get_state_var(self, key):
         with self._lock:

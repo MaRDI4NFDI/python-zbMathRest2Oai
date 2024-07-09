@@ -11,7 +11,7 @@ API_SOURCE = 'https://api.zbmath.org/v1/document/_structured_search?page=0&resul
 
 class PlainXmlTest(unittest.TestCase):
     def test_similarity(self):
-        real_string = getAsXml.final_xml2(API_SOURCE, 'Zbl ')['Zbl 6383667']
+        real_string = getAsXml.final_xml2(API_SOURCE, 'Zbl ')[0]['Zbl 6383667']
 
         ref_location = os.path.join(os.path.dirname(__file__), 'data/articles/plain.xml')
         with open(ref_location) as f:

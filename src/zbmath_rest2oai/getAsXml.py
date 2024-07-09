@@ -20,27 +20,20 @@ def apply_zbmath_api_fixes(result, prefix):
     result['states'] = states
 
 
-def final_xml2(api_source,prefix):
+def final_xml2(api_source, prefix):
     headers = {'Accept': 'application/json'}
     r = requests.get(api_source, headers=headers)
     if r.status_code != 200:
         raise Exception(f"Unexpected response with status code {r.status_code}: {r.text}")
     json = r.json()
     dict_math_entities = dict()
-    if prefix=='Zbl ':
-        filename = 'last_de.txt'
-    else:
-        filename = 'last_id.txt'
-    with open(filename, 'a') as f:
-        f.write(';' + str(json['status']['last_id']))
-        f.close()
     for result in json["result"]:
         apply_zbmath_api_fixes(result, prefix)
         dict_math_entities[result["id"]] = Converter(wrap="root").build(
             result,
             closed_tags_for=[[], '', [None], None])
-    return dict_math_entities
+    return [dict_math_entities, r.elapsed.total_seconds()]
 
 
 if __name__ == "__main__":
-    final_xml2(sys.argv[1])
+    print(final_xml2(sys.argv[1], '')[0])

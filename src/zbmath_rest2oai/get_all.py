@@ -6,8 +6,7 @@ def get_all(prefix, url, ingest_format, state_property):
     state = State()
     while True:
         uri_request = url.format(state.get_state_var(state_property))
-        last_id = write_oai(api_source=uri_request, prefix=prefix, ingest_format=ingest_format)
-        last_id = int(last_id.removeprefix(prefix))
-        if last_id == -1:
+        res = write_oai(api_source=uri_request, prefix=prefix, ingest_format=ingest_format)
+        if res['last_id'] == -1:
             break
-        state.set_state_var(state_property, last_id)
+        state.update_state(state_property, res)

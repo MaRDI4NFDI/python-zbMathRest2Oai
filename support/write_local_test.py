@@ -1,7 +1,7 @@
 from zbmath_rest2oai import getAsXml
 import sys
 import re
-xml_string = getAsXml.final_xml2(sys.argv[1], sys.argv[2])
+xml_string, _ = getAsXml.final_xml2(sys.argv[1], sys.argv[2])
 
 xml_string = re.sub(
     '<query_execution_time_in_seconds>0.\\d+</query_execution_time_in_seconds>',

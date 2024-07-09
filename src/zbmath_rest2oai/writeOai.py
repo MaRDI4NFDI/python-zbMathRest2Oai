@@ -9,8 +9,11 @@ from zbmath_rest2oai import getAsXml
 
 def write_oai(api_source, prefix, ingest_format):
     last_id = -1
-    test_xml = getAsXml.final_xml2(api_source, prefix)
+    records = 0
+    test_xml, time_rest = getAsXml.final_xml2(api_source, prefix)
+    time_oai = .0
     for identifier in test_xml.keys():
+        records += 1
         files = {"item": (None, json.dumps({
             "identifier": str(identifier),
             "deleteFlag": False,
@@ -21,9 +24,16 @@ def write_oai(api_source, prefix, ingest_format):
         x = requests.post(url=str_ulr, files=files, auth=basic)
         if x.status_code not in [200, 409]:
             raise Exception(f"Unexpected response with status code {x.status_code}: {x.text}")
+        time_oai += x.elapsed.total_seconds()
         last_id = str(identifier)
 
-    return last_id
+    last_id = int(last_id.removeprefix(prefix))
+    return {
+            'last_id': last_id,
+            'records': records,
+            'time_rest': time_rest,
+            'time_oai': time_oai
+            }
 
 
 if __name__ == '__main__':
