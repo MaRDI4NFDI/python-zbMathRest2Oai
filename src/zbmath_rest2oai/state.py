@@ -23,9 +23,9 @@ class State:
     def _load_state(self):
         if os.path.exists(self.state_file):
             with open(self.state_file, 'r') as f:
-                self.settings = json.load(f)
+                self.state = json.load(f)
         else:
-            self.settings = {
+            self.state = {
                 'last_software_id': 0,
                 'last_document_id': 0
             }
@@ -33,7 +33,7 @@ class State:
     def _save_state(self):
         with self._lock:
             with open(self.state_file, 'w') as f:
-                json.dump(self.settings, f, indent=4)
+                json.dump(self.state, f, indent=4)
 
     def _handle_signal(self, signum, frame):
         print(f'Received signal {signum}, saving state and exiting...')
@@ -48,10 +48,10 @@ class State:
 
         threading.Thread(target=save_periodically, daemon=True).start()
 
-    def update_setting(self, key, value):
+    def set_state_var(self, key, value):
         with self._lock:
-            self.settings[key] = value
+            self.state[key] = value
 
-    def get_setting(self, key):
+    def get_state_var(self, key):
         with self._lock:
-            return self.settings.get(key)
+            return self.state.get(key)
