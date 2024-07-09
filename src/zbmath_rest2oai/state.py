@@ -1,15 +1,13 @@
 import signal
-import pickle
+import json
 import threading
 import os
 
 
 class State:
-    def __init__(self, state_file='state.pkl'):
+    def __init__(self, state_file='state.json'):
         self.state_file = state_file
         self._lock = threading.Lock()
-        self.last_software_id = None
-        self.last_document_id = None
         self._stop_event = threading.Event()
 
         # Load state if exists
@@ -24,22 +22,18 @@ class State:
 
     def _load_state(self):
         if os.path.exists(self.state_file):
-            with open(self.state_file, 'rb') as f:
-                state = pickle.load(f)
-                self.last_software_id = state.get('last_software_id')
-                self.last_document_id = state.get('last_document_id')
+            with open(self.state_file, 'r') as f:
+                self.settings = json.load(f)
         else:
-            self.last_software_id = 0
-            self.last_document_id = 0
+            self.settings = {
+                'last_software_id': 0,
+                'last_document_id': 0
+            }
 
     def _save_state(self):
         with self._lock:
-            state = {
-                'last_software_id': self.last_software_id,
-                'last_document_id': self.last_document_id
-            }
-            with open(self.state_file, 'wb') as f:
-                pickle.dump(state, f)
+            with open(self.state_file, 'w') as f:
+                json.dump(self.settings, f, indent=4)
 
     def _handle_signal(self, signum, frame):
         print(f'Received signal {signum}, saving state and exiting...')
@@ -54,25 +48,10 @@ class State:
 
         threading.Thread(target=save_periodically, daemon=True).start()
 
-    def update_state(self, last_software_id, last_document_id):
+    def update_setting(self, key, value):
         with self._lock:
-            self.last_software_id = last_software_id
-            self.last_document_id = last_document_id
+            self.settings[key] = value
 
-    # Getter and Setter for last_document_id
-    @property
-    def last_document_id(self):
-        return self._last_document_id
-
-    @last_document_id.setter
-    def last_document_id(self, value):
-        self._last_document_id = value
-
-    # Getter and Setter for last_software_id (if needed)
-    @property
-    def last_software_id(self):
-        return self._last_software_id
-
-    @last_software_id.setter
-    def last_software_id(self, value):
-        self._last_software_id = value
+    def get_setting(self, key):
+        with self._lock:
+            return self.settings.get(key)
