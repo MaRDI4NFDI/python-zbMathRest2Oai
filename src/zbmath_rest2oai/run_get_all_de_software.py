@@ -1,12 +1,9 @@
-from zbmath_rest2oai.writeOai import write_oai
+from zbmath_rest2oai.get_all import get_all
 
-with open('last_id.txt', 'r') as f:
-    last_id = max(f.read().split(';'))
-    f.close()
+get_all(
+        prefix='swmath',
+        url='https://api.zbmath.org/v1/software/_all?start_after={0}&results_per_request=500',
+        ingest_format='zbmath_rest_api_software',
+        state_property='last_software_id'
+    )
 
-while int(last_id) < 70000:
-    with open('last_id.txt', 'r') as f:
-        last_id = str(max([int(x) for x in f.read().split(';')]))
-        f.close()
-        uri_request = 'https://api.zbmath.org/v1/software/_all?start_after={0}&results_per_request=500'.format(last_id)
-        write_oai(api_source=uri_request, prefix='oai:swmath.org:',format='zbmath_rest_api_software')

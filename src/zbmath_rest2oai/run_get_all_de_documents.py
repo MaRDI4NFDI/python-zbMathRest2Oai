@@ -1,12 +1,9 @@
-from zbmath_rest2oai.writeOai import write_oai
+from zbmath_rest2oai.get_all import get_all
 
-with open('last_de.txt', 'r') as handle:
-    last_id = max(handle.read().split(';'))
-    handle.close()
+get_all(
+        prefix='Zbl',
+        url='https://api.zbmath.org/v1/document/_all?start_after={0}&results_per_request=500',
+        ingest_format='zbmath_rest_api',
+        state_property='last_document_id'
+    )
 
-    while int(last_id) < 70000000:
-        with open('last_de.txt', 'r') as f:
-            last_id = str(max([int(x) for x in f.read().split(';')]))
-            f.close()
-            uri_request = 'https://api.zbmath.org/v1/document/_all?start_after={0}&results_per_request=500'.format(last_id)
-            write_oai(api_source=uri_request, prefix='Zbl', format= 'zbmath_rest_api')
