@@ -16,7 +16,7 @@ def get_api_version(url):
 class TestAPIVersion(unittest.TestCase):
     def test_api_version_matches(self):
         url = "https://api.zbmath.org/openapi.json"
-        expected_version = "1.5.1"
+        expected_version = "1.5.2"
         actual_version = get_api_version(url)
         self.assertEqual(actual_version, expected_version,
                          f"Expected API version {expected_version}, but got {actual_version}")
