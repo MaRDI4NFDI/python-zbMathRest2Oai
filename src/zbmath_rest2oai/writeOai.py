@@ -6,22 +6,23 @@ import asyncio
 import aiohttp
 from aiohttp import ClientSession
 
-from requests.auth import HTTPBasicAuth
-
 from zbmath_rest2oai import getAsXml
 
+AUTH = aiohttp.BasicAuth('swmath', os.environ.get('OAI_BASIC_PASSWORD'))
 
-async def post_item(session, url, files, auth):
-    async with session.post(url, data=files, auth=auth) as response:
+URL = "https://oai-input.portal.mardi4nfdi.de/oai-backend/item"
+
+
+async def post_item(session, files, identifier='unknown'):
+    async with session.post(URL, data=files, auth=AUTH) as response:
         if response.status not in [200, 409]:
-            raise Exception(f"Unexpected response with status code {response.status}: {await response.text()}")
+            raise Exception(f"Unexpected response with status code {response.status} for item {identifier}:"
+                            f" {await response.text()}")
         return response
 
 
 async def async_write_oai(test_xml, ingest_format):
     tasks = []
-    auth = aiohttp.BasicAuth('swmath', os.environ.get('OAI_BASIC_PASSWORD'))
-    url = "https://oai-input.portal.mardi4nfdi.de/oai-backend/item"
 
     async with ClientSession() as session:
         last_id = -1
@@ -36,7 +37,7 @@ async def async_write_oai(test_xml, ingest_format):
                 "ingestFormat": ingest_format
             }), content_type='application/json')
             data.add_field('content', test_xml[identifier], filename='dummy.xml')
-            tasks.append(post_item(session, url, data, auth))
+            tasks.append(post_item(session, data,identifier))
 
         await asyncio.gather(*tasks)
 
