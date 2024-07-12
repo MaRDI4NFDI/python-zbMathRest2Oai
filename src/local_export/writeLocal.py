@@ -15,4 +15,3 @@ def write_local(api_source):
 
 if __name__ == '__main__':
     write_local(sys.argv[1])
-
