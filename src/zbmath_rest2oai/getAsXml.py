@@ -3,7 +3,6 @@ import re
 from dict2xml import Converter
 import requests
 import sys
-from urllib3.packages.six import unichr
 
 # from https://stackoverflow.com/a/22273639
 
@@ -31,7 +30,7 @@ if sys.maxunicode >= 0x10000:  # not narrow build
 
                              (0xFFFFE, 0xFFFFF), (0x10FFFE, 0x10FFFF)])
 
-_illegal_ranges = ["%s-%s" % (unichr(low), unichr(high))
+_illegal_ranges = ["%s-%s" % (chr(low), chr(high))
 
                    for (low, high) in _illegal_unichrs]
 

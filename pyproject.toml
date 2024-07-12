@@ -13,7 +13,6 @@ dependencies = [
     "dict2xml",
     "requests",
     "aiohttp",
-    "urllib3",
     "lxml"
 ]
 [project.optional-dependencies]
