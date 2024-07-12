@@ -14,5 +14,4 @@ def write_local(api_source):
         f.close()
 
 if __name__ == '__main__':
-    import sys
     write_local(sys.argv[1])
