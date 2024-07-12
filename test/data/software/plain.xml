@@ -1,6 +1,7 @@
 <root>
   <articles_count>107</articles_count>
-  <authors>Li, X.S., Demmel, J.W.</authors>
+  <authors>Li, X.S.</authors>
+  <authors>Demmel, J.W.</authors>
   <classification>35</classification>
   <classification>65</classification>
   <classification>68</classification>
@@ -72,12 +73,12 @@
     <name>ScaLAPACK</name>
   </related_software>
   <related_software>
-    <id>4827</id>
-    <name>mctoolbox</name>
-  </related_software>
-  <related_software>
     <id>6749</id>
     <name>WSMP</name>
+  </related_software>
+  <related_software>
+    <id>4827</id>
+    <name>mctoolbox</name>
   </related_software>
   <related_software>
     <id>6496</id>
