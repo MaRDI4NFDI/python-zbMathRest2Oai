@@ -60,7 +60,7 @@ def final_xml2(api_source, prefix):
     if r.status_code != 200:
         raise Exception(f"Unexpected response with status code {r.status_code}: {r.text}")
     json = r.json()
-    dict_math_entities = dict()
+    dict_math_entities = {}
     for result in json["result"]:
         apply_zbmath_api_fixes(result, prefix)
         dict_math_entities[result["id"]] = _illegal_xml_chars_RE.sub("", Converter(wrap="root").build(

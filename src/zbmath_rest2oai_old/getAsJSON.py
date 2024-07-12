@@ -22,7 +22,7 @@ def final_json(api_source):
     if r.status_code != 200:
         raise Exception(f"Unexpected response with status code {r.status_code}: {r.text}")
     json = r.json()
-    dict_math_entities = dict()
+    dict_math_entities = {}
     with open('last_id.txt','a') as f:
         f.write(';' + str(json['status']['last_id']))
         f.close()
