@@ -31,9 +31,8 @@ class State:
             }
 
     def _save_state(self):
-        with self._lock:
-            with open(self.state_file, 'w') as f:
-                json.dump(self.state, f, indent=4)
+        with self._lock, open(self.state_file, 'w') as f:
+            json.dump(self.state, f, indent=4)
 
     def _handle_signal(self, signum, frame):
         print(f'Received signal {signum}, saving state and exiting...')
