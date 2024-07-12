@@ -3,7 +3,7 @@
         xsi:schemaLocation="http://datacite.org/schema/kernel-4 http://schema.datacite.org/meta/kernel-4.1/metadata.xsd"
         xmlns="http://datacite.org/schema/kernel-4" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <identifier identifierType="swMATH">2</identifier>
-    <creators>Li, X.S., Demmel, J.W.</creators>
+    <creators>Li, X.S.</creators>
     <resourceType resourceTypeGeneral="Software"/>
     <titles>
         <title>SuperLU-DIST</title>
@@ -78,12 +78,12 @@
         <name>ScaLAPACK</name>
     </related_software>
     <related_software>
-        <id>4827</id>
-        <name>mctoolbox</name>
-    </related_software>
-    <related_software>
         <id>6749</id>
         <name>WSMP</name>
+    </related_software>
+    <related_software>
+        <id>4827</id>
+        <name>mctoolbox</name>
     </related_software>
     <related_software>
         <id>6496</id>
