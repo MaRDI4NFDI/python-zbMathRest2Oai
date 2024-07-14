@@ -37,6 +37,10 @@ _illegal_ranges = ["%s-%s" % (chr(low), chr(high))
 _illegal_xml_chars_RE = re.compile(u'[%s]' % u''.join(_illegal_ranges))
 
 
+class EntryNotFoundException(Exception):
+    pass
+
+
 def apply_zbmath_api_fixes(result, prefix):
     if result.get('datestamp'):
         result['datestamp'] = (result['datestamp'].
@@ -57,6 +61,10 @@ def apply_zbmath_api_fixes(result, prefix):
 def final_xml2(api_source, prefix):
     headers = {'Accept': 'application/json'}
     r = requests.get(api_source, headers=headers)
+    if r.status_code == 404:
+        json = r.json()
+        if json['status']['execution'].startswith('Entry not found!'):
+            raise EntryNotFoundException(Exception(r.text))
     if r.status_code != 200:
         raise Exception(f"Unexpected response with status code {r.status_code}: {r.text}")
     json = r.json()
