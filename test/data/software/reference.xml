@@ -2,7 +2,7 @@
           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
           xsi:schemaLocation="http://datacite.org/schema/kernel-4 http://schema.datacite.org/meta/kernel-4/metadata.xsd">
    <identifier identifierType="swMATH">2</identifier> identifier
-            <creators>
+          <creators>
       <creator>
          <creatorName nameType="Personal">Li, X.S.</creatorName>
          <givenName>X.S.</givenName>
@@ -12,8 +12,8 @@
          <creatorName nameType="Personal">Demmel, J.W.</creatorName>
          <givenName>J.W.</givenName>
          <familyName>Demmel</familyName>
-      </creator> auhtors
-            </creators>
+      </creator>
+   </creators>
    <titles>
       <title>SuperLU-DIST</title>
    </titles>
