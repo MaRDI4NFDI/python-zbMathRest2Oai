@@ -21,4 +21,23 @@
       <description xml:lang="en" descriptionType="Abstract">zbMATH Open Web Interface contents unavailable due to conflicting licenses.</description>
    </descriptions>
    <publicationYear>2003</publicationYear>
+    <subjects>
+      <subject subjectScheme="msc2020">35</subject>
+      <subject subjectScheme="msc2020">65</subject>
+      <subject subjectScheme="msc2020">68</subject>
+      <subject subjectScheme="msc2020">74</subject>
+      <subject subjectScheme="msc2020">76</subject>
+      <subject subjectScheme="msc2020">05</subject>
+      <subject subjectScheme="msc2020">15</subject>
+      <subject subjectScheme="msc2020">60</subject>
+      <subject subjectScheme="msc2020">78</subject>
+      <subject subjectScheme="msc2020">80</subject>
+      <subject subjectScheme="msc2020">81</subject>
+      <subject subjectScheme="msc2020">82</subject>
+      <subject subjectScheme="msc2020">85</subject>
+      <subject subjectScheme="msc2020">86</subject>
+      <subject subjectScheme="msc2020">90</subject>
+      <subject subjectScheme="msc2020">92</subject>
+      <subject subjectScheme="keyword">orms</subject>
+   </subjects>
 </resource>
