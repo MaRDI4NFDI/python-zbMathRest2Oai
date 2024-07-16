@@ -19,6 +19,10 @@
                 <xsl:apply-templates select="root/description"/>
                 </descriptions>
       <xsl:apply-templates select="root/standard_articles/year"/>
+            <subjects>
+                <xsl:apply-templates select="root/classification"/>
+                <xsl:apply-templates select="root/keywords"/>
+            </subjects>
 
 </resource>
 </xsl:template>
@@ -57,5 +61,17 @@
         <publicationYear>
          <xsl:value-of select="."/>
         </publicationYear>
+        </xsl:template>
+
+        <xsl:template match="classification">
+        <subject subjectScheme="msc2020" >
+            <xsl:value-of select="."/>
+        </subject>
+        </xsl:template>
+        <xsl:template match="keywords">
+            <!-- Transformation of  keywords -->
+        <subject subjectScheme="keyword">
+            <xsl:value-of select="."/>
+        </subject>
         </xsl:template>
 </xsl:stylesheet>
