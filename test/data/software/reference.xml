@@ -43,4 +43,5 @@
       <subject subjectScheme="msc2020">92</subject>
       <subject subjectScheme="keyword">orms</subject>
    </subjects>
+    <resourceType resourceTypeGeneral="Software"/>
 </resource>
