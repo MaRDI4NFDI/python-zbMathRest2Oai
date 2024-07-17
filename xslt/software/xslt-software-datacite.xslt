@@ -27,7 +27,7 @@
                 <xsl:apply-templates select="root/classification"/>
                 <xsl:apply-templates select="root/keywords"/>
             </subjects>
-
+ <resourceType resourceTypeGeneral="Software"/>
 </resource>
 </xsl:template>
 <xsl:template match="id">
