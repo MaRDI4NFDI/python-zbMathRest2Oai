@@ -9,6 +9,10 @@
          <resource xsi:schemaLocation="http://datacite.org/schema/kernel-4 http://schema.datacite.org/meta/kernel-4/metadata.xsd">
             <!-- Roots of the metadata -->
             <xsl:apply-templates select="root/id"/>
+
+             <alternateIdentifiers>
+            <xsl:apply-templates select="root/zbmath_url"/>
+            </alternateIdentifiers>
             <creators>
                 <xsl:apply-templates select="root/authors"/>
             </creators>
@@ -31,7 +35,11 @@
 <xsl:value-of select="."/>
  </identifier>
 </xsl:template>
-
+        <xsl:template match="zbmath_url">
+        <alternateIdentifier alternateIdentifierType="URL">
+            <xsl:value-of select="."/>
+        </alternateIdentifier>
+        </xsl:template>
  <xsl:template match="authors">
         <creator>
             <creatorName nameType="Personal">
