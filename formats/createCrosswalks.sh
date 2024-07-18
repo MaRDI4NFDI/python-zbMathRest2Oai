@@ -11,6 +11,15 @@ curl --noproxy '*' -X POST -H 'Content-Type: application/json' -H  "Authorizatio
 #XSLT_JSON_ENCODED=`cat RadarMD-v9-to-DataciteMD-v4_0.xslt | jq -Rsa .`
 #curl -X POST -H 'Content-Type: application/json' -i 'http://localhost:8081/oai-backend/crosswalk' --data '{"name":"Radar2datacite","formatFrom":"radar","formatTo":"datacite","xsltStylesheet":'"$XSLT_JSON_ENCODED}"'}'
 
+#Create Crosswalk from rest_api to datacite
+## Read the xslt file
+XSLT_JSON_ENCODED=`cat ../xslt/articles/xslt-article-Datacite.xslt | jq -Rsa .`
+## Delete
+#curl -v -X DELETE -H  "Authorization: Basic $AUTH"   https://oai-input.portal.mardi4nfdi.de/oai-backend/crosswalk/software_restapi_to_datacite
+# Update
+curl --noproxy '*' -X POST -H 'Content-Type: application/json' -H  "Authorization: Basic $AUTH" -i 'https://oai-input.portal.mardi4nfdi.de/oai-backend/crosswalk' --data '{"name":"article2datacite","formatFrom":"zbmath_rest_api","formatTo":"datacite","xsltStylesheet":'"$XSLT_JSON_ENCODED}"'}'
+
+
 
 #Read all crosswalk
 #curl -X GET 'http://localhost:8081/oai-backend/crosswalk'
