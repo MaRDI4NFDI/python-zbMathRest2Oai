@@ -14,7 +14,7 @@ curl --noproxy '*' -X POST -H 'Content-Type: application/json' -H  "Authorizatio
 
 #Read all crosswalk
 #curl -X GET 'http://localhost:8081/oai-backend/crosswalk'
-curl --noproxy '*' -X GET -H  "Authorization: Basic $AUTH"  'https://oai-input.portal.mardi4nfdi.de/oai-backend/format'
+curl --noproxy '*' -X GET -H  "Authorization: Basic $AUTH"  'https://oai-input.portal.mardi4nfdi.de/oai-backend/crosswalk'
 
 #Delete specific crosswalk
 #curl -v -X DELETE http://localhost:8081/oai-backend/crosswalk/Radar2OAI_DC_v09
