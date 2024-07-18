@@ -16,7 +16,6 @@ if os.path.basename(os.getcwd()) == 'test':
 
             transform = ET.XSLT(xslt)  # is it a reserved word
             newdom = transform(dom)
-            print(newdom) #this print is to see the result of the trnasformation when by running the test
             real_string = ET.tostring(newdom, pretty_print=True, encoding='utf8').decode()
             # test if result is parsable
             reference = ET.parse('test/data/software/reference.xml')
