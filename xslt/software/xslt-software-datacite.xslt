@@ -9,6 +9,10 @@
          <resource xsi:schemaLocation="http://datacite.org/schema/kernel-4 http://schema.datacite.org/meta/kernel-4/metadata.xsd">
             <!-- Roots of the metadata -->
             <xsl:apply-templates select="root/id"/>
+
+             <alternateIdentifiers>
+            <xsl:apply-templates select="root/zbmath_url"/>
+            </alternateIdentifiers>
             <creators>
                 <xsl:apply-templates select="root/authors"/>
             </creators>
@@ -17,13 +21,15 @@
                  </titles>
                 <descriptions>
                 <xsl:apply-templates select="root/description"/>
+                    <xsl:apply-templates select="root/operating_systems"/>
+                    <xsl:apply-templates select="root/programming_languages"/>
                 </descriptions>
       <xsl:apply-templates select="root/standard_articles/year"/>
             <subjects>
                 <xsl:apply-templates select="root/classification"/>
                 <xsl:apply-templates select="root/keywords"/>
             </subjects>
-
+ <resourceType resourceTypeGeneral="Software"/>
 </resource>
 </xsl:template>
 <xsl:template match="id">
@@ -31,7 +37,11 @@
 <xsl:value-of select="."/>
  </identifier>
 </xsl:template>
-
+        <xsl:template match="zbmath_url">
+        <alternateIdentifier alternateIdentifierType="URL">
+            <xsl:value-of select="."/>
+        </alternateIdentifier>
+        </xsl:template>
  <xsl:template match="authors">
         <creator>
             <creatorName nameType="Personal">
@@ -56,6 +66,23 @@
          <xsl:value-of select="."/>
         </description>
         </xsl:template>
+      <xsl:template match="operating_systems">
+    <xsl:if test=". != ''">
+        <description xml:lang="en" descriptionType="TechnicalInfo">
+            <xsl:text>operating systems: </xsl:text>
+            <xsl:value-of select="."/>
+        </description>
+    </xsl:if>
+</xsl:template>
+
+<xsl:template match="programming_languages">
+    <xsl:if test=". != ''">
+        <description xml:lang="en" descriptionType="TechnicalInfo">
+        <xsl:text>programming languages : </xsl:text>
+            <xsl:value-of select="."/>
+        </description>
+    </xsl:if>
+</xsl:template>
   <xsl:template match="year">
             <!-- Transformation of publicationYear -->
         <publicationYear>
