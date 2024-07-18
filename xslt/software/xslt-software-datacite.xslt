@@ -21,6 +21,8 @@
                  </titles>
                 <descriptions>
                 <xsl:apply-templates select="root/description"/>
+                    <xsl:apply-templates select="root/operating_systems"/>
+                    <xsl:apply-templates select="root/programming_languages"/>
                 </descriptions>
       <xsl:apply-templates select="root/standard_articles/year"/>
             <subjects>
@@ -64,6 +66,23 @@
          <xsl:value-of select="."/>
         </description>
         </xsl:template>
+      <xsl:template match="operating_systems">
+    <xsl:if test=". != ''">
+        <description xml:lang="en" descriptionType="TechnicalInfo">
+            <xsl:text>operating systems: </xsl:text>
+            <xsl:value-of select="."/>
+        </description>
+    </xsl:if>
+</xsl:template>
+
+<xsl:template match="programming_languages">
+    <xsl:if test=". != ''">
+        <description xml:lang="en" descriptionType="TechnicalInfo">
+        <xsl:text>programming languages : </xsl:text>
+            <xsl:value-of select="."/>
+        </description>
+    </xsl:if>
+</xsl:template>
   <xsl:template match="year">
             <!-- Transformation of publicationYear -->
         <publicationYear>
