@@ -2,6 +2,8 @@
 
 #The examples below use the linux command jq for encoding teh XSLT to JSON for adding it into the curl command
 #The package can be installed via yum install jq
+#Get the password and export it as OAI_BASIC_PASSWORD
+OAI_BASIC_USER=swmath
 AUTH=$(echo -n "$OAI_BASIC_USER:$OAI_BASIC_PASSWORD" | base64)
 #Create Crosswalk from radar to oai_dc
 XSLT_JSON_ENCODED=`cat ../xslt/software/xslt-software-datacite.xslt | jq -Rsa .`
@@ -16,9 +18,12 @@ curl --noproxy '*' -X POST -H 'Content-Type: application/json' -H  "Authorizatio
 XSLT_JSON_ENCODED=`cat ../xslt/articles/xslt-article-Datacite.xslt | jq -Rsa .`
 ## Delete
 #curl -v -X DELETE -H  "Authorization: Basic $AUTH"   https://oai-input.portal.mardi4nfdi.de/oai-backend/crosswalk/software_restapi_to_datacite
-# Update
+#create
 curl --noproxy '*' -X POST -H 'Content-Type: application/json' -H  "Authorization: Basic $AUTH" -i 'https://oai-input.portal.mardi4nfdi.de/oai-backend/crosswalk' --data '{"name":"article2datacite","formatFrom":"zbmath_rest_api","formatTo":"datacite","xsltStylesheet":'"$XSLT_JSON_ENCODED}"'}'
 
+#Update the data after recreating or push
+curl --noproxy '*' -X PUT -H  "Authorization: Basic $AUTH" -i 'https://oai-input.portal.mardi4nfdi.de/oai-backend/crosswalk/article2datacite/process?updateItemTimestamp=true&from=0000-00-00T00:00:00Z&until=2030-05-27T07:05:02Z'
+# TODO needs reindexing /reindex/start“
 
 
 #Read all crosswalk
