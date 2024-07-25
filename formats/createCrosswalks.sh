@@ -23,8 +23,7 @@ curl --noproxy '*' -X POST -H 'Content-Type: application/json' -H  "Authorizatio
 
 #Update the data after recreating or push
 curl --noproxy '*' -X PUT -H  "Authorization: Basic $AUTH" -i 'https://oai-input.portal.mardi4nfdi.de/oai-backend/crosswalk/article2datacite/process?updateItemTimestamp=true&from=0000-00-00T00:00:00Z&until=2030-05-27T07:05:02Z'
-# TODO needs reindexing /reindex/start“
-
+curl --noproxy '*' -X POST -H "Authorization: Basic $AUTH" -i 'https://oai-input.portal.mardi4nfdi.de/oai-backend/reindex/start'
 
 #Read all crosswalk
 #curl -X GET 'http://localhost:8081/oai-backend/crosswalk'
