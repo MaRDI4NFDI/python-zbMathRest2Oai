@@ -34,11 +34,13 @@ Made by Shiraz Malla Mohamad member of zbmath Team-->
             </subjects>
                 <xsl:apply-templates select="root/language/languages"/>
                 <xsl:apply-templates select="root/document_type/description"/>
-               <relatedIdentifiers>
-                <xsl:apply-templates select="//references/doi[normalize-space()]"/>
-            <!-- Select all references with empty DOI elements -->
-            <xsl:apply-templates select="//references[doi[not(normalize-space())]]"/>
-            </relatedIdentifiers>
+                        <relatedIdentifiers>
+    <!-- Apply templates to DOI elements that are neither empty nor "None" -->
+    <xsl:apply-templates select="//references/doi[normalize-space() and normalize-space() != 'None']"/>
+
+    <!-- Apply templates to references with no valid DOI and where document_id is not "None" and not empty -->
+    <xsl:apply-templates select="//references[not(doi[normalize-space() and normalize-space() != 'None']) and zbmath/document_id and normalize-space(zbmath/document_id) != '' and normalize-space(zbmath/document_id) != 'None']"/>
+</relatedIdentifiers>
                 <rightsList> <!-- this generates the copyrights and legal aspect wihtin the xslt -->
                 <rights xml:lang="en"
                         schemeURI="https://api.zbmath.org/v1/"
@@ -227,15 +229,20 @@ with its own subjectscheme -->
         </subject>
         </xsl:template>
 
-<!-- Template for processing DOI references -->
-  <xsl:template match="doi[normalize-space()]">
-        <relatedIdentifier relatedIdentifierType="DOI" relationType="Cites" resourceTypeGeneral="JournalArticle"><xsl:value-of select="normalize-space(.)"/></relatedIdentifier>
-    </xsl:template>
+<xsl:template match="references[not(doi[normalize-space() and normalize-space() != 'None']) and zbmath/document_id and normalize-space(zbmath/document_id) != '' and normalize-space(zbmath/document_id) != 'None']">
+    <relatedIdentifier relatedIdentifierType="URL" relationType="IsCitedBy">
+        <xsl:value-of select="concat('https://zbmath.org/', zbmath/document_id)"/>
+    </relatedIdentifier>
+</xsl:template>
 
-    <!-- Template to handle references with empty DOI elements and take the value of document_id also adding the url of zbmath to the result -->
-    <xsl:template match="references[not(doi[normalize-space()])]">
-        <relatedIdentifier relatedIdentifierType="URL" relationType="IsCitedBy"><xsl:value-of select="concat('https://zbmath.org/', zbmath/document_id)"/></relatedIdentifier>
-    </xsl:template>
+<xsl:template match="doi">
+    <!-- Check if DOI is neither empty nor "None" -->
+    <xsl:if test="normalize-space() and normalize-space() != 'None'">
+        <relatedIdentifier relatedIdentifierType="DOI" relationType="Cites" resourceTypeGeneral="JournalArticle">
+            <xsl:value-of select="normalize-space(.)"/>
+        </relatedIdentifier>
+    </xsl:if>
+</xsl:template>
 
 
 
