@@ -1,0 +1,196 @@
+<entry xmlns:atom="http://www.w3.org/2005/Atom"
+       xmlns:codemeta="https://doi.org/10.5063/SCHEMA/CODEMETA-2.0"
+       xmlns:swhdeposit="https://www.softwareheritage.org/schema/2018/deposit"
+       xmlns:swh="https://www.softwareheritage.org/schema/2018/deposit"
+       xmlns:schema="https://schema.org/">
+   <codemeta:identifier>zbmath-825</codemeta:identifier>
+   <swhdeposit:deposit>
+      <swhdeposit:reference>
+         <swhdeposit:object swhid="swh:1:dir:817ed0bdff1dc117dd87ef88f233f7fe1b1d9332"/>
+      </swhdeposit:reference>
+      <swhdeposit:metadata-provenance>
+         <schema:url>https://staging.swmath.org/</schema:url>
+      </swhdeposit:metadata-provenance>
+   </swhdeposit:deposit>
+   <codemeta:author>
+      <codemeta:author>
+         <codemeta:familyName>Developers</codemeta:familyName>
+         <codemeta:givenName>The Sage</codemeta:givenName>
+      </codemeta:author>
+      <codemeta:author>
+         <codemeta:familyName>Stein</codemeta:familyName>
+         <codemeta:givenName>William</codemeta:givenName>
+      </codemeta:author>
+      <codemeta:author>
+         <codemeta:familyName>Joyner</codemeta:familyName>
+         <codemeta:givenName>David</codemeta:givenName>
+      </codemeta:author>
+      <codemeta:author>
+         <codemeta:familyName>Kohel</codemeta:familyName>
+         <codemeta:givenName>David</codemeta:givenName>
+      </codemeta:author>
+      <codemeta:author>
+         <codemeta:familyName>Cremona</codemeta:familyName>
+         <codemeta:givenName>John</codemeta:givenName>
+      </codemeta:author>
+      <codemeta:author>
+         <codemeta:familyName>Eröcal</codemeta:familyName>
+         <codemeta:givenName>Burçin</codemeta:givenName>
+      </codemeta:author>
+   </codemeta:author>
+   <codemeta:name>SageMath</codemeta:name>
+   <codemeta:description>zbMATH Open Web Interface contents unavailable due to conflicting licenses.</codemeta:description>
+   <codemeta:sameAs>http://www.sagemath.org</codemeta:sameAs>
+   <codemeta:codeRepository>https://github.com/sagemath/sage</codemeta:codeRepository>
+   <codemeta:keywords>orms</codemeta:keywords>
+   <codemeta:keywords>Python</codemeta:keywords>
+   <codemeta:keywords>Cython</codemeta:keywords>
+   <codemeta:keywords>Sage</codemeta:keywords>
+   <codemeta:keywords>Open Source</codemeta:keywords>
+   <codemeta:keywords>Interfaces</codemeta:keywords>
+   <codemeta:operatingSystem>None</codemeta:operatingSystem>
+   <codemeta:identifier>255</codemeta:identifier>
+   <codemeta:programmingLanguage>None</codemeta:programmingLanguage>
+   <codemeta:inCodeSet>05</codemeta:inCodeSet>
+   <codemeta:inCodeSet>11</codemeta:inCodeSet>
+   <codemeta:inCodeSet>14</codemeta:inCodeSet>
+   <codemeta:inCodeSet>20</codemeta:inCodeSet>
+   <codemeta:inCodeSet>68</codemeta:inCodeSet>
+   <codemeta:inCodeSet>00</codemeta:inCodeSet>
+   <codemeta:inCodeSet>01</codemeta:inCodeSet>
+   <codemeta:inCodeSet>03</codemeta:inCodeSet>
+   <codemeta:inCodeSet>06</codemeta:inCodeSet>
+   <codemeta:inCodeSet>12</codemeta:inCodeSet>
+   <codemeta:inCodeSet>13</codemeta:inCodeSet>
+   <codemeta:inCodeSet>15</codemeta:inCodeSet>
+   <codemeta:inCodeSet>16</codemeta:inCodeSet>
+   <codemeta:inCodeSet>17</codemeta:inCodeSet>
+   <codemeta:inCodeSet>18</codemeta:inCodeSet>
+   <codemeta:inCodeSet>19</codemeta:inCodeSet>
+   <codemeta:inCodeSet>22</codemeta:inCodeSet>
+   <codemeta:inCodeSet>26</codemeta:inCodeSet>
+   <codemeta:inCodeSet>28</codemeta:inCodeSet>
+   <codemeta:inCodeSet>30</codemeta:inCodeSet>
+   <codemeta:inCodeSet>31</codemeta:inCodeSet>
+   <codemeta:inCodeSet>32</codemeta:inCodeSet>
+   <codemeta:inCodeSet>33</codemeta:inCodeSet>
+   <codemeta:inCodeSet>34</codemeta:inCodeSet>
+   <codemeta:inCodeSet>35</codemeta:inCodeSet>
+   <codemeta:inCodeSet>37</codemeta:inCodeSet>
+   <codemeta:inCodeSet>39</codemeta:inCodeSet>
+   <codemeta:inCodeSet>40</codemeta:inCodeSet>
+   <codemeta:inCodeSet>41</codemeta:inCodeSet>
+   <codemeta:inCodeSet>42</codemeta:inCodeSet>
+   <codemeta:inCodeSet>43</codemeta:inCodeSet>
+   <codemeta:inCodeSet>44</codemeta:inCodeSet>
+   <codemeta:inCodeSet>46</codemeta:inCodeSet>
+   <codemeta:inCodeSet>47</codemeta:inCodeSet>
+   <codemeta:inCodeSet>49</codemeta:inCodeSet>
+   <codemeta:inCodeSet>51</codemeta:inCodeSet>
+   <codemeta:inCodeSet>52</codemeta:inCodeSet>
+   <codemeta:inCodeSet>53</codemeta:inCodeSet>
+   <codemeta:inCodeSet>54</codemeta:inCodeSet>
+   <codemeta:inCodeSet>55</codemeta:inCodeSet>
+   <codemeta:inCodeSet>57</codemeta:inCodeSet>
+   <codemeta:inCodeSet>58</codemeta:inCodeSet>
+   <codemeta:inCodeSet>60</codemeta:inCodeSet>
+   <codemeta:inCodeSet>62</codemeta:inCodeSet>
+   <codemeta:inCodeSet>65</codemeta:inCodeSet>
+   <codemeta:inCodeSet>70</codemeta:inCodeSet>
+   <codemeta:inCodeSet>74</codemeta:inCodeSet>
+   <codemeta:inCodeSet>76</codemeta:inCodeSet>
+   <codemeta:inCodeSet>78</codemeta:inCodeSet>
+   <codemeta:inCodeSet>80</codemeta:inCodeSet>
+   <codemeta:inCodeSet>81</codemeta:inCodeSet>
+   <codemeta:inCodeSet>82</codemeta:inCodeSet>
+   <codemeta:inCodeSet>83</codemeta:inCodeSet>
+   <codemeta:inCodeSet>85</codemeta:inCodeSet>
+   <codemeta:inCodeSet>86</codemeta:inCodeSet>
+   <codemeta:inCodeSet>90</codemeta:inCodeSet>
+   <codemeta:inCodeSet>91</codemeta:inCodeSet>
+   <codemeta:inCodeSet>92</codemeta:inCodeSet>
+   <codemeta:inCodeSet>93</codemeta:inCodeSet>
+   <codemeta:inCodeSet>94</codemeta:inCodeSet>
+   <codemeta:inCodeSet>97</codemeta:inCodeSet>
+   <codemeta:itemList>2775</codemeta:itemList>
+   <codemeta:supportingData>
+      <codemeta:name>Magma</codemeta:name>
+      <codemeta:identifier>540</codemeta:identifier>
+      <codemeta:name>GAP</codemeta:name>
+      <codemeta:identifier>320</codemeta:identifier>
+      <codemeta:name>GitHub</codemeta:name>
+      <codemeta:identifier>23170</codemeta:identifier>
+      <codemeta:name>OEIS</codemeta:name>
+      <codemeta:identifier>7248</codemeta:identifier>
+      <codemeta:name>SINGULAR</codemeta:name>
+      <codemeta:identifier>866</codemeta:identifier>
+      <codemeta:name>PARI/GP</codemeta:name>
+      <codemeta:identifier>680</codemeta:identifier>
+      <codemeta:name>Sage-Combinat</codemeta:name>
+      <codemeta:identifier>16448</codemeta:identifier>
+      <codemeta:name>Macaulay2</codemeta:name>
+      <codemeta:identifier>537</codemeta:identifier>
+      <codemeta:name>Mathematica</codemeta:name>
+      <codemeta:identifier>554</codemeta:identifier>
+      <codemeta:name>Maple</codemeta:name>
+      <codemeta:identifier>545</codemeta:identifier>
+      <codemeta:name>LMFDB</codemeta:name>
+      <codemeta:identifier>7249</codemeta:identifier>
+      <codemeta:name>Python</codemeta:name>
+      <codemeta:identifier>14460</codemeta:identifier>
+      <codemeta:name>ecdata</codemeta:name>
+      <codemeta:identifier>27596</codemeta:identifier>
+      <codemeta:name>nauty</codemeta:name>
+      <codemeta:identifier>611</codemeta:identifier>
+      <codemeta:name>Traces</codemeta:name>
+      <codemeta:identifier>7823</codemeta:identifier>
+      <codemeta:name>DLMF</codemeta:name>
+      <codemeta:identifier>4968</codemeta:identifier>
+      <codemeta:name>Maxima</codemeta:name>
+      <codemeta:identifier>560</codemeta:identifier>
+      <codemeta:name>Gfan</codemeta:name>
+      <codemeta:identifier>4698</codemeta:identifier>
+      <codemeta:name>MathOverflow</codemeta:name>
+      <codemeta:identifier>23728</codemeta:identifier>
+      <codemeta:name>SciPy</codemeta:name>
+      <codemeta:identifier>6293</codemeta:identifier>
+   </codemeta:supportingData>
+   <codemeta:citation>
+      <codemeta:author/>
+      <codemeta:identifier>7045592</codemeta:identifier>
+      <codemeta:hasSource>zbMATH Open Web Interface contents unavailable due to conflicting licenses.</codemeta:hasSource>
+      <codemeta:headline>zbMATH Open Web Interface contents unavailable due to conflicting licenses.</codemeta:headline>
+      <codemeta:datePublished>2019</codemeta:datePublished>
+      <codemeta:author/>
+      <codemeta:identifier>6418360</codemeta:identifier>
+      <codemeta:hasSource>zbMATH Open Web Interface contents unavailable due to conflicting licenses.</codemeta:hasSource>
+      <codemeta:headline>zbMATH Open Web Interface contents unavailable due to conflicting licenses.</codemeta:headline>
+      <codemeta:datePublished>2015</codemeta:datePublished>
+      <codemeta:author/>
+      <codemeta:identifier>6532438</codemeta:identifier>
+      <codemeta:hasSource>zbMATH Open Web Interface contents unavailable due to conflicting licenses.</codemeta:hasSource>
+      <codemeta:headline>zbMATH Open Web Interface contents unavailable due to conflicting licenses.</codemeta:headline>
+      <codemeta:datePublished>2013</codemeta:datePublished>
+      <codemeta:author/>
+      <codemeta:identifier>6462232</codemeta:identifier>
+      <codemeta:hasSource>zbMATH Open Web Interface contents unavailable due to conflicting licenses.</codemeta:hasSource>
+      <codemeta:headline>zbMATH Open Web Interface contents unavailable due to conflicting licenses.</codemeta:headline>
+      <codemeta:datePublished>2013</codemeta:datePublished>
+      <codemeta:author/>
+      <codemeta:identifier>6114556</codemeta:identifier>
+      <codemeta:hasSource>zbMATH Open Web Interface contents unavailable due to conflicting licenses.</codemeta:hasSource>
+      <codemeta:headline>zbMATH Open Web Interface contents unavailable due to conflicting licenses.</codemeta:headline>
+      <codemeta:datePublished>2012</codemeta:datePublished>
+      <codemeta:author/>
+      <codemeta:identifier>5785538</codemeta:identifier>
+      <codemeta:hasSource>zbMATH Open Web Interface contents unavailable due to conflicting licenses.</codemeta:hasSource>
+      <codemeta:headline>zbMATH Open Web Interface contents unavailable due to conflicting licenses.</codemeta:headline>
+      <codemeta:datePublished>2010</codemeta:datePublished>
+      <codemeta:author/>
+      <codemeta:identifier>5380273</codemeta:identifier>
+      <codemeta:hasSource>zbMATH Open Web Interface contents unavailable due to conflicting licenses.</codemeta:hasSource>
+      <codemeta:headline>zbMATH Open Web Interface contents unavailable due to conflicting licenses.</codemeta:headline>
+      <codemeta:datePublished>2008</codemeta:datePublished>
+   </codemeta:citation>
+   <codemeta:url>https://zbmath.org/software/825</codemeta:url>
+</entry>
