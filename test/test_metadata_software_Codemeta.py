@@ -19,20 +19,20 @@ if os.path.basename(os.getcwd()) == 'test':
             transform = ET.XSLT(xslt)
             newdom = transform(dom)
 
-            real_string = ET.tostring(newdom , pretty_print= True , encoding= 'utf8').decode()
+            real_string = ET.tostring(newdom, pretty_print=True, encoding='utf8').decode()
 
             reference = ET.parse('test/data/software/Test_Result_Codemeta.xml')
 
-            expected_string = ET.tostring(reference , pretty_print=True , encoding= 'utf8').decode()
+            expected_string = ET.tostring(reference, pretty_print=True, encoding='utf8').decode()
 
-            diff = main.diff_texts(expected_string , real_string,
-             {'ratie mode' : 'fast'
-               , 'ratio' : 1,
+            diff = main.diff_texts(expected_string, real_string,
+             {'ratio_mode': 'fast'
+               , 'F': 1,
               })
 
-            essentials = list(filter(lambda e : not isinstance(e , MoveNode), diff))
+            essentials = list(filter(lambda e: not isinstance(e, MoveNode), diff))
 
-            self.assertEqual(len(essentials), 0 , "Found differences between expected and transformed XML")
+            self.assertEqual(len(essentials), 0, "Found differences between expected and transformed XML")
 
 
     if __name__ == '__main__':
