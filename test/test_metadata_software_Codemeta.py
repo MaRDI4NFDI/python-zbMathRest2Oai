@@ -21,13 +21,14 @@ if os.path.basename(os.getcwd()) == 'test':
 
             real_string = ET.tostring(newdom , pretty_print= True , encoding= 'utf8').decode()
 
-            reference = ET.parse('test/data/software/Sagemath_plain.xml')
+            reference = ET.parse('test/data/software/Test_Result_Codemeta.xml')
 
             expected_string = ET.tostring(reference , pretty_print=True , encoding= 'utf8').decode()
 
             diff = main.diff_texts(expected_string , real_string,
              {'ratie mode' : 'fast'
-               , 'ratio' : 1, })
+               , 'ratio' : 1,
+              })
 
             essentials = list(filter(lambda e : not isinstance(e , MoveNode), diff))
 
