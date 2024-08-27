@@ -1,0 +1,223 @@
+{
+  "entry": {
+    "@xmlns:atom": "http://www.w3.org/2005/Atom",
+    "@xmlns:codemeta": "https://doi.org/10.5063/SCHEMA/CODEMETA-2.0",
+    "@xmlns:swhdeposit": "https://www.softwareheritage.org/schema/2018/deposit",
+    "@xmlns:swh": "https://www.softwareheritage.org/schema/2018/deposit",
+    "@xmlns:schema": "https://schema.org/",
+    "codemeta:identifier": [
+      "zbmath-825",
+      "255"
+    ],
+    "swhdeposit:deposit": {
+      "swhdeposit:reference": {
+        "swhdeposit:object": {
+          "@swhid": "swh:1:dir:817ed0bdff1dc117dd87ef88f233f7fe1b1d9332"
+        }
+      },
+      "swhdeposit:metadata-provenance": {
+        "schema:url": "https://staging.swmath.org/"
+      }
+    },
+    "codemeta:author": {
+      "codemeta:author": [
+        {
+          "codemeta:familyName": "Developers",
+          "codemeta:givenName": "The Sage"
+        },
+        {
+          "codemeta:familyName": "Stein",
+          "codemeta:givenName": "William"
+        },
+        {
+          "codemeta:familyName": "Joyner",
+          "codemeta:givenName": "David"
+        },
+        {
+          "codemeta:familyName": "Kohel",
+          "codemeta:givenName": "David"
+        },
+        {
+          "codemeta:familyName": "Cremona",
+          "codemeta:givenName": "John"
+        },
+        {
+          "codemeta:familyName": "Eröcal",
+          "codemeta:givenName": "Burçin"
+        }
+      ]
+    },
+    "codemeta:name": "SageMath",
+    "codemeta:description": "zbMATH Open Web Interface contents unavailable due to conflicting licenses.",
+    "codemeta:sameAs": "http://www.sagemath.org",
+    "codemeta:codeRepository": "https://github.com/sagemath/sage",
+    "codemeta:keywords": [
+      "orms",
+      "Python",
+      "Cython",
+      "Sage",
+      "Open Source",
+      "Interfaces"
+    ],
+    "codemeta:operatingSystem": "None",
+    "codemeta:programmingLanguage": "None",
+    "codemeta:inCodeSet": [
+      "05",
+      "11",
+      "14",
+      "20",
+      "68",
+      "00",
+      "01",
+      "03",
+      "06",
+      "12",
+      "13",
+      "15",
+      "16",
+      "17",
+      "18",
+      "19",
+      "22",
+      "26",
+      "28",
+      "30",
+      "31",
+      "32",
+      "33",
+      "34",
+      "35",
+      "37",
+      "39",
+      "40",
+      "41",
+      "42",
+      "43",
+      "44",
+      "46",
+      "47",
+      "49",
+      "51",
+      "52",
+      "53",
+      "54",
+      "55",
+      "57",
+      "58",
+      "60",
+      "62",
+      "65",
+      "70",
+      "74",
+      "76",
+      "78",
+      "80",
+      "81",
+      "82",
+      "83",
+      "85",
+      "86",
+      "90",
+      "91",
+      "92",
+      "93",
+      "94",
+      "97"
+    ],
+    "codemeta:itemList": "2775",
+    "codemeta:supportingData": {
+      "codemeta:name": [
+        "Magma",
+        "GAP",
+        "GitHub",
+        "OEIS",
+        "SINGULAR",
+        "PARI/GP",
+        "Sage-Combinat",
+        "Macaulay2",
+        "Mathematica",
+        "Maple",
+        "LMFDB",
+        "Python",
+        "ecdata",
+        "nauty",
+        "Traces",
+        "DLMF",
+        "Maxima",
+        "Gfan",
+        "MathOverflow",
+        "SciPy"
+      ],
+      "codemeta:identifier": [
+        "540",
+        "320",
+        "23170",
+        "7248",
+        "866",
+        "680",
+        "16448",
+        "537",
+        "554",
+        "545",
+        "7249",
+        "14460",
+        "27596",
+        "611",
+        "7823",
+        "4968",
+        "560",
+        "4698",
+        "23728",
+        "6293"
+      ]
+    },
+    "codemeta:citation": {
+      "codemeta:author": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "codemeta:identifier": [
+        "7045592",
+        "6418360",
+        "6532438",
+        "6462232",
+        "6114556",
+        "5785538",
+        "5380273"
+      ],
+      "codemeta:hasSource": [
+        "zbMATH Open Web Interface contents unavailable due to conflicting licenses.",
+        "zbMATH Open Web Interface contents unavailable due to conflicting licenses.",
+        "zbMATH Open Web Interface contents unavailable due to conflicting licenses.",
+        "zbMATH Open Web Interface contents unavailable due to conflicting licenses.",
+        "zbMATH Open Web Interface contents unavailable due to conflicting licenses.",
+        "zbMATH Open Web Interface contents unavailable due to conflicting licenses.",
+        "zbMATH Open Web Interface contents unavailable due to conflicting licenses."
+      ],
+      "codemeta:headline": [
+        "zbMATH Open Web Interface contents unavailable due to conflicting licenses.",
+        "zbMATH Open Web Interface contents unavailable due to conflicting licenses.",
+        "zbMATH Open Web Interface contents unavailable due to conflicting licenses.",
+        "zbMATH Open Web Interface contents unavailable due to conflicting licenses.",
+        "zbMATH Open Web Interface contents unavailable due to conflicting licenses.",
+        "zbMATH Open Web Interface contents unavailable due to conflicting licenses.",
+        "zbMATH Open Web Interface contents unavailable due to conflicting licenses."
+      ],
+      "codemeta:datePublished": [
+        "2019",
+        "2015",
+        "2013",
+        "2013",
+        "2012",
+        "2010",
+        "2008"
+      ]
+    },
+    "codemeta:url": "https://zbmath.org/software/825"
+  }
+}
