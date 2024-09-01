@@ -40,7 +40,7 @@ def convert_json(data):
 # Path to the input JSON file
 input_file_path = r'/test/test_Result_Codemeta.json'
 # Path to the output JSON file
-output_file_path = 'data/software/converted_data_to_Codemeta.json'
+output_file_path = '../../test/data/software/converted_data_to_Codemeta.json'
 
 # Ensure the input file exists
 if not os.path.isfile(input_file_path):
