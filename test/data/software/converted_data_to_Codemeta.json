@@ -15,6 +15,12 @@
     "name": "None",
     "url": "http://www.sagemath.org"
   },
+  "runtimePlatform": "None",
+  "provider": {
+    "@type": "Organization",
+    "name": "zbMATH Open Web Interface",
+    "url": "https://zbmath.org"
+  },
   "author": [
     {
       "@type": "Person",
@@ -46,5 +52,312 @@
       "givenName": "Burçin",
       "familyName": "Eröcal"
     }
-  ]
+  ],
+  "CategoryCodeSet": {
+    "1": {
+      "@type": "CategoryCode",
+      "descrption": "Mathematical Subject Classification",
+      "inCodeSet": "05"
+    },
+    "2": {
+      "@type": "CategoryCode",
+      "descrption": "Mathematical Subject Classification",
+      "inCodeSet": "11"
+    },
+    "3": {
+      "@type": "CategoryCode",
+      "descrption": "Mathematical Subject Classification",
+      "inCodeSet": "14"
+    },
+    "4": {
+      "@type": "CategoryCode",
+      "descrption": "Mathematical Subject Classification",
+      "inCodeSet": "20"
+    },
+    "5": {
+      "@type": "CategoryCode",
+      "descrption": "Mathematical Subject Classification",
+      "inCodeSet": "68"
+    },
+    "6": {
+      "@type": "CategoryCode",
+      "descrption": "Mathematical Subject Classification",
+      "inCodeSet": "00"
+    },
+    "7": {
+      "@type": "CategoryCode",
+      "descrption": "Mathematical Subject Classification",
+      "inCodeSet": "01"
+    },
+    "8": {
+      "@type": "CategoryCode",
+      "descrption": "Mathematical Subject Classification",
+      "inCodeSet": "03"
+    },
+    "9": {
+      "@type": "CategoryCode",
+      "descrption": "Mathematical Subject Classification",
+      "inCodeSet": "06"
+    },
+    "10": {
+      "@type": "CategoryCode",
+      "descrption": "Mathematical Subject Classification",
+      "inCodeSet": "12"
+    },
+    "11": {
+      "@type": "CategoryCode",
+      "descrption": "Mathematical Subject Classification",
+      "inCodeSet": "13"
+    },
+    "12": {
+      "@type": "CategoryCode",
+      "descrption": "Mathematical Subject Classification",
+      "inCodeSet": "15"
+    },
+    "13": {
+      "@type": "CategoryCode",
+      "descrption": "Mathematical Subject Classification",
+      "inCodeSet": "16"
+    },
+    "14": {
+      "@type": "CategoryCode",
+      "descrption": "Mathematical Subject Classification",
+      "inCodeSet": "17"
+    },
+    "15": {
+      "@type": "CategoryCode",
+      "descrption": "Mathematical Subject Classification",
+      "inCodeSet": "18"
+    },
+    "16": {
+      "@type": "CategoryCode",
+      "descrption": "Mathematical Subject Classification",
+      "inCodeSet": "19"
+    },
+    "17": {
+      "@type": "CategoryCode",
+      "descrption": "Mathematical Subject Classification",
+      "inCodeSet": "22"
+    },
+    "18": {
+      "@type": "CategoryCode",
+      "descrption": "Mathematical Subject Classification",
+      "inCodeSet": "26"
+    },
+    "19": {
+      "@type": "CategoryCode",
+      "descrption": "Mathematical Subject Classification",
+      "inCodeSet": "28"
+    },
+    "20": {
+      "@type": "CategoryCode",
+      "descrption": "Mathematical Subject Classification",
+      "inCodeSet": "30"
+    },
+    "21": {
+      "@type": "CategoryCode",
+      "descrption": "Mathematical Subject Classification",
+      "inCodeSet": "31"
+    },
+    "22": {
+      "@type": "CategoryCode",
+      "descrption": "Mathematical Subject Classification",
+      "inCodeSet": "32"
+    },
+    "23": {
+      "@type": "CategoryCode",
+      "descrption": "Mathematical Subject Classification",
+      "inCodeSet": "33"
+    },
+    "24": {
+      "@type": "CategoryCode",
+      "descrption": "Mathematical Subject Classification",
+      "inCodeSet": "34"
+    },
+    "25": {
+      "@type": "CategoryCode",
+      "descrption": "Mathematical Subject Classification",
+      "inCodeSet": "35"
+    },
+    "26": {
+      "@type": "CategoryCode",
+      "descrption": "Mathematical Subject Classification",
+      "inCodeSet": "37"
+    },
+    "27": {
+      "@type": "CategoryCode",
+      "descrption": "Mathematical Subject Classification",
+      "inCodeSet": "39"
+    },
+    "28": {
+      "@type": "CategoryCode",
+      "descrption": "Mathematical Subject Classification",
+      "inCodeSet": "40"
+    },
+    "29": {
+      "@type": "CategoryCode",
+      "descrption": "Mathematical Subject Classification",
+      "inCodeSet": "41"
+    },
+    "30": {
+      "@type": "CategoryCode",
+      "descrption": "Mathematical Subject Classification",
+      "inCodeSet": "42"
+    },
+    "31": {
+      "@type": "CategoryCode",
+      "descrption": "Mathematical Subject Classification",
+      "inCodeSet": "43"
+    },
+    "32": {
+      "@type": "CategoryCode",
+      "descrption": "Mathematical Subject Classification",
+      "inCodeSet": "44"
+    },
+    "33": {
+      "@type": "CategoryCode",
+      "descrption": "Mathematical Subject Classification",
+      "inCodeSet": "46"
+    },
+    "34": {
+      "@type": "CategoryCode",
+      "descrption": "Mathematical Subject Classification",
+      "inCodeSet": "47"
+    },
+    "35": {
+      "@type": "CategoryCode",
+      "descrption": "Mathematical Subject Classification",
+      "inCodeSet": "49"
+    },
+    "36": {
+      "@type": "CategoryCode",
+      "descrption": "Mathematical Subject Classification",
+      "inCodeSet": "51"
+    },
+    "37": {
+      "@type": "CategoryCode",
+      "descrption": "Mathematical Subject Classification",
+      "inCodeSet": "52"
+    },
+    "38": {
+      "@type": "CategoryCode",
+      "descrption": "Mathematical Subject Classification",
+      "inCodeSet": "53"
+    },
+    "39": {
+      "@type": "CategoryCode",
+      "descrption": "Mathematical Subject Classification",
+      "inCodeSet": "54"
+    },
+    "40": {
+      "@type": "CategoryCode",
+      "descrption": "Mathematical Subject Classification",
+      "inCodeSet": "55"
+    },
+    "41": {
+      "@type": "CategoryCode",
+      "descrption": "Mathematical Subject Classification",
+      "inCodeSet": "57"
+    },
+    "42": {
+      "@type": "CategoryCode",
+      "descrption": "Mathematical Subject Classification",
+      "inCodeSet": "58"
+    },
+    "43": {
+      "@type": "CategoryCode",
+      "descrption": "Mathematical Subject Classification",
+      "inCodeSet": "60"
+    },
+    "44": {
+      "@type": "CategoryCode",
+      "descrption": "Mathematical Subject Classification",
+      "inCodeSet": "62"
+    },
+    "45": {
+      "@type": "CategoryCode",
+      "descrption": "Mathematical Subject Classification",
+      "inCodeSet": "65"
+    },
+    "46": {
+      "@type": "CategoryCode",
+      "descrption": "Mathematical Subject Classification",
+      "inCodeSet": "70"
+    },
+    "47": {
+      "@type": "CategoryCode",
+      "descrption": "Mathematical Subject Classification",
+      "inCodeSet": "74"
+    },
+    "48": {
+      "@type": "CategoryCode",
+      "descrption": "Mathematical Subject Classification",
+      "inCodeSet": "76"
+    },
+    "49": {
+      "@type": "CategoryCode",
+      "descrption": "Mathematical Subject Classification",
+      "inCodeSet": "78"
+    },
+    "50": {
+      "@type": "CategoryCode",
+      "descrption": "Mathematical Subject Classification",
+      "inCodeSet": "80"
+    },
+    "51": {
+      "@type": "CategoryCode",
+      "descrption": "Mathematical Subject Classification",
+      "inCodeSet": "81"
+    },
+    "52": {
+      "@type": "CategoryCode",
+      "descrption": "Mathematical Subject Classification",
+      "inCodeSet": "82"
+    },
+    "53": {
+      "@type": "CategoryCode",
+      "descrption": "Mathematical Subject Classification",
+      "inCodeSet": "83"
+    },
+    "54": {
+      "@type": "CategoryCode",
+      "descrption": "Mathematical Subject Classification",
+      "inCodeSet": "85"
+    },
+    "55": {
+      "@type": "CategoryCode",
+      "descrption": "Mathematical Subject Classification",
+      "inCodeSet": "86"
+    },
+    "56": {
+      "@type": "CategoryCode",
+      "descrption": "Mathematical Subject Classification",
+      "inCodeSet": "90"
+    },
+    "57": {
+      "@type": "CategoryCode",
+      "descrption": "Mathematical Subject Classification",
+      "inCodeSet": "91"
+    },
+    "58": {
+      "@type": "CategoryCode",
+      "descrption": "Mathematical Subject Classification",
+      "inCodeSet": "92"
+    },
+    "59": {
+      "@type": "CategoryCode",
+      "descrption": "Mathematical Subject Classification",
+      "inCodeSet": "93"
+    },
+    "60": {
+      "@type": "CategoryCode",
+      "descrption": "Mathematical Subject Classification",
+      "inCodeSet": "94"
+    },
+    "61": {
+      "@type": "CategoryCode",
+      "descrption": "Mathematical Subject Classification",
+      "inCodeSet": "97"
+    }
+  }
 }
