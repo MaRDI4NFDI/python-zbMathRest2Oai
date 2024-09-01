@@ -21,6 +21,12 @@ def convert_json(data):
             "name": data.get("entry", {}).get("codemeta:programmingLanguage"),
             "url": data.get("entry", {}).get("codemeta:sameAs")
         },
+        "runtimePlatform": "None",  # Additional field
+        "provider": {  # Additional field
+            "@type": "Organization",
+            "name": "zbMATH Open Web Interface",
+            "url": "https://zbmath.org"
+        },
         "author": []
     }
 
