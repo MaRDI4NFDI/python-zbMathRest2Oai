@@ -11,5 +11,5 @@ with open(xml_result) as xml_file:
 
     json_data = json.dumps(data_dict , indent=2, ensure_ascii=False)
 
-with open("../../test/data/software/test_Result_Codemeta.json", "w") as json_file:
+with open("data/software/test_Result_Codemeta.json", "w") as json_file:
      json_file.write(json_data)
