@@ -359,5 +359,107 @@
       "descrption": "Mathematical Subject Classification",
       "inCodeSet": "97"
     }
-  }
+  },
+  "supportingData": [
+    {
+      "@type": "DataFeed",
+      "identifier": "540",
+      "name": "Magma"
+    },
+    {
+      "@type": "DataFeed",
+      "identifier": "320",
+      "name": "GAP"
+    },
+    {
+      "@type": "DataFeed",
+      "identifier": "23170",
+      "name": "GitHub"
+    },
+    {
+      "@type": "DataFeed",
+      "identifier": "7248",
+      "name": "OEIS"
+    },
+    {
+      "@type": "DataFeed",
+      "identifier": "866",
+      "name": "SINGULAR"
+    },
+    {
+      "@type": "DataFeed",
+      "identifier": "680",
+      "name": "PARI/GP"
+    },
+    {
+      "@type": "DataFeed",
+      "identifier": "16448",
+      "name": "Sage-Combinat"
+    },
+    {
+      "@type": "DataFeed",
+      "identifier": "537",
+      "name": "Macaulay2"
+    },
+    {
+      "@type": "DataFeed",
+      "identifier": "554",
+      "name": "Mathematica"
+    },
+    {
+      "@type": "DataFeed",
+      "identifier": "545",
+      "name": "Maple"
+    },
+    {
+      "@type": "DataFeed",
+      "identifier": "7249",
+      "name": "LMFDB"
+    },
+    {
+      "@type": "DataFeed",
+      "identifier": "14460",
+      "name": "Python"
+    },
+    {
+      "@type": "DataFeed",
+      "identifier": "27596",
+      "name": "ecdata"
+    },
+    {
+      "@type": "DataFeed",
+      "identifier": "611",
+      "name": "nauty"
+    },
+    {
+      "@type": "DataFeed",
+      "identifier": "7823",
+      "name": "Traces"
+    },
+    {
+      "@type": "DataFeed",
+      "identifier": "4968",
+      "name": "DLMF"
+    },
+    {
+      "@type": "DataFeed",
+      "identifier": "560",
+      "name": "Maxima"
+    },
+    {
+      "@type": "DataFeed",
+      "identifier": "4698",
+      "name": "Gfan"
+    },
+    {
+      "@type": "DataFeed",
+      "identifier": "23728",
+      "name": "MathOverflow"
+    },
+    {
+      "@type": "DataFeed",
+      "identifier": "6293",
+      "name": "SciPy"
+    }
+  ]
 }
