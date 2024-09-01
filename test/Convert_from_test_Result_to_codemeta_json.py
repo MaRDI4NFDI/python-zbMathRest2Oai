@@ -51,6 +51,23 @@ def convert_json(data):
                 }
             new_format["CategoryCodeSet"] = category_code_set
 
+    supporting_data = data.get("entry", {}).get("codemeta:supportingData", {})
+    supporting_names = supporting_data.get("codemeta:name", [])
+    supporting_identifiers = supporting_data.get("codemeta:identifier", [])
+
+    if supporting_names and supporting_identifiers:
+        # Ensure that the number of names and identifiers are the same
+        supporting_list = []
+        for name, identifier in zip(supporting_names, supporting_identifiers):
+            supporting_item = {
+                "@type": "DataFeed",
+                "identifier": identifier,
+                "name": name
+            }
+            supporting_list.append(supporting_item)
+
+        new_format["supportingData"] = supporting_list
+
     return new_format
 
 
