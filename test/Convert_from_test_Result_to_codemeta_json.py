@@ -40,6 +40,17 @@ def convert_json(data):
         }
         new_format["author"].append(reshaped_author)
 
+        in_code_set = data.get("entry", {}).get("codemeta:inCodeSet", [])
+        if in_code_set:
+            category_code_set = {}
+            for idx, code in enumerate(in_code_set, start=1):
+                category_code_set[str(idx)] = {
+                    "@type": "CategoryCode",
+                    "descrption": "Mathematical Subject Classification",
+                    "inCodeSet": code
+                }
+            new_format["CategoryCodeSet"] = category_code_set
+
     return new_format
 
 
