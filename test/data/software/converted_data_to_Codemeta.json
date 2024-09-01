@@ -461,5 +461,56 @@
       "identifier": "6293",
       "name": "SciPy"
     }
+  ],
+  "Citation": [
+    {
+      "@type": "publication",
+      "identifier": "7045592",
+      "hasSource": "zbMATH Open Web Interface contents unavailable due to conflicting licenses.",
+      "headline": "zbMATH Open Web Interface contents unavailable due to conflicting licenses.",
+      "datePublished": "2019"
+    },
+    {
+      "@type": "publication",
+      "identifier": "6418360",
+      "hasSource": "zbMATH Open Web Interface contents unavailable due to conflicting licenses.",
+      "headline": "zbMATH Open Web Interface contents unavailable due to conflicting licenses.",
+      "datePublished": "2015"
+    },
+    {
+      "@type": "publication",
+      "identifier": "6532438",
+      "hasSource": "zbMATH Open Web Interface contents unavailable due to conflicting licenses.",
+      "headline": "zbMATH Open Web Interface contents unavailable due to conflicting licenses.",
+      "datePublished": "2013"
+    },
+    {
+      "@type": "publication",
+      "identifier": "6462232",
+      "hasSource": "zbMATH Open Web Interface contents unavailable due to conflicting licenses.",
+      "headline": "zbMATH Open Web Interface contents unavailable due to conflicting licenses.",
+      "datePublished": "2013"
+    },
+    {
+      "@type": "publication",
+      "identifier": "6114556",
+      "hasSource": "zbMATH Open Web Interface contents unavailable due to conflicting licenses.",
+      "headline": "zbMATH Open Web Interface contents unavailable due to conflicting licenses.",
+      "datePublished": "2012"
+    },
+    {
+      "@type": "publication",
+      "identifier": "5785538",
+      "hasSource": "zbMATH Open Web Interface contents unavailable due to conflicting licenses.",
+      "headline": "zbMATH Open Web Interface contents unavailable due to conflicting licenses.",
+      "datePublished": "2010"
+    },
+    {
+      "@type": "publication",
+      "identifier": "5380273",
+      "hasSource": "zbMATH Open Web Interface contents unavailable due to conflicting licenses.",
+      "headline": "zbMATH Open Web Interface contents unavailable due to conflicting licenses.",
+      "datePublished": "2008"
+    }
   ]
 }
