@@ -68,6 +68,27 @@ def convert_json(data):
 
         new_format["supportingData"] = supporting_list
 
+        citation = data.get("entry", {}).get("codemeta:citation", {})
+        citation_identifiers = citation.get("codemeta:identifier", [])
+        citation_sources = citation.get("codemeta:hasSource", [])
+        citation_headlines = citation.get("codemeta:headline", [])
+        citation_dates = citation.get("codemeta:datePublished", [])
+
+        if citation_identifiers and citation_sources and citation_headlines and citation_dates:
+            citation_list = []
+            for identifier, source, headline, date in zip(citation_identifiers, citation_sources, citation_headlines,
+                                                          citation_dates):
+                citation_item = {
+                    "@type": "publication",
+                    "identifier": identifier,
+                    "hasSource": source,
+                    "headline": headline,
+                    "datePublished": date
+                }
+                citation_list.append(citation_item)
+
+            new_format["Citation"] = citation_list
+
     return new_format
 
 
