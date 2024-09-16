@@ -10,6 +10,7 @@ def convert_json(data):
         "identifier": data.get("entry", {}).get("codemeta:identifier", [None])[0],
         "description": data.get("entry", {}).get("codemeta:description"),
         "name": data.get("entry", {}).get("codemeta:name"),
+        "url": data.get("entry", {}).get("codemeta:url"),
         "relatedLink": [
             data.get("entry", {}).get("swhdeposit:deposit", {}).get("swhdeposit:metadata-provenance", {}).get("schema:url"),
             data.get("entry", {}).get("codemeta:sameAs")
@@ -27,7 +28,22 @@ def convert_json(data):
             "name": "zbMATH Open Web Interface",
             "url": "https://zbmath.org"
         },
-        "author": []
+        "author": [],
+        "keywords": data.get("entry", {}).get("codemeta:keywords", []),
+        "contributor": None,
+        "copyrightHolder": None,
+        "funder": None,
+        "maintainer": None,
+        "isPartOf": None,
+        "fileSize": None,
+        "releaseNotes": None,
+        "readme": None,
+        "contentIntegration": None,
+        "developmentStatus": None,
+        "itemListElement": {
+            "@type": "Integer",
+            "numberOfItems": data.get("entry", {}).get("codemeta:itemList", "2775")
+        }
     }
 
     # Extract and transform author information
