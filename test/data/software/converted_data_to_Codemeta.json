@@ -4,6 +4,7 @@
   "identifier": "zbmath-825",
   "description": "zbMATH Open Web Interface contents unavailable due to conflicting licenses.",
   "name": "SageMath",
+  "url": "https://zbmath.org/software/825",
   "relatedLink": [
     "https://staging.swmath.org/",
     "http://www.sagemath.org"
@@ -53,6 +54,28 @@
       "familyName": "Eröcal"
     }
   ],
+  "keywords": [
+    "orms",
+    "Python",
+    "Cython",
+    "Sage",
+    "Open Source",
+    "Interfaces"
+  ],
+  "contributor": null,
+  "copyrightHolder": null,
+  "funder": null,
+  "maintainer": null,
+  "isPartOf": null,
+  "fileSize": null,
+  "releaseNotes": null,
+  "readme": null,
+  "contentIntegration": null,
+  "developmentStatus": null,
+  "itemListElement": {
+    "@type": "Integer",
+    "numberOfItems": "2775"
+  },
   "CategoryCodeSet": {
     "1": {
       "@type": "CategoryCode",
