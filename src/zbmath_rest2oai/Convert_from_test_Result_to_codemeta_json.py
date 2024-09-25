@@ -1,8 +1,21 @@
 import json
 import os
+import csv
+
+
+def parse_csv_to_dict(csv_file_path):
+    swmathid_to_swhid = {}
+    with open(csv_file_path, mode='r', newline='', encoding='utf-8') as file:
+        reader = csv.DictReader(file)
+        for row in reader:
+            swmathid = int(row['swmathid'])
+            swhid = row['swhid']
+            swmathid_to_swhid[swmathid] = swhid
+    return swmathid_to_swhid
+
 
 # Function to convert the input JSON format to the desired format
-def convert_json(data):
+def convert_json(data , swmathid_to_swhid=None):
     # Initialize the new format with the desired structure
     new_format = {
         "@context": "https://doi.org/10.5063/schema/codemeta-2.0",
@@ -43,6 +56,21 @@ def convert_json(data):
         "itemListElement": {
             "@type": "Integer",
             "numberOfItems": data.get("entry", {}).get("codemeta:itemList", "2775")
+        },
+        "swhdeposit:deposit": {
+            "swhdeposit:reference": {
+                "swhdeposit:object": {
+                    "@swhid": data.get("entry", {}).get("swhdeposit:deposit", {}).get("swhdeposit:reference", {}).get(
+                        "swhdeposit:object", {}).get("@swhid", "swh:1:dir:default_swhid")
+                    # Default value if not present
+                }
+            },
+            "swhdeposit:metadata-provenance": {
+                "schema:url": data.get("entry", {}).get("swhdeposit:deposit", {}).get("swhdeposit:metadata-provenance",
+                                                                                      {}).get("schema:url",
+                                                                                              "https://staging.swmath.org/")
+                # Default value if not present
+            }
         }
     }
 
@@ -104,20 +132,38 @@ def convert_json(data):
                 citation_list.append(citation_item)
 
             new_format["Citation"] = citation_list
+        if swmathid_to_swhid:
+            url = data.get("entry", {}).get("codemeta:url", "")
+            parts = url.split('software/')
+            if len(parts) > 1:
+                swmathid_str = parts[1] # Get the value after 'software/'
+                try:
+                    swmathid = int(swmathid_str)  # Convert it to an integer
+                    if swmathid in swmathid_to_swhid:  # Check if the swmathid exists in the mapping
+                        new_format["swhdeposit:deposit"]["swhdeposit:reference"]["swhdeposit:object"]["@swhid"] = \
+                        swmathid_to_swhid[swmathid]
+                except ValueError:
+                    # If conversion to integer fails, do nothing
+                    pass
 
     return new_format
 
 
 # Path to the input JSON file
-#input_file_path = r'python-zbmathRest2Oai/test/data/software/test_Result_Codemeta.json'
+
 input_file_path = '../../test/data/software/test_Result_Codemeta.json'
 # Path to the output JSON file
-#output_file_path = 'python-zbmathRest2Oai/test/data/software/converted_data_to_Codemeta.json'
+
 output_file_path = '../../test/data/software/converted_data_to_Codemeta.json'
+
+csv_file_path = '../../test/data/software/swh_swmath.csv'
 
 # Ensure the input file exists
 if not os.path.isfile(input_file_path):
     print(f"Error: The file {input_file_path} does not exist.")
+    exit(1)
+if not os.path.isfile(csv_file_path):
+    print(f"Error: The file {csv_file_path} does not exist.")
     exit(1)
 
 try:
@@ -129,8 +175,9 @@ try:
     print("Input JSON data:")
     print(json.dumps(input_json, indent=2, ensure_ascii=False))
 
+    swmathid_to_swhid = parse_csv_to_dict(csv_file_path)
     # Convert the JSON data
-    converted_json = convert_json(input_json)
+    converted_json = convert_json(input_json , swmathid_to_swhid)
 
     # Print the converted JSON to verify the transformation
     print("Converted JSON data:")
