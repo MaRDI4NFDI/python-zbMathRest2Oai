@@ -109,8 +109,10 @@ def convert_json(data):
 
 
 # Path to the input JSON file
-input_file_path = r'/test/data/software/test_Result_Codemeta.json'
+#input_file_path = r'python-zbmathRest2Oai/test/data/software/test_Result_Codemeta.json'
+input_file_path = '../../test/data/software/test_Result_Codemeta.json'
 # Path to the output JSON file
+#output_file_path = 'python-zbmathRest2Oai/test/data/software/converted_data_to_Codemeta.json'
 output_file_path = '../../test/data/software/converted_data_to_Codemeta.json'
 
 # Ensure the input file exists
