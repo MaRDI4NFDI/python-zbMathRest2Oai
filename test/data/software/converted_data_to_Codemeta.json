@@ -76,6 +76,16 @@
     "@type": "Integer",
     "numberOfItems": "2775"
   },
+  "swhdeposit:deposit": {
+    "swhdeposit:reference": {
+      "swhdeposit:object": {
+        "@swhid": "swh:1:snp:5132188cdf169d8ffcf2e44f41ad30734ecbf685"
+      }
+    },
+    "swhdeposit:metadata-provenance": {
+      "schema:url": "https://staging.swmath.org/"
+    }
+  },
   "CategoryCodeSet": {
     "1": {
       "@type": "CategoryCode",
