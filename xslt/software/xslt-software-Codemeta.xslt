@@ -14,16 +14,7 @@ Made by Shiraz Malla Mohamad member of zbmath Team-->
 
  <xsl:apply-templates select="root/id"/>
 
-
-  <swhdeposit:deposit>
-                <swhdeposit:reference>
-                    <swhdeposit:object swhid="swh:1:dir:817ed0bdff1dc117dd87ef88f233f7fe1b1d9332"/>
-                </swhdeposit:reference>
-                <swhdeposit:metadata-provenance>
-                    <schema:url>https://staging.swmath.org/</schema:url>
-                </swhdeposit:metadata-provenance>
- </swhdeposit:deposit>
-
+<xsl:apply-templates select="root/swhdeposit:deposit"/>
 
  <codemeta:author>
 <xsl:apply-templates select="root/authors"/>
@@ -71,6 +62,43 @@ Made by Shiraz Malla Mohamad member of zbmath Team-->
             <xsl:value-of select="."/>
         </codemeta:identifier>
     </xsl:template>
+
+
+     <xsl:template match="swhdeposit:deposit">
+        <swhdeposit:deposit>
+            <xsl:apply-templates select="swhdeposit:reference"/>
+            <xsl:apply-templates select="swhdeposit:metadata-provenance"/>
+        </swhdeposit:deposit>
+    </xsl:template>
+
+    <!-- Template for swhdeposit:reference -->
+    <xsl:template match="swhdeposit:reference">
+        <swhdeposit:reference>
+            <xsl:apply-templates select="swhdeposit:object"/>
+        </swhdeposit:reference>
+    </xsl:template>
+
+    <!-- Template for swhdeposit:object -->
+    <xsl:template match="swhdeposit:object">
+        <swhdeposit:object swhid="{@swhid}"/>
+    </xsl:template>
+
+    <!-- Template for swhdeposit:metadata-provenance -->
+    <xsl:template match="swhdeposit:metadata-provenance">
+        <swhdeposit:metadata-provenance>
+            <xsl:apply-templates select="schema:url"/>
+        </swhdeposit:metadata-provenance>
+    </xsl:template>
+
+    <!-- Template for schema:url -->
+    <xsl:template match="schema:url">
+        <schema:url>
+            <xsl:value-of select="."/>
+        </schema:url>
+    </xsl:template>
+
+
+
 
     <xsl:template match="authors">
         <codemeta:author>
