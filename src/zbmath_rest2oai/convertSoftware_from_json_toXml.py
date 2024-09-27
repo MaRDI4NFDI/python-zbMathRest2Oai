@@ -4,7 +4,11 @@ import xml.etree.ElementTree as ET
 
 def json_to_xml(json_data):
     # Create the root element
-    root = ET.Element('root')
+    root = ET.Element('root' ,  attrib= {
+        'xmlns:swhdeposit': "https://www.softwareheritage.org/schema/2018/deposit",
+        'xmlns:swh': "https://www.softwareheritage.org/schema/2018/deposit",
+        'xmlns:schema': "https://schema.org/"
+                                             })
 
     # Add articles_count
     articles_count = ET.SubElement(root, 'articles_count')
