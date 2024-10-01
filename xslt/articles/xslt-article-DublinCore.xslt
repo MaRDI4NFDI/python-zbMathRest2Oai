@@ -19,7 +19,11 @@
 
                 <!-- Apply templates to transform title and datestamp -->
                 <xsl:apply-templates select="root/title"/>
+                <xsl:apply-templates select="root/contributors/authors"/>
+                <xsl:apply-templates select="root/editorial_contributions/text"/>
+                <xsl:apply-templates select="root/source/series/publisher"/>
                 <xsl:apply-templates select="root/datestamp"/>
+                <xsl:apply-templates select="root/language/languages"/>
 
                 <!-- Example of a static format element -->
                 <dc:format>XML</dc:format>
@@ -35,11 +39,37 @@
         </dc:title>
     </xsl:template>
 
+    <xsl:template match="authors">
+    <dc:creator>
+        <!-- Output the family name, then a comma and a space, followed by the given name -->
+        <xsl:value-of select="concat(substring-after(name, ', '), ', ', substring-before(name, ','))"/>
+    </dc:creator>
+</xsl:template>
+
+
+     <xsl:template match="text">
+            <!-- Transformation of  description text -->
+        <dc:description>
+         <xsl:value-of select="normalize-space(.)"/>
+        </dc:description>
+        </xsl:template>
+
+     <xsl:template match="publisher">
+            <dc:publisher>
+            <xsl:value-of select="."/>
+            </dc:publisher>
+            </xsl:template>
 
     <xsl:template match="datestamp">
         <dc:date>
             <xsl:value-of select="substring-before(. , 'T')" />
         </dc:date>
     </xsl:template>
+
+    <xsl:template match="languages">
+            <dc:language>
+             <xsl:value-of select="substring-before(. , 'g')" />
+            </dc:language>
+            </xsl:template>
 
 </xsl:stylesheet>
