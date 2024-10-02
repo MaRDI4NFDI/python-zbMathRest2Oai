@@ -303,61 +303,30 @@ with its own subjectscheme -->
                 </xsl:otherwise>
             </xsl:choose>
         </titles>
-            <!-- authors name is separted to given and family name , also adding the properties of creator to it -->
-            <creators>
-                <xsl:for-each select="zbmath/author_codes">
-                    <creator>
-                         <creatorName nameType="Personal">
-                <xsl:choose>
-                    <xsl:when test="contains(translate(substring-after(., '.'), '0123456789.', ''), '-')">
-                        <xsl:value-of select="concat(
-                            translate(substring(translate(substring-before(., '.'), '0123456789.', ''), 1, 1), 'abcdefghijklmnopqrstuvwxyz', 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'),
-                            substring(translate(substring-before(., '.'), '0123456789.', ''), 2),
-                            ', ',
-                            substring-before(
-                                concat(
-                                    translate(substring(translate(substring-after(., '.'), '0123456789.', ''), 1, 1), 'abcdefghijklmnopqrstuvwxyz', 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'),
-                                    substring(translate(substring-after(., '.'), '0123456789.', ''), 2)
-                                ), '-')
-                        )"/>
-                    </xsl:when>
-                    <xsl:otherwise>
-                        <xsl:value-of select="concat(
-                            translate(substring(translate(substring-before(., '.'), '0123456789.', ''), 1, 1), 'abcdefghijklmnopqrstuvwxyz', 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'),
-                            substring(translate(substring-before(., '.'), '0123456789.', ''), 2),
-                            ', ',
-                            translate(substring(translate(substring-after(., '.'), '0123456789.', ''), 1, 1), 'abcdefghijklmnopqrstuvwxyz', 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'),
-                            substring(translate(substring-after(., '.'), '0123456789.', ''), 2)
-                        )"/>
-                    </xsl:otherwise>
-                </xsl:choose>
-            </creatorName>
-                        <givenName>
-                            <xsl:choose>
-                                <xsl:when test="contains(translate(substring-after(., '.'), '0123456789.', ''), '-')">
-                                    <xsl:value-of select="substring-before(
-                                        concat(
-                                            translate(substring(translate(substring-after(., '.'), '0123456789.', ''), 1, 1), 'abcdefghijklmnopqrstuvwxyz', 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'),
-                                            substring(translate(substring-after(., '.'), '0123456789.', ''), 2)
-                                        ), '-')"/>
-                                </xsl:when>
-                                <xsl:otherwise>
-                                    <xsl:value-of select="concat(
-                                        translate(substring(translate(substring-after(., '.'), '0123456789.', ''), 1, 1), 'abcdefghijklmnopqrstuvwxyz', 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'),
-                                        substring(translate(substring-after(., '.'), '0123456789.', ''), 2)
-                                    )"/>
-                                </xsl:otherwise>
-                            </xsl:choose>
-                        </givenName>
-                        <familyName>
-                            <xsl:value-of select="concat(
+            <!-- authors name is separted to given and family name , also adding the properties of contributors to it -->
+            <contributors>
+            <xsl:for-each select="zbmath/author_codes">
+                <contributor contributorType="Researcher">
+                    <!-- Combine familyName and givenName in contributorName -->
+                    <contributorName>
+                        <xsl:value-of select="
+                            concat(
                                 translate(substring(translate(substring-before(., '.'), '0123456789.', ''), 1, 1), 'abcdefghijklmnopqrstuvwxyz', 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'),
-                                substring(translate(substring-before(., '.'), '0123456789.', ''), 2)
-                            )"/>
-                        </familyName>
-                    </creator>
-                </xsl:for-each>
-            </creators>
+                                substring(translate(substring-before(., '.'), '0123456789.', ''), 2),
+                                ', ',
+                                translate(substring(translate(substring-after(., '.'), '0123456789.', ''), 1, 1), 'abcdefghijklmnopqrstuvwxyz', 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'),
+                                substring(translate(substring-after(., '.'), '0123456789.', ''), 2)
+                            )
+                        "/>
+                    </contributorName>
+
+                    <!-- Add nameIdentifier with author_codes value -->
+                    <nameIdentifier nameIdentifierScheme="Info">
+                        <xsl:value-of select="."/>
+                    </nameIdentifier>
+                </contributor>
+            </xsl:for-each>
+        </contributors>
             <publicationYear>
                 <xsl:value-of select="zbmath/year"/>
             </publicationYear>
