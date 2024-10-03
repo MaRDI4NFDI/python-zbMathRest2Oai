@@ -29,16 +29,16 @@ def split_doi(doi):
 class PlainXmlTest(unittest.TestCase):
     def test_similarity(self):
 
-        dom = ET.parse('test/data/articles/plain.xml')
-        xslt = ET.parse('xslt/articles/xslt-article-Datacite.xslt')
+        dom = ET.parse(r'test/data/articles/plain.xml')
+        xslt = ET.parse(r'xslt/articles/xslt-article-Datacite.xslt')
 
         transform = ET.XSLT(xslt)  # is it a reserved word
         newdom = transform(dom)
-
+        print(newdom)
         real_string = ET.tostring(newdom, pretty_print=True, encoding='utf8').decode()
         # test if result is parsable
-        reference = ET.parse('test/data/articles/Test_Reference.xml')
-
+        reference = ET.parse(r'test/data/articles/Test_Reference-Datacite.xml')
+        print(reference)
         expected_string = ET.tostring(reference, pretty_print=True, encoding='utf8').decode()
         diff = main.diff_texts(expected_string, real_string, {
             'ratio_mode': 'fast',  # is that for latency
