@@ -1,12 +1,13 @@
+<?xml version="1.0"?>
 <resource xmlns="http://datacite.org/schema/kernel-4"
           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
           xsi:schemaLocation="http://datacite.org/schema/kernel-4 http://schema.datacite.org/meta/kernel-4/metadata.xsd">
    <Identifier IdentifierType="URL">https://zbmath.org/6383667</Identifier>
      <alternateIdentifiers>
-      <alternateIdentifier alternateIdentifierType="zbMATH Identifier">1306.11073</alternateIdentifier>
-      <alternateIdentifier alternateIdentifierType="zbMATH Document ID">6383667</alternateIdentifier>
-      <alternateidentifier alternateidentifierType="DOI">10.4007/annals.2015.181.1.7</alternateidentifier>
-   </alternateIdentifiers>
+    <alternateIdentifier alternateIdentifierType="zbMATH Identifier">1306.11073</alternateIdentifier>
+    <alternateIdentifier alternateIdentifierType="zbMATH Document ID">Zbl 6383667</alternateIdentifier>
+    <alternateIdentifier alternateIdentifierType="DOI">10.4007/annals.2015.181.1.7</alternateIdentifier>
+  </alternateIdentifiers>
      <creators>
       <creator>
          <creatorName nameType="Personal">Maynard, James</creatorName>
