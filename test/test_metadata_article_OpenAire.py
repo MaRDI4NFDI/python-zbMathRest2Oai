@@ -35,17 +35,17 @@ class PlainXmlTest(unittest.TestCase):
 
         transform = ET.XSLT(xslt)  # is it a reserved word
         newdom = transform(dom)
-        print(newdom)
+
         real_string = ET.tostring(newdom, pretty_print=True, encoding='utf8').decode()
         # test if result is parsable
         reference = ET.parse('../../test/data/articles/reference_OpenAire.xml')
-        print(reference)
+
         expected_string = ET.tostring(reference, pretty_print=True, encoding='utf8').decode()
         diff = main.diff_texts(expected_string, real_string, {
             'ratio_mode': 'fast',  # is that for latency
             'F': 1,
         })
-        print(diff)
+
         essentials = list(filter(lambda e: not isinstance(e, MoveNode), diff))
 
         self.assertLessEqual(len(essentials), 0, "Found differences between expected and transformed XML")
