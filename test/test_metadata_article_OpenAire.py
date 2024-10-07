@@ -30,15 +30,15 @@ class PlainXmlTest(unittest.TestCase):
     def test_similarity(self):
 
 
-        dom = ET.parse('../../test/data/articles/plain.xml')
-        xslt = ET.parse('../../xslt/articles/xslt-article_OpenAire.xslt')
+        dom = ET.parse('test/data/articles/plain.xml')
+        xslt = ET.parse('xslt/articles/xslt-article_OpenAire.xslt')
 
         transform = ET.XSLT(xslt)  # is it a reserved word
         newdom = transform(dom)
 
         real_string = ET.tostring(newdom, pretty_print=True, encoding='utf8').decode()
         # test if result is parsable
-        reference = ET.parse('../../test/data/articles/reference_OpenAire.xml')
+        reference = ET.parse('test/data/articles/reference_OpenAire.xml')
 
         expected_string = ET.tostring(reference, pretty_print=True, encoding='utf8').decode()
         diff = main.diff_texts(expected_string, real_string, {
