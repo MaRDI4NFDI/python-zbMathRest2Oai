@@ -6,7 +6,7 @@
    <codemeta:identifier>zbmath-825</codemeta:identifier>
    <swhdeposit:deposit>
       <swhdeposit:reference>
-         <swhdeposit:object swhid="swh:1:dir:817ed0bdff1dc117dd87ef88f233f7fe1b1d9332"/>
+         <swhdeposit:object swhid="swh:1:snp:5132188cdf169d8ffcf2e44f41ad30734ecbf685"/>
       </swhdeposit:reference>
       <swhdeposit:metadata-provenance>
          <schema:url>https://staging.swmath.org/</schema:url>

@@ -29,21 +29,23 @@ def split_doi(doi):
 class PlainXmlTest(unittest.TestCase):
     def test_similarity(self):
 
-        dom = ET.parse(r'test/data/articles/plain.xml')
-        xslt = ET.parse(r'xslt/articles/xslt-article-Datacite.xslt')
+
+        dom = ET.parse('test/data/articles/plain.xml')
+        xslt = ET.parse('xslt/articles/xslt-article-OpenAire2.xslt')
 
         transform = ET.XSLT(xslt)  # is it a reserved word
         newdom = transform(dom)
-        print(newdom)
+
         real_string = ET.tostring(newdom, pretty_print=True, encoding='utf8').decode()
         # test if result is parsable
-        reference = ET.parse(r'test/data/articles/Test_Reference-Datacite.xml')
-        print(reference)
+        reference = ET.parse('test/data/articles/reference-OpenAire2.xml')
+
         expected_string = ET.tostring(reference, pretty_print=True, encoding='utf8').decode()
         diff = main.diff_texts(expected_string, real_string, {
             'ratio_mode': 'fast',  # is that for latency
             'F': 1,
         })
+
         essentials = list(filter(lambda e: not isinstance(e, MoveNode), diff))
 
         self.assertLessEqual(len(essentials), 0, "Found differences between expected and transformed XML")
@@ -51,3 +53,4 @@ class PlainXmlTest(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
+
