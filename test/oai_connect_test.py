@@ -7,8 +7,7 @@ import oai_connection
 
 class PlainXmlTest(unittest.TestCase):
     def test_similarity(self):
-        real_string = oai_connection.get_version()
-        self.assertEqual("1.2.12", real_string)
+        self.assertEqual("1.3.0", oai_connection.get_version())
 
 
 if __name__ == '__main__':
