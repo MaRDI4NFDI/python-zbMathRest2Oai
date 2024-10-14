@@ -56,6 +56,36 @@
     <type>arxiv</type>
     <url/>
   </links>
+    <links>
+    <identifier>A1097</identifier>
+    <type>oeis</type>
+    <url/>
+  </links>
+  <links>
+    <identifier>A38664</identifier>
+    <type>oeis</type>
+    <url/>
+  </links>
+  <links>
+    <identifier>A46133</identifier>
+    <type>oeis</type>
+    <url/>
+  </links>
+  <links>
+    <identifier>A231607</identifier>
+    <type>oeis</type>
+    <url/>
+  </links>
+  <links>
+    <identifier>A235686</identifier>
+    <type>oeis</type>
+    <url/>
+  </links>
+  <links>
+    <identifier>A244368</identifier>
+    <type>oeis</type>
+    <url/>
+  </links>
   <msc>
     <code>11N05</code>
     <scheme>msc2020</scheme>
