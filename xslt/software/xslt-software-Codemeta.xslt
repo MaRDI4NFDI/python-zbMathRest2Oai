@@ -1,5 +1,3 @@
-<!-- XSLT code to transform the zbmath metadata acoording the metadata Scheme of CodeMeta
-Made by Shiraz Malla Mohamad member of zbmath Team-->
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet version="1.0"
                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
