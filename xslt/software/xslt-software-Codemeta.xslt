@@ -27,6 +27,8 @@ Made by Shiraz Malla Mohamad member of zbmath Team-->
 
 <xsl:apply-templates select="root/source_code"/>
 
+<xsl:apply-templates select="root/license_terms"/>
+
 <xsl:apply-templates select="root/keywords"/>
 
  <xsl:apply-templates select="root/operating_systems"/>
@@ -134,6 +136,11 @@ Made by Shiraz Malla Mohamad member of zbmath Team-->
         <codemeta:codeRepository>
             <xsl:value-of select="."/>
         </codemeta:codeRepository>
+    </xsl:template>
+  <xsl:template match="license_terms">
+        <codemeta:license>
+            <xsl:value-of select="."/>
+        </codemeta:license>
     </xsl:template>
 
      <xsl:template match="keywords">
