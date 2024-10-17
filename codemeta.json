@@ -1,79 +1,79 @@
 {
-    "@context": "https://doi.org/10.5063/schema/codemeta-2.0",
-    "@type": "SoftwareSourceCode",
-    "codeRepository": "https://github.com/MaRDI4NFDI/python-zbMathRest2Oai",
-    "contIntegration": "https://github.com/MaRDI4NFDI/python-zbMathRest2Oai/blob/main/.github/workflows/python-app.yml",
-    "dateCreated": "2024-02-13",
-    "datePublished": "2024-02-13",
-    "dateModified": "2024-02-13",
-    "downloadUrl": "https://github.com/MaRDI4NFDI/python-zbMathRest2Oai/archive/refs/heads/main.zip",
-    "issueTracker": "https://github.com/MaRDI4NFDI/python-zbMathRest2Oai/issues",
-    "name": "python-zbMathRest2Oai",
-    "version": "1.0.0",
-    "identifier": "swh:1:dir:de327a8f9f82353f91c8dbbdd3f54d1efb3ba04e",
-    "description": "Read data from the zbMATH Open API https://api.zbmath.org/docs and feed it to the OAI-PMH server https://oai.portal.mardi4nfdi.de/oai/",
-    "releaseNotes": "This is the first codemeta file we create, and should be considered as a prototype for the future beta integration in the faircore4eosc.",
-    "developmentStatus": "wip",
-    "isPartOf": "https://portal.mardi4nfdi.de/wiki/Portal",
-    "funder": {
+  "@context": "https://doi.org/10.5063/schema/codemeta-2.0",
+  "@type": "SoftwareSourceCode",
+  "codeRepository": "https://github.com/MaRDI4NFDI/python-zbMathRest2Oai",
+  "contIntegration": "https://github.com/MaRDI4NFDI/python-zbMathRest2Oai/blob/main/.github/workflows/python-app.yml",
+  "dateCreated": "2024-02-13",
+  "datePublished": "2024-02-13",
+  "dateModified": "2024-02-13",
+  "downloadUrl": "https://github.com/MaRDI4NFDI/python-zbMathRest2Oai/archive/refs/heads/main.zip",
+  "issueTracker": "https://github.com/MaRDI4NFDI/python-zbMathRest2Oai/issues",
+  "name": "python-zbMathRest2Oai",
+  "version": "1.0.0",
+  "identifier": "swh:1:dir:de327a8f9f82353f91c8dbbdd3f54d1efb3ba04e",
+  "description": "Read data from the zbMATH Open API https://api.zbmath.org/docs and feed it to the OAI-PMH server https://oai.portal.mardi4nfdi.de/oai/",
+  "releaseNotes": "This is the first codemeta file we create, and should be considered as a prototype for the future beta integration in the faircore4eosc.",
+  "developmentStatus": "wip",
+  "isPartOf": "https://portal.mardi4nfdi.de/wiki/Portal",
+  "funder": {
+    "@type": "Organization",
+    "name": "FIZ Karlstruhe"
+  },
+  "keywords": [
+    "zbmath",
+    "swmath",
+    "EOSC",
+    "PIDGraph",
+    "RDGraph",
+    "RSAC"
+  ],
+  "programmingLanguage": [
+    "Python3",
+    "XSLT",
+    "shell"
+  ],
+  "operatingSystem": [
+    "Linux"
+  ],
+  "softwareRequirements": [
+    "Python 3.9"
+  ],
+  "relatedLink": [
+    "https://faircore4eosc.eu/"
+  ],
+  "author": [
+    {
+      "@type": "Person",
+      "@id": "https://orcid.org/0000-0002-8710-9548",
+      "givenName": "Maxence",
+      "familyName": "Azzouz-Thuderoz",
+      "email": "maxence.azzouz-thudero@fiz-karlsruhe.de",
+      "affiliation": {
         "@type": "Organization",
-        "name": "FIZ Karlstruhe"
+        "name": "Department of Mathematics, FIZ Karlsruhe"
+      }
     },
-    "keywords": [
-        "zbmath",
-        "swmath",
-        "EOSC",
-        "PIDGraph",
-        "RDGraph",
-        "RSAC"
-    ],
-    "programmingLanguage": [
-        "Python3",
-        "XSLT",
-        "shell"
-    ],
-    "operatingSystem": [
-        "Linux"
-    ],
-    "softwareRequirements": [
-        "Python 3.9"
-    ],
-    "relatedLink": [
-        "https://faircore4eosc.eu/"
-    ],
-    "author": [
-        {
-            "@type": "Person",
-            "@id": "https://orcid.org/0000-0002-8710-9548",
-            "givenName": "Maxence",
-            "familyName": "Azzouz-Thuderoz",
-            "email": "maxence.azzouz-thudero@fiz-karlsruhe.de",
-            "affiliation": {
-                "@type": "Organization",
-                "name": "Department of Mathematics, FIZ Karlsruhe"
-            }
-        },
-        {
-            "@type": "Person",
-            "@id": "https://orcid.org/0009-0005-1697-3282",
-            "givenName": "Shiraz",
-            "familyName": "Malla Mohamad",
-            "email": "Shiraz.Malla_Mohamad@fiz-Karlsruhe.de",
-            "affiliation": {
-                "@type": "Organization",
-                "name": "Department of Mathematics, FIZ Karlsruhe"
-            }
-        },
-        {
-            "@type": "Person",
-            "@id": "https://orcid.org/0000-0001-7141-4997",
-            "givenName": "Moritz",
-            "familyName": "Schubotz",
-            "email": "Moritz.Schubotz@fiz-Karlsruhe.de",
-            "affiliation": {
-                "@type": "Organization",
-                "name": "Department of Mathematics, FIZ Karlsruhe"
-            }
-        }
-    ]
+    {
+      "@type": "Person",
+      "@id": "https://orcid.org/0009-0005-1697-3282",
+      "givenName": "Shiraz",
+      "familyName": "Malla Mohamad",
+      "email": "Shiraz.Malla_Mohamad@fiz-Karlsruhe.de",
+      "affiliation": {
+        "@type": "Organization",
+        "name": "Department of Mathematics, FIZ Karlsruhe"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://orcid.org/0000-0001-7141-4997",
+      "givenName": "Moritz",
+      "familyName": "Schubotz",
+      "email": "Moritz.Schubotz@fiz-Karlsruhe.de",
+      "affiliation": {
+        "@type": "Organization",
+        "name": "Department of Mathematics, FIZ Karlsruhe"
+      }
+    }
+  ]
 }

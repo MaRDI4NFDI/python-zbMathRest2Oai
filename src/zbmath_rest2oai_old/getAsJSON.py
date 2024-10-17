@@ -1,5 +1,6 @@
-import requests
 import sys
+
+import requests
 
 
 def apply_zbmath_api_fixes(result):
@@ -23,7 +24,7 @@ def final_json(api_source):
         raise Exception(f"Unexpected response with status code {r.status_code}: {r.text}")
     json = r.json()
     dict_math_entities = {}
-    with open('last_id.txt','a') as f:
+    with open('last_id.txt', 'a') as f:
         f.write(';' + str(json['status']['last_id']))
         f.close()
     for result in json["result"]:

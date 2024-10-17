@@ -1,5 +1,7 @@
-import requests
 import json
+
+import requests
+
 from swhid import parse_csv_to_dict
 
 
@@ -52,11 +54,11 @@ def process_metadata(csv_file_path, api_url, output_path=None):
         #  Save the modified JSON data to a file
         output_json_filename = 'output_with_swhid.json'
         with open(output_path, 'w') as json_file:
-            json.dump(data, json_file, indent=4 , ensure_ascii=False)
+            json.dump(data, json_file, indent=4, ensure_ascii=False)
         print(f"Data successfully saved to {output_json_filename}")
 
         #  Save the output log to a file
-       # output_log_filename = 'process_log.txt'
+        # output_log_filename = 'process_log.txt'
         with open(output_log_filename, 'w') as log_file:
             for log_entry in output_log:
                 log_file.write(log_entry + '\n')
@@ -65,9 +67,8 @@ def process_metadata(csv_file_path, api_url, output_path=None):
         print(f"Failed to retrieve data. Status code: {response.status_code}")
 
 
-
 csv_file_path = '../../test/data/software/swh_swmath.csv'  # Path to your CSV file
 api_url = 'https://api.zbmath.org/v1/software/825'  # API URL, can be generalized for any software ID
 output_path = '../../test/data/software/software_with_swhid.json'
 output_log_filename = '../../test/data/software/logfile.txt'
-process_metadata(csv_file_path, api_url , output_path)
+process_metadata(csv_file_path, api_url, output_path)

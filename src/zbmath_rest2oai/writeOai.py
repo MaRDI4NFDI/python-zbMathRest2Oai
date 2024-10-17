@@ -1,8 +1,8 @@
+import asyncio
 import json
 import os
-
 from timeit import default_timer as timer
-import asyncio
+
 import aiohttp
 from aiohttp import ClientSession
 
@@ -36,11 +36,11 @@ async def async_write_oai(xml_contents, ingest_format, tags=None):
             data.add_field('item', json.dumps({
                 "identifier": str(identifier),
                 "deleteFlag": False,
-                "tags": tags.get(identifier,[]),
+                "tags": tags.get(identifier, []),
                 "ingestFormat": ingest_format
             }), content_type='application/json')
             data.add_field('content', xml_contents[identifier], filename='dummy.xml')
-            tasks.append(post_item(session, data,identifier))
+            tasks.append(post_item(session, data, identifier))
 
         await asyncio.gather(*tasks)
 

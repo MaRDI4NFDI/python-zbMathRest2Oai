@@ -1,7 +1,7 @@
-import signal
 import json
-import threading
 import os
+import signal
+import threading
 
 
 class State:

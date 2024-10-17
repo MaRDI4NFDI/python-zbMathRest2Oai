@@ -1,8 +1,8 @@
 import re
-
-from dict2xml import Converter
-import requests
 import sys
+
+import requests
+from dict2xml import Converter
 
 # from https://stackoverflow.com/a/22273639
 
@@ -59,7 +59,7 @@ def apply_zbmath_api_fixes(result, prefix):
 
 
 def extract_tags(result):
-    mscs = result.get('msc',[])
+    mscs = result.get('msc', [])
     tags = []
     for msc in mscs:
         msc0 = msc['code'][:2]

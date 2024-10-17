@@ -4,11 +4,11 @@ import xml.etree.ElementTree as ET
 
 def json_to_xml(json_data):
     # Create the root element
-    root = ET.Element('root' ,  attrib= {
+    root = ET.Element('root', attrib={
         'xmlns:swhdeposit': "https://www.softwareheritage.org/schema/2018/deposit",
         'xmlns:swh': "https://www.softwareheritage.org/schema/2018/deposit",
         'xmlns:schema': "https://schema.org/"
-                                             })
+    })
 
     # Add articles_count
     articles_count = ET.SubElement(root, 'articles_count')
@@ -107,6 +107,7 @@ def json_to_xml(json_data):
 
     return root
 
+
 def indent_xml(elem, level=0):
     """Function to add indentation to XML."""
     i = "\n" + level * "  "
@@ -149,5 +150,3 @@ json_file_path = '../../test/data/software/software_with_swhid.json'  # Update w
 xml_output_path = '../../test/data/software/software_with_swhid.xml'  # Update with your desired output path
 
 convert_json_to_xml(json_file_path, xml_output_path)
-
-

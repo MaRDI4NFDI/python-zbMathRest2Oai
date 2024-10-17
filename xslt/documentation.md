@@ -1,4 +1,5 @@
-In this document, we'd like to show how the XLST can process the XML file generated with src/zbmath_rest2oai/getAsXml.py.
+In this document, we'd like to show how the XLST can process the XML file generated with
+src/zbmath_rest2oai/getAsXml.py.
 
 Environment request:
 
@@ -10,7 +11,8 @@ Install the package :
 
 https://github.com/physikerwelt/xstlprocJ
 
-Point to the folder xstlprocJ, copy the files xslt-article-transformation.xslt and plain.xml, then execute the shell command:
+Point to the folder xstlprocJ, copy the files xslt-article-transformation.xslt and plain.xml, then execute the shell
+command:
 
 ```shell
 :~/xstlprocJ$ bash xsltprocJ xslt-article-oai_zb_preview.xslt plain.xml

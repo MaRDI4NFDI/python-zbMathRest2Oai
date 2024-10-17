@@ -28,8 +28,6 @@ def split_doi(doi):
 
 class PlainXmlTest(unittest.TestCase):
     def test_similarity(self):
-
-
         dom = ET.parse('test/data/software/software_with_swhid.xml')
         xslt = ET.parse('xslt/software/xslt-software-Codemeta.xslt')
 
@@ -52,4 +50,3 @@ class PlainXmlTest(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main()
-

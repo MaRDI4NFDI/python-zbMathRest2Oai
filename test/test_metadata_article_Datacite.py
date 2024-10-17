@@ -28,7 +28,6 @@ def split_doi(doi):
 
 class PlainXmlTest(unittest.TestCase):
     def test_similarity(self):
-
         dom = ET.parse(r'test/data/articles/plain.xml')
         xslt = ET.parse(r'xslt/articles/xslt-article-Datacite.xslt')
 

@@ -1,6 +1,8 @@
-from zbmath_rest2oai import getAsXml
-import sys
 import re
+import sys
+
+from zbmath_rest2oai import getAsXml
+
 xml_string, _ = getAsXml.final_xml2(sys.argv[1], sys.argv[2])
 
 xml_string = re.sub(
@@ -14,5 +16,4 @@ xml_string = re.sub(
 
 if __name__ == '__main__':
     with open(sys.argv[3], 'w') as f:
-
         f.write(xml_string)
