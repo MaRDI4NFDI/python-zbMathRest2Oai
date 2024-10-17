@@ -179,9 +179,9 @@ Made by Shiraz Malla Mohamad member of zbmath Team-->
     </xsl:template>
 
   <xsl:template match="classification">
-        <codemeta:inCodeSet>
+        <schema:inCodeSet>
             <xsl:value-of select="."/>
-        </codemeta:inCodeSet>
+        </schema:inCodeSet>
     </xsl:template>
 
   <xsl:template match="articles_count">
@@ -223,9 +223,9 @@ Made by Shiraz Malla Mohamad member of zbmath Team-->
                 <xsl:value-of select="source"/>
             </codemeta:citation>
 
-                <codemeta:headline>
+                <schema:headline>
                 <xsl:value-of select="title"/>
-            </codemeta:headline>
+            </schema:headline>
 
             <codemeta:datePublished >
 
