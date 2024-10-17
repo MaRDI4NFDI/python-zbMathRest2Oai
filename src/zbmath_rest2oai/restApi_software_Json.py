@@ -51,13 +51,13 @@ def process_metadata(csv_file_path, api_url, output_path=None):
 
         #  Save the modified JSON data to a file
         output_json_filename = 'output_with_swhid.json'
-        with open(output_path, 'w') as json_file:
+        with open(output_path, 'w',encoding='utf-8') as json_file:
             json.dump(data, json_file, indent=4 , ensure_ascii=False)
         print(f"Data successfully saved to {output_json_filename}")
 
         #  Save the output log to a file
        # output_log_filename = 'process_log.txt'
-        with open(output_log_filename, 'w') as log_file:
+        with open(output_log_filename, 'w', encoding='utf-8') as log_file:
             for log_entry in output_log:
                 log_file.write(log_entry + '\n')
         print(f"Log successfully saved to {output_log_filename}")
@@ -67,7 +67,7 @@ def process_metadata(csv_file_path, api_url, output_path=None):
 
 
 csv_file_path = '../../test/data/software/swh_swmath.csv'  # Path to your CSV file
-api_url = 'https://api.zbmath.org/v1/software/825'  # API URL, can be generalized for any software ID
-output_path = '../../test/data/software/software_with_swhid.json'
+api_url = 'https://api.zbmath.org/v1/software/4532'  # API URL, can be generalized for any software ID
+output_path = '../../test/data/software/software_with_swhid_2.json'
 output_log_filename = '../../test/data/software/logfile.txt'
 process_metadata(csv_file_path, api_url , output_path)
