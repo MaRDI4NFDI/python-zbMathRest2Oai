@@ -4,16 +4,24 @@ import requests
 
 from zbmath_rest2oai.getAsXml import extract_tags
 
-API_SOURCE = 'https://api.zbmath.org/v1/document/_structured_search?page=0&results_per_page=10&zbmath%20id=2500495'
-
-
 class PlainXmlTest(unittest.TestCase):
-    def test_similarity(self):
+    @staticmethod
+    def test_jfm_doc():
         headers = {'Accept': 'application/json'}
-        r = requests.get(API_SOURCE, headers=headers)
+        r = requests.get(
+            'https://api.zbmath.org/v1/document/_structured_search?page=0&results_per_page=10&zbmath%20id=2500495',
+            headers=headers)
         real_tags = extract_tags(r.json()['result'][0])
         assert real_tags == ['11', 'JFM']
 
+    @staticmethod
+    def test_software():
+        headers = {'Accept': 'application/json'}
+        r = requests.get(
+            'https://api.zbmath.org/v1/software/12',
+            headers=headers)
+        real_tags = extract_tags(r.json()['result'])
+        assert real_tags == ['60', '65', '78', '82']
 
 if __name__ == '__main__':
     unittest.main()

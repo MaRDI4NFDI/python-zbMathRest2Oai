@@ -59,12 +59,14 @@ def apply_zbmath_api_fixes(result, prefix):
 
 
 def extract_tags(result):
-    mscs = result.get('msc', [])
     tags = []
-    for msc in mscs:
+    for msc in result.get('msc', []):
         msc0 = msc['code'][:2]
         if msc0 not in tags:
             tags.append(msc0)
+    for msc in result.get('classification', []):
+        if msc not in tags:
+            tags.append(msc)
     tags.sort()
     if result.get('database') == 'JFM':
         tags.append('JFM')
