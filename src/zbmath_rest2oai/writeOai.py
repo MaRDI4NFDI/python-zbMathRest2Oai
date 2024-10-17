@@ -48,9 +48,9 @@ async def async_write_oai(xml_contents, ingest_format, tags=None):
 
 
 def write_oai(api_source, prefix, ingest_format):
-    test_xml, time_rest = getAsXml.final_xml2(api_source, prefix)
+    xml_contents, time_rest, tags = getAsXml.final_xml2(api_source, prefix)
     start = timer()
-    records, last_id = asyncio.run(async_write_oai(test_xml, ingest_format))
+    records, last_id = asyncio.run(async_write_oai(xml_contents, ingest_format, tags))
 
     last_id = int(last_id.removeprefix(prefix))
     return {
