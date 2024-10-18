@@ -1,0 +1,143 @@
+{
+    "result": {
+        "articles_count": 150,
+        "authors": [
+            "Jr, Frank E Harrell"
+        ],
+        "classification": [
+            "62",
+            "65",
+            "68",
+            "91",
+            "92",
+            "00",
+            "20",
+            "37",
+            "41",
+            "60",
+            "81",
+            "82",
+            "83",
+            "86",
+            "90",
+            "93",
+            "94"
+        ],
+        "dependencies": "R; Hmisc (≥ 3.7), survival (≥ 2.36-3)",
+        "description": "zbMATH Open Web Interface contents unavailable due to conflicting licenses.",
+        "homepage": "http://cran.r-project.org/web/packages/rms/",
+        "id": 4532,
+        "keywords": [],
+        "license_terms": "GPL (≥ 2)",
+        "name": "rms",
+        "operating_systems": null,
+        "orms_id": null,
+        "programming_languages": null,
+        "related_software": [
+            {
+                "id": 771,
+                "name": "R"
+            },
+            {
+                "id": 6377,
+                "name": "SAS"
+            },
+            {
+                "id": 4364,
+                "name": "survival"
+            },
+            {
+                "id": 8159,
+                "name": "glmnet"
+            },
+            {
+                "id": 6029,
+                "name": "Stata"
+            },
+            {
+                "id": 4490,
+                "name": "VGAM"
+            },
+            {
+                "id": 11049,
+                "name": "ElemStatLearn"
+            },
+            {
+                "id": 4557,
+                "name": "ggplot2"
+            },
+            {
+                "id": 12561,
+                "name": "ordinal"
+            },
+            {
+                "id": 18788,
+                "name": "SAS/STAT"
+            },
+            {
+                "id": 11008,
+                "name": "BayesDA"
+            },
+            {
+                "id": 19105,
+                "name": "bootstrap"
+            },
+            {
+                "id": 19099,
+                "name": "brms"
+            },
+            {
+                "id": 2892,
+                "name": "S-PLUS"
+            },
+            {
+                "id": 4479,
+                "name": "MASS (R)"
+            },
+            {
+                "id": 4074,
+                "name": "UCI-ml"
+            },
+            {
+                "id": 8068,
+                "name": "timereg"
+            },
+            {
+                "id": 4586,
+                "name": "KernSmooth"
+            },
+            {
+                "id": 4351,
+                "name": "CRAN"
+            },
+            {
+                "id": 20527,
+                "name": "ordinalNet"
+            }
+        ],
+        "source_code": "https://github.com/cran/rms",
+        "standard_articles": [],
+        "zbmath_url": "https://zbmath.org/software/4532"
+    },
+    "status": {
+        "execution": "successful request",
+        "execution_bool": true,
+        "internal_code": "ok",
+        "last_id": null,
+        "nr_total_results": 1,
+        "nr_request_results": 1,
+        "query_execution_time_in_seconds": 0.10137176513671875,
+        "status_code": 200,
+        "time_stamp": "2024-10-17T17:48:07Z"
+    },
+    "swhdeposit:deposit": {
+        "swhdeposit:reference": {
+            "swhdeposit:object": {
+                "@swhid": "swh:1:snp:3f97c8fa7714065b16fa022ae54522c6b783e3a3"
+            }
+        },
+        "swhdeposit:metadata-provenance": {
+            "schema:url": "https://staging.swmath.org/"
+        }
+    }
+}

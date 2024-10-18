@@ -1,3 +1,4 @@
+
 import json
 
 import requests
@@ -72,3 +73,4 @@ api_url = 'https://api.zbmath.org/v1/software/825'  # API URL, can be generalize
 output_path = '../../test/data/software/software_with_swhid.json'
 output_log_filename = '../../test/data/software/logfile.txt'
 process_metadata(csv_file_path, api_url, output_path)
+
