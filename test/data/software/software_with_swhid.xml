@@ -1,0 +1,225 @@
+<?xml version='1.0' encoding='utf-8'?>
+<root xmlns:swhdeposit="https://www.softwareheritage.org/schema/2018/deposit" xmlns:swh="https://www.softwareheritage.org/schema/2018/deposit" xmlns:schema="https://schema.org/">
+  <articles_count>2829</articles_count>
+  <authors>Developers, The Sage</authors>
+  <authors>Stein, William</authors>
+  <authors>Joyner, David</authors>
+  <authors>Kohel, David</authors>
+  <authors>Cremona, John</authors>
+  <authors>Eröcal, Burçin</authors>
+  <classification>05</classification>
+  <classification>11</classification>
+  <classification>14</classification>
+  <classification>20</classification>
+  <classification>68</classification>
+  <classification>00</classification>
+  <classification>01</classification>
+  <classification>03</classification>
+  <classification>06</classification>
+  <classification>12</classification>
+  <classification>13</classification>
+  <classification>15</classification>
+  <classification>16</classification>
+  <classification>17</classification>
+  <classification>18</classification>
+  <classification>19</classification>
+  <classification>22</classification>
+  <classification>26</classification>
+  <classification>28</classification>
+  <classification>30</classification>
+  <classification>31</classification>
+  <classification>32</classification>
+  <classification>33</classification>
+  <classification>34</classification>
+  <classification>35</classification>
+  <classification>37</classification>
+  <classification>39</classification>
+  <classification>40</classification>
+  <classification>41</classification>
+  <classification>42</classification>
+  <classification>43</classification>
+  <classification>44</classification>
+  <classification>46</classification>
+  <classification>47</classification>
+  <classification>49</classification>
+  <classification>51</classification>
+  <classification>52</classification>
+  <classification>53</classification>
+  <classification>54</classification>
+  <classification>55</classification>
+  <classification>57</classification>
+  <classification>58</classification>
+  <classification>60</classification>
+  <classification>62</classification>
+  <classification>65</classification>
+  <classification>70</classification>
+  <classification>74</classification>
+  <classification>76</classification>
+  <classification>78</classification>
+  <classification>80</classification>
+  <classification>81</classification>
+  <classification>82</classification>
+  <classification>83</classification>
+  <classification>85</classification>
+  <classification>86</classification>
+  <classification>90</classification>
+  <classification>91</classification>
+  <classification>92</classification>
+  <classification>93</classification>
+  <classification>94</classification>
+  <classification>97</classification>
+  <swhdeposit:deposit>
+    <swhdeposit:reference>
+      <swhdeposit:object swhid="swh:1:snp:5132188cdf169d8ffcf2e44f41ad30734ecbf685" />
+    </swhdeposit:reference>
+    <swhdeposit:metadata-provenance>
+      <schema:url>https://staging.swmath.org/</schema:url>
+    </swhdeposit:metadata-provenance>
+  </swhdeposit:deposit>
+  <dependencies>None</dependencies>
+  <description>zbMATH Open Web Interface contents unavailable due to conflicting licenses.</description>
+  <homepage>http://www.sagemath.org</homepage>
+  <id>825</id>
+  <keywords>orms</keywords>
+  <keywords>Python</keywords>
+  <keywords>Cython</keywords>
+  <keywords>Sage</keywords>
+  <keywords>Open Source</keywords>
+  <keywords>Interfaces</keywords>
+  <license_terms>None</license_terms>
+  <name>SageMath</name>
+  <operating_systems>None</operating_systems>
+  <orms_id>255</orms_id>
+  <programming_languages>None</programming_languages>
+  <related_software>
+    <id>540</id>
+    <name>Magma</name>
+  </related_software>
+  <related_software>
+    <id>320</id>
+    <name>GAP</name>
+  </related_software>
+  <related_software>
+    <id>23170</id>
+    <name>GitHub</name>
+  </related_software>
+  <related_software>
+    <id>7248</id>
+    <name>OEIS</name>
+  </related_software>
+  <related_software>
+    <id>680</id>
+    <name>PARI/GP</name>
+  </related_software>
+  <related_software>
+    <id>866</id>
+    <name>SINGULAR</name>
+  </related_software>
+  <related_software>
+    <id>16448</id>
+    <name>Sage-Combinat</name>
+  </related_software>
+  <related_software>
+    <id>537</id>
+    <name>Macaulay2</name>
+  </related_software>
+  <related_software>
+    <id>554</id>
+    <name>Mathematica</name>
+  </related_software>
+  <related_software>
+    <id>545</id>
+    <name>Maple</name>
+  </related_software>
+  <related_software>
+    <id>7249</id>
+    <name>LMFDB</name>
+  </related_software>
+  <related_software>
+    <id>14460</id>
+    <name>Python</name>
+  </related_software>
+  <related_software>
+    <id>27596</id>
+    <name>ecdata</name>
+  </related_software>
+  <related_software>
+    <id>611</id>
+    <name>nauty</name>
+  </related_software>
+  <related_software>
+    <id>7823</id>
+    <name>Traces</name>
+  </related_software>
+  <related_software>
+    <id>560</id>
+    <name>Maxima</name>
+  </related_software>
+  <related_software>
+    <id>4968</id>
+    <name>DLMF</name>
+  </related_software>
+  <related_software>
+    <id>4698</id>
+    <name>Gfan</name>
+  </related_software>
+  <related_software>
+    <id>23728</id>
+    <name>MathOverflow</name>
+  </related_software>
+  <related_software>
+    <id>6293</id>
+    <name>SciPy</name>
+  </related_software>
+  <source_code>https://github.com/sagemath/sage</source_code>
+  <standard_articles>
+    <authors />
+    <id>7045592</id>
+    <source>zbMATH Open Web Interface contents unavailable due to conflicting licenses.</source>
+    <title>zbMATH Open Web Interface contents unavailable due to conflicting licenses.</title>
+    <year>2019</year>
+  </standard_articles>
+  <standard_articles>
+    <authors />
+    <id>6418360</id>
+    <source>zbMATH Open Web Interface contents unavailable due to conflicting licenses.</source>
+    <title>zbMATH Open Web Interface contents unavailable due to conflicting licenses.</title>
+    <year>2015</year>
+  </standard_articles>
+  <standard_articles>
+    <authors />
+    <id>6532438</id>
+    <source>zbMATH Open Web Interface contents unavailable due to conflicting licenses.</source>
+    <title>zbMATH Open Web Interface contents unavailable due to conflicting licenses.</title>
+    <year>2013</year>
+  </standard_articles>
+  <standard_articles>
+    <authors />
+    <id>6462232</id>
+    <source>zbMATH Open Web Interface contents unavailable due to conflicting licenses.</source>
+    <title>zbMATH Open Web Interface contents unavailable due to conflicting licenses.</title>
+    <year>2013</year>
+  </standard_articles>
+  <standard_articles>
+    <authors />
+    <id>6114556</id>
+    <source>zbMATH Open Web Interface contents unavailable due to conflicting licenses.</source>
+    <title>zbMATH Open Web Interface contents unavailable due to conflicting licenses.</title>
+    <year>2012</year>
+  </standard_articles>
+  <standard_articles>
+    <authors />
+    <id>5785538</id>
+    <source>zbMATH Open Web Interface contents unavailable due to conflicting licenses.</source>
+    <title>zbMATH Open Web Interface contents unavailable due to conflicting licenses.</title>
+    <year>2010</year>
+  </standard_articles>
+  <standard_articles>
+    <authors />
+    <id>5380273</id>
+    <source>zbMATH Open Web Interface contents unavailable due to conflicting licenses.</source>
+    <title>zbMATH Open Web Interface contents unavailable due to conflicting licenses.</title>
+    <year>2008</year>
+  </standard_articles>
+  <zbmath_url>https://zbmath.org/software/825</zbmath_url>
+</root>

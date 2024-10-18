@@ -33,7 +33,7 @@ test = [
 ]
 
 [tool.setuptools]
-package-dir = {"" = "src"}
+package-dir = { "" = "src" }
 include-package-data = true
 zip-safe = false
 

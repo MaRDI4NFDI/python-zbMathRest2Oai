@@ -36,7 +36,9 @@ With the XSLT code block below, we can transform the upper XML block into a new 
 </xsl:template>
 </xsl:stylesheet>
 ```
+
 This transformation outputs the result below.
+
 ```xml
 <oai_zb_preview xmlns:foo="http://www.foo.org/" xmlns:bar="http://www.bar.org">
    <author>Maynard, James</author>

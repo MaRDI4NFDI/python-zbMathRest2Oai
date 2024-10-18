@@ -1,8 +1,8 @@
 import re
-
-from dict2xml import Converter
-import requests
 import sys
+
+import requests
+from dict2xml import Converter
 
 # from https://stackoverflow.com/a/22273639
 
@@ -58,6 +58,21 @@ def apply_zbmath_api_fixes(result, prefix):
     result['states'] = states
 
 
+def extract_tags(result):
+    tags = []
+    for msc in result.get('msc', []):
+        msc0 = msc['code'][:2]
+        if msc0 not in tags:
+            tags.append(msc0)
+    for msc in result.get('classification', []):
+        if msc not in tags:
+            tags.append(msc)
+    tags.sort()
+    if result.get('database') == 'JFM':
+        tags.append('JFM')
+    return tags
+
+
 def final_xml2(api_source, prefix):
     headers = {'Accept': 'application/json'}
     r = requests.get(api_source, headers=headers)
@@ -69,12 +84,15 @@ def final_xml2(api_source, prefix):
         raise Exception(f"Unexpected response with status code {r.status_code}: {r.text}")
     json = r.json()
     dict_math_entities = {}
+    tags = {}
     for result in json["result"]:
         apply_zbmath_api_fixes(result, prefix)
-        dict_math_entities[result["id"]] = _illegal_xml_chars_RE.sub("", Converter(wrap="root").build(
+        identifier = result["id"]
+        dict_math_entities[identifier] = _illegal_xml_chars_RE.sub("", Converter(wrap="root").build(
             result,
             closed_tags_for=[[], '', [None], None]))
-    return [dict_math_entities, r.elapsed.total_seconds()]
+        tags[identifier] = extract_tags(result)
+    return [dict_math_entities, r.elapsed.total_seconds(), tags]
 
 
 if __name__ == "__main__":

@@ -1,3 +1,4 @@
+
 <!-- XSLT code to transform the zbmath metadata acoording the metadata Scheme of Datacite
 Made by Shiraz Malla Mohamad member of zbmath Team-->
 <xsl:stylesheet version="1.0"
@@ -247,4 +248,3 @@ Made by Shiraz Malla Mohamad member of zbmath Team-->
         </codemeta:url>
     </xsl:template>
 
- </xsl:stylesheet>

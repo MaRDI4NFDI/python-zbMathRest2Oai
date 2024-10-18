@@ -1,6 +1,6 @@
+import csv
 import json
 import os
-import csv
 
 
 def parse_csv_to_dict(csv_file_path):
@@ -15,7 +15,7 @@ def parse_csv_to_dict(csv_file_path):
 
 
 # Function to convert the input JSON format to the desired format
-def convert_json(data , swmathid_to_swhid=None):
+def convert_json(data, swmathid_to_swhid=None):
     # Initialize the new format with the desired structure
     new_format = {
         "@context": "https://doi.org/10.5063/schema/codemeta-2.0",
@@ -25,7 +25,8 @@ def convert_json(data , swmathid_to_swhid=None):
         "name": data.get("entry", {}).get("codemeta:name"),
         "url": data.get("entry", {}).get("codemeta:url"),
         "relatedLink": [
-            data.get("entry", {}).get("swhdeposit:deposit", {}).get("swhdeposit:metadata-provenance", {}).get("schema:url"),
+            data.get("entry", {}).get("swhdeposit:deposit", {}).get("swhdeposit:metadata-provenance", {}).get(
+                "schema:url"),
             data.get("entry", {}).get("codemeta:sameAs")
         ],
         "codeRepository": data.get("entry", {}).get("codemeta:codeRepository"),
@@ -136,12 +137,12 @@ def convert_json(data , swmathid_to_swhid=None):
             url = data.get("entry", {}).get("codemeta:url", "")
             parts = url.split('software/')
             if len(parts) > 1:
-                swmathid_str = parts[1] # Get the value after 'software/'
+                swmathid_str = parts[1]  # Get the value after 'software/'
                 try:
                     swmathid = int(swmathid_str)  # Convert it to an integer
                     if swmathid in swmathid_to_swhid:  # Check if the swmathid exists in the mapping
                         new_format["swhdeposit:deposit"]["swhdeposit:reference"]["swhdeposit:object"]["@swhid"] = \
-                        swmathid_to_swhid[swmathid]
+                            swmathid_to_swhid[swmathid]
                 except ValueError:
                     # If conversion to integer fails, do nothing
                     pass
@@ -177,7 +178,7 @@ try:
 
     swmathid_to_swhid = parse_csv_to_dict(csv_file_path)
     # Convert the JSON data
-    converted_json = convert_json(input_json , swmathid_to_swhid)
+    converted_json = convert_json(input_json, swmathid_to_swhid)
 
     # Print the converted JSON to verify the transformation
     print("Converted JSON data:")

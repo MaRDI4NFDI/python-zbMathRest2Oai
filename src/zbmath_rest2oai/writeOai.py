@@ -1,8 +1,8 @@
+import asyncio
 import json
 import os
-
 from timeit import default_timer as timer
-import asyncio
+
 import aiohttp
 from aiohttp import ClientSession
 
@@ -21,23 +21,26 @@ async def post_item(session, files, identifier='unknown'):
         return response
 
 
-async def async_write_oai(test_xml, ingest_format):
+async def async_write_oai(xml_contents, ingest_format, tags=None):
+    if tags is None:
+        tags = {}
     tasks = []
 
     async with ClientSession() as session:
         last_id = -1
         records = 0
-        for identifier in test_xml.keys():
+        for identifier in xml_contents.keys():
             records += 1
             last_id = identifier
             data = aiohttp.FormData()
             data.add_field('item', json.dumps({
                 "identifier": str(identifier),
                 "deleteFlag": False,
+                "tags": tags.get(identifier, []),
                 "ingestFormat": ingest_format
             }), content_type='application/json')
-            data.add_field('content', test_xml[identifier], filename='dummy.xml')
-            tasks.append(post_item(session, data,identifier))
+            data.add_field('content', xml_contents[identifier], filename='dummy.xml')
+            tasks.append(post_item(session, data, identifier))
 
         await asyncio.gather(*tasks)
 
@@ -45,9 +48,9 @@ async def async_write_oai(test_xml, ingest_format):
 
 
 def write_oai(api_source, prefix, ingest_format):
-    test_xml, time_rest = getAsXml.final_xml2(api_source, prefix)
+    xml_contents, time_rest, tags = getAsXml.final_xml2(api_source, prefix)
     start = timer()
-    records, last_id = asyncio.run(async_write_oai(test_xml, ingest_format))
+    records, last_id = asyncio.run(async_write_oai(xml_contents, ingest_format, tags))
 
     last_id = int(last_id.removeprefix(prefix))
     return {

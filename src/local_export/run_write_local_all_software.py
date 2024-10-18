@@ -1,14 +1,12 @@
-import sys
 import os
+import sys
+
 sys.path.append(os.getcwd())
 from writeLocal import write_local
 
-
-
-with open('last_id.txt','r') as f:
+with open('last_id.txt', 'r') as f:
     last_id = max(f.read().split(';'))
     f.close()
-
 
 while int(last_id) < 70000:
     with open('last_id.txt', 'r') as f:

@@ -1,5 +1,6 @@
-import unittest
 import os
+import unittest
+
 import lxml.etree as ET
 from xmldiff import main
 from xmldiff.actions import MoveNode

@@ -21,6 +21,14 @@ XSLT_JSON_ENCODED=`cat ../xslt/articles/xslt-article-Datacite.xslt | jq -Rsa .`
 #create
 curl --noproxy '*' -X POST -H 'Content-Type: application/json' -H  "Authorization: Basic $AUTH" -i 'https://oai-input.portal.mardi4nfdi.de/oai-backend/crosswalk' --data '{"name":"article2datacite","formatFrom":"zbmath_rest_api","formatTo":"datacite","xsltStylesheet":'"$XSLT_JSON_ENCODED}"'}'
 
+#Create Crosswalk from rest_api to dublin core
+## Read the xslt file
+XSLT_JSON_ENCODED=`cat ../xslt/articles/xslt-article-DublinCore.xslt | jq -Rsa .`
+#create
+curl --noproxy '*' -X POST -H 'Content-Type: application/json' -H  "Authorization: Basic $AUTH" -i 'https://oai-input.portal.mardi4nfdi.de/oai-backend/crosswalk' --data '{"name":"article2dc","formatFrom":"zbmath_rest_api","formatTo":"oai_dc","xsltStylesheet":'"$XSLT_JSON_ENCODED}"'}'
+
+
+
 #Update the data after recreating or push
 curl --noproxy '*' -X PUT -H  "Authorization: Basic $AUTH" -i 'https://oai-input.portal.mardi4nfdi.de/oai-backend/crosswalk/article2datacite/process?updateItemTimestamp=true&from=0000-00-00T00:00:00Z&until=2030-05-27T07:05:02Z'
 curl --noproxy '*' -X POST -H "Authorization: Basic $AUTH" -i 'https://oai-input.portal.mardi4nfdi.de/oai-backend/reindex/start'
