@@ -1,9 +1,7 @@
-
-<!-- XSLT code to transform the zbmath metadata acoording the metadata Scheme of Datacite
-Made by Shiraz Malla Mohamad member of zbmath Team-->
+<?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet version="1.0"
                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-                xmlns="http://www.w3.org/2005/Atom"
+                xmlns:atom="http://www.w3.org/2005/Atom"
                 xmlns:codemeta="https://doi.org/10.5063/SCHEMA/CODEMETA-2.0"
                 xmlns:swhdeposit="https://www.softwareheritage.org/schema/2018/deposit"
                 xmlns:swh="https://www.softwareheritage.org/schema/2018/deposit"
@@ -12,14 +10,13 @@ Made by Shiraz Malla Mohamad member of zbmath Team-->
      <xsl:template match="/">
         <entry>
 
- <xsl:apply-templates select="root/id" mode="id"/>
+ <xsl:apply-templates select="root/id"/>
 
 <xsl:apply-templates select="root/swhdeposit:deposit"/>
 
  <codemeta:author>
 <xsl:apply-templates select="root/authors"/>
 </codemeta:author>
-
 <xsl:apply-templates select="root/name"/>
 
 <xsl:apply-templates select="root/description"/>
@@ -27,8 +24,6 @@ Made by Shiraz Malla Mohamad member of zbmath Team-->
 <xsl:apply-templates select="root/homepage"/>
 
 <xsl:apply-templates select="root/source_code"/>
-
-<xsl:apply-templates select="root/license_terms"/>
 
 <xsl:apply-templates select="root/keywords"/>
 
@@ -38,23 +33,17 @@ Made by Shiraz Malla Mohamad member of zbmath Team-->
 
 <xsl:apply-templates select="root/programming_languages"/>
 
-<schema:Identifier>
-<xsl:apply-templates select="root/id" mode="codemeta-identifier"/>
-</schema:Identifier>
-<schema:categoryCode>
 <xsl:apply-templates select="root/classification"/>
-</schema:categoryCode>
 
-<schema:itemList>
 <xsl:apply-templates select="root/articles_count"/>
-</schema:itemList>
+
 <codemeta:supportingData>
 <xsl:apply-templates select="root/related_software"/>
 </codemeta:supportingData>
 
-<schema:referencePublication>
+<codemeta:citation>
 <xsl:apply-templates select="root/standard_articles"/>
-</schema:referencePublication>
+</codemeta:citation>
 
 <xsl:apply-templates select="root/zbmath_url"/>
 
@@ -65,11 +54,11 @@ Made by Shiraz Malla Mohamad member of zbmath Team-->
 
 
 
- <xsl:template match="id" mode="id">
-        <id>
+ <xsl:template match="id">
+        <codemeta:identifier>
             <xsl:text>zbmath-</xsl:text>
             <xsl:value-of select="."/>
-        </id>
+        </codemeta:identifier>
     </xsl:template>
 
 
@@ -110,15 +99,16 @@ Made by Shiraz Malla Mohamad member of zbmath Team-->
 
 
     <xsl:template match="authors">
-       <codemeta:name>
-        <xsl:value-of select="."/>
-        </codemeta:name>
-           <codemeta:givenName>
-                <xsl:value-of select="normalize-space(substring-after(., ','))"/>
-            </codemeta:givenName>
+        <codemeta:author>
+
             <codemeta:familyName>
                 <xsl:value-of select="substring-before(., ',')"/>
             </codemeta:familyName>
+
+            <codemeta:givenName>
+                <xsl:value-of select="normalize-space(substring-after(., ','))"/>
+            </codemeta:givenName>
+        </codemeta:author>
     </xsl:template>
 
      <xsl:template match="description">
@@ -137,11 +127,6 @@ Made by Shiraz Malla Mohamad member of zbmath Team-->
         <codemeta:codeRepository>
             <xsl:value-of select="."/>
         </codemeta:codeRepository>
-    </xsl:template>
-  <xsl:template match="license_terms">
-        <codemeta:license>
-            <xsl:value-of select="."/>
-        </codemeta:license>
     </xsl:template>
 
      <xsl:template match="keywords">
@@ -163,12 +148,9 @@ Made by Shiraz Malla Mohamad member of zbmath Team-->
     </xsl:template>
 
      <xsl:template match="orms_id">
-        <schema:identifier>
-          <codemeta:type>schema:PropertyValue</codemeta:type>
-        <schema:value>
+        <codemeta:identifier>
             <xsl:value-of select="."/>
-        </schema:value>
-        </schema:identifier>
+        </codemeta:identifier>
     </xsl:template>
 
 
@@ -178,24 +160,16 @@ Made by Shiraz Malla Mohamad member of zbmath Team-->
         </codemeta:programmingLanguage>
     </xsl:template>
 
-     <xsl:template match="id" mode="codemeta-identifier">
-        <codemeta:type>schema:PropertyValue</codemeta:type>
-        <schema:value>
-            <xsl:text>zbmath-</xsl:text>
-            <xsl:value-of select="."/>
-        </schema:value>
-    </xsl:template>
-
   <xsl:template match="classification">
-        <schema:inCodeSet>
+        <codemeta:inCodeSet>
             <xsl:value-of select="."/>
-        </schema:inCodeSet>
+        </codemeta:inCodeSet>
     </xsl:template>
 
   <xsl:template match="articles_count">
-            <schema:numberofItems>
+        <codemeta:itemList>
             <xsl:value-of select="."/>
-            </schema:numberofItems>
+        </codemeta:itemList>
     </xsl:template>
 
 
@@ -215,25 +189,23 @@ Made by Shiraz Malla Mohamad member of zbmath Team-->
 
      <xsl:template match="standard_articles">
 
-           <xsl:if test="normalize-space(authors) != ''">
-             <codemeta:author>
-            <xsl:value-of select="authors"/>
-             </codemeta:author>
-            </xsl:if>
+            <codemeta:author>
+                <xsl:value-of select="authors"/>
+            </codemeta:author>
 
                <codemeta:identifier>
 
                 <xsl:value-of select="id"/>
             </codemeta:identifier>
 
-          <codemeta:citation>
+          <codemeta:hasSource>
 
                 <xsl:value-of select="source"/>
-            </codemeta:citation>
+            </codemeta:hasSource>
 
-                <schema:headline>
+                <codemeta:headline>
                 <xsl:value-of select="title"/>
-            </schema:headline>
+            </codemeta:headline>
 
             <codemeta:datePublished >
 
@@ -248,3 +220,4 @@ Made by Shiraz Malla Mohamad member of zbmath Team-->
         </codemeta:url>
     </xsl:template>
 
+ </xsl:stylesheet>
