@@ -9,5 +9,3 @@ class PlainXmlTest(unittest.TestCase):
         real_sets = get_sets()
         assert len(real_sets) == 65
         assert real_sets['14'] == '14-XX:Algebraic geometry'
-
-
