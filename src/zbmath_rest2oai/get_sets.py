@@ -12,7 +12,8 @@ def get_sets():
                         + 'https://guidelines.openaire.eu/en/latest/literature'
                         + '/use_of_oai_pmh.html'}
     for result in results:
-        mscs[result['code'][:2]] = result['short_title']
+        code = result['code'][:2]
+        mscs[code] = code + '-XX:' + result['short_title']
     return mscs
 
 
