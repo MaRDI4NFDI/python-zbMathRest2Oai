@@ -2,12 +2,12 @@
     "result": {
         "articles_count": 2829,
         "authors": [
-            "Developers, The Sage",
+            "The Sage Developers",
             "Stein, William",
             "Joyner, David",
             "Kohel, David",
             "Cremona, John",
-            "ErÃ¶cal, BurÃ§in"
+            "Eröcal, Burçin"
         ],
         "classification": [
             "05",
@@ -155,12 +155,12 @@
                 "name": "Maxima"
             },
             {
-                "id": 4968,
-                "name": "DLMF"
-            },
-            {
                 "id": 4698,
                 "name": "Gfan"
+            },
+            {
+                "id": 4968,
+                "name": "DLMF"
             },
             {
                 "id": 23728,
@@ -232,9 +232,9 @@
         "last_id": null,
         "nr_total_results": 1,
         "nr_request_results": 1,
-        "query_execution_time_in_seconds": 0.41052913665771484,
+        "query_execution_time_in_seconds": 0.4049835205078125,
         "status_code": 200,
-        "time_stamp": "2024-09-26T18:55:42Z"
+        "time_stamp": "2024-10-23T13:51:44Z"
     },
     "swhdeposit:deposit": {
         "swhdeposit:reference": {
@@ -243,7 +243,7 @@
             }
         },
         "swhdeposit:metadata-provenance": {
-            "schema:url": "https://staging.swmath.org/"
+            "schema:url": "https://api.zbmath.org/v1/"
         }
     }
 }
