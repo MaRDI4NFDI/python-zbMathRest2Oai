@@ -1,6 +1,3 @@
-
-<!-- XSLT code to transform the zbmath metadata acoording the metadata Scheme of Datacite
-Made by Shiraz Malla Mohamad member of zbmath Team-->
 <xsl:stylesheet version="1.0"
                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                 xmlns="http://www.w3.org/2005/Atom"
@@ -60,9 +57,6 @@ Made by Shiraz Malla Mohamad member of zbmath Team-->
 
   </entry>
 </xsl:template>
-
-
-
 
 
  <xsl:template match="id" mode="id">
