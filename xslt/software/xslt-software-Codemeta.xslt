@@ -77,6 +77,9 @@ Made by Shiraz Malla Mohamad member of zbmath Team-->
         <swhdeposit:deposit>
             <xsl:apply-templates select="swhdeposit:reference"/>
             <xsl:apply-templates select="swhdeposit:metadata-provenance"/>
+        <swh:add_to_origin>
+              <swh:origin url="{/root/source_code}"/>
+            </swh:add_to_origin>
         </swhdeposit:deposit>
     </xsl:template>
 
@@ -248,3 +251,4 @@ Made by Shiraz Malla Mohamad member of zbmath Team-->
         </codemeta:url>
     </xsl:template>
 
+</xsl:stylesheet>
