@@ -11,9 +11,6 @@
       <swhdeposit:metadata-provenance>
          <schema:url>https://api.zbmath.org/v1/</schema:url>
       </swhdeposit:metadata-provenance>
-      <swh:add_to_origin>
-         <swh:origin url="https://github.com/sagemath/sage"/>
-      </swh:add_to_origin>
    </swhdeposit:deposit>
    <codemeta:author>
       <codemeta:name>The Sage Developers</codemeta:name>
