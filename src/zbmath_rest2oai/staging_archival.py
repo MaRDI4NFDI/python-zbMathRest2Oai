@@ -4,6 +4,7 @@ import csv
 import os
 import subprocess
 
+
 class Swhid:
     def __init__(self, url, token):
         self.url = url
@@ -42,8 +43,11 @@ class Swhid:
             if self.status == 429:  # Rate limit exceeded
                 json_content = response.json()
                 wait_match = json_content.get('reason')
-                if wait_match and 'seconds' in wait_match.lower():
-                    self.wait = int(wait_match.split()[0])
+                if wait_match and any(char.isdigit() for char in wait_match):
+                    try:
+                        self.wait = int(''.join(filter(str.isdigit, wait_match)))  # Extract numeric part
+                    except ValueError:
+                        print(f"Could not parse wait time from: {wait_match}")
                     return None
 
         except Exception as e:
@@ -54,10 +58,12 @@ class Swhid:
         self.wait = 3600
         return None
 
+
 # Example usage
 if __name__ == "__main__":
     # Load environment variables from .bashrc
-    result = subprocess.run(['bash', '-c', 'source ~/.bashrc && export -p'], stdout=subprocess.PIPE, text=True, check=True)
+    result = subprocess.run(['bash', '-c', 'source ~/.bashrc && export -p'], stdout=subprocess.PIPE, text=True,
+                            check=True)
     for line in result.stdout.splitlines():
         if line.startswith('declare -x '):
             key_value = line[len('declare -x '):].split('=', 1)
@@ -78,16 +84,18 @@ if __name__ == "__main__":
     root_dir = os.path.abspath(os.path.join(current_dir, "../../"))
 
     # Construct the desired file path
-    file_path = os.path.join(root_dir, "test/data/software/swh_swmath.csv")
+    file_path = os.path.abspath(os.path.join(root_dir, "test/data/software/swh_swmath.csv"))
+
+    # Check if file exists
+    if not os.path.exists(file_path):
+        print(f"Error: File not found at {file_path}")
+        exit(1)
 
     with open(file_path, newline='') as csvfile:
-        reader = csv.reader(csvfile)
-        next(reader)  # Skip header row
-        total_software = sum(1 for _ in reader)
-    csvfile.seek(0)
-    next(reader)  # Skip header row
+        reader = list(csv.reader(csvfile))
+        total_software = len(reader) - 1  # Skip header row count
     current_index = 0
-    for row in reader:
+    for row in reader[1:]:
         current_index += 1
         print(f"Archiving software {current_index} of {total_software}")
         swmathid, url, swhid = row
