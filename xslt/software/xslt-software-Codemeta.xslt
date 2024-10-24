@@ -71,9 +71,6 @@
         <swhdeposit:deposit>
             <xsl:apply-templates select="swhdeposit:reference"/>
             <xsl:apply-templates select="swhdeposit:metadata-provenance"/>
-        <swh:add_to_origin>
-              <swh:origin url="{/root/source_code}"/>
-            </swh:add_to_origin>
         </swhdeposit:deposit>
     </xsl:template>
 
