@@ -6,6 +6,9 @@ __pycache__/
 #swMATH dataset
 src/zbmath_rest2oai/swmath_metadata.zip
 
+# local state
+src/zbmath_rest2oai/state.json
+
 # C extensions
 *.so
 
