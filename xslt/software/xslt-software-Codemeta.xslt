@@ -30,7 +30,7 @@
 <xsl:apply-templates select="root/keywords"/>
 
  <xsl:apply-templates select="root/operating_systems"/>
-
+ <xsl:apply-templates select="root/dependencies"/>
  <xsl:apply-templates select="root/orms_id"/>
 
 <xsl:apply-templates select="root/programming_languages"/>
@@ -156,13 +156,23 @@
         </codemeta:operatingSystem>
     </xsl:template>
 
+ <xsl:template match="dependencies">
+        <xsl:if test="normalize-space(.) != '' and . != 'None'">
+            <codemeta:softwareRequirements>
+                <xsl:value-of select="."/>
+            </codemeta:softwareRequirements>
+        </xsl:if>
+    </xsl:template>
+
      <xsl:template match="orms_id">
+         <xsl:if test="normalize-space(.) != '' and . != 'None'">
         <schema:identifier>
           <codemeta:type>schema:PropertyValue</codemeta:type>
         <schema:value>
             <xsl:value-of select="."/>
         </schema:value>
         </schema:identifier>
+         </xsl:if>
     </xsl:template>
 
 
