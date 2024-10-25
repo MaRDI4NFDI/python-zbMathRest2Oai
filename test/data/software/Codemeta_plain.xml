@@ -70,7 +70,7 @@
     <dependencies>None</dependencies>
     <description>zbMATH Open Web Interface contents unavailable due to conflicting licenses.</description>
     <homepage>http://www.sagemath.org</homepage>
-    <id>825</id> done
+    <id>825</id>
     <keywords>orms</keywords>
     <keywords>Python</keywords>
     <keywords>Cython</keywords>
@@ -79,7 +79,6 @@
     <keywords>Interfaces</keywords>
     <license_terms>None</license_terms>
     <name>SageMath</name>
-
     <operating_systems>None</operating_systems>
     <orms_id>255</orms_id>
     <programming_languages>None</programming_languages>
