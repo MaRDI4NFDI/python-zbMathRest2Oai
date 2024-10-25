@@ -71,18 +71,19 @@
     <description>zbMATH Open Web Interface contents unavailable due to conflicting licenses.</description>
     <homepage>http://www.sagemath.org</homepage>
     <id>825</id> done
-    <keywords>orms</keywords> done
+    <keywords>orms</keywords>
     <keywords>Python</keywords>
     <keywords>Cython</keywords>
     <keywords>Sage</keywords>
     <keywords>Open Source</keywords>
     <keywords>Interfaces</keywords>
-    <license_terms>None</license_terms> should ask for it
-    <name>SageMath</name> done
-    <operating_systems>None</operating_systems> done
+    <license_terms>None</license_terms>
+    <name>SageMath</name>
+
+    <operating_systems>None</operating_systems>
     <orms_id>255</orms_id>
-    <programming_languages>None</programming_languages> done
-    <related_software> done
+    <programming_languages>None</programming_languages>
+    <related_software>
       <id>540</id>
       <name>Magma</name>
     </related_software>
