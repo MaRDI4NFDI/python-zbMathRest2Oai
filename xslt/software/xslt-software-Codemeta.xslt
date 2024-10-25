@@ -60,10 +60,12 @@
 
 
  <xsl:template match="id" mode="id">
+     <xsl:if test="normalize-space(.) != '' and . != 'None'">
         <id>
             <xsl:text>zbmath-</xsl:text>
             <xsl:value-of select="."/>
         </id>
+     </xsl:if>
     </xsl:template>
 
 
@@ -95,15 +97,19 @@
 
     <!-- Template for schema:url -->
     <xsl:template match="schema:url">
+         <xsl:if test="normalize-space(.) != '' and . != 'None'">
         <schema:url>
             <xsl:value-of select="."/>
         </schema:url>
+         </xsl:if>
     </xsl:template>
 
 
 
 
+
     <xsl:template match="authors">
+         <xsl:if test="normalize-space(.) != '' and . != 'None'">
        <codemeta:name>
         <xsl:value-of select="."/>
         </codemeta:name>
@@ -113,47 +119,63 @@
             <codemeta:familyName>
                 <xsl:value-of select="substring-before(., ',')"/>
             </codemeta:familyName>
+         </xsl:if>
     </xsl:template>
 
      <xsl:template match="description">
+          <xsl:if test="normalize-space(.) != '' and . != 'None'">
         <codemeta:description>
             <xsl:value-of select="."/>
         </codemeta:description>
+          </xsl:if>
     </xsl:template>
 
      <xsl:template match="homepage">
+          <xsl:if test="normalize-space(.) != '' and . != 'None'">
         <codemeta:sameAs >
             <xsl:value-of select="."/>
         </codemeta:sameAs>
+          </xsl:if>
     </xsl:template>
 
          <xsl:template match="source_code">
+              <xsl:if test="normalize-space(.) != '' and . != 'None'">
         <codemeta:codeRepository>
             <xsl:value-of select="."/>
         </codemeta:codeRepository>
+              </xsl:if>
     </xsl:template>
+
   <xsl:template match="license_terms">
+       <xsl:if test="normalize-space(.) != '' and . != 'None'">
         <codemeta:license>
             <xsl:value-of select="."/>
         </codemeta:license>
+       </xsl:if>
     </xsl:template>
 
      <xsl:template match="keywords">
+          <xsl:if test="normalize-space(.) != '' and . != 'None'">
         <codemeta:keywords>
             <xsl:value-of select="."/>
         </codemeta:keywords>
+          </xsl:if>
     </xsl:template>
 
       <xsl:template match="name">
+           <xsl:if test="normalize-space(.) != '' and . != 'None'">
         <codemeta:name>
             <xsl:value-of select="."/>
         </codemeta:name>
+           </xsl:if>
     </xsl:template>
 
       <xsl:template match="operating_systems">
+           <xsl:if test="normalize-space(.) != '' and . != 'None'">
         <codemeta:operatingSystem>
             <xsl:value-of select="."/>
         </codemeta:operatingSystem>
+           </xsl:if>
     </xsl:template>
 
  <xsl:template match="dependencies">
@@ -177,34 +199,42 @@
 
 
   <xsl:template match="programming_languages">
+       <xsl:if test="normalize-space(.) != '' and . != 'None'">
         <codemeta:programmingLanguage>
             <xsl:value-of select="."/>
         </codemeta:programmingLanguage>
+       </xsl:if>
     </xsl:template>
 
      <xsl:template match="id" mode="codemeta-identifier">
+          <xsl:if test="normalize-space(.) != '' and . != 'None'">
         <codemeta:type>schema:PropertyValue</codemeta:type>
         <schema:value>
             <xsl:text>zbmath-</xsl:text>
             <xsl:value-of select="."/>
         </schema:value>
+          </xsl:if>
     </xsl:template>
 
   <xsl:template match="classification">
+       <xsl:if test="normalize-space(.) != '' and . != 'None'">
         <schema:inCodeSet>
             <xsl:value-of select="."/>
         </schema:inCodeSet>
+       </xsl:if>
     </xsl:template>
 
   <xsl:template match="articles_count">
+       <xsl:if test="normalize-space(.) != '' and . != 'None'">
             <schema:numberofItems>
             <xsl:value-of select="."/>
             </schema:numberofItems>
+       </xsl:if>
     </xsl:template>
 
 
  <xsl:template match="related_software">
-
+        <xsl:if test="normalize-space(.) != '' and . != 'None'">
             <codemeta:name>
                 <xsl:value-of select="name"/>
             </codemeta:name>
@@ -213,12 +243,12 @@
 
                 <xsl:value-of select="id"/>
             </codemeta:identifier>
-
+        </xsl:if>
     </xsl:template>
 
 
      <xsl:template match="standard_articles">
-
+        <xsl:if test="normalize-space(.) != '' and . != 'None'">
            <xsl:if test="normalize-space(authors) != ''">
              <codemeta:author>
             <xsl:value-of select="authors"/>
@@ -243,13 +273,16 @@
 
                 <xsl:value-of select="year"/>
             </codemeta:datePublished >
+        </xsl:if>
     </xsl:template>
 
 
       <xsl:template match="zbmath_url">
+           <xsl:if test="normalize-space(.) != '' and . != 'None'">
         <codemeta:url>
             <xsl:value-of select="."/>
         </codemeta:url>
+           </xsl:if>
     </xsl:template>
 
 </xsl:stylesheet>
