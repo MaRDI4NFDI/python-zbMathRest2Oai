@@ -3,6 +3,7 @@ import json
 import csv
 import os
 import subprocess
+import time
 
 
 class Swhid:
@@ -54,9 +55,31 @@ class Swhid:
             # Handle exceptions
             print(f"Exception occurred: {e}")
 
+        # Log the response status and content if the request failed
+        if response is not None:
+            print(f"Failed request. Status code: {response.status_code}, Response text: {response.text}")
+
         # Default wait for 1 hour if rate limit is hit
         self.wait = 3600
         return None
+
+
+def url_already_archived(url, archived_file_path):
+    if not os.path.exists(archived_file_path):
+        return False
+
+    with open(archived_file_path, 'r', newline='') as archived_csv:
+        archived_reader = csv.reader(archived_csv)
+        for row in archived_reader:
+            if row and row[0] == url:
+                return True
+    return False
+
+
+def append_archived_url(url, archived_file_path):
+    with open(archived_file_path, 'a', newline='') as archived_csv:
+        writer = csv.writer(archived_csv)
+        writer.writerow([url])
 
 
 # Example usage
@@ -83,8 +106,9 @@ if __name__ == "__main__":
     # Navigate up two levels from the 'src/zbmath_rest2oai' directory to the project root
     root_dir = os.path.abspath(os.path.join(current_dir, "../../"))
 
-    # Construct the desired file path
+    # Construct the desired file paths
     file_path = os.path.abspath(os.path.join(root_dir, "test/data/software/swh_swmath.csv"))
+    archived_file_path = os.path.abspath(os.path.join(root_dir, "test/data/software/swh_swmath_archived.csv"))
 
     # Check if file exists
     if not os.path.exists(file_path):
@@ -97,10 +121,29 @@ if __name__ == "__main__":
     current_index = 0
     for row in reader[1:]:
         current_index += 1
-        print(f"Archiving software {current_index} of {total_software}")
         swmathid, url, swhid = row
-        swhid_instance = Swhid(url=url, token=token)
-        if swhid_instance.save_code_now():
-            print(f"Code for {url} successfully archived.")
-        else:
-            print(f"Failed to archive code for {url}.")
+
+        # Check if URL is already archived
+        if url_already_archived(url, archived_file_path):
+            print(f"Skipping {url}, already archived.")
+            continue
+
+        print(f"Archiving software {current_index} of {total_software}")
+        retries = 3
+        backoff_time = 5  # Initial backoff time in seconds
+        while retries > 0:
+            swhid_instance = Swhid(url=url, token=token)
+            if swhid_instance.save_code_now():
+                print(f"Code for {url} successfully archived.")
+                append_archived_url(url, archived_file_path)
+                break
+            else:
+                print(f"Failed to archive code for {url}. Retries left: {retries - 1}")
+                if swhid_instance.get_status() is not None:
+                    print(f"Reason: Status code {swhid_instance.get_status()} - Waiting for {backoff_time} seconds before retrying.")
+                retries -= 1
+                time.sleep(backoff_time)
+                backoff_time *= 2  # Exponential backoff
+
+        if retries == 0:
+            print(f"Failed to archive code for {url} after multiple attempts.")
