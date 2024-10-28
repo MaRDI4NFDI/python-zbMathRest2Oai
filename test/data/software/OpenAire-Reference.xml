@@ -7,4 +7,16 @@
           xmlns="http://namespace.openaire.eu/schema/oaire/"
           xsi:schemaLocation="http://namespace.openaire.eu/schema/oaire/ https://www.openaire.eu/schema/repo-lit/4.0/openaire.xsd">
    <datacite:identifier IdentifierType="URL">https://zbmath.org/software/2</datacite:identifier>
+    <datacite:creators>
+      <datacite:creator>
+         <datacite:creatorName nameType="Personal">Li, X.S.</datacite:creatorName>
+         <datacite:givenName>X.S.</datacite:givenName>
+         <datacite:familyName>Li</datacite:familyName>
+      </datacite:creator>
+      <datacite:creator>
+         <datacite:creatorName nameType="Personal">Demmel, J.W.</datacite:creatorName>
+         <datacite:givenName>J.W.</datacite:givenName>
+         <datacite:familyName>Demmel</datacite:familyName>
+      </datacite:creator>
+   </datacite:creators>
 </resource>
