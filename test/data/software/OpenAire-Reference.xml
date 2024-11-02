@@ -44,6 +44,7 @@
    </datacite:subjects>
     <datacite:relatedIdentifiers>
       <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSourceOf">http://crd-legacy.lbl.gov/~xiaoye/SuperLU/</datacite:relatedIdentifier>
+        <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsCitedBy">https://zbmath.org/2187846</datacite:relatedIdentifier>
    </datacite:relatedIdentifiers>
     <resourceType resourceTypeGeneral="Software"/>
    <datacite:rightsList>
