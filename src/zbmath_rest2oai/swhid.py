@@ -7,6 +7,6 @@ def parse_csv_to_dict(csv_file_path):
         reader = csv.DictReader(file)
         for row in reader:
             swmathid = int(row['swmathid'])
-            swhid = row['swhid']
+            swhid = row['swhid_dir']
             swmathid_to_swhid[swmathid] = swhid
     return swmathid_to_swhid

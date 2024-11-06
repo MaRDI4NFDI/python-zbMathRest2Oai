@@ -2,11 +2,11 @@ import json
 
 import requests
 
-from swhid import parse_csv_to_dict
+from zbmath_rest2oai.swhid import parse_csv_to_dict
 
 
 # Main function to handle the API request, CSV parsing, and JSON modification
-def process_metadata(csv_file_path, api_url, output_path=None):
+def process_metadata(output_log_filename, csv_file_path, api_url, output_path=None):
     # Extract the swmathid from the API URL
     swmathid = int(api_url.split('/')[-1])  # This extracts the number after 'software/'
 
@@ -67,8 +67,8 @@ def process_metadata(csv_file_path, api_url, output_path=None):
         print(f"Failed to retrieve data. Status code: {response.status_code}")
 
 
-csv_file_path = '../../test/data/software/swh_swmath.csv'  # Path to your CSV file
-api_url = 'https://api.zbmath.org/v1/software/825'  # API URL, can be generalized for any software ID
-output_path = '../../test/data/software/software_with_swhid.json'
-output_log_filename = '../../test/data/software/logfile.txt'
-process_metadata(csv_file_path, api_url, output_path)
+#csv_file_path = '../../test/data/software/swh_swmath.csv'  # Path to your CSV file
+#api_url = 'https://api.zbmath.org/v1/software/825'  # API URL, can be generalized for any software ID
+#output_path = '../../test/data/software/software_with_swhid.json'
+#output_log_filename = '../../test/data/software/logfile.txt'
+#process_metadata(csv_file_path, api_url, output_path)

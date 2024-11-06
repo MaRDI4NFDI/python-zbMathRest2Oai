@@ -146,7 +146,7 @@ def convert_json_to_xml(json_file_path, xml_output_path):
 
 
 # Example usage
-json_file_path = '../../test/data/software/software_with_swhid.json'  # Update with your file path
-xml_output_path = '../../test/data/software/software_with_swhid.xml'  # Update with your desired output path
+#json_file_path = '../../test/data/software/software_with_swhid.json'  # Update with your file path
+#xml_output_path = '../../test/data/software/software_with_swhid.xml'  # Update with your desired output path
 
-convert_json_to_xml(json_file_path, xml_output_path)
+#convert_json_to_xml(json_file_path, xml_output_path)
