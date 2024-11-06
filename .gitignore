@@ -166,3 +166,6 @@ cython_debug/
 .idea/
 test/data/software/swh_swmath_archived.csv
 
+test/data/software/logfile.txt
+test/data/software/software_with_swhid.json
+test/data/software/software_with_swhid.xml
