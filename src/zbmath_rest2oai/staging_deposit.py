@@ -39,7 +39,6 @@ for (i,swmath_id) in enumerate(pd.read_csv(csv_file_path)['swmathid']):
     with tempfile.NamedTemporaryFile(mode='w', delete=False, suffix='.xml') as temp_file:
         temp_file.write(str(newdom))
         temp_filename = temp_file.name
-
     # Format current time for deposit status
     current_time = time.localtime()
     formatted_time = time.strftime("%Y-%m-%d %H:%M:%S", current_time)
