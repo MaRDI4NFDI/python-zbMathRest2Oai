@@ -1,229 +1,123 @@
 {
     "result": {
-        "articles_count": 2829,
+        "articles_count": 29,
         "authors": [
-            "Developers, The Sage",
-            "Stein, William",
-            "Joyner, David",
-            "Kohel, David",
-            "Cremona, John",
-            "Eröcal, Burçin"
+            "Kursa, Miron Bartosz",
+            "Rudnicki, Witold Remigiusz"
         ],
         "classification": [
-            "05",
-            "11",
-            "14",
-            "20",
-            "68",
-            "00",
-            "01",
-            "03",
-            "06",
-            "12",
-            "13",
-            "15",
-            "16",
-            "17",
-            "18",
-            "19",
-            "22",
-            "26",
-            "28",
-            "30",
-            "31",
-            "32",
-            "33",
-            "34",
-            "35",
-            "37",
-            "39",
-            "40",
-            "41",
-            "42",
-            "43",
-            "44",
-            "46",
-            "47",
-            "49",
-            "51",
-            "52",
-            "53",
-            "54",
-            "55",
-            "57",
-            "58",
-            "60",
             "62",
-            "65",
-            "70",
+            "68",
             "74",
-            "76",
-            "78",
-            "80",
-            "81",
-            "82",
-            "83",
-            "85",
-            "86",
-            "90",
             "91",
             "92",
-            "93",
-            "94",
-            "97"
+            "65",
+            "86",
+            "90"
         ],
-        "dependencies": null,
+        "dependencies": "R",
         "description": "zbMATH Open Web Interface contents unavailable due to conflicting licenses.",
-        "homepage": "http://www.sagemath.org",
-        "id": 825,
-        "keywords": [
-            "orms",
-            "Python",
-            "Cython",
-            "Sage",
-            "Open Source",
-            "Interfaces"
-        ],
+        "homepage": "http://cran.r-project.org/web/packages/Boruta/index.html",
+        "id": 8032,
+        "keywords": [],
         "license_terms": null,
-        "name": "SageMath",
+        "name": "Boruta",
         "operating_systems": null,
-        "orms_id": "255",
+        "orms_id": null,
         "programming_languages": null,
         "related_software": [
             {
-                "id": 540,
-                "name": "Magma"
+                "id": 771,
+                "name": "R"
             },
             {
-                "id": 320,
-                "name": "GAP"
+                "id": 10639,
+                "name": "randomForest"
             },
             {
-                "id": 23170,
-                "name": "GitHub"
+                "id": 8031,
+                "name": "caret"
             },
             {
-                "id": 7248,
-                "name": "OEIS"
+                "id": 12357,
+                "name": "mlr"
             },
             {
-                "id": 680,
-                "name": "PARI/GP"
+                "id": 8254,
+                "name": "GeneSrF"
             },
             {
-                "id": 866,
-                "name": "SINGULAR"
+                "id": 21035,
+                "name": "XGBoost"
             },
             {
-                "id": 16448,
-                "name": "Sage-Combinat"
+                "id": 30901,
+                "name": "shap"
             },
             {
-                "id": 537,
-                "name": "Macaulay2"
+                "id": 27884,
+                "name": "VSURF"
             },
             {
-                "id": 554,
-                "name": "Mathematica"
+                "id": 8253,
+                "name": "varSelRF"
             },
             {
-                "id": 545,
-                "name": "Maple"
+                "id": 4351,
+                "name": "CRAN"
             },
             {
-                "id": 7249,
-                "name": "LMFDB"
+                "id": 8044,
+                "name": "FSelector"
             },
             {
-                "id": 14460,
-                "name": "Python"
+                "id": 4074,
+                "name": "UCI-ml"
             },
             {
-                "id": 27596,
-                "name": "ecdata"
+                "id": 8159,
+                "name": "glmnet"
             },
             {
-                "id": 611,
-                "name": "nauty"
+                "id": 14498,
+                "name": "ranger"
             },
             {
-                "id": 7823,
-                "name": "Traces"
+                "id": 7985,
+                "name": "e1071"
             },
             {
-                "id": 560,
-                "name": "Maxima"
+                "id": 35668,
+                "name": "GeneralisedCovarianceMeasure"
             },
             {
-                "id": 4968,
-                "name": "DLMF"
+                "id": 41086,
+                "name": "cpi"
             },
             {
-                "id": 4698,
-                "name": "Gfan"
+                "id": 11049,
+                "name": "ElemStatLearn"
             },
             {
-                "id": 23728,
-                "name": "MathOverflow"
+                "id": 7994,
+                "name": "gbm"
             },
             {
-                "id": 6293,
-                "name": "SciPy"
+                "id": 7115,
+                "name": "rpart"
             }
         ],
-        "source_code": "https://github.com/sagemath/sage",
+        "source_code": "https://github.com/cran/Boruta",
         "standard_articles": [
             {
                 "authors": [],
-                "id": 7045592,
-                "source": "zbMATH Open Web Interface contents unavailable due to conflicting licenses.",
-                "title": "zbMATH Open Web Interface contents unavailable due to conflicting licenses.",
-                "year": "2019"
-            },
-            {
-                "authors": [],
-                "id": 6418360,
-                "source": "zbMATH Open Web Interface contents unavailable due to conflicting licenses.",
-                "title": "zbMATH Open Web Interface contents unavailable due to conflicting licenses.",
-                "year": "2015"
-            },
-            {
-                "authors": [],
-                "id": 6532438,
-                "source": "zbMATH Open Web Interface contents unavailable due to conflicting licenses.",
-                "title": "zbMATH Open Web Interface contents unavailable due to conflicting licenses.",
-                "year": "2013"
-            },
-            {
-                "authors": [],
-                "id": 6462232,
-                "source": "zbMATH Open Web Interface contents unavailable due to conflicting licenses.",
-                "title": "zbMATH Open Web Interface contents unavailable due to conflicting licenses.",
-                "year": "2013"
-            },
-            {
-                "authors": [],
-                "id": 6114556,
-                "source": "zbMATH Open Web Interface contents unavailable due to conflicting licenses.",
-                "title": "zbMATH Open Web Interface contents unavailable due to conflicting licenses.",
-                "year": "2012"
-            },
-            {
-                "authors": [],
-                "id": 5785538,
+                "id": null,
                 "source": "zbMATH Open Web Interface contents unavailable due to conflicting licenses.",
                 "title": "zbMATH Open Web Interface contents unavailable due to conflicting licenses.",
                 "year": "2010"
-            },
-            {
-                "authors": [],
-                "id": 5380273,
-                "source": "zbMATH Open Web Interface contents unavailable due to conflicting licenses.",
-                "title": "zbMATH Open Web Interface contents unavailable due to conflicting licenses.",
-                "year": "2008"
             }
         ],
-        "zbmath_url": "https://zbmath.org/software/825"
+        "zbmath_url": "https://zbmath.org/software/8032"
     },
     "status": {
         "execution": "successful request",
@@ -232,14 +126,14 @@
         "last_id": null,
         "nr_total_results": 1,
         "nr_request_results": 1,
-        "query_execution_time_in_seconds": 0.41052913665771484,
+        "query_execution_time_in_seconds": 0.07397818565368652,
         "status_code": 200,
-        "time_stamp": "2024-09-26T18:55:42Z"
+        "time_stamp": "2024-11-07T10:33:39Z"
     },
     "swhdeposit:deposit": {
         "swhdeposit:reference": {
             "swhdeposit:object": {
-                "@swhid": "swh:1:snp:5132188cdf169d8ffcf2e44f41ad30734ecbf685"
+                "@swhid": "swh:1:dir:87aa974294fc68a64c371507162d16af6190c9ce"
             }
         },
         "swhdeposit:metadata-provenance": {
