@@ -22,34 +22,19 @@
    <codemeta:description>zbMATH Open Web Interface contents unavailable due to conflicting licenses.</codemeta:description>
    <codemeta:sameAs>http://cran.r-project.org/web/packages/Boruta/index.html</codemeta:sameAs>
    <codemeta:codeRepository>https://github.com/cran/Boruta</codemeta:codeRepository>
-   <codemeta:operatingSystem>None</codemeta:operatingSystem>
-   <schema:identifier>
+  <codemeta:softwareRequirements>R</codemeta:softwareRequirements>
+   <schema:Identifier>
       <codemeta:type>schema:PropertyValue</codemeta:type>
-      <schema:value>None</schema:value>
-   </schema:identifier>
-   <codemeta:programmingLanguage>None</codemeta:programmingLanguage>
+      <schema:value>zbmath-8032</schema:value>
+   </schema:Identifier>
    <schema:categoryCode>
       <schema:inCodeSet>62</schema:inCodeSet>
-   </schema:categoryCode>
-   <schema:categoryCode>
       <schema:inCodeSet>68</schema:inCodeSet>
-   </schema:categoryCode>
-   <schema:categoryCode>
       <schema:inCodeSet>74</schema:inCodeSet>
-   </schema:categoryCode>
-   <schema:categoryCode>
       <schema:inCodeSet>91</schema:inCodeSet>
-   </schema:categoryCode>
-   <schema:categoryCode>
       <schema:inCodeSet>92</schema:inCodeSet>
-   </schema:categoryCode>
-   <schema:categoryCode>
       <schema:inCodeSet>65</schema:inCodeSet>
-   </schema:categoryCode>
-   <schema:categoryCode>
       <schema:inCodeSet>86</schema:inCodeSet>
-   </schema:categoryCode>
-   <schema:categoryCode>
       <schema:inCodeSet>90</schema:inCodeSet>
    </schema:categoryCode>
    <schema:itemList>
