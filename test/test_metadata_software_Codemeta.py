@@ -43,6 +43,7 @@ class PlainXmlTest(unittest.TestCase):
             'ratio_mode': 'fast',  # is that for latency
             'F': 1,
         })
+
         essentials = list(filter(lambda e: not isinstance(e, MoveNode), diff))
 
         self.assertLessEqual(len(essentials), 0, "Found differences between expected and transformed XML")
