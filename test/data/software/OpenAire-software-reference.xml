@@ -23,5 +23,28 @@
       <datacite:title>SuperLU-DIST</datacite:title>
    </datacite:titles>
    <dc:description xml:lang="en" descriptionType="Abstract">zbMATH Open Web Interface contents unavailable due to conflicting licenses.</dc:description>
-
+ <datacite:subjects>
+      <datacite:subject subjectScheme="msc2020">35</datacite:subject>
+      <datacite:subject subjectScheme="msc2020">65</datacite:subject>
+      <datacite:subject subjectScheme="msc2020">68</datacite:subject>
+      <datacite:subject subjectScheme="msc2020">74</datacite:subject>
+      <datacite:subject subjectScheme="msc2020">76</datacite:subject>
+      <datacite:subject subjectScheme="msc2020">05</datacite:subject>
+      <datacite:subject subjectScheme="msc2020">15</datacite:subject>
+      <datacite:subject subjectScheme="msc2020">60</datacite:subject>
+      <datacite:subject subjectScheme="msc2020">78</datacite:subject>
+      <datacite:subject subjectScheme="msc2020">80</datacite:subject>
+      <datacite:subject subjectScheme="msc2020">81</datacite:subject>
+      <datacite:subject subjectScheme="msc2020">82</datacite:subject>
+      <datacite:subject subjectScheme="msc2020">85</datacite:subject>
+      <datacite:subject subjectScheme="msc2020">86</datacite:subject>
+      <datacite:subject subjectScheme="msc2020">90</datacite:subject>
+      <datacite:subject subjectScheme="msc2020">92</datacite:subject>
+      <datacite:subject subjectScheme="keyword">orms</datacite:subject>
+   </datacite:subjects>
+   <datacite:relatedIdentifiers>
+      <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSourceOf">http://crd-legacy.lbl.gov/~xiaoye/SuperLU/</datacite:relatedIdentifier>
+      <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsCitedBy">https://zbmath.org/2187846</datacite:relatedIdentifier>
+   </datacite:relatedIdentifiers>
+   <resourceType resourceTypeGeneral="Software"/>
  </resource>
