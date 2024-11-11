@@ -17,6 +17,10 @@ curl --noproxy '*' -X POST -H 'Content-Type: application/json' -H  "Authorizatio
 printf "\n\nCreate Format datacite_swmath\n\n"
 curl --noproxy '*' -X POST -H 'Content-Type: application/json' -H  "Authorization: Basic $AUTH" -i 'https://oai-input.portal.mardi4nfdi.de/oai-backend/format' --data '{"metadataPrefix":"datacite_swmath","schemaLocation":"https://raw.githubusercontent.com/MaRDI4NFDI/python-zbMathRest2Oai/main/test/data/software/swmath2datacite_software_schema.xsd","schemaNamespace":"http://datacite.org/schema/kernel-4","identifierXpath":"/identifier"}'
 
+printf "\n\nCreate Format openaire_swmath\n\n"
+curl --noproxy '*' -X POST -H 'Content-Type: application/json' -H  "Authorization: Basic $AUTH" -i 'https://oai-input.portal.mardi4nfdi.de/oai-backend/format' --data '{"metadataPrefix":"openaire_swmath","schemaLocation":"https://raw.githubusercontent.com/MaRDI4NFDI/python-zbMathRest2Oai/main/test/data/software/OpenAire-software-reference.xsd","schemaNamespace":"http://datacite.org/schema/kernel-4","identifierXpath":"/identifier"}'
+
+
 printf "\n\nCreate Format oai_zb_preview\n\n"
 curl --noproxy '*' -X POST -H 'Content-Type: application/json' -H  "Authorization: Basic $AUTH" -i 'https://oai-input.portal.mardi4nfdi.de/oai-backend/format' --data '{"metadataPrefix":"oai_zb_preview","schemaLocation":"https://zbmath.org/OAI/2.0/oai_zb_preview/","schemaNamespace":"https://zbmath.org/zbmath/elements/1.0/","identifierXpath":""}'
 
