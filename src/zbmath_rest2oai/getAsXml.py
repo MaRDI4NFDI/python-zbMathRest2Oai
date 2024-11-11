@@ -89,10 +89,12 @@ def final_xml2(api_source, prefix):
         soft_id=api_source.split("/")[-1]
         list_articles_ids_to_soft=[]
         def api_doc_endpoint(page):
-            return requests.get("https://api.zbmath.org/v1/document/_structured_search?page={}&results_per_page=100&software%20id=".format(page)+soft_id)
+            return requests.get("https://api.zbmath.org/v1/document/_structured_search?page={}&results_per_page=100&software%20id=".format(page,soft_id))
         page=0
-        while api_doc_endpoint["result"]!=None:
+        while True:
             data = api_doc_endpoint(page)
+            if data is None or "result" not in data or not data["result"]:
+                break
             list_articles_ids_to_soft.extend([entry["id"] for entry in data["result"]])
             page+=1
     for result in json["result"]:
