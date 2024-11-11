@@ -1,0 +1,142 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://datacite.org/schema/kernel-4" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="identifier">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute type="xs:string" name="IdentifierType"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="alternateIdentifiers">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="alternateIdentifier" maxOccurs="unbounded" minOccurs="0">
+          <xs:complexType>
+            <xs:simpleContent>
+              <xs:extension base="xs:string">
+                <xs:attribute type="xs:string" name="alternateIdentifierType" use="optional"/>
+              </xs:extension>
+            </xs:simpleContent>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="creators">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="creator">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="creatorName">
+                <xs:complexType>
+                  <xs:simpleContent>
+                    <xs:extension base="xs:string">
+                      <xs:attribute type="xs:string" name="nameType"/>
+                    </xs:extension>
+                  </xs:simpleContent>
+                </xs:complexType>
+              </xs:element>
+              <xs:element type="xs:string" name="givenName"/>
+              <xs:element type="xs:string" name="familyName"/>
+              <xs:element name="nameIdentifier">
+                <xs:complexType>
+                  <xs:simpleContent>
+                    <xs:extension base="xs:string">
+                      <xs:attribute type="xs:string" name="schemeURI"/>
+                      <xs:attribute type="xs:string" name="nameIdentifierScheme"/>
+                    </xs:extension>
+                  </xs:simpleContent>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="titles">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="title">
+          <xs:complexType>
+            <xs:simpleContent>
+              <xs:extension base="xs:string">
+                <xs:attribute type="xs:string" name="titleType"/>
+                <xs:attribute ref="xml:lang"/>
+              </xs:extension>
+            </xs:simpleContent>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="rightsList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="rights" maxOccurs="unbounded" minOccurs="0">
+          <xs:complexType>
+            <xs:simpleContent>
+              <xs:extension base="xs:string">
+                <xs:attribute type="xs:string" name="rightsURI" use="optional"/>
+                <xs:attribute ref="xml:lang"/>
+                <xs:attribute type="xs:string" name="schemeURI" use="optional"/>
+                <xs:attribute type="xs:string" name="rightsIdentifierScheme" use="optional"/>
+                <xs:attribute type="xs:string" name="rightsIdentifier" use="optional"/>
+              </xs:extension>
+            </xs:simpleContent>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="subjects">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="subject" maxOccurs="unbounded" minOccurs="0">
+          <xs:complexType>
+            <xs:simpleContent>
+              <xs:extension base="xs:string">
+                <xs:attribute type="xs:string" name="subjectScheme" use="optional"/>
+                <xs:attribute type="xs:string" name="classificationCode" use="optional"/>
+              </xs:extension>
+            </xs:simpleContent>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="dates">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="date" maxOccurs="unbounded" minOccurs="0">
+          <xs:complexType>
+            <xs:simpleContent>
+              <xs:extension base="xs:string">
+                <xs:attribute type="xs:string" name="dateType" use="optional"/>
+              </xs:extension>
+            </xs:simpleContent>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="relatedIdentifiers">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="relatedIdentifier" maxOccurs="unbounded" minOccurs="0">
+          <xs:complexType>
+            <xs:simpleContent>
+              <xs:extension base="xs:string">
+                <xs:attribute type="xs:string" name="relatedIdentifierType" use="optional"/>
+                <xs:attribute type="xs:string" name="relationType" use="optional"/>
+                <xs:attribute type="xs:string" name="resourceTypeGeneral" use="optional"/>
+              </xs:extension>
+            </xs:simpleContent>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
