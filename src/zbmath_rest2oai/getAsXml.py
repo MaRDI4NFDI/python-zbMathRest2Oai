@@ -73,6 +73,27 @@ def extract_tags(result):
     return tags
 
 
+
+def add_references_to_software(api_uri, dict_res):
+    if "software" in api_uri:
+        soft_id=api_uri.split("/")[-1]
+        list_articles_ids_to_soft=[]
+        def api_doc_endpoint(page):
+            return requests.get("https://api.zbmath.org/v1/document/_structured_search?page={}&results_per_page=100&software%20id={}".format(page,soft_id))
+        page=0
+        while True:
+            data = api_doc_endpoint(page).json()
+            if data is None or "result" not in data or not data["result"]:
+                break
+            list_articles_ids_to_soft.extend([entry["id"] for entry in data["result"]])
+            page+=1
+
+    if isinstance(dict_res, dict):
+        dict_res["references"] = list_articles_ids_to_soft
+        # Wrap it in a list to make it iterable for your existing loop
+        dict_res = [dict_res]
+
+    return dict_res
 def final_xml2(api_source, prefix):
     headers = {'Accept': 'application/json'}
     r = requests.get(api_source, headers=headers)
@@ -85,23 +106,8 @@ def final_xml2(api_source, prefix):
     json = r.json()
     dict_math_entities = {}
     tags = {}
-    if "software" in api_source:
-        soft_id=api_source.split("/")[-1]
-        list_articles_ids_to_soft=[]
-        def api_doc_endpoint(page):
-            return requests.get("https://api.zbmath.org/v1/document/_structured_search?page={}&results_per_page=100&software%20id={}".format(page,soft_id))
-        page=0
-        while True:
-            data = api_doc_endpoint(page).json()
-            if data is None or "result" not in data or not data["result"]:
-                break
-            list_articles_ids_to_soft.extend([entry["id"] for entry in data["result"]])
-            page+=1
 
-    if isinstance(json["result"], dict):
-        json["result"]["references"] = list_articles_ids_to_soft
-        # Wrap it in a list to make it iterable for your existing loop
-        json["result"] = [json["result"]]
+    json["result"]=add_references_to_software(api_source, json["result"])
 
     for result in json["result"]:
         apply_zbmath_api_fixes(result, prefix)
