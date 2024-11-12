@@ -97,8 +97,9 @@ def final_xml2(api_source, prefix):
                 break
             list_articles_ids_to_soft.extend([entry["id"] for entry in data["result"]])
             page+=1
-        json["result"]["references"] = list_articles_ids_to_soft
+
     if isinstance(json["result"], dict):
+        json["result"]["references"] = list_articles_ids_to_soft
         # Wrap it in a list to make it iterable for your existing loop
         json["result"] = [json["result"]]
 
