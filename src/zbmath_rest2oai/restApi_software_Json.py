@@ -3,7 +3,7 @@ import json
 import requests
 
 from zbmath_rest2oai.swhid import parse_csv_to_dict
-
+from zbmath_rest2oai.getAsXml import add_references_to_software
 
 # Main function to handle the API request, CSV parsing, and JSON modification
 def process_metadata(output_log_filename, csv_file_path, api_url, output_path=None):
@@ -17,6 +17,7 @@ def process_metadata(output_log_filename, csv_file_path, api_url, output_path=No
     if response.status_code == 200:
         # Parse the response JSON content
         data = response.json()
+        data["result"]=add_references_to_software(api_url,data["result"])
 
         #  Parse the CSV and get the dictionary of swmathid to swhid
         swmathid_to_swhid = parse_csv_to_dict(csv_file_path)
