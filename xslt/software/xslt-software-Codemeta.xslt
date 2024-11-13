@@ -235,6 +235,7 @@
       <codemeta:referencePublication>
            <xsl:if test="normalize-space(.) != '' and . != 'None'">
         <codemeta:identifier>
+            <xsl:text>https://zbmath.org/</xsl:text>
             <xsl:value-of select="id"/>
         </codemeta:identifier>
            </xsl:if>
