@@ -36,9 +36,7 @@
             <xsl:apply-templates select="root/orms_id"/>
 
             <xsl:apply-templates select="root/programming_languages"/>
-            <schema:identifier>
-            <xsl:apply-templates select="root/id" mode="codemeta-identifier"/>
-            </schema:identifier>
+
 
 
             <xsl:apply-templates select="root/classification"/>
@@ -182,15 +180,15 @@
     </xsl:template>
 
     <xsl:template match="orms_id">
-     <xsl:if test="normalize-space(.) != '' and . != 'None'">
-        <schema:identifier>
-            <codemeta:type>schema:PropertyValue</codemeta:type>
-            <schema:value>
+    <xsl:if test="normalize-space(.) != '' and . != 'None'">
+        <codemeta:relatedLink>
+                <xsl:text>https://orms.mfo.de/project@id=</xsl:text>
                 <xsl:value-of select="."/>
-            </schema:value>
-        </schema:identifier>
-     </xsl:if>
-    </xsl:template>
+                <xsl:text>.html</xsl:text>
+        </codemeta:relatedLink>
+    </xsl:if>
+</xsl:template>
+
 
     <xsl:template match="programming_languages">
      <xsl:if test="normalize-space(.) != '' and . != 'None'">
@@ -200,15 +198,7 @@
       </xsl:if>
     </xsl:template>
 
-       <xsl:template match="id" mode="codemeta-identifier">
-          <xsl:if test="normalize-space(.) != '' and . != 'None'">
-        <codemeta:type>schema:PropertyValue</codemeta:type>
-        <schema:value>
-            <xsl:text>zbmath-</xsl:text>
-            <xsl:value-of select="."/>
-        </schema:value>
-          </xsl:if>
-       </xsl:template>
+
 
     <xsl:template match="classification">
      <xsl:if test="normalize-space(.) != '' and . != 'None'">
