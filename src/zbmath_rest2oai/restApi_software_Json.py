@@ -68,8 +68,8 @@ def process_metadata(output_log_filename, csv_file_path, api_url, output_path=No
         print(f"Failed to retrieve data. Status code: {response.status_code}")
 
 
-#csv_file_path = '../../test/data/software/swh_swmath.csv'  # Path to your CSV file
-#api_url = 'https://api.zbmath.org/v1/software/825'  # API URL, can be generalized for any software ID
-#output_path = '../../test/data/software/software_with_swhid.json'
-#output_log_filename = '../../test/data/software/logfile.txt'
-#process_metadata(csv_file_path, api_url, output_path)
+csv_file_path = '../../test/data/software/swh_swmath_swhid_dir.csv'  # Path to your CSV file
+api_url = 'https://api.zbmath.org/v1/software/8779'  # API URL, can be generalized for any software ID
+output_path = '../../test/data/software/software_with_swhid3.json'
+output_log_filename = '../../test/data/software/logfile.txt'
+process_metadata(output_log_filename, csv_file_path, api_url, output_path)
