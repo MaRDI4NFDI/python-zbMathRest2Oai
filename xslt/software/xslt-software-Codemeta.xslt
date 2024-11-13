@@ -15,9 +15,9 @@
 
             <xsl:apply-templates select="root/swhdeposit:deposit"/>
 
-            <codemeta:author>
+
                 <xsl:apply-templates select="root/authors"/>
-            </codemeta:author>
+
 
             <xsl:apply-templates select="root/name"/>
 
@@ -49,13 +49,13 @@
             <xsl:apply-templates select="root/articles_count"/>
 
 
-            <codemeta:supportingData>
-                <xsl:apply-templates select="root/related_software"/>
-            </codemeta:supportingData>
 
-            <schema:referencePublication>
+                <xsl:apply-templates select="root/related_software"/>
+
+
+
                 <xsl:apply-templates select="root/standard_articles"/>
-            </schema:referencePublication>
+
 
             <xsl:apply-templates select="root/zbmath_url"/>
 
@@ -106,6 +106,7 @@
 
     <!-- Template for authors -->
     <xsl:template match="authors">
+        <codemeta:author>
         <codemeta:name>
             <xsl:value-of select="."/>
         </codemeta:name>
@@ -115,6 +116,7 @@
         <codemeta:familyName>
             <xsl:value-of select="substring-before(., ',')"/>
         </codemeta:familyName>
+        </codemeta:author>
     </xsl:template>
 
     <xsl:template match="description">
@@ -226,39 +228,33 @@
 
     <xsl:template match="related_software">
   <xsl:if test="normalize-space(.) != '' and . != 'None'">
+      <codemeta:supportingData>
         <codemeta:name>
             <xsl:value-of select="name"/>
         </codemeta:name>
         <codemeta:identifier>
             <xsl:value-of select="id"/>
         </codemeta:identifier>
+      </codemeta:supportingData>
   </xsl:if>
     </xsl:template>
 
     <xsl:template match="standard_articles">
- <xsl:if test="normalize-space(.) != '' and . != 'None'">
- <xsl:if test="normalize-space(authors) != ''">
-             <codemeta:author>
-            <xsl:value-of select="authors"/>
-             </codemeta:author>
-            </xsl:if>
 
+
+      <codemeta:referencePublication>
+           <xsl:if test="normalize-space(.) != '' and . != 'None'">
         <codemeta:identifier>
             <xsl:value-of select="id"/>
         </codemeta:identifier>
-
-        <codemeta:citation>
-            <xsl:value-of select="source"/>
-        </codemeta:citation>
-
-        <schema:headline>
-            <xsl:value-of select="title"/>
-        </schema:headline>
-
+           </xsl:if>
+          <xsl:if test="normalize-space(.) != '' and . != 'None'">
         <codemeta:datePublished>
             <xsl:value-of select="year"/>
         </codemeta:datePublished>
-      </xsl:if>
+          </xsl:if>
+      </codemeta:referencePublication>
+
     </xsl:template>
 
     <xsl:template match="zbmath_url">
