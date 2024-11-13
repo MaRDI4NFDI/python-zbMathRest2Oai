@@ -15,9 +15,9 @@
 
             <xsl:apply-templates select="root/swhdeposit:deposit"/>
 
-            <codemeta:author>
+
                 <xsl:apply-templates select="root/authors"/>
-            </codemeta:author>
+
 
             <xsl:apply-templates select="root/name"/>
 
@@ -36,9 +36,7 @@
             <xsl:apply-templates select="root/orms_id"/>
 
             <xsl:apply-templates select="root/programming_languages"/>
-            <schema:identifier>
-            <xsl:apply-templates select="root/id" mode="codemeta-identifier"/>
-            </schema:identifier>
+
 
 
             <xsl:apply-templates select="root/classification"/>
@@ -49,13 +47,13 @@
             <xsl:apply-templates select="root/articles_count"/>
 
 
-            <codemeta:supportingData>
-                <xsl:apply-templates select="root/related_software"/>
-            </codemeta:supportingData>
 
-            <schema:referencePublication>
+                <xsl:apply-templates select="root/related_software"/>
+
+
+
                 <xsl:apply-templates select="root/standard_articles"/>
-            </schema:referencePublication>
+
 
             <xsl:apply-templates select="root/zbmath_url"/>
 
@@ -106,6 +104,7 @@
 
     <!-- Template for authors -->
     <xsl:template match="authors">
+        <codemeta:author>
         <codemeta:name>
             <xsl:value-of select="."/>
         </codemeta:name>
@@ -115,6 +114,7 @@
         <codemeta:familyName>
             <xsl:value-of select="substring-before(., ',')"/>
         </codemeta:familyName>
+        </codemeta:author>
     </xsl:template>
 
     <xsl:template match="description">
@@ -180,15 +180,15 @@
     </xsl:template>
 
     <xsl:template match="orms_id">
-     <xsl:if test="normalize-space(.) != '' and . != 'None'">
-        <schema:identifier>
-            <codemeta:type>schema:PropertyValue</codemeta:type>
-            <schema:value>
+    <xsl:if test="normalize-space(.) != '' and . != 'None'">
+        <codemeta:relatedLink>
+                <xsl:text>https://orms.mfo.de/project@id=</xsl:text>
                 <xsl:value-of select="."/>
-            </schema:value>
-        </schema:identifier>
-     </xsl:if>
-    </xsl:template>
+                <xsl:text>.html</xsl:text>
+        </codemeta:relatedLink>
+    </xsl:if>
+</xsl:template>
+
 
     <xsl:template match="programming_languages">
      <xsl:if test="normalize-space(.) != '' and . != 'None'">
@@ -198,15 +198,7 @@
       </xsl:if>
     </xsl:template>
 
-       <xsl:template match="id" mode="codemeta-identifier">
-          <xsl:if test="normalize-space(.) != '' and . != 'None'">
-        <codemeta:type>schema:PropertyValue</codemeta:type>
-        <schema:value>
-            <xsl:text>zbmath-</xsl:text>
-            <xsl:value-of select="."/>
-        </schema:value>
-          </xsl:if>
-       </xsl:template>
+
 
     <xsl:template match="classification">
      <xsl:if test="normalize-space(.) != '' and . != 'None'">
@@ -226,39 +218,33 @@
 
     <xsl:template match="related_software">
   <xsl:if test="normalize-space(.) != '' and . != 'None'">
+      <codemeta:supportingData>
         <codemeta:name>
             <xsl:value-of select="name"/>
         </codemeta:name>
         <codemeta:identifier>
             <xsl:value-of select="id"/>
         </codemeta:identifier>
+      </codemeta:supportingData>
   </xsl:if>
     </xsl:template>
 
     <xsl:template match="standard_articles">
- <xsl:if test="normalize-space(.) != '' and . != 'None'">
- <xsl:if test="normalize-space(authors) != ''">
-             <codemeta:author>
-            <xsl:value-of select="authors"/>
-             </codemeta:author>
-            </xsl:if>
 
+
+      <codemeta:referencePublication>
+           <xsl:if test="normalize-space(.) != '' and . != 'None'">
         <codemeta:identifier>
             <xsl:value-of select="id"/>
         </codemeta:identifier>
-
-        <codemeta:citation>
-            <xsl:value-of select="source"/>
-        </codemeta:citation>
-
-        <schema:headline>
-            <xsl:value-of select="title"/>
-        </schema:headline>
-
+           </xsl:if>
+          <xsl:if test="normalize-space(.) != '' and . != 'None'">
         <codemeta:datePublished>
             <xsl:value-of select="year"/>
         </codemeta:datePublished>
-      </xsl:if>
+          </xsl:if>
+      </codemeta:referencePublication>
+
     </xsl:template>
 
     <xsl:template match="zbmath_url">
