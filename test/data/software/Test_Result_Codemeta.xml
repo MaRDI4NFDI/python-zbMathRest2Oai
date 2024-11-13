@@ -25,10 +25,6 @@
    <codemeta:sameAs>http://cran.r-project.org/web/packages/Boruta/index.html</codemeta:sameAs>
    <codemeta:codeRepository>https://github.com/cran/Boruta</codemeta:codeRepository>
   <codemeta:softwareRequirements>R</codemeta:softwareRequirements>
-   <schema:identifier>
-      <codemeta:type>schema:PropertyValue</codemeta:type>
-      <schema:value>zbmath-8032</schema:value>
-   </schema:identifier>
    <schema:categoryCode>62</schema:categoryCode>
    <schema:categoryCode>68</schema:categoryCode>
    <schema:categoryCode>74</schema:categoryCode>
