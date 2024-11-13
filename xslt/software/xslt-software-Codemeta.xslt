@@ -5,7 +5,7 @@
                 xmlns:codemeta="https://doi.org/10.5063/SCHEMA/CODEMETA-2.0"
                 xmlns:swhdeposit="https://www.softwareheritage.org/schema/2018/deposit"
                 xmlns:swh="https://www.softwareheritage.org/schema/2018/deposit"
-                xmlns:schema="https://schema.org">
+                xmlns:schema="http://schema.org">
     <xsl:output method="xml" indent="yes"/>
 
     <xsl:template match="/">
@@ -36,18 +36,18 @@
             <xsl:apply-templates select="root/orms_id"/>
 
             <xsl:apply-templates select="root/programming_languages"/>
-            <schema:Identifier>
+            <schema:identifier>
             <xsl:apply-templates select="root/id" mode="codemeta-identifier"/>
-            </schema:Identifier>
+            </schema:identifier>
 
-            <schema:categoryCode>
+
             <xsl:apply-templates select="root/classification"/>
-            </schema:categoryCode>
 
 
-            <schema:itemList>
+
+
             <xsl:apply-templates select="root/articles_count"/>
-            </schema:itemList>
+
 
             <codemeta:supportingData>
                 <xsl:apply-templates select="root/related_software"/>
@@ -64,7 +64,7 @@
 
     <xsl:template match="id"  mode="id">
         <id>
-            <xsl:text>zbmath-</xsl:text>
+            <xsl:text>https://zbmath.org/</xsl:text>
             <xsl:value-of select="."/>
         </id>
     </xsl:template>
@@ -210,9 +210,9 @@
 
     <xsl:template match="classification">
      <xsl:if test="normalize-space(.) != '' and . != 'None'">
-            <schema:inCodeSet>
+            <schema:categoryCode>
                 <xsl:value-of select="."/>
-            </schema:inCodeSet>
+            </schema:categoryCode>
      </xsl:if>
     </xsl:template>
 

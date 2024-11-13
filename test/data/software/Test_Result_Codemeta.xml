@@ -2,8 +2,8 @@
        xmlns:codemeta="https://doi.org/10.5063/SCHEMA/CODEMETA-2.0"
        xmlns:swhdeposit="https://www.softwareheritage.org/schema/2018/deposit"
        xmlns:swh="https://www.softwareheritage.org/schema/2018/deposit"
-       xmlns:schema="https://schema.org">
-   <id>zbmath-8032</id>
+       xmlns:schema="http://schema.org">
+   <id>https://zbmath.org/8032</id>
    <swhdeposit:deposit>
       <swhdeposit:reference>
          <swhdeposit:object swhid="swh:1:dir:87aa974294fc68a64c371507162d16af6190c9ce"/>
@@ -23,23 +23,19 @@
    <codemeta:sameAs>http://cran.r-project.org/web/packages/Boruta/index.html</codemeta:sameAs>
    <codemeta:codeRepository>https://github.com/cran/Boruta</codemeta:codeRepository>
   <codemeta:softwareRequirements>R</codemeta:softwareRequirements>
-   <schema:Identifier>
+   <schema:identifier>
       <codemeta:type>schema:PropertyValue</codemeta:type>
       <schema:value>zbmath-8032</schema:value>
-   </schema:Identifier>
-   <schema:categoryCode>
-      <schema:inCodeSet>62</schema:inCodeSet>
-      <schema:inCodeSet>68</schema:inCodeSet>
-      <schema:inCodeSet>74</schema:inCodeSet>
-      <schema:inCodeSet>91</schema:inCodeSet>
-      <schema:inCodeSet>92</schema:inCodeSet>
-      <schema:inCodeSet>65</schema:inCodeSet>
-      <schema:inCodeSet>86</schema:inCodeSet>
-      <schema:inCodeSet>90</schema:inCodeSet>
-   </schema:categoryCode>
-   <schema:itemList>
+   </schema:identifier>
+   <schema:categoryCode>62</schema:categoryCode>
+   <schema:categoryCode>68</schema:categoryCode>
+   <schema:categoryCode>74</schema:categoryCode>
+   <schema:categoryCode>91</schema:categoryCode>
+   <schema:categoryCode>92</schema:categoryCode>
+   <schema:categoryCode>65</schema:categoryCode>
+   <schema:categoryCode>86</schema:categoryCode>
+   <schema:categoryCode>90</schema:categoryCode>
       <schema:numberofItems>29</schema:numberofItems>
-   </schema:itemList>
    <codemeta:supportingData>
       <codemeta:name>R</codemeta:name>
       <codemeta:identifier>771</codemeta:identifier>
