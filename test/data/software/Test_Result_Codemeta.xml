@@ -8,7 +8,9 @@
       <swhdeposit:reference>
          <swhdeposit:object swhid="swh:1:dir:87aa974294fc68a64c371507162d16af6190c9ce"/>
       </swhdeposit:reference>
-      <swhdeposit:metadata-provenance/>
+       <swhdeposit:metadata-provenance>
+         <schema:url>https://api.zbmath.org/v1/</schema:url>
+      </swhdeposit:metadata-provenance>
    </swhdeposit:deposit>
     <codemeta:author>
       <codemeta:name>Kursa, Miron Bartosz</codemeta:name>
@@ -115,7 +117,6 @@
       <codemeta:identifier>7115</codemeta:identifier>
    </codemeta:supportingData>
    <codemeta:referencePublication>
-      <codemeta:identifier>None</codemeta:identifier>
       <codemeta:datePublished>2010</codemeta:datePublished>
    </codemeta:referencePublication>
    <codemeta:url>https://zbmath.org/software/8032</codemeta:url>
