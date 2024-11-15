@@ -31,12 +31,14 @@ def json_to_xml(json_data):
     swhdeposit_elem = ET.SubElement(root, 'swhdeposit:deposit')
     swhdeposit_reference = ET.SubElement(swhdeposit_elem, 'swhdeposit:reference')
     swhdeposit_object = ET.SubElement(swhdeposit_reference, 'swhdeposit:object')
-    swhid = json_data['swhdeposit:deposit']['swhdeposit:reference']['swhdeposit:object'].get('@swhid', '')
+    swhid = (json_data['swhdeposit:deposit']['swhdeposit:reference']['swhdeposit:object']
+             .get('@swhid', ''))
     swhdeposit_object.set('swhid', swhid)
 
     metadata_provenance = ET.SubElement(swhdeposit_elem, 'swhdeposit:metadata-provenance')
     schema_url = ET.SubElement(metadata_provenance, 'schema:url')
-    schema_url.text = json_data['swhdeposit:deposit']['swhdeposit:metadata-provenance'].get('schema:url', '')
+    schema_url.text = (json_data['swhdeposit:deposit']['swhdeposit:metadata-provenance']
+                       .get('schema:url', ''))
 
     # Add dependencies
     dependencies = ET.SubElement(root, 'dependencies')
@@ -156,7 +158,8 @@ def convert_json_to_xml(json_file_path, xml_output_path):
 
 
 # Example usage
-json_file_path = '../../test/data/software/software_with_swhid.json'  # Update with your file path
-xml_output_path = '../../test/data/software/software_with_swhid.xml'  # Update with your desired output path
+json_file_path = '../../test/data/software/software_with_swhid.json'
+xml_output_path = '../../test/data/software/software_with_swhid.xml'
 
 convert_json_to_xml(json_file_path, xml_output_path)
+
