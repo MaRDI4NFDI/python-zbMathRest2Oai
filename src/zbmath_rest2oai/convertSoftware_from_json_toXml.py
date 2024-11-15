@@ -10,17 +10,20 @@ def json_to_xml(json_data):
         'xmlns:schema': "https://schema.org/"
     })
 
+    # Extract the first entry from the "result" key
+    result = json_data['result'][0]
+
     # Add articles_count
     articles_count = ET.SubElement(root, 'articles_count')
-    articles_count.text = str(json_data['result']['articles_count'])
+    articles_count.text = str(result.get('articles_count', ''))
 
     # Add authors
-    for author in json_data['result']['authors']:
+    for author in result.get('authors', []):
         author_elem = ET.SubElement(root, 'authors')
         author_elem.text = author
 
     # Add classification
-    for classif in json_data['result']['classification']:
+    for classif in result.get('classification', []):
         classif_elem = ET.SubElement(root, 'classification')
         classif_elem.text = classif
 
@@ -28,56 +31,56 @@ def json_to_xml(json_data):
     swhdeposit_elem = ET.SubElement(root, 'swhdeposit:deposit')
     swhdeposit_reference = ET.SubElement(swhdeposit_elem, 'swhdeposit:reference')
     swhdeposit_object = ET.SubElement(swhdeposit_reference, 'swhdeposit:object')
-    swhdeposit_object.set('swhid',
-                          json_data['swhdeposit:deposit']['swhdeposit:reference']['swhdeposit:object']['@swhid'])
+    swhid = json_data['swhdeposit:deposit']['swhdeposit:reference']['swhdeposit:object'].get('@swhid', '')
+    swhdeposit_object.set('swhid', swhid)
 
     metadata_provenance = ET.SubElement(swhdeposit_elem, 'swhdeposit:metadata-provenance')
     schema_url = ET.SubElement(metadata_provenance, 'schema:url')
-    schema_url.text = json_data['swhdeposit:deposit']['swhdeposit:metadata-provenance']['schema:url']
+    schema_url.text = json_data['swhdeposit:deposit']['swhdeposit:metadata-provenance'].get('schema:url', '')
 
     # Add dependencies
     dependencies = ET.SubElement(root, 'dependencies')
-    dependencies.text = str(json_data['result']['dependencies'])
+    dependencies.text = str(result.get('dependencies', 'None'))
 
     # Add description
     description = ET.SubElement(root, 'description')
-    description.text = json_data['result']['description']
+    description.text = result.get('description', '')
 
     # Add homepage
     homepage = ET.SubElement(root, 'homepage')
-    homepage.text = json_data['result']['homepage']
+    homepage.text = result.get('homepage', '')
 
     # Add id
     id_elem = ET.SubElement(root, 'id')
-    id_elem.text = str(json_data['result']['id'])
+    id_elem.text = str(result.get('id', ''))
 
     # Add keywords
-    for keyword in json_data['result']['keywords']:
+    for keyword in result.get('keywords', []):
         keyword_elem = ET.SubElement(root, 'keywords')
         keyword_elem.text = keyword
 
     # Add license_terms
     license_terms = ET.SubElement(root, 'license_terms')
-    license_terms.text = str(json_data['result']['license_terms'])
+    license_terms.text = str(result.get('license_terms', 'None'))
 
     # Add name
     name = ET.SubElement(root, 'name')
-    name.text = json_data['result']['name']
+    name.text = result.get('name', '')
 
     # Add operating_systems
     operating_systems = ET.SubElement(root, 'operating_systems')
-    operating_systems.text = str(json_data['result']['operating_systems'])
+    operating_systems.text = str(result.get('operating_systems', 'None'))
 
     # Add orms_id
     orms_id = ET.SubElement(root, 'orms_id')
-    orms_id.text = str(json_data['result']['orms_id'])
+    orms_id.text = str(result.get('orms_id', 'None'))
 
     # Add programming_languages
     programming_languages = ET.SubElement(root, 'programming_languages')
-    programming_languages.text = str(json_data['result']['programming_languages'])
+    programming_languages.text = str(result.get('programming_languages', 'None'))
 
     # Add related_software
-    for software in json_data['result']['related_software']:
+    for software in result.get('related_software', []):
         related_software_elem = ET.SubElement(root, 'related_software')
         software_id = ET.SubElement(related_software_elem, 'id')
         software_id.text = str(software['id'])
@@ -86,24 +89,31 @@ def json_to_xml(json_data):
 
     # Add source_code
     source_code = ET.SubElement(root, 'source_code')
-    source_code.text = json_data['result']['source_code']
+    source_code.text = result.get('source_code', '')
 
     # Add standard_articles
-    for article in json_data['result']['standard_articles']:
+    for article in result.get('standard_articles', []):
         article_elem = ET.SubElement(root, 'standard_articles')
         article_authors = ET.SubElement(article_elem, 'authors')
+        article_authors.text = ', '.join(article.get('authors', []))
         article_id = ET.SubElement(article_elem, 'id')
-        article_id.text = str(article['id'])
+        article_id.text = str(article.get('id', ''))
         article_source = ET.SubElement(article_elem, 'source')
-        article_source.text = article['source']
+        article_source.text = article.get('source', '')
         article_title = ET.SubElement(article_elem, 'title')
-        article_title.text = article['title']
+        article_title.text = article.get('title', '')
         article_year = ET.SubElement(article_elem, 'year')
-        article_year.text = article['year']
+        article_year.text = article.get('year', '')
 
     # Add zbmath_url
     zbmath_url = ET.SubElement(root, 'zbmath_url')
-    zbmath_url.text = json_data['result']['zbmath_url']
+    zbmath_url.text = result.get('zbmath_url', '')
+
+    # Add references
+    references_elem = ET.SubElement(root, 'references')
+    for ref in result.get('references', []):
+        reference_elem = ET.SubElement(references_elem, 'reference')
+        reference_elem.text = str(ref)
 
     return root
 
@@ -146,7 +156,7 @@ def convert_json_to_xml(json_file_path, xml_output_path):
 
 
 # Example usage
-#json_file_path = '../../test/data/software/software_with_swhid.json'  # Update with your file path
-#xml_output_path = '../../test/data/software/software_with_swhid.xml'  # Update with your desired output path
+json_file_path = '../../test/data/software/software_with_swhid.json'  # Update with your file path
+xml_output_path = '../../test/data/software/software_with_swhid.xml'  # Update with your desired output path
 
-#convert_json_to_xml(json_file_path, xml_output_path)
+convert_json_to_xml(json_file_path, xml_output_path)
