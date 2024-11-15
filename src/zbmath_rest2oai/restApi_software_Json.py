@@ -38,7 +38,7 @@ def process_metadata(output_log_filename, csv_file_path, api_url, output_path=No
                         }
                     },
                     "swhdeposit:metadata-provenance": {
-                        "schema:url": "https://staging.swmath.org/"  # Split or modify the URL as needed
+                        "schema:url": "https://api.zbmath.org/v1/"
                     }
                 }
             }
@@ -70,6 +70,6 @@ def process_metadata(output_log_filename, csv_file_path, api_url, output_path=No
 
 csv_file_path = '../../test/data/software/swh_swmath_swhid_dir.csv'  # Path to your CSV file
 api_url = 'https://api.zbmath.org/v1/software/8779'  # API URL, can be generalized for any software ID
-output_path = '../../test/data/software/software_with_swhid3.json'
+output_path = '../../test/data/software/software_with_swhid.json'
 output_log_filename = '../../test/data/software/logfile.txt'
 process_metadata(output_log_filename, csv_file_path, api_url, output_path)
