@@ -28,12 +28,29 @@ def json_to_xml(json_data):
         classif_elem.text = classif
 
     # Add swhdeposit:deposit section
-    swhdeposit_elem = ET.SubElement(root, 'swhdeposit:deposit')
+    """" swhdeposit_elem = ET.SubElement(root, 'swhdeposit:deposit')
     swhdeposit_reference = ET.SubElement(swhdeposit_elem, 'swhdeposit:reference')
     swhdeposit_object = ET.SubElement(swhdeposit_reference, 'swhdeposit:object')
     swhid = (json_data['swhdeposit:deposit']['swhdeposit:reference']['swhdeposit:object']
              .get('@swhid', ''))
+    swhdeposit_object.set('swhid', swhid)"""
+
+    # Add swhdeposit:deposit section
+    swhdeposit_elem = ET.SubElement(root, 'swhdeposit:deposit')
+    swhdeposit_reference = ET.SubElement(swhdeposit_elem, 'swhdeposit:reference')
+    swhdeposit_object = ET.SubElement(swhdeposit_reference, 'swhdeposit:object')
+
+    # Fetch the 'swhid' value with improved readability
+    swhid = (
+    json_data['swhdeposit:deposit']
+    ['swhdeposit:reference']
+    ['swhdeposit:object']
+    .get('@swhid', '')
+    )
+
+    # Set the swhid attribute
     swhdeposit_object.set('swhid', swhid)
+
 
     metadata_provenance = ET.SubElement(swhdeposit_elem, 'swhdeposit:metadata-provenance')
     schema_url = ET.SubElement(metadata_provenance, 'schema:url')
@@ -158,8 +175,7 @@ def convert_json_to_xml(json_file_path, xml_output_path):
 
 
 # Example usage
-json_file_path = '../../test/data/software/software_with_swhid.json'
-xml_output_path = '../../test/data/software/software_with_swhid.xml'
+JSON_FILE_PATH = '../../test/data/software/software_with_swhid.json'
+XML_OUTPUT_PATH = '../../test/data/software/software_with_swhid.xml'
 
-convert_json_to_xml(json_file_path, xml_output_path)
-
+convert_json_to_xml(JSON_FILE_PATH, XML_OUTPUT_PATH)
