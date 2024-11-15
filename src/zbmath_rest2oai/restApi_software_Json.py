@@ -38,7 +38,7 @@ def process_metadata(output_log_filename, csv_file_path, api_url, output_path=No
                         }
                     },
                     "swhdeposit:metadata-provenance": {
-                        "schema:url": "https://staging.swmath.org/"  # Split or modify the URL as needed
+                        "schema:url": "https://api.zbmath.org/v1/"  # Split or modify the URL as needed
                     }
                 }
             }
