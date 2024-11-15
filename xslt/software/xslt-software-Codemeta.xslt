@@ -54,6 +54,7 @@
 
                 <xsl:apply-templates select="root/standard_articles"/>
 
+             <xsl:apply-templates select="root/references"/>
 
             <xsl:apply-templates select="root/zbmath_url"/>
 
@@ -89,18 +90,12 @@
     <!-- Template for swhdeposit:metadata-provenance -->
     <xsl:template match="swhdeposit:metadata-provenance">
         <swhdeposit:metadata-provenance>
-            <xsl:apply-templates select="schema:url"/>
+             <schema:url>
+              <xsl:value-of select="."/>
+            </schema:url>
         </swhdeposit:metadata-provenance>
     </xsl:template>
 
-    <!-- Template for schema:url -->
-    <xsl:template match="schema:url">
-      <xsl:if test="normalize-space(.) != '' and . != 'None'">
-        <schema:url>
-            <xsl:value-of select="."/>
-        </schema:url>
-      </xsl:if>
-    </xsl:template>
 
     <!-- Template for authors -->
     <xsl:template match="authors">
@@ -229,23 +224,35 @@
   </xsl:if>
     </xsl:template>
 
-    <xsl:template match="standard_articles">
+  <xsl:template match="standard_articles">
+    <codemeta:referencePublication>
+        <!-- Conditional check for id -->
+        <xsl:if test="normalize-space(id) != '' and id != 'None'">
+            <codemeta:identifier>
+                <xsl:text>https://zbmath.org/</xsl:text>
+                <xsl:value-of select="id"/>
+            </codemeta:identifier>
+        </xsl:if>
+
+        <!-- Conditional check for year -->
+        <xsl:if test="normalize-space(year) != '' and year != 'None'">
+            <codemeta:datePublished>
+                <xsl:value-of select="year"/>
+            </codemeta:datePublished>
+        </xsl:if>
+    </codemeta:referencePublication>
+</xsl:template>
 
 
-      <codemeta:referencePublication>
-           <xsl:if test="normalize-space(.) != '' and . != 'None'">
-        <codemeta:identifier>
-            <xsl:value-of select="id"/>
-        </codemeta:identifier>
-           </xsl:if>
-          <xsl:if test="normalize-space(.) != '' and . != 'None'">
-        <codemeta:datePublished>
-            <xsl:value-of select="year"/>
-        </codemeta:datePublished>
-          </xsl:if>
-      </codemeta:referencePublication>
-
+     <xsl:template match="reference">
+  <xsl:if test="normalize-space(.) != '' and . != 'None'">
+        <codemeta:citation>
+            <xsl:text>https://zbmath.org/</xsl:text>
+            <xsl:value-of select="."/>
+        </codemeta:citation>
+       </xsl:if>
     </xsl:template>
+
 
     <xsl:template match="zbmath_url">
   <xsl:if test="normalize-space(.) != '' and . != 'None'">
