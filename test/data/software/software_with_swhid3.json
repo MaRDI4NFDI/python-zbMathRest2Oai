@@ -1,0 +1,216 @@
+{
+    "result": [
+        {
+            "articles_count": 49,
+            "authors": [
+                "Vejdemo-Johansson, Mikael",
+                "Adams, Henry",
+                "Tausz, Andrew"
+            ],
+            "classification": [
+                "37",
+                "55",
+                "62",
+                "68",
+                "92",
+                "00",
+                "05",
+                "11",
+                "13",
+                "14",
+                "18",
+                "34",
+                "49",
+                "51",
+                "52",
+                "53",
+                "54",
+                "57",
+                "58",
+                "60",
+                "65",
+                "76",
+                "81",
+                "83",
+                "90",
+                "91",
+                "93",
+                "94"
+            ],
+            "dependencies": null,
+            "description": "zbMATH Open Web Interface contents unavailable due to conflicting licenses.",
+            "homepage": "http://appliedtopology.github.io/javaplex/",
+            "id": 8779,
+            "keywords": [],
+            "license_terms": null,
+            "name": "javaPlex",
+            "operating_systems": null,
+            "orms_id": null,
+            "programming_languages": null,
+            "related_software": [
+                {
+                    "id": 27771,
+                    "name": "Ripser"
+                },
+                {
+                    "id": 8777,
+                    "name": "Gudhi"
+                },
+                {
+                    "id": 9359,
+                    "name": "Dionysus"
+                },
+                {
+                    "id": 8778,
+                    "name": "Perseus"
+                },
+                {
+                    "id": 8780,
+                    "name": "PHAT"
+                },
+                {
+                    "id": 15020,
+                    "name": "jHoles"
+                },
+                {
+                    "id": 15508,
+                    "name": "TDA"
+                },
+                {
+                    "id": 23170,
+                    "name": "GitHub"
+                },
+                {
+                    "id": 41013,
+                    "name": "TopologyNet"
+                },
+                {
+                    "id": 29766,
+                    "name": "CliqueTop"
+                },
+                {
+                    "id": 41418,
+                    "name": "PersistenceImages"
+                },
+                {
+                    "id": 558,
+                    "name": "Matlab"
+                },
+                {
+                    "id": 17206,
+                    "name": "SW1PerS"
+                },
+                {
+                    "id": 21260,
+                    "name": "Persistence Landscape"
+                },
+                {
+                    "id": 15021,
+                    "name": "Holes"
+                },
+                {
+                    "id": 28220,
+                    "name": "DIPHA"
+                },
+                {
+                    "id": 26097,
+                    "name": "Eirene"
+                },
+                {
+                    "id": 9851,
+                    "name": "jPlex"
+                },
+                {
+                    "id": 41012,
+                    "name": "HERMES"
+                },
+                {
+                    "id": 41015,
+                    "name": "AGL-Score"
+                }
+            ],
+            "source_code": "https://github.com/appliedtopology/javaplex",
+            "standard_articles": [
+                {
+                    "authors": [],
+                    "id": 6341304,
+                    "source": "zbMATH Open Web Interface contents unavailable due to conflicting licenses.",
+                    "title": "zbMATH Open Web Interface contents unavailable due to conflicting licenses.",
+                    "year": "2014"
+                }
+            ],
+            "zbmath_url": "https://zbmath.org/software/8779",
+            "references": [
+                6472981,
+                6776481,
+                6461820,
+                6513127,
+                6946762,
+                6341304,
+                7392281,
+                7421252,
+                6618145,
+                7089252,
+                7207733,
+                7074450,
+                7559032,
+                6533939,
+                6516690,
+                6637701,
+                7615095,
+                7547913,
+                7100949,
+                6621209,
+                7589533,
+                7278745,
+                7301453,
+                6660915,
+                7464720,
+                7461383,
+                7064220,
+                7079285,
+                7496318,
+                7244712,
+                6578876,
+                7618083,
+                7790718,
+                7207021,
+                7805160,
+                7846287,
+                6920291,
+                7864906,
+                7473194,
+                7477435,
+                6851803,
+                6883903,
+                6871748,
+                7461791,
+                7225684,
+                7413870,
+                7121379,
+                7553292
+            ]
+        }
+    ],
+    "status": {
+        "execution": "successful request",
+        "execution_bool": true,
+        "internal_code": "ok",
+        "last_id": null,
+        "nr_total_results": 1,
+        "nr_request_results": 1,
+        "query_execution_time_in_seconds": 0.09023284912109375,
+        "status_code": 200,
+        "time_stamp": "2024-11-15T14:19:58Z"
+    },
+    "swhdeposit:deposit": {
+        "swhdeposit:reference": {
+            "swhdeposit:object": {
+                "@swhid": "swh:1:dir:ba50b7dc0025cdbd10911381cf1f5b672b086a1a"
+            }
+        },
+        "swhdeposit:metadata-provenance": {
+            "schema:url": "https://api.zbmath.org/v1/"
+        }
+    }
+}
