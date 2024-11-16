@@ -14,7 +14,11 @@ URL = "https://oai-input.portal.mardi4nfdi.de/oai-backend/item"
 
 
 def content_differs(current, content) -> bool:
-    return content != current['content']['content']
+    try:
+        return content != current['content']['content']
+    except TypeError:
+        # Content is None
+        return True
 
 
 async def sync_item(session, identifier, tags, ingest_format, content):
