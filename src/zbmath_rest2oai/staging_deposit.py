@@ -9,6 +9,7 @@ import subprocess
 import time
 import tempfile
 import os
+
 env = os.environ.copy()
 env['SWMATH_USER_DEPOSIT'] = os.getenv('SWMATH_USER_DEPOSIT')
 env['SWMATH_PWD_DEPOSIT'] = os.getenv('SWMATH_PWD_DEPOSIT')
@@ -21,8 +22,12 @@ json_output_path = '../test/data/software/software_with_swhid.json'
 xml_output_path = '../test/data/software/software_with_swhid.xml'  # Update with your desired output path
 output_log_filename = '../test/data/software/logfile.txt'
 xsl_filename = '../xslt/software/xslt-software-Codemeta.xslt'
-
-for (i,swmath_id) in enumerate(pd.read_csv(csv_file_path)['swmathid']):
+df= pd.read_csv(csv_file_path)
+print(df.head().dtypes)
+url="https://github.com/appliedtopology/javaplex"
+df=df[df['cvs']==url]
+print(df)
+for (i,swmath_id) in enumerate(df['swmathid']):
     if i == 10:
         print("End of the deposit process")
         break

@@ -166,7 +166,7 @@ def convert_json_to_xml(json_file_path, xml_output_path):
 
 
 # Example usage
-JSON_FILE_PATH = '../../test/data/software/software_with_swhid.json'
-XML_OUTPUT_PATH = '../../test/data/software/software_with_swhid.xml'
+#JSON_FILE_PATH = '../../test/data/software/software_with_swhid.json'
+#XML_OUTPUT_PATH = '../../test/data/software/software_with_swhid.xml'
 
-convert_json_to_xml(JSON_FILE_PATH, XML_OUTPUT_PATH)
+#convert_json_to_xml(JSON_FILE_PATH, XML_OUTPUT_PATH)
