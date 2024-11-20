@@ -31,7 +31,6 @@
 
             <xsl:apply-templates select="root/operating_systems"/>
 
-            <xsl:apply-templates select="root/dependencies"/>
 
             <xsl:apply-templates select="root/orms_id"/>
 
@@ -56,7 +55,7 @@
 
              <xsl:apply-templates select="root/references"/>
 
-            <xsl:apply-templates select="root/zbmath_url"/>
+            <xsl:apply-templates select="root/id"/>
 
         </entry>
     </xsl:template>
@@ -75,17 +74,19 @@
         </swhdeposit:deposit>
     </xsl:template>
 
-    <!-- Template for swhdeposit:reference -->
-    <xsl:template match="swhdeposit:reference">
-        <swhdeposit:reference>
-            <xsl:apply-templates select="swhdeposit:object"/>
-        </swhdeposit:reference>
-    </xsl:template>
 
     <!-- Template for swhdeposit:object -->
-    <xsl:template match="swhdeposit:object">
-        <swhdeposit:object swhid="{@swhid}"/>
-    </xsl:template>
+ <xsl:template match="swhdeposit:reference">
+    <swhdeposit:reference>
+        <swhdeposit:origin>
+            <xsl:attribute name="url">
+                <xsl:value-of select="//source_code"/>
+            </xsl:attribute>
+        </swhdeposit:origin>
+    </swhdeposit:reference>
+</xsl:template>
+
+
 
     <!-- Template for swhdeposit:metadata-provenance -->
     <xsl:template match="swhdeposit:metadata-provenance">
@@ -166,13 +167,7 @@
      </xsl:if>
     </xsl:template>
 
-     <xsl:template match="dependencies">
-        <xsl:if test="normalize-space(.) != '' and . != 'None'">
-            <codemeta:softwareRequirements>
-                <xsl:value-of select="."/>
-            </codemeta:softwareRequirements>
-        </xsl:if>
-    </xsl:template>
+
 
     <xsl:template match="orms_id">
     <xsl:if test="normalize-space(.) != '' and . != 'None'">
@@ -254,9 +249,10 @@
     </xsl:template>
 
 
-    <xsl:template match="zbmath_url">
+    <xsl:template match="id">
   <xsl:if test="normalize-space(.) != '' and . != 'None'">
         <codemeta:url>
+            <xsl:text>https://api.zbmath.org/v1/software/</xsl:text>
             <xsl:value-of select="."/>
         </codemeta:url>
        </xsl:if>
