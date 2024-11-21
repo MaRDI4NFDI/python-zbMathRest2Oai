@@ -6,9 +6,11 @@
    <id>https://zbmath.org/8032</id>
    <swhdeposit:deposit>
       <swhdeposit:reference>
-         <swhdeposit:object swhid="swh:1:dir:87aa974294fc68a64c371507162d16af6190c9ce"/>
+         <swhdeposit:origin url="https://github.com/cran/Boruta"/>
       </swhdeposit:reference>
-      <swhdeposit:metadata-provenance/>
+      <swhdeposit:metadata-provenance>
+         <schema:url>https://api.zbmath.org/v1/</schema:url>
+      </swhdeposit:metadata-provenance>
    </swhdeposit:deposit>
     <codemeta:author>
       <codemeta:name>Kursa, Miron Bartosz</codemeta:name>
