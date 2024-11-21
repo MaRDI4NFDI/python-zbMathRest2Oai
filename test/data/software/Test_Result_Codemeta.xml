@@ -3,194 +3,120 @@
        xmlns:swhdeposit="https://www.softwareheritage.org/schema/2018/deposit"
        xmlns:swh="https://www.softwareheritage.org/schema/2018/deposit"
        xmlns:schema="http://schema.org">
-   <id>https://zbmath.org/8779</id>
+   <id>https://zbmath.org/8032</id>
    <swhdeposit:deposit>
       <swhdeposit:reference>
-         <swhdeposit:origin url="https://github.com/appliedtopology/javaplex"/>
+         <swhdeposit:object swhid="swh:1:dir:87aa974294fc68a64c371507162d16af6190c9ce"/>
       </swhdeposit:reference>
-      <swhdeposit:metadata-provenance>
-         <schema:url>https://api.zbmath.org/v1/</schema:url>
-      </swhdeposit:metadata-provenance>
+      <swhdeposit:metadata-provenance/>
    </swhdeposit:deposit>
-   <codemeta:author>
-      <codemeta:name>Vejdemo-Johansson, Mikael</codemeta:name>
-      <codemeta:givenName>Mikael</codemeta:givenName>
-      <codemeta:familyName>Vejdemo-Johansson</codemeta:familyName>
+    <codemeta:author>
+      <codemeta:name>Kursa, Miron Bartosz</codemeta:name>
+      <codemeta:givenName>Miron Bartosz</codemeta:givenName>
+      <codemeta:familyName>Kursa</codemeta:familyName>
    </codemeta:author>
    <codemeta:author>
-      <codemeta:name>Adams, Henry</codemeta:name>
-      <codemeta:givenName>Henry</codemeta:givenName>
-      <codemeta:familyName>Adams</codemeta:familyName>
+      <codemeta:name>Rudnicki, Witold Remigiusz</codemeta:name>
+      <codemeta:givenName>Witold Remigiusz</codemeta:givenName>
+      <codemeta:familyName>Rudnicki</codemeta:familyName>
    </codemeta:author>
-   <codemeta:author>
-      <codemeta:name>Tausz, Andrew</codemeta:name>
-      <codemeta:givenName>Andrew</codemeta:givenName>
-      <codemeta:familyName>Tausz</codemeta:familyName>
-   </codemeta:author>
-    <codemeta:name>javaPlex</codemeta:name>
+   <codemeta:name>Boruta</codemeta:name>
    <codemeta:description>zbMATH Open Web Interface contents unavailable due to conflicting licenses.</codemeta:description>
-   <codemeta:sameAs>http://appliedtopology.github.io/javaplex/</codemeta:sameAs>
-   <codemeta:codeRepository>https://github.com/appliedtopology/javaplex</codemeta:codeRepository>
-   <schema:categoryCode>37</schema:categoryCode>
-   <schema:categoryCode>55</schema:categoryCode>
+   <codemeta:sameAs>http://cran.r-project.org/web/packages/Boruta/index.html</codemeta:sameAs>
+   <codemeta:codeRepository>https://github.com/cran/Boruta</codemeta:codeRepository>
+  <codemeta:softwareRequirements>R</codemeta:softwareRequirements>
    <schema:categoryCode>62</schema:categoryCode>
    <schema:categoryCode>68</schema:categoryCode>
-   <schema:categoryCode>92</schema:categoryCode>
-   <schema:categoryCode>00</schema:categoryCode>
-   <schema:categoryCode>05</schema:categoryCode>
-   <schema:categoryCode>11</schema:categoryCode>
-   <schema:categoryCode>13</schema:categoryCode>
-   <schema:categoryCode>14</schema:categoryCode>
-   <schema:categoryCode>18</schema:categoryCode>
-   <schema:categoryCode>34</schema:categoryCode>
-   <schema:categoryCode>49</schema:categoryCode>
-   <schema:categoryCode>51</schema:categoryCode>
-   <schema:categoryCode>52</schema:categoryCode>
-   <schema:categoryCode>53</schema:categoryCode>
-   <schema:categoryCode>54</schema:categoryCode>
-   <schema:categoryCode>57</schema:categoryCode>
-   <schema:categoryCode>58</schema:categoryCode>
-   <schema:categoryCode>60</schema:categoryCode>
-   <schema:categoryCode>65</schema:categoryCode>
-   <schema:categoryCode>76</schema:categoryCode>
-   <schema:categoryCode>81</schema:categoryCode>
-   <schema:categoryCode>83</schema:categoryCode>
-   <schema:categoryCode>90</schema:categoryCode>
+   <schema:categoryCode>74</schema:categoryCode>
    <schema:categoryCode>91</schema:categoryCode>
-   <schema:categoryCode>93</schema:categoryCode>
-   <schema:categoryCode>94</schema:categoryCode>
-   <schema:numberofItems>49</schema:numberofItems>
-  <codemeta:supportingData>
-      <codemeta:name>Ripser</codemeta:name>
-      <codemeta:identifier>27771</codemeta:identifier>
+   <schema:categoryCode>92</schema:categoryCode>
+   <schema:categoryCode>65</schema:categoryCode>
+   <schema:categoryCode>86</schema:categoryCode>
+   <schema:categoryCode>90</schema:categoryCode>
+      <schema:numberofItems>29</schema:numberofItems>
+ <codemeta:supportingData>
+      <codemeta:name>R</codemeta:name>
+      <codemeta:identifier>771</codemeta:identifier>
    </codemeta:supportingData>
    <codemeta:supportingData>
-      <codemeta:name>Gudhi</codemeta:name>
-      <codemeta:identifier>8777</codemeta:identifier>
+      <codemeta:name>randomForest</codemeta:name>
+      <codemeta:identifier>10639</codemeta:identifier>
    </codemeta:supportingData>
    <codemeta:supportingData>
-      <codemeta:name>Dionysus</codemeta:name>
-      <codemeta:identifier>9359</codemeta:identifier>
+      <codemeta:name>caret</codemeta:name>
+      <codemeta:identifier>8031</codemeta:identifier>
    </codemeta:supportingData>
    <codemeta:supportingData>
-      <codemeta:name>Perseus</codemeta:name>
-      <codemeta:identifier>8778</codemeta:identifier>
+      <codemeta:name>mlr</codemeta:name>
+      <codemeta:identifier>12357</codemeta:identifier>
    </codemeta:supportingData>
    <codemeta:supportingData>
-      <codemeta:name>PHAT</codemeta:name>
-      <codemeta:identifier>8780</codemeta:identifier>
+      <codemeta:name>GeneSrF</codemeta:name>
+      <codemeta:identifier>8254</codemeta:identifier>
    </codemeta:supportingData>
    <codemeta:supportingData>
-      <codemeta:name>jHoles</codemeta:name>
-      <codemeta:identifier>15020</codemeta:identifier>
+      <codemeta:name>XGBoost</codemeta:name>
+      <codemeta:identifier>21035</codemeta:identifier>
    </codemeta:supportingData>
    <codemeta:supportingData>
-      <codemeta:name>TDA</codemeta:name>
-      <codemeta:identifier>15508</codemeta:identifier>
+      <codemeta:name>shap</codemeta:name>
+      <codemeta:identifier>30901</codemeta:identifier>
    </codemeta:supportingData>
    <codemeta:supportingData>
-      <codemeta:name>GitHub</codemeta:name>
-      <codemeta:identifier>23170</codemeta:identifier>
+      <codemeta:name>VSURF</codemeta:name>
+      <codemeta:identifier>27884</codemeta:identifier>
    </codemeta:supportingData>
    <codemeta:supportingData>
-      <codemeta:name>TopologyNet</codemeta:name>
-      <codemeta:identifier>41013</codemeta:identifier>
+      <codemeta:name>varSelRF</codemeta:name>
+      <codemeta:identifier>8253</codemeta:identifier>
    </codemeta:supportingData>
    <codemeta:supportingData>
-      <codemeta:name>CliqueTop</codemeta:name>
-      <codemeta:identifier>29766</codemeta:identifier>
+      <codemeta:name>CRAN</codemeta:name>
+      <codemeta:identifier>4351</codemeta:identifier>
    </codemeta:supportingData>
    <codemeta:supportingData>
-      <codemeta:name>PersistenceImages</codemeta:name>
-      <codemeta:identifier>41418</codemeta:identifier>
+      <codemeta:name>FSelector</codemeta:name>
+      <codemeta:identifier>8044</codemeta:identifier>
    </codemeta:supportingData>
    <codemeta:supportingData>
-      <codemeta:name>Matlab</codemeta:name>
-      <codemeta:identifier>558</codemeta:identifier>
+      <codemeta:name>UCI-ml</codemeta:name>
+      <codemeta:identifier>4074</codemeta:identifier>
    </codemeta:supportingData>
    <codemeta:supportingData>
-      <codemeta:name>SW1PerS</codemeta:name>
-      <codemeta:identifier>17206</codemeta:identifier>
+      <codemeta:name>glmnet</codemeta:name>
+      <codemeta:identifier>8159</codemeta:identifier>
    </codemeta:supportingData>
    <codemeta:supportingData>
-      <codemeta:name>Persistence Landscape</codemeta:name>
-      <codemeta:identifier>21260</codemeta:identifier>
+      <codemeta:name>ranger</codemeta:name>
+      <codemeta:identifier>14498</codemeta:identifier>
    </codemeta:supportingData>
    <codemeta:supportingData>
-      <codemeta:name>Holes</codemeta:name>
-      <codemeta:identifier>15021</codemeta:identifier>
+      <codemeta:name>e1071</codemeta:name>
+      <codemeta:identifier>7985</codemeta:identifier>
    </codemeta:supportingData>
    <codemeta:supportingData>
-      <codemeta:name>DIPHA</codemeta:name>
-      <codemeta:identifier>28220</codemeta:identifier>
+      <codemeta:name>GeneralisedCovarianceMeasure</codemeta:name>
+      <codemeta:identifier>35668</codemeta:identifier>
    </codemeta:supportingData>
    <codemeta:supportingData>
-      <codemeta:name>Eirene</codemeta:name>
-      <codemeta:identifier>26097</codemeta:identifier>
+      <codemeta:name>cpi</codemeta:name>
+      <codemeta:identifier>41086</codemeta:identifier>
    </codemeta:supportingData>
    <codemeta:supportingData>
-      <codemeta:name>jPlex</codemeta:name>
-      <codemeta:identifier>9851</codemeta:identifier>
+      <codemeta:name>ElemStatLearn</codemeta:name>
+      <codemeta:identifier>11049</codemeta:identifier>
    </codemeta:supportingData>
    <codemeta:supportingData>
-      <codemeta:name>HERMES</codemeta:name>
-      <codemeta:identifier>41012</codemeta:identifier>
+      <codemeta:name>gbm</codemeta:name>
+      <codemeta:identifier>7994</codemeta:identifier>
    </codemeta:supportingData>
    <codemeta:supportingData>
-      <codemeta:name>AGL-Score</codemeta:name>
-      <codemeta:identifier>41015</codemeta:identifier>
+      <codemeta:name>rpart</codemeta:name>
+      <codemeta:identifier>7115</codemeta:identifier>
    </codemeta:supportingData>
-  <codemeta:referencePublication>
-      <codemeta:identifier>https://zbmath.org/6341304</codemeta:identifier>
-      <codemeta:datePublished>2014</codemeta:datePublished>
+   <codemeta:referencePublication>
+      <codemeta:identifier>None</codemeta:identifier>
+      <codemeta:datePublished>2010</codemeta:datePublished>
    </codemeta:referencePublication>
-    <codemeta:citation>https://zbmath.org/6472981</codemeta:citation>
-    <codemeta:citation>https://zbmath.org/6776481</codemeta:citation>
-    <codemeta:citation>https://zbmath.org/6461820</codemeta:citation>
-    <codemeta:citation>https://zbmath.org/6513127</codemeta:citation>
-    <codemeta:citation>https://zbmath.org/6946762</codemeta:citation>
-    <codemeta:citation>https://zbmath.org/6341304</codemeta:citation>
-    <codemeta:citation>https://zbmath.org/7392281</codemeta:citation>
-    <codemeta:citation>https://zbmath.org/7421252</codemeta:citation>
-    <codemeta:citation>https://zbmath.org/6618145</codemeta:citation>
-    <codemeta:citation>https://zbmath.org/7089252</codemeta:citation>
-    <codemeta:citation>https://zbmath.org/7207733</codemeta:citation>
-    <codemeta:citation>https://zbmath.org/7074450</codemeta:citation>
-    <codemeta:citation>https://zbmath.org/7559032</codemeta:citation>
-    <codemeta:citation>https://zbmath.org/6533939</codemeta:citation>
-    <codemeta:citation>https://zbmath.org/6516690</codemeta:citation>
-    <codemeta:citation>https://zbmath.org/6637701</codemeta:citation>
-    <codemeta:citation>https://zbmath.org/7615095</codemeta:citation>
-    <codemeta:citation>https://zbmath.org/7547913</codemeta:citation>
-    <codemeta:citation>https://zbmath.org/7100949</codemeta:citation>
-    <codemeta:citation>https://zbmath.org/6621209</codemeta:citation>
-    <codemeta:citation>https://zbmath.org/7589533</codemeta:citation>
-    <codemeta:citation>https://zbmath.org/7278745</codemeta:citation>
-    <codemeta:citation>https://zbmath.org/7301453</codemeta:citation>
-    <codemeta:citation>https://zbmath.org/6660915</codemeta:citation>
-    <codemeta:citation>https://zbmath.org/7464720</codemeta:citation>
-    <codemeta:citation>https://zbmath.org/7461383</codemeta:citation>
-    <codemeta:citation>https://zbmath.org/7064220</codemeta:citation>
-    <codemeta:citation>https://zbmath.org/7079285</codemeta:citation>
-    <codemeta:citation>https://zbmath.org/7496318</codemeta:citation>
-    <codemeta:citation>https://zbmath.org/7244712</codemeta:citation>
-    <codemeta:citation>https://zbmath.org/6578876</codemeta:citation>
-    <codemeta:citation>https://zbmath.org/7618083</codemeta:citation>
-    <codemeta:citation>https://zbmath.org/7790718</codemeta:citation>
-    <codemeta:citation>https://zbmath.org/7207021</codemeta:citation>
-    <codemeta:citation>https://zbmath.org/7805160</codemeta:citation>
-    <codemeta:citation>https://zbmath.org/7846287</codemeta:citation>
-    <codemeta:citation>https://zbmath.org/6920291</codemeta:citation>
-    <codemeta:citation>https://zbmath.org/7864906</codemeta:citation>
-    <codemeta:citation>https://zbmath.org/7473194</codemeta:citation>
-    <codemeta:citation>https://zbmath.org/7477435</codemeta:citation>
-    <codemeta:citation>https://zbmath.org/6851803</codemeta:citation>
-    <codemeta:citation>https://zbmath.org/6883903</codemeta:citation>
-    <codemeta:citation>https://zbmath.org/6871748</codemeta:citation>
-    <codemeta:citation>https://zbmath.org/7461791</codemeta:citation>
-    <codemeta:citation>https://zbmath.org/7225684</codemeta:citation>
-    <codemeta:citation>https://zbmath.org/7413870</codemeta:citation>
-    <codemeta:citation>https://zbmath.org/7121379</codemeta:citation>
-    <codemeta:citation>https://zbmath.org/7553292</codemeta:citation>
-  <codemeta:url>https://api.zbmath.org/v1/software/8779</codemeta:url>
+   <codemeta:url>https://zbmath.org/software/8032</codemeta:url>
 </entry>
