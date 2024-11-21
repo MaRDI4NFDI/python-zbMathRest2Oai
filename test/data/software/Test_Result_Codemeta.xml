@@ -142,9 +142,57 @@
       <codemeta:name>AGL-Score</codemeta:name>
       <codemeta:identifier>41015</codemeta:identifier>
    </codemeta:supportingData>
-   <codemeta:referencePublication>
-      <codemeta:identifier>None</codemeta:identifier>
-      <codemeta:datePublished>2010</codemeta:datePublished>
+  <codemeta:referencePublication>
+      <codemeta:identifier>https://zbmath.org/6341304</codemeta:identifier>
+      <codemeta:datePublished>2014</codemeta:datePublished>
    </codemeta:referencePublication>
-   <codemeta:url>https://zbmath.org/software/8032</codemeta:url>
+    <codemeta:citation>https://zbmath.org/6472981</codemeta:citation>
+    <codemeta:citation>https://zbmath.org/6776481</codemeta:citation>
+    <codemeta:citation>https://zbmath.org/6461820</codemeta:citation>
+    <codemeta:citation>https://zbmath.org/6513127</codemeta:citation>
+    <codemeta:citation>https://zbmath.org/6946762</codemeta:citation>
+    <codemeta:citation>https://zbmath.org/6341304</codemeta:citation>
+    <codemeta:citation>https://zbmath.org/7392281</codemeta:citation>
+    <codemeta:citation>https://zbmath.org/7421252</codemeta:citation>
+    <codemeta:citation>https://zbmath.org/6618145</codemeta:citation>
+    <codemeta:citation>https://zbmath.org/7089252</codemeta:citation>
+    <codemeta:citation>https://zbmath.org/7207733</codemeta:citation>
+    <codemeta:citation>https://zbmath.org/7074450</codemeta:citation>
+    <codemeta:citation>https://zbmath.org/7559032</codemeta:citation>
+    <codemeta:citation>https://zbmath.org/6533939</codemeta:citation>
+    <codemeta:citation>https://zbmath.org/6516690</codemeta:citation>
+    <codemeta:citation>https://zbmath.org/6637701</codemeta:citation>
+    <codemeta:citation>https://zbmath.org/7615095</codemeta:citation>
+    <codemeta:citation>https://zbmath.org/7547913</codemeta:citation>
+    <codemeta:citation>https://zbmath.org/7100949</codemeta:citation>
+    <codemeta:citation>https://zbmath.org/6621209</codemeta:citation>
+    <codemeta:citation>https://zbmath.org/7589533</codemeta:citation>
+    <codemeta:citation>https://zbmath.org/7278745</codemeta:citation>
+    <codemeta:citation>https://zbmath.org/7301453</codemeta:citation>
+    <codemeta:citation>https://zbmath.org/6660915</codemeta:citation>
+    <codemeta:citation>https://zbmath.org/7464720</codemeta:citation>
+    <codemeta:citation>https://zbmath.org/7461383</codemeta:citation>
+    <codemeta:citation>https://zbmath.org/7064220</codemeta:citation>
+    <codemeta:citation>https://zbmath.org/7079285</codemeta:citation>
+    <codemeta:citation>https://zbmath.org/7496318</codemeta:citation>
+    <codemeta:citation>https://zbmath.org/7244712</codemeta:citation>
+    <codemeta:citation>https://zbmath.org/6578876</codemeta:citation>
+    <codemeta:citation>https://zbmath.org/7618083</codemeta:citation>
+    <codemeta:citation>https://zbmath.org/7790718</codemeta:citation>
+    <codemeta:citation>https://zbmath.org/7207021</codemeta:citation>
+    <codemeta:citation>https://zbmath.org/7805160</codemeta:citation>
+    <codemeta:citation>https://zbmath.org/7846287</codemeta:citation>
+    <codemeta:citation>https://zbmath.org/6920291</codemeta:citation>
+    <codemeta:citation>https://zbmath.org/7864906</codemeta:citation>
+    <codemeta:citation>https://zbmath.org/7473194</codemeta:citation>
+    <codemeta:citation>https://zbmath.org/7477435</codemeta:citation>
+    <codemeta:citation>https://zbmath.org/6851803</codemeta:citation>
+    <codemeta:citation>https://zbmath.org/6883903</codemeta:citation>
+    <codemeta:citation>https://zbmath.org/6871748</codemeta:citation>
+    <codemeta:citation>https://zbmath.org/7461791</codemeta:citation>
+    <codemeta:citation>https://zbmath.org/7225684</codemeta:citation>
+    <codemeta:citation>https://zbmath.org/7413870</codemeta:citation>
+    <codemeta:citation>https://zbmath.org/7121379</codemeta:citation>
+    <codemeta:citation>https://zbmath.org/7553292</codemeta:citation>
+  <codemeta:url>https://api.zbmath.org/v1/software/8779</codemeta:url>
 </entry>
