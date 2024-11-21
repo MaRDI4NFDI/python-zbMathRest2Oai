@@ -3,22 +3,31 @@
        xmlns:swhdeposit="https://www.softwareheritage.org/schema/2018/deposit"
        xmlns:swh="https://www.softwareheritage.org/schema/2018/deposit"
        xmlns:schema="http://schema.org">
-   <id>https://zbmath.org/8032</id>
+   <id>https://zbmath.org/8779</id>
    <swhdeposit:deposit>
       <swhdeposit:reference>
-         <swhdeposit:object swhid="swh:1:dir:87aa974294fc68a64c371507162d16af6190c9ce"/>
+         <swhdeposit:origin url="https://github.com/appliedtopology/javaplex"/>
       </swhdeposit:reference>
-      <swhdeposit:metadata-provenance/>
+      <swhdeposit:metadata-provenance>
+         <schema:url>
+      https://api.zbmath.org/v1/
+    </schema:url>
+      </swhdeposit:metadata-provenance>
    </swhdeposit:deposit>
-    <codemeta:author>
-      <codemeta:name>Kursa, Miron Bartosz</codemeta:name>
-      <codemeta:givenName>Miron Bartosz</codemeta:givenName>
-      <codemeta:familyName>Kursa</codemeta:familyName>
+   <codemeta:author>
+      <codemeta:name>Vejdemo-Johansson, Mikael</codemeta:name>
+      <codemeta:givenName>Mikael</codemeta:givenName>
+      <codemeta:familyName>Vejdemo-Johansson</codemeta:familyName>
    </codemeta:author>
    <codemeta:author>
-      <codemeta:name>Rudnicki, Witold Remigiusz</codemeta:name>
-      <codemeta:givenName>Witold Remigiusz</codemeta:givenName>
-      <codemeta:familyName>Rudnicki</codemeta:familyName>
+      <codemeta:name>Adams, Henry</codemeta:name>
+      <codemeta:givenName>Henry</codemeta:givenName>
+      <codemeta:familyName>Adams</codemeta:familyName>
+   </codemeta:author>
+   <codemeta:author>
+      <codemeta:name>Tausz, Andrew</codemeta:name>
+      <codemeta:givenName>Andrew</codemeta:givenName>
+      <codemeta:familyName>Tausz</codemeta:familyName>
    </codemeta:author>
    <codemeta:name>Boruta</codemeta:name>
    <codemeta:description>zbMATH Open Web Interface contents unavailable due to conflicting licenses.</codemeta:description>
