@@ -29,20 +29,39 @@
       <codemeta:givenName>Andrew</codemeta:givenName>
       <codemeta:familyName>Tausz</codemeta:familyName>
    </codemeta:author>
-   <codemeta:name>Boruta</codemeta:name>
+    <codemeta:name>javaPlex</codemeta:name>
    <codemeta:description>zbMATH Open Web Interface contents unavailable due to conflicting licenses.</codemeta:description>
-   <codemeta:sameAs>http://cran.r-project.org/web/packages/Boruta/index.html</codemeta:sameAs>
-   <codemeta:codeRepository>https://github.com/cran/Boruta</codemeta:codeRepository>
-  <codemeta:softwareRequirements>R</codemeta:softwareRequirements>
+   <codemeta:sameAs>http://appliedtopology.github.io/javaplex/</codemeta:sameAs>
+   <codemeta:codeRepository>https://github.com/appliedtopology/javaplex</codemeta:codeRepository>
+   <schema:categoryCode>37</schema:categoryCode>
+   <schema:categoryCode>55</schema:categoryCode>
    <schema:categoryCode>62</schema:categoryCode>
    <schema:categoryCode>68</schema:categoryCode>
-   <schema:categoryCode>74</schema:categoryCode>
-   <schema:categoryCode>91</schema:categoryCode>
    <schema:categoryCode>92</schema:categoryCode>
+   <schema:categoryCode>00</schema:categoryCode>
+   <schema:categoryCode>05</schema:categoryCode>
+   <schema:categoryCode>11</schema:categoryCode>
+   <schema:categoryCode>13</schema:categoryCode>
+   <schema:categoryCode>14</schema:categoryCode>
+   <schema:categoryCode>18</schema:categoryCode>
+   <schema:categoryCode>34</schema:categoryCode>
+   <schema:categoryCode>49</schema:categoryCode>
+   <schema:categoryCode>51</schema:categoryCode>
+   <schema:categoryCode>52</schema:categoryCode>
+   <schema:categoryCode>53</schema:categoryCode>
+   <schema:categoryCode>54</schema:categoryCode>
+   <schema:categoryCode>57</schema:categoryCode>
+   <schema:categoryCode>58</schema:categoryCode>
+   <schema:categoryCode>60</schema:categoryCode>
    <schema:categoryCode>65</schema:categoryCode>
-   <schema:categoryCode>86</schema:categoryCode>
+   <schema:categoryCode>76</schema:categoryCode>
+   <schema:categoryCode>81</schema:categoryCode>
+   <schema:categoryCode>83</schema:categoryCode>
    <schema:categoryCode>90</schema:categoryCode>
-      <schema:numberofItems>29</schema:numberofItems>
+   <schema:categoryCode>91</schema:categoryCode>
+   <schema:categoryCode>93</schema:categoryCode>
+   <schema:categoryCode>94</schema:categoryCode>
+   <schema:numberofItems>49</schema:numberofItems>
  <codemeta:supportingData>
       <codemeta:name>R</codemeta:name>
       <codemeta:identifier>771</codemeta:identifier>
