@@ -62,85 +62,85 @@
    <schema:categoryCode>93</schema:categoryCode>
    <schema:categoryCode>94</schema:categoryCode>
    <schema:numberofItems>49</schema:numberofItems>
- <codemeta:supportingData>
-      <codemeta:name>R</codemeta:name>
-      <codemeta:identifier>771</codemeta:identifier>
+  <codemeta:supportingData>
+      <codemeta:name>Ripser</codemeta:name>
+      <codemeta:identifier>27771</codemeta:identifier>
    </codemeta:supportingData>
    <codemeta:supportingData>
-      <codemeta:name>randomForest</codemeta:name>
-      <codemeta:identifier>10639</codemeta:identifier>
+      <codemeta:name>Gudhi</codemeta:name>
+      <codemeta:identifier>8777</codemeta:identifier>
    </codemeta:supportingData>
    <codemeta:supportingData>
-      <codemeta:name>caret</codemeta:name>
-      <codemeta:identifier>8031</codemeta:identifier>
+      <codemeta:name>Dionysus</codemeta:name>
+      <codemeta:identifier>9359</codemeta:identifier>
    </codemeta:supportingData>
    <codemeta:supportingData>
-      <codemeta:name>mlr</codemeta:name>
-      <codemeta:identifier>12357</codemeta:identifier>
+      <codemeta:name>Perseus</codemeta:name>
+      <codemeta:identifier>8778</codemeta:identifier>
    </codemeta:supportingData>
    <codemeta:supportingData>
-      <codemeta:name>GeneSrF</codemeta:name>
-      <codemeta:identifier>8254</codemeta:identifier>
+      <codemeta:name>PHAT</codemeta:name>
+      <codemeta:identifier>8780</codemeta:identifier>
    </codemeta:supportingData>
    <codemeta:supportingData>
-      <codemeta:name>XGBoost</codemeta:name>
-      <codemeta:identifier>21035</codemeta:identifier>
+      <codemeta:name>jHoles</codemeta:name>
+      <codemeta:identifier>15020</codemeta:identifier>
    </codemeta:supportingData>
    <codemeta:supportingData>
-      <codemeta:name>shap</codemeta:name>
-      <codemeta:identifier>30901</codemeta:identifier>
+      <codemeta:name>TDA</codemeta:name>
+      <codemeta:identifier>15508</codemeta:identifier>
    </codemeta:supportingData>
    <codemeta:supportingData>
-      <codemeta:name>VSURF</codemeta:name>
-      <codemeta:identifier>27884</codemeta:identifier>
+      <codemeta:name>GitHub</codemeta:name>
+      <codemeta:identifier>23170</codemeta:identifier>
    </codemeta:supportingData>
    <codemeta:supportingData>
-      <codemeta:name>varSelRF</codemeta:name>
-      <codemeta:identifier>8253</codemeta:identifier>
+      <codemeta:name>TopologyNet</codemeta:name>
+      <codemeta:identifier>41013</codemeta:identifier>
    </codemeta:supportingData>
    <codemeta:supportingData>
-      <codemeta:name>CRAN</codemeta:name>
-      <codemeta:identifier>4351</codemeta:identifier>
+      <codemeta:name>CliqueTop</codemeta:name>
+      <codemeta:identifier>29766</codemeta:identifier>
    </codemeta:supportingData>
    <codemeta:supportingData>
-      <codemeta:name>FSelector</codemeta:name>
-      <codemeta:identifier>8044</codemeta:identifier>
+      <codemeta:name>PersistenceImages</codemeta:name>
+      <codemeta:identifier>41418</codemeta:identifier>
    </codemeta:supportingData>
    <codemeta:supportingData>
-      <codemeta:name>UCI-ml</codemeta:name>
-      <codemeta:identifier>4074</codemeta:identifier>
+      <codemeta:name>Matlab</codemeta:name>
+      <codemeta:identifier>558</codemeta:identifier>
    </codemeta:supportingData>
    <codemeta:supportingData>
-      <codemeta:name>glmnet</codemeta:name>
-      <codemeta:identifier>8159</codemeta:identifier>
+      <codemeta:name>SW1PerS</codemeta:name>
+      <codemeta:identifier>17206</codemeta:identifier>
    </codemeta:supportingData>
    <codemeta:supportingData>
-      <codemeta:name>ranger</codemeta:name>
-      <codemeta:identifier>14498</codemeta:identifier>
+      <codemeta:name>Persistence Landscape</codemeta:name>
+      <codemeta:identifier>21260</codemeta:identifier>
    </codemeta:supportingData>
    <codemeta:supportingData>
-      <codemeta:name>e1071</codemeta:name>
-      <codemeta:identifier>7985</codemeta:identifier>
+      <codemeta:name>Holes</codemeta:name>
+      <codemeta:identifier>15021</codemeta:identifier>
    </codemeta:supportingData>
    <codemeta:supportingData>
-      <codemeta:name>GeneralisedCovarianceMeasure</codemeta:name>
-      <codemeta:identifier>35668</codemeta:identifier>
+      <codemeta:name>DIPHA</codemeta:name>
+      <codemeta:identifier>28220</codemeta:identifier>
    </codemeta:supportingData>
    <codemeta:supportingData>
-      <codemeta:name>cpi</codemeta:name>
-      <codemeta:identifier>41086</codemeta:identifier>
+      <codemeta:name>Eirene</codemeta:name>
+      <codemeta:identifier>26097</codemeta:identifier>
    </codemeta:supportingData>
    <codemeta:supportingData>
-      <codemeta:name>ElemStatLearn</codemeta:name>
-      <codemeta:identifier>11049</codemeta:identifier>
+      <codemeta:name>jPlex</codemeta:name>
+      <codemeta:identifier>9851</codemeta:identifier>
    </codemeta:supportingData>
    <codemeta:supportingData>
-      <codemeta:name>gbm</codemeta:name>
-      <codemeta:identifier>7994</codemeta:identifier>
+      <codemeta:name>HERMES</codemeta:name>
+      <codemeta:identifier>41012</codemeta:identifier>
    </codemeta:supportingData>
    <codemeta:supportingData>
-      <codemeta:name>rpart</codemeta:name>
-      <codemeta:identifier>7115</codemeta:identifier>
+      <codemeta:name>AGL-Score</codemeta:name>
+      <codemeta:identifier>41015</codemeta:identifier>
    </codemeta:supportingData>
    <codemeta:referencePublication>
       <codemeta:identifier>None</codemeta:identifier>
