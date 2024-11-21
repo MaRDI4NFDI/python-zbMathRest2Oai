@@ -9,9 +9,7 @@
          <swhdeposit:origin url="https://github.com/appliedtopology/javaplex"/>
       </swhdeposit:reference>
       <swhdeposit:metadata-provenance>
-         <schema:url>
-      https://api.zbmath.org/v1/
-    </schema:url>
+         <schema:url>https://api.zbmath.org/v1/</schema:url>
       </swhdeposit:metadata-provenance>
    </swhdeposit:deposit>
    <codemeta:author>
