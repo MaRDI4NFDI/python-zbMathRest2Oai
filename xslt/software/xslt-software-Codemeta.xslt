@@ -92,7 +92,7 @@
     <xsl:template match="swhdeposit:metadata-provenance">
         <swhdeposit:metadata-provenance>
              <schema:url>
-              <xsl:value-of select="."/>
+                 <xsl:text>https://api.zbmath.org/v1/</xsl:text>
             </schema:url>
         </swhdeposit:metadata-provenance>
     </xsl:template>
