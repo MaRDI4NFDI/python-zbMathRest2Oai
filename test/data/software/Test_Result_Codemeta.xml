@@ -5,10 +5,12 @@
        xmlns:schema="http://schema.org">
    <id>https://zbmath.org/8032</id>
    <swhdeposit:deposit>
-      <swhdeposit:reference>
-         <swhdeposit:object swhid="swh:1:dir:87aa974294fc68a64c371507162d16af6190c9ce"/>
+       <swhdeposit:reference>
+         <swhdeposit:origin url="https://github.com/cran/Boruta"/>
       </swhdeposit:reference>
-      <swhdeposit:metadata-provenance/>
+      <swhdeposit:metadata-provenance>
+         <schema:url>https://api.zbmath.org/v1/</schema:url>
+      </swhdeposit:metadata-provenance>
    </swhdeposit:deposit>
     <codemeta:author>
       <codemeta:name>Kursa, Miron Bartosz</codemeta:name>
@@ -24,7 +26,6 @@
    <codemeta:description>zbMATH Open Web Interface contents unavailable due to conflicting licenses.</codemeta:description>
    <codemeta:sameAs>http://cran.r-project.org/web/packages/Boruta/index.html</codemeta:sameAs>
    <codemeta:codeRepository>https://github.com/cran/Boruta</codemeta:codeRepository>
-  <codemeta:softwareRequirements>R</codemeta:softwareRequirements>
    <schema:categoryCode>62</schema:categoryCode>
    <schema:categoryCode>68</schema:categoryCode>
    <schema:categoryCode>74</schema:categoryCode>
@@ -115,8 +116,7 @@
       <codemeta:identifier>7115</codemeta:identifier>
    </codemeta:supportingData>
    <codemeta:referencePublication>
-      <codemeta:identifier>None</codemeta:identifier>
       <codemeta:datePublished>2010</codemeta:datePublished>
    </codemeta:referencePublication>
-   <codemeta:url>https://zbmath.org/software/8032</codemeta:url>
+   <codemeta:url>https://api.zbmath.org/v1/software/8032</codemeta:url>
 </entry>
