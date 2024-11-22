@@ -31,7 +31,6 @@
 
             <xsl:apply-templates select="root/operating_systems"/>
 
-            <xsl:apply-templates select="root/dependencies"/>
 
             <xsl:apply-templates select="root/orms_id"/>
 
@@ -55,7 +54,9 @@
                 <xsl:apply-templates select="root/standard_articles"/>
 
 
-            <xsl:apply-templates select="root/zbmath_url"/>
+             <xsl:apply-templates select="root/references"/>
+
+            <xsl:apply-templates select="root/id"/>
 
         </entry>
     </xsl:template>
@@ -75,32 +76,27 @@
     </xsl:template>
 
     <!-- Template for swhdeposit:reference -->
-    <xsl:template match="swhdeposit:reference">
-        <swhdeposit:reference>
-            <xsl:apply-templates select="swhdeposit:object"/>
-        </swhdeposit:reference>
-    </xsl:template>
-
-    <!-- Template for swhdeposit:object -->
-    <xsl:template match="swhdeposit:object">
-        <swhdeposit:object swhid="{@swhid}"/>
-    </xsl:template>
+   <xsl:template match="swhdeposit:reference">
+    <swhdeposit:reference>
+        <swhdeposit:origin>
+            <xsl:attribute name="url">
+                <xsl:value-of select="//source_code"/>
+            </xsl:attribute>
+        </swhdeposit:origin>
+    </swhdeposit:reference>
+</xsl:template>
 
     <!-- Template for swhdeposit:metadata-provenance -->
     <xsl:template match="swhdeposit:metadata-provenance">
         <swhdeposit:metadata-provenance>
-            <xsl:apply-templates select="schema:url"/>
+             <schema:url>
+                 <xsl:text>https://api.zbmath.org/v1/</xsl:text>
+            </schema:url>
         </swhdeposit:metadata-provenance>
     </xsl:template>
 
-    <!-- Template for schema:url -->
-    <xsl:template match="schema:url">
-      <xsl:if test="normalize-space(.) != '' and . != 'None'">
-        <schema:url>
-            <xsl:value-of select="."/>
-        </schema:url>
-      </xsl:if>
-    </xsl:template>
+
+
 
     <!-- Template for authors -->
     <xsl:template match="authors">
@@ -171,13 +167,6 @@
      </xsl:if>
     </xsl:template>
 
-     <xsl:template match="dependencies">
-        <xsl:if test="normalize-space(.) != '' and . != 'None'">
-            <codemeta:softwareRequirements>
-                <xsl:value-of select="."/>
-            </codemeta:softwareRequirements>
-        </xsl:if>
-    </xsl:template>
 
     <xsl:template match="orms_id">
     <xsl:if test="normalize-space(.) != '' and . != 'None'">
@@ -230,8 +219,6 @@
     </xsl:template>
 
     <xsl:template match="standard_articles">
-
-
       <codemeta:referencePublication>
            <xsl:if test="normalize-space(.) != '' and . != 'None'">
         <codemeta:identifier>
@@ -247,9 +234,19 @@
 
     </xsl:template>
 
-    <xsl:template match="zbmath_url">
+         <xsl:template match="reference">
+  <xsl:if test="normalize-space(.) != '' and . != 'None'">
+        <codemeta:citation>
+            <xsl:text>https://zbmath.org/</xsl:text>
+            <xsl:value-of select="."/>
+        </codemeta:citation>
+       </xsl:if>
+    </xsl:template>
+
+    <xsl:template match="id">
   <xsl:if test="normalize-space(.) != '' and . != 'None'">
         <codemeta:url>
+            <xsl:text>https://api.zbmath.org/v1/software/</xsl:text>
             <xsl:value-of select="."/>
         </codemeta:url>
        </xsl:if>
