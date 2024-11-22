@@ -220,11 +220,12 @@
 
     <xsl:template match="standard_articles">
       <codemeta:referencePublication>
-           <xsl:if test="normalize-space(.) != '' and . != 'None'">
-        <codemeta:identifier>
-            <xsl:value-of select="id"/>
-        </codemeta:identifier>
-           </xsl:if>
+           <xsl:if test="normalize-space(id) != '' and id != 'None'">
+            <codemeta:identifier>
+                <xsl:text>https://zbmath.org/</xsl:text>
+                <xsl:value-of select="id"/>
+            </codemeta:identifier>
+        </xsl:if>
           <xsl:if test="normalize-space(.) != '' and . != 'None'">
         <codemeta:datePublished>
             <xsl:value-of select="year"/>
