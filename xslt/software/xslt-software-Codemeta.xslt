@@ -238,7 +238,7 @@
          <xsl:template match="reference">
   <xsl:if test="normalize-space(.) != '' and . != 'None'">
         <codemeta:citation>
-            <xsl:text>https://zbmath.org/</xsl:text>
+            <xsl:text>https://api.zbmath.org/v1/</xsl:text>
             <xsl:value-of select="."/>
         </codemeta:citation>
        </xsl:if>
