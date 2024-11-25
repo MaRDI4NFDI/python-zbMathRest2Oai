@@ -5,24 +5,36 @@
 #Get the password and export it as OAI_BASIC_PASSWORD
 OAI_BASIC_USER=swmath
 AUTH=$(echo -n "$OAI_BASIC_USER:$OAI_BASIC_PASSWORD" | base64)
-#Create Crosswalk from radar to oai_dc
-XSLT_JSON_ENCODED=$(cat ../xslt/software/xslt-software-datacite.xslt | jq -Rsa .)
-curl --noproxy '*' -X POST -H 'Content-Type: application/json' -H  "Authorization: Basic $AUTH" -i 'https://oai-input.portal.mardi4nfdi.de/oai-backend/crosswalk' --data '{"name":"swmath2datacite","formatFrom":"zbmath_rest_api_software","formatTo":"datacite_swmath","xsltStylesheet":'"$XSLT_JSON_ENCODED}"'}'
-
-
-#Create Crosswalk from rest_api to datacite
-## Read the xslt file
-XSLT_JSON_ENCODED=`cat ../xslt/articles/xslt-article-Datacite.xslt | jq -Rsa .`
-## Delete
-#curl -v -X DELETE -H  "Authorization: Basic $AUTH"   https://oai-input.portal.mardi4nfdi.de/oai-backend/crosswalk/software_restapi_to_datacite
-#create
-curl --noproxy '*' -X POST -H 'Content-Type: application/json' -H  "Authorization: Basic $AUTH" -i 'https://oai-input.portal.mardi4nfdi.de/oai-backend/crosswalk' --data '{"name":"article2datacite","formatFrom":"zbmath_rest_api","formatTo":"datacite","xsltStylesheet":'"$XSLT_JSON_ENCODED}"'}'
 
 #Create Crosswalk from rest_api to dublin core
 ## Read the xslt file
 XSLT_JSON_ENCODED=`cat ../xslt/articles/xslt-article-DublinCore.xslt | jq -Rsa .`
-#create
 curl --noproxy '*' -X POST -H 'Content-Type: application/json' -H  "Authorization: Basic $AUTH" -i 'https://oai-input.portal.mardi4nfdi.de/oai-backend/crosswalk' --data '{"name":"article2dc","formatFrom":"zbmath_rest_api","formatTo":"oai_dc","xsltStylesheet":'"$XSLT_JSON_ENCODED}"'}'
+
+#Create Crosswalk from rest_api to oai_zb_preview
+XSLT_JSON_ENCODED=`cat ../xslt/articles/xslt-article-oai_zb_preview.xslt | jq -Rsa .`
+curl --noproxy '*' -X POST -H 'Content-Type: application/json' -H  "Authorization: Basic $AUTH" -i 'https://oai-input.portal.mardi4nfdi.de/oai-backend/crosswalk' --data '{"name":"rest2preview","formatFrom":"zbmath_rest_api","formatTo":"oai_zb_preview","xsltStylesheet":'"$XSLT_JSON_ENCODED}"'}'
+
+#Create Crosswalk from rest_api to datacite_articles
+XSLT_JSON_ENCODED=`cat ../xslt/articles/xslt-article-Datacite.xslt | jq -Rsa .`
+curl --noproxy '*' -X POST -H 'Content-Type: application/json' -H  "Authorization: Basic $AUTH" -i 'https://oai-input.portal.mardi4nfdi.de/oai-backend/crosswalk' --data '{"name":"article2datacite","formatFrom":"zbmath_rest_api","formatTo":"datacite_articles","xsltStylesheet":'"$XSLT_JSON_ENCODED}"'}'
+
+#Create Crosswalk from zbmath_rest_api_software to datacite_software
+XSLT_JSON_ENCODED=$(cat ../xslt/software/xslt-software-datacite.xslt | jq -Rsa .)
+curl --noproxy '*' -X POST -H 'Content-Type: application/json' -H  "Authorization: Basic $AUTH" -i 'https://oai-input.portal.mardi4nfdi.de/oai-backend/crosswalk' --data '{"name":"swmath2datacite","formatFrom":"zbmath_rest_api_software","formatTo":"datacite_swmath","xsltStylesheet":'"$XSLT_JSON_ENCODED}"'}'
+
+#Create Crosswalk from rest_api to openaire_articles
+XSLT_JSON_ENCODED=`cat ../xslt/articles/xslt-article-OpenAire2.xslt | jq -Rsa .`
+curl --noproxy '*' -X POST -H 'Content-Type: application/json' -H  "Authorization: Basic $AUTH" -i 'https://oai-input.portal.mardi4nfdi.de/oai-backend/crosswalk' --data '{"name":"articles2openaire","formatFrom":"zbmath_rest_api","formatTo":"openaire_articles","xsltStylesheet":'"$XSLT_JSON_ENCODED}"'}'
+
+#Create Crosswalk from zbmath_rest_api_software to openaire_swmath
+XSLT_JSON_ENCODED=`cat ../xslt/software/xslt-software-OpenAire.xslt | jq -Rsa .`
+curl --noproxy '*' -X POST -H 'Content-Type: application/json' -H  "Authorization: Basic $AUTH" -i 'https://oai-input.portal.mardi4nfdi.de/oai-backend/crosswalk' --data '{"name":"software2openaire","formatFrom":"zbmath_rest_api_software","formatTo":"openaire_swmath","xsltStylesheet":'"$XSLT_JSON_ENCODED}"'}'
+
+
+#Create Crosswalk from zbmath_rest_api_software to codemeta
+XSLT_JSON_ENCODED=`cat ../xslt/software/xslt-software-Codemeta.xslt | jq -Rsa .`
+curl --noproxy '*' -X POST -H 'Content-Type: application/json' -H  "Authorization: Basic $AUTH" -i 'https://oai-input.portal.mardi4nfdi.de/oai-backend/crosswalk' --data '{"name":"software2codemeta","formatFrom":"zbmath_rest_api_software","formatTo":"codemeta","xsltStylesheet":'"$XSLT_JSON_ENCODED}"'}'
 
 
 
@@ -38,4 +50,3 @@ curl --noproxy '*' -X GET -H  "Authorization: Basic $AUTH"  'https://oai-input.p
 #curl -v -X DELETE http://localhost:8081/oai-backend/crosswalk/Radar2OAI_DC_v09
 
 #
-#curl --noproxy '*' -X POST -H 'Content-Type: application/json' -H  "Authorization: Basic $AUTH" -i 'https://oai-input.portal.mardi4nfdi.de/oai-backend/crosswalk' --data '{"name":"rest2preview","formatFrom":"zbmath_rest_api","formatTo":"oai_zb_preview","xsltStylesheet":'"$XSLT_JSON_ENCODED}"'}'
