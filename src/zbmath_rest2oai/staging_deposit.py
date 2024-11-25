@@ -39,10 +39,10 @@ for (i,swmath_id) in enumerate(df['swmathid']):
     xslt = ET.parse(xsl_filename)
     transform = ET.XSLT(xslt)
     newdom = transform(dom)
-
+    formatted_newdom = ET.tostring(newdom, pretty_print=True, encoding='unicode')
     # Write transformed XML to a temporary file
     with tempfile.NamedTemporaryFile(mode='w', delete=False, suffix='.xml') as temp_file:
-        temp_file.write(str(newdom))
+        temp_file.write(formatted_newdom)
         temp_filename = temp_file.name
     # Format current time for deposit status
     current_time = time.localtime()
