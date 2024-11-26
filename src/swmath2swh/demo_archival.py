@@ -1,5 +1,4 @@
-from zbmath_rest2oai.staging_archival import Swhid
-from zbmath_rest2oai.staging_archival import append_archived_url
+from swmath2swh.staging_archival import Swhid
 import os
 token = os.getenv('SWH_API_TOKEN')
 url="https://github.com/appliedtopology/javaplex"

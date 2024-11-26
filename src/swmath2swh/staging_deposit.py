@@ -1,9 +1,6 @@
-import pandas as pd
-
-from zbmath_rest2oai.restApi_software_Json import process_metadata
-from zbmath_rest2oai.convertSoftware_from_json_toXml import convert_json_to_xml
+from swmath2swh.restApi_software_Json import process_metadata
+from swmath2swh.convertSoftware_from_json_toXml import convert_json_to_xml
 import lxml.etree as ET
-import requests
 import pandas as pd
 import subprocess
 import time
