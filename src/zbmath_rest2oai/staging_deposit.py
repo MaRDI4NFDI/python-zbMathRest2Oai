@@ -22,11 +22,11 @@ json_output_path = '../test/data/software/software_with_swhid.json'
 xml_output_path = '../test/data/software/software_with_swhid.xml'  # Update with your desired output path
 output_log_filename = '../test/data/software/logfile.txt'
 xsl_filename = '../xslt/software/xslt-software-Codemeta.xslt'
-df= pd.read_csv(csv_file_path)
-print(df.head().dtypes)
-url="https://github.com/appliedtopology/javaplex"
-df=df[df['cvs']==url]
-print(df)
+df=pd.read_csv(csv_file_path)
+#print(df.head().dtypes)
+#url="https://github.com/cran/rms"
+#df=df[df['cvs']==url]
+#print(df)
 for (i,swmath_id) in enumerate(df['swmathid']):
     if i == 10:
         print("End of the deposit process")
