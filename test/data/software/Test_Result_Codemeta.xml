@@ -14,13 +14,9 @@
    </swhdeposit:deposit>
     <codemeta:author>
       <codemeta:name>Kursa, Miron Bartosz</codemeta:name>
-      <codemeta:givenName>Miron Bartosz</codemeta:givenName>
-      <codemeta:familyName>Kursa</codemeta:familyName>
    </codemeta:author>
    <codemeta:author>
       <codemeta:name>Rudnicki, Witold Remigiusz</codemeta:name>
-      <codemeta:givenName>Witold Remigiusz</codemeta:givenName>
-      <codemeta:familyName>Rudnicki</codemeta:familyName>
    </codemeta:author>
    <codemeta:name>Boruta</codemeta:name>
    <codemeta:description>zbMATH Open Web Interface contents unavailable due to conflicting licenses.</codemeta:description>

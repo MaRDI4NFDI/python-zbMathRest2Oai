@@ -104,12 +104,6 @@
         <codemeta:name>
             <xsl:value-of select="."/>
         </codemeta:name>
-        <codemeta:givenName>
-            <xsl:value-of select="normalize-space(substring-after(., ','))"/>
-        </codemeta:givenName>
-        <codemeta:familyName>
-            <xsl:value-of select="substring-before(., ',')"/>
-        </codemeta:familyName>
         </codemeta:author>
     </xsl:template>
 
