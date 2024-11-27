@@ -95,4 +95,4 @@ def write_oai(api_source, oai_url, prefix, ingest_format):
 if __name__ == '__main__':
     import sys
 
-    write_oai(sys.argv[1], sys.argv[2], 'zbmath_rest_api_software')
+    write_oai(sys.argv[1], oai_url, sys.argv[2], 'zbmath_rest_api_software')
