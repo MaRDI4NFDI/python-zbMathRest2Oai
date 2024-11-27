@@ -5,12 +5,12 @@ from zbmath_rest2oai.state import State
 from zbmath_rest2oai.writeOai import write_oai
 
 
-def get_all(prefix, url, ingest_format, state_property):
+def get_all(prefix, url, oai_url, ingest_format, state_property):
     state = State(os.environ.get('OAI_STATE_PATH', 'state.json'))
     while True:
         uri_request = url.format(state.get_state_var(state_property))
         try:
-            res = write_oai(api_source=uri_request, prefix=prefix, ingest_format=ingest_format)
+            res = write_oai(api_source=uri_request, oai_url=oai_url, prefix=prefix, ingest_format=ingest_format)
         except EntryNotFoundException:
             break
         if res['last_id'] == -1:

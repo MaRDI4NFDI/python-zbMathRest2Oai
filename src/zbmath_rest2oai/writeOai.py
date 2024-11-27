@@ -10,8 +10,6 @@ from zbmath_rest2oai import getAsXml
 
 AUTH = aiohttp.BasicAuth('swmath', os.environ.get('OAI_BASIC_PASSWORD'))
 
-URL = "https://oai-input.portal.mardi4nfdi.de/oai-backend/item"
-
 
 def content_differs(current, content) -> bool:
     try:
@@ -21,11 +19,11 @@ def content_differs(current, content) -> bool:
         return True
 
 
-async def sync_item(session, identifier, tags, ingest_format, content):
-    async with session.get(URL + '/' + str(identifier) + '?content=true', auth=AUTH) as resp:
+async def sync_item(session, identifier, oai_url, tags, ingest_format, content):
+    async with session.get(oai_url + '/' + str(identifier) + '?content=true', auth=AUTH) as resp:
         if resp.status == 404:
             data = await format_data(content, identifier, ingest_format, tags)
-            async with session.post(URL, data=data, auth=AUTH) as response:
+            async with session.post(oai_url, data=data, auth=AUTH) as response:
                 if response.status not in [200]:
                     raise Exception(f"Unexpected response with status code {response.status} for item {identifier}:"
                                     f" {await response.text()}")
@@ -34,7 +32,7 @@ async def sync_item(session, identifier, tags, ingest_format, content):
             current = await resp.json()
             if content_differs(current, content):
                 data = await format_data(content, identifier, ingest_format, tags)
-                async with session.put(URL + '/' + str(identifier), data=data, auth=AUTH) as response:
+                async with session.put(oai_url + '/' + str(identifier), data=data, auth=AUTH) as response:
                     if response.status not in [200]:
                         raise Exception(f"Unexpected response with status code {response.status} for item {identifier}:"
                                         f" {await response.text()}")
@@ -56,7 +54,7 @@ async def format_data(content, identifier, ingest_format, tags):
     return data
 
 
-async def async_write_oai(xml_contents, ingest_format, tags=None):
+async def async_write_oai(xml_contents, oai_url, ingest_format, tags=None):
     if tags is None:
         tags = {}
     tasks = []
@@ -70,6 +68,7 @@ async def async_write_oai(xml_contents, ingest_format, tags=None):
             tasks.append(sync_item(
                 session,
                 identifier,
+                oai_url,
                 tags.get(identifier, []),
                 ingest_format,
                 xml_contents[identifier]))
@@ -79,10 +78,10 @@ async def async_write_oai(xml_contents, ingest_format, tags=None):
     return records, last_id
 
 
-def write_oai(api_source, prefix, ingest_format):
+def write_oai(api_source, oai_url, prefix, ingest_format):
     xml_contents, time_rest, tags = getAsXml.final_xml2(api_source, prefix)
     start = timer()
-    records, last_id = asyncio.run(async_write_oai(xml_contents, ingest_format, tags))
+    records, last_id = asyncio.run(async_write_oai(xml_contents, oai_url, ingest_format, tags))
 
     last_id = int(last_id.removeprefix(prefix))
     return {
