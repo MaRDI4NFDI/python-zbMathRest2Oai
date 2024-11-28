@@ -28,7 +28,7 @@ def split_doi(doi):
 
 class PlainXmlTest(unittest.TestCase):
     def test_similarity(self):
-        dom = ET.parse('test/data/software/plain.xml')
+        dom = ET.parse('test/data/software/plain_with_references.xml')
         xslt = ET.parse('xslt/software/xslt-software-OpenAire.xslt')
 
         transform = ET.XSLT(xslt)  # is it a reserved word
