@@ -120,4 +120,4 @@ def final_xml2(api_source, prefix):
 
 
 if __name__ == "__main__":
-    print(final_xml2(sys.argv[1], '')[0])
+    print(final_xml2(sys.argv[1], '')[0]['2'])
