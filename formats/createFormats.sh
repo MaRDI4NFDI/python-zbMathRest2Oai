@@ -1,5 +1,5 @@
 #!/bin/bash
-OAI_BASIC_USER=swmath
+
 AUTH=$(echo -n "$OAI_BASIC_USER:$OAI_BASIC_PASSWORD" | base64)
 
 OAI_INPUT_STAGING='https://oai-input.staging.mardi4nfdi.org/oai-backend/format'
