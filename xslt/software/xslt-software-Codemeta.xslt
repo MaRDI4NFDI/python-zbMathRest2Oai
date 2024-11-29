@@ -229,7 +229,7 @@
 
     </xsl:template>
 
-         <xsl:template match="reference">
+         <xsl:template match="references">
   <xsl:if test="normalize-space(.) != '' and . != 'None'">
         <codemeta:citation>
             <xsl:text>https://api.zbmath.org/v1/</xsl:text>
