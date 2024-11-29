@@ -108,18 +108,20 @@ def final_xml2(api_source, prefix):
     dict_math_entities = {}
     tags = {}
     if isinstance(json["result"], dict):
-        json["result"]=add_references_to_software(api_source, json["result"])
+        json["result"] = add_references_to_software(api_source, json["result"])
     elif isinstance(json["result"], list):
         for ent in range(len(json["result"])):
-            soft_id=json["result"][ent]['id']
+            soft_id = json["result"][ent]['id']
             json["result"][ent] = add_references_to_software("https://api.zbmath.org/v1/software/"+str(soft_id), json["result"][ent])
     for result in json["result"]:
-        apply_zbmath_api_fixes(result, prefix)
-        identifier = result["id"]
-        dict_math_entities[identifier] = _illegal_xml_chars_RE.sub("", Converter(wrap="root").build(
-            result,
-            closed_tags_for=[[], '', [None], None]))
-        tags[identifier] = extract_tags(result)
+        if isinstance(result, list):
+            result = result[0]
+            apply_zbmath_api_fixes(result, prefix)
+            identifier = result["id"]
+            dict_math_entities[identifier] = _illegal_xml_chars_RE.sub("", Converter(wrap="root").build(
+                result,
+                closed_tags_for=[[], '', [None], None]))
+            tags[identifier] = extract_tags(result)
     return [dict_math_entities, r.elapsed.total_seconds(), tags]
 
 
