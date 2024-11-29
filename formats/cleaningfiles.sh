@@ -12,7 +12,25 @@ AUTH=$(echo -n "$OAI_BASIC_USER:$OAI_BASIC_PASSWORD" | base64)
 #curl --noproxy '*' -v -X DELETE -H 'Content-Type: multipart/form-data' -i 'http://oai-backend:8080/oai-backend/item/oai:swmath.org:544'
 #curl --noproxy '*' -v -X DELETE -H 'Content-Type: multipart/form-data' -i 'http://oai-backend:8080/oai-backend/crosswalk/swmath2datacite2'
 
+#From local, to delete formats, copy-paste:
+curl --noproxy '*' -X DELETE -H  "Authorization: Basic $AUTH" -i 'https://oai-input.staging.mardi4nfdi.org/oai-backend/format/oai_dc'
+curl --noproxy '*' -X DELETE -H  "Authorization: Basic $AUTH" -i 'https://oai-input.staging.mardi4nfdi.org/oai-backend/format/oai_zb_preview'
+curl --noproxy '*' -X DELETE -H  "Authorization: Basic $AUTH" -i 'https://oai-input.staging.mardi4nfdi.org/oai-backend/format/zbmath_rest_api'
+curl --noproxy '*' -X DELETE -H  "Authorization: Basic $AUTH" -i 'https://oai-input.staging.mardi4nfdi.org/oai-backend/format/zbmath_rest_api_software'
+curl --noproxy '*' -X DELETE -H  "Authorization: Basic $AUTH" -i 'https://oai-input.staging.mardi4nfdi.org/oai-backend/format/datacite_articles'
+curl --noproxy '*' -X DELETE -H  "Authorization: Basic $AUTH" -i 'https://oai-input.staging.mardi4nfdi.org/oai-backend/format/datacite_swmath'
+curl --noproxy '*' -X DELETE -H  "Authorization: Basic $AUTH" -i 'https://oai-input.staging.mardi4nfdi.org/oai-backend/format/openaire_articles'
+curl --noproxy '*' -X DELETE -H  "Authorization: Basic $AUTH" -i 'https://oai-input.staging.mardi4nfdi.org/oai-backend/format/openaire_swmath'
+curl --noproxy '*' -X DELETE -H  "Authorization: Basic $AUTH" -i 'https://oai-input.staging.mardi4nfdi.org/oai-backend/format/codemeta'
 
+#In portainer staging, to delete crosswalks, copy-paste:
+curl --noproxy '*' -X DELETE -H  "Authorization: Basic $AUTH" -i 'https://oai-input.staging.mardi4nfdi.org/oai-backend/crosswalk/article2dc'
+curl --noproxy '*' -X DELETE -H  "Authorization: Basic $AUTH" -i 'https://oai-input.staging.mardi4nfdi.org/oai-backend/crosswalk/rest2preview'
+curl --noproxy '*' -X DELETE -H  "Authorization: Basic $AUTH" -i 'https://oai-input.staging.mardi4nfdi.org/oai-backend/crosswalk/article2datacite'
+curl --noproxy '*' -X DELETE -H  "Authorization: Basic $AUTH" -i 'https://oai-input.staging.mardi4nfdi.org/oai-backend/crosswalk/swmath2datacite'
+curl --noproxy '*' -X DELETE -H  "Authorization: Basic $AUTH" -i 'https://oai-input.staging.mardi4nfdi.org/oai-backend/crosswalk/articles2openaire'
+curl --noproxy '*' -X DELETE -H  "Authorization: Basic $AUTH" -i 'https://oai-input.staging.mardi4nfdi.org/oai-backend/crosswalk/software2openaire'
+curl --noproxy '*' -X DELETE -H  "Authorization: Basic $AUTH" -i 'https://oai-input.staging.mardi4nfdi.org/oai-backend/crosswalk/software2codemeta'
 #In portainer staging, to delete formats, copy-paste:
 curl --noproxy '*' -v -X DELETE -H 'Content-Type: multipart/form-data' -i 'http://oai-backend:8080/oai-backend/format/oai_dc'
 curl --noproxy '*' -v -X DELETE -H 'Content-Type: multipart/form-data' -i 'http://oai-backend:8080/oai-backend/format/oai_zb_preview'
