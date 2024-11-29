@@ -75,18 +75,19 @@ def extract_tags(result):
 
 
 def add_references_to_software(api_uri, dict_res):
+    list_articles_ids_to_soft = []
     if "software" in api_uri:
-        soft_id=api_uri.split("/")[-1]
-        list_articles_ids_to_soft=[]
-        def api_doc_endpoint(page):
-            return requests.get("https://api.zbmath.org/v1/document/_structured_search?page={}&results_per_page=100&software%20id={}".format(page,soft_id))
-        page=0
-        while True:
-            data = api_doc_endpoint(page).json()
-            if data is None or "result" not in data or not data["result"]:
-                break
-            list_articles_ids_to_soft.extend([entry["id"] for entry in data["result"]])
-            page+=1
+        if api_uri.startswith("https://api.zbmath.org/v1/software/_all?start_after=")==False:
+            soft_id=api_uri.split("/")[-1]
+            def api_doc_endpoint(page):
+                return requests.get("https://api.zbmath.org/v1/document/_structured_search?page={}&results_per_page=100&software%20id={}".format(page,soft_id))
+            page=0
+            while True:
+                data = api_doc_endpoint(page).json()
+                if data is None or "result" not in data or not data["result"]:
+                    break
+                list_articles_ids_to_soft.extend([entry["id"] for entry in data["result"]])
+                page+=1
 
     if isinstance(dict_res, dict):
         dict_res["references"] = list_articles_ids_to_soft
@@ -106,9 +107,12 @@ def final_xml2(api_source, prefix):
     json = r.json()
     dict_math_entities = {}
     tags = {}
-
-    json["result"]=add_references_to_software(api_source, json["result"])
-
+    if isinstance(json["result"], dict):
+        json["result"]=add_references_to_software(api_source, json["result"])
+    elif isinstance(json["result"], list):
+        for ent in range(len(json["result"])):
+            soft_id=json["result"][ent]['id']
+            json["result"][ent] = add_references_to_software("https://api.zbmath.org/v1/software/"+str(soft_id), json["result"][ent])
     for result in json["result"]:
         apply_zbmath_api_fixes(result, prefix)
         identifier = result["id"]
@@ -120,4 +124,4 @@ def final_xml2(api_source, prefix):
 
 
 if __name__ == "__main__":
-    print(final_xml2(sys.argv[1], '')[0]['2'])
+    print(final_xml2(sys.argv[1], '')[0])
