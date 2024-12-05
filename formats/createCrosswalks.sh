@@ -25,13 +25,13 @@ curl --noproxy '*' -X POST -H 'Content-Type: application/json' -H  "Authorizatio
 XSLT_JSON_ENCODED=$(cat ../xslt/software/xslt-software-datacite.xslt | jq -Rsa .)
 curl --noproxy '*' -X POST -H 'Content-Type: application/json' -H  "Authorization: Basic $AUTH" -i $OAI_INPUT --data '{"name":"swmath2datacite","formatFrom":"zbmath_rest_api_software","formatTo":"datacite_swmath","xsltStylesheet":'"$XSLT_JSON_ENCODED}"'}'
 
-#Create Crosswalk from rest_api to openaire_articles
+#Create Crosswalk from rest_api to oai_openaire
 XSLT_JSON_ENCODED=`cat ../xslt/articles/xslt-article-OpenAire2.xslt | jq -Rsa .`
-curl --noproxy '*' -X POST -H 'Content-Type: application/json' -H  "Authorization: Basic $AUTH" -i $OAI_INPUT --data '{"name":"articles2openaire","formatFrom":"zbmath_rest_api","formatTo":"openaire_articles","xsltStylesheet":'"$XSLT_JSON_ENCODED}"'}'
+curl --noproxy '*' -X POST -H 'Content-Type: application/json' -H  "Authorization: Basic $AUTH" -i $OAI_INPUT --data '{"name":"articles2openaire","formatFrom":"zbmath_rest_api","formatTo":"oai_openaire","xsltStylesheet":'"$XSLT_JSON_ENCODED}"'}'
 
-#Create Crosswalk from zbmath_rest_api_software to openaire_swmath
+#Create Crosswalk from zbmath_rest_api_software to oai_openaire
 XSLT_JSON_ENCODED=`cat ../xslt/software/xslt-software-OpenAire.xslt | jq -Rsa .`
-curl --noproxy '*' -X POST -H 'Content-Type: application/json' -H  "Authorization: Basic $AUTH" -i $OAI_INPUT --data '{"name":"software2openaire","formatFrom":"zbmath_rest_api_software","formatTo":"openaire_swmath","xsltStylesheet":'"$XSLT_JSON_ENCODED}"'}'
+curl --noproxy '*' -X POST -H 'Content-Type: application/json' -H  "Authorization: Basic $AUTH" -i $OAI_INPUT --data '{"name":"software2openaire","formatFrom":"zbmath_rest_api_software","formatTo":"oai_openaire","xsltStylesheet":'"$XSLT_JSON_ENCODED}"'}'
 
 
 #Create Crosswalk from zbmath_rest_api_software to codemeta
