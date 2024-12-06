@@ -89,10 +89,10 @@ def add_references_to_software(api_uri, dict_res):
                 list_articles_ids_to_soft.extend([entry["id"] for entry in data["result"]])
                 page+=1
 
-    if isinstance(dict_res, dict):
-        dict_res["references"] = list_articles_ids_to_soft
-        # Wrap it in a list to make it iterable for your existing loop
-        dict_res = [dict_res]
+        if isinstance(dict_res, dict):
+            dict_res["references"] = list_articles_ids_to_soft
+            # Wrap it in a list to make it iterable for your existing loop
+            dict_res = [dict_res]
 
     return dict_res
 def final_xml2(api_source, prefix):
@@ -107,15 +107,23 @@ def final_xml2(api_source, prefix):
     json = r.json()
     dict_math_entities = {}
     tags = {}
-    if isinstance(json["result"], dict):
-        json["result"] = add_references_to_software(api_source, json["result"])
-    elif isinstance(json["result"], list):
-        for ent in range(len(json["result"])):
-            soft_id = json["result"][ent]['id']
-            json["result"][ent] = add_references_to_software("https://api.zbmath.org/v1/software/"+str(soft_id), json["result"][ent])
+    if "software" in api_source:
+        if isinstance(json["result"], dict):
+            json["result"] = add_references_to_software(api_source, json["result"])
+        elif isinstance(json["result"], list):
+            for ent in range(len(json["result"])):
+                soft_id = json["result"][ent]['id']
+                json["result"][ent] = add_references_to_software("https://api.zbmath.org/v1/software/"+str(soft_id), json["result"][ent])
     for result in json["result"]:
         if isinstance(result, list):
             result = result[0]
+            apply_zbmath_api_fixes(result, prefix)
+            identifier = result["id"]
+            dict_math_entities[identifier] = _illegal_xml_chars_RE.sub("", Converter(wrap="root").build(
+                result,
+                closed_tags_for=[[], '', [None], None]))
+            tags[identifier] = extract_tags(result)
+        elif isinstance(result, dict):  
             apply_zbmath_api_fixes(result, prefix)
             identifier = result["id"]
             dict_math_entities[identifier] = _illegal_xml_chars_RE.sub("", Converter(wrap="root").build(
@@ -126,4 +134,8 @@ def final_xml2(api_source, prefix):
 
 
 if __name__ == "__main__":
-    print(final_xml2(sys.argv[1], '')[0])
+    if "document" in sys.argv[1]:
+        prefix="oai:zbmath.org:"
+    else:
+        prefix="oai:swmath.org:"
+    print(final_xml2(sys.argv[1], prefix))
