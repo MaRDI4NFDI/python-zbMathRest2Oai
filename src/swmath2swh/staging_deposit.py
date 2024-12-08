@@ -12,31 +12,31 @@ env['SWMATH_USER_DEPOSIT'] = os.getenv('SWMATH_USER_DEPOSIT')
 env['SWMATH_PWD_DEPOSIT'] = os.getenv('SWMATH_PWD_DEPOSIT')
 env['SWMATH_PWD_DEPOSIT'] = os.getenv('SWMATH_PWD_DEPOSIT')
 
-#csv_file_path = '../test/data/software/swh_swmath.csv'  # Path to your CSV file
-csv_file_path = '../test/data/software/swh_swmath_swhid_dir.csv'  # Path to your CSV file
+csv_file_path = '../test/data/software/swh_swmath.csv'  # Path to your CSV file
+#csv_file_path = '../test/data/software/swh_swmath_swhid_dir.csv'  # Path to your CSV file
 api_url = 'https://api.zbmath.org/v1/software/'  # API URL, can be generalized for any software ID
 json_output_path = '../test/data/software/software_with_swhid.json'
 xml_output_path = '../test/data/software/software_with_swhid.xml'  # Update with your desired output path
 output_log_filename = '../test/data/software/logfile.txt'
 xsl_filename = '../xslt/software/xslt-software-Codemeta.xslt'
 df=pd.read_csv(csv_file_path)
-#print(df.head().dtypes)
-#url="https://github.com/cran/rms"
-#df=df[df['cvs']==url]
-#print(df)
+url="https://github.com/cran/rms"
+df=df[df['cvs']==url]
+print(df)
 for (i,swmath_id) in enumerate(df['swmathid']):
-    if i == 10:
-        print("End of the deposit process")
-        break
+    #if i == 10:
+        #print("End of the deposit process")
+        #break
     full_api_url = api_url+str(swmath_id)
     print(full_api_url)
-    process_metadata(output_log_filename, csv_file_path, full_api_url, json_output_path)
+    process_metadata(output_log_filename=output_log_filename, api_url=full_api_url, output_path=json_output_path)
     convert_json_to_xml(json_output_path, xml_output_path)
     dom = ET.parse(xml_output_path)
     xslt = ET.parse(xsl_filename)
     transform = ET.XSLT(xslt)
     newdom = transform(dom)
     formatted_newdom = ET.tostring(newdom, pretty_print=True, encoding='unicode')
+    print(formatted_newdom)
     # Write transformed XML to a temporary file
     with tempfile.NamedTemporaryFile(mode='w', delete=False, suffix='.xml') as temp_file:
         temp_file.write(formatted_newdom)
