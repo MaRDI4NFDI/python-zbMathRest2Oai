@@ -21,7 +21,7 @@ xslt = ET.parse(xsl_filename)
 transform = ET.XSLT(xslt)
 newdom = transform(dom)
 formatted_newdom = ET.tostring(newdom, pretty_print=True, encoding='unicode')
-
+print(xml_str)
  # Add this before the write statement
 # Write transformed XML to a temporary file
 with tempfile.NamedTemporaryFile(mode='w', delete=False, suffix='.xml') as temp_file:
