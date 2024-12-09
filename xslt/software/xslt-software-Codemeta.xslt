@@ -191,14 +191,6 @@
      </xsl:if>
     </xsl:template>
 
-    <xsl:template match="articles_count">
-      <xsl:if test="normalize-space(.) != '' and . != 'None'">
-            <schema:numberofItems>
-                <xsl:value-of select="."/>
-            </schema:numberofItems>
-        </xsl:if>
-    </xsl:template>
-
     <xsl:template match="related_software">
   <xsl:if test="normalize-space(.) != '' and . != 'None'">
       <codemeta:supportingData>
