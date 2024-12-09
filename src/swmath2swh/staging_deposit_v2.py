@@ -6,22 +6,26 @@ import subprocess
 import time
 import tempfile
 import os
+import requests
 
 env = os.environ.copy()
 env['SWMATH_USER_DEPOSIT'] = os.getenv('SWMATH_USER_DEPOSIT')
 env['SWMATH_PWD_DEPOSIT'] = os.getenv('SWMATH_PWD_DEPOSIT')
 env['SWMATH_PWD_DEPOSIT'] = os.getenv('SWMATH_PWD_DEPOSIT')
-
-import requests
+xsl_filename = '../xslt/software/xslt_SWH_deposit.xslt'
 
 r = requests.get("https://oai.staging.mardi4nfdi.org/oai/OAIHandler?verb=GetRecord&metadataPrefix=codemeta&identifier=oai:swmath.org:4532")
+xml_str = r.content
+dom = ET.fromstring(xml_str)
+xslt = ET.parse(xsl_filename)
+transform = ET.XSLT(xslt)
+newdom = transform(dom)
+formatted_newdom = ET.tostring(newdom, pretty_print=True, encoding='unicode')
 
-xml = r.text
-
-
+ # Add this before the write statement
 # Write transformed XML to a temporary file
 with tempfile.NamedTemporaryFile(mode='w', delete=False, suffix='.xml') as temp_file:
-    temp_file.write(xml)
+    temp_file.write(formatted_newdom)
     temp_filename = temp_file.name
     print(f"Temporary file created: {temp_filename}")
 # Format current time for deposit status
