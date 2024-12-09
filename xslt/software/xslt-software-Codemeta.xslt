@@ -205,26 +205,30 @@
     </xsl:template>
 
     <xsl:template match="standard_articles">
-      <codemeta:referencePublication>
-           <xsl:if test="normalize-space(id) != '' and id != 'None'">
-            <codemeta:identifier>
-                <xsl:text>https://zbmath.org/</xsl:text>
-                <xsl:value-of select="id"/>
-            </codemeta:identifier>
-        </xsl:if>
-          <xsl:if test="normalize-space(.) != '' and . != 'None'">
-        <codemeta:datePublished>
-            <xsl:value-of select="year"/>
-        </codemeta:datePublished>
-          </xsl:if>
-      </codemeta:referencePublication>
+    <xsl:if test="normalize-space(.) != '' and . != 'None'">
+        <codemeta:referencePublication>
+            <!-- Check if 'id' exists and is not 'None' or empty -->
+            <xsl:if test="normalize-space(id) != '' and id != 'None'">
+                <codemeta:identifier>
+                    <xsl:text>https://zbmath.org/</xsl:text>
+                    <xsl:value-of select="id"/>
+                </codemeta:identifier>
+            </xsl:if>
 
-    </xsl:template>
+            <!-- Check if 'year' exists and is not 'None' or empty -->
+            <xsl:if test="normalize-space(year) != '' and year != 'None'">
+                <codemeta:datePublished>
+                    <xsl:value-of select="year"/>
+                </codemeta:datePublished>
+            </xsl:if>
+        </codemeta:referencePublication>
+    </xsl:if>
+</xsl:template>
 
          <xsl:template match="references">
   <xsl:if test="normalize-space(.) != '' and . != 'None'">
         <codemeta:citation>
-            <xsl:text>https://api.zbmath.org/v1/</xsl:text>
+            <xsl:text>https://api.zbmath.org/v1/document/</xsl:text>
             <xsl:value-of select="."/>
         </codemeta:citation>
        </xsl:if>
