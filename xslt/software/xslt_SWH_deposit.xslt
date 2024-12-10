@@ -25,14 +25,16 @@
 
 
       <!-- SWH Deposit Metadata -->
-      <swhdeposit:deposit>
-        <swhdeposit:reference>
-          <swhdeposit:origin url="{/oai:OAI-PMH/oai:GetRecord/oai:record/oai:metadata/*/codemeta:codeRepository}"/>
-        </swhdeposit:reference>
-        <swhdeposit:metadata-provenance>
-          <schema:url>https://api.zbmath.org/v1/</schema:url>
-        </swhdeposit:metadata-provenance>
-      </swhdeposit:deposit>
+      <swh:deposit>
+        <swh:reference>
+          <swh:origin url="{/oai:OAI-PMH/oai:GetRecord/oai:record/oai:metadata/*/codemeta:codeRepository}"/>
+        </swh:reference>
+        <swh:metadata-provenance>
+          <schema:url>
+            <xsl:value-of select="concat('https://zbmath.org/software/', substring-after(/oai:OAI-PMH/oai:GetRecord/oai:record/oai:header/oai:identifier, ':swmath.org:'))"/>
+          </schema:url>
+        </swh:metadata-provenance>
+      </swh:deposit>
 
       <!-- Copy additional metadata -->
       <xsl:copy-of select="/oai:OAI-PMH/oai:GetRecord/oai:record/oai:metadata/*/codemeta:supportingData"/>
@@ -42,7 +44,11 @@
       <xsl:copy-of select="/oai:OAI-PMH/oai:GetRecord/oai:record/oai:metadata/*/codemeta:sameAs"/>
       <xsl:copy-of select="/oai:OAI-PMH/oai:GetRecord/oai:record/oai:metadata/*/codemeta:codeRepository"/>
       <xsl:copy-of select="/oai:OAI-PMH/oai:GetRecord/oai:record/oai:metadata/*/codemeta:citation"/>
-      <xsl:copy-of select="/oai:OAI-PMH/oai:GetRecord/oai:record/oai:metadata/*/codemeta:url"/>
+      <codemeta:url>
+            <xsl:value-of select="concat('https://api.zbmath.org/software/', substring-after(/oai:OAI-PMH/oai:GetRecord/oai:record/oai:header/oai:identifier, ':swmath.org:'))"/>
+          </codemeta:url>
+
+
     </entry>
   </xsl:template>
 
