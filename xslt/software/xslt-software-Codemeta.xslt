@@ -43,7 +43,6 @@
 
 
 
-            <xsl:apply-templates select="root/articles_count"/>
 
 
 
