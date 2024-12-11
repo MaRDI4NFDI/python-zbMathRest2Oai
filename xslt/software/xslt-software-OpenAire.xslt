@@ -41,7 +41,8 @@
 
 
              <xsl:apply-templates select="root/license_terms"/>
-           <resourceType resourceTypeGeneral="Software"/>
+
+            <oaire:resourceType resourceTypeGeneral="software" uri="http://purl.org/coar/resource_type/c_5ce6"/>
              <datacite:rightsList>
                    <datacite:rights rightsURI="http://purl.org/coar/access_right/c_14cb">metadata only access</datacite:rights>
                 <datacite:rights xml:lang="en"
