@@ -197,6 +197,7 @@
             <xsl:value-of select="name"/>
         </codemeta:name>
         <codemeta:identifier>
+            <xsl:text>https://swmath.org/software/</xsl:text>
             <xsl:value-of select="id"/>
         </codemeta:identifier>
       </codemeta:supportingData>
