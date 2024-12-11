@@ -178,15 +178,15 @@ with its own subjectscheme -->
     <oaire:resourceType>
         <xsl:choose>
             <xsl:when test="contains(translate(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), 'article')">
-                <xsl:attribute name="resourceTypeGeneral">journal article</xsl:attribute>
+                <xsl:attribute name="resourceTypeGeneral">literature</xsl:attribute>
                 <xsl:attribute name="uri">http://purl.org/coar/resource_type/c_6501</xsl:attribute>
             </xsl:when>
             <xsl:when test="contains(translate(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), 'book')">
-                <xsl:attribute name="resourceTypeGeneral">Book</xsl:attribute>
+                <xsl:attribute name="resourceTypeGeneral">literature</xsl:attribute>
                 <xsl:attribute name="uri">http://purl.org/coar/resource_type/c_2f33</xsl:attribute>
             </xsl:when>
             <xsl:otherwise>
-                <xsl:attribute name="resourceTypeGeneral">Other</xsl:attribute>
+                <xsl:attribute name="resourceTypeGeneral">literature</xsl:attribute>
                 <xsl:attribute name="uri">http://purl.org/coar/resource_type/c_1843</xsl:attribute>
             </xsl:otherwise>
         </xsl:choose>
