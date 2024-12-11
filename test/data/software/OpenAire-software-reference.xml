@@ -157,7 +157,7 @@
       <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsCitedBy">https://api.zbmath.org/v1/document/2234457</datacite:relatedIdentifier>
    </datacite:relatedIdentifiers>
    <datacite:alternateIdentifier alternateIdentifierType="URL">http://crd-legacy.lbl.gov/~xiaoye/SuperLU/</datacite:alternateIdentifier>
-   <resourceType resourceTypeGeneral="Software"/>
+   <oaire:resourceType resourceTypeGeneral="software" uri="http://purl.org/coar/resource_type/c_5ce6"/>
    <datacite:rightsList>
       <datacite:rights rightsURI="http://purl.org/coar/access_right/c_14cb">metadata only access</datacite:rights>
       <datacite:rights xml:lang="en"
