@@ -32,83 +32,83 @@
    <schema:categoryCode>90</schema:categoryCode>
  <codemeta:supportingData>
       <codemeta:name>R</codemeta:name>
-      <codemeta:identifier>771</codemeta:identifier>
+      <codemeta:identifier>https://swmath.org/software/771</codemeta:identifier>
    </codemeta:supportingData>
    <codemeta:supportingData>
       <codemeta:name>randomForest</codemeta:name>
-      <codemeta:identifier>10639</codemeta:identifier>
+      <codemeta:identifier>https://swmath.org/software/10639</codemeta:identifier>
    </codemeta:supportingData>
    <codemeta:supportingData>
       <codemeta:name>caret</codemeta:name>
-      <codemeta:identifier>8031</codemeta:identifier>
+      <codemeta:identifier>https://swmath.org/software/8031</codemeta:identifier>
    </codemeta:supportingData>
    <codemeta:supportingData>
       <codemeta:name>mlr</codemeta:name>
-      <codemeta:identifier>12357</codemeta:identifier>
+      <codemeta:identifier>https://swmath.org/software/12357</codemeta:identifier>
    </codemeta:supportingData>
    <codemeta:supportingData>
       <codemeta:name>GeneSrF</codemeta:name>
-      <codemeta:identifier>8254</codemeta:identifier>
+      <codemeta:identifier>https://swmath.org/software/8254</codemeta:identifier>
    </codemeta:supportingData>
    <codemeta:supportingData>
       <codemeta:name>XGBoost</codemeta:name>
-      <codemeta:identifier>21035</codemeta:identifier>
+      <codemeta:identifier>https://swmath.org/software/21035</codemeta:identifier>
    </codemeta:supportingData>
    <codemeta:supportingData>
       <codemeta:name>shap</codemeta:name>
-      <codemeta:identifier>30901</codemeta:identifier>
+      <codemeta:identifier>https://swmath.org/software/30901</codemeta:identifier>
    </codemeta:supportingData>
    <codemeta:supportingData>
       <codemeta:name>VSURF</codemeta:name>
-      <codemeta:identifier>27884</codemeta:identifier>
+      <codemeta:identifier>https://swmath.org/software/27884</codemeta:identifier>
    </codemeta:supportingData>
    <codemeta:supportingData>
       <codemeta:name>varSelRF</codemeta:name>
-      <codemeta:identifier>8253</codemeta:identifier>
+      <codemeta:identifier>https://swmath.org/software/8253</codemeta:identifier>
    </codemeta:supportingData>
    <codemeta:supportingData>
       <codemeta:name>CRAN</codemeta:name>
-      <codemeta:identifier>4351</codemeta:identifier>
+      <codemeta:identifier>https://swmath.org/software/4351</codemeta:identifier>
    </codemeta:supportingData>
    <codemeta:supportingData>
       <codemeta:name>FSelector</codemeta:name>
-      <codemeta:identifier>8044</codemeta:identifier>
+      <codemeta:identifier>https://swmath.org/software/8044</codemeta:identifier>
    </codemeta:supportingData>
    <codemeta:supportingData>
       <codemeta:name>UCI-ml</codemeta:name>
-      <codemeta:identifier>4074</codemeta:identifier>
+      <codemeta:identifier>https://swmath.org/software/4074</codemeta:identifier>
    </codemeta:supportingData>
    <codemeta:supportingData>
       <codemeta:name>glmnet</codemeta:name>
-      <codemeta:identifier>8159</codemeta:identifier>
+      <codemeta:identifier>https://swmath.org/software/8159</codemeta:identifier>
    </codemeta:supportingData>
    <codemeta:supportingData>
       <codemeta:name>ranger</codemeta:name>
-      <codemeta:identifier>14498</codemeta:identifier>
+      <codemeta:identifier>https://swmath.org/software/14498</codemeta:identifier>
    </codemeta:supportingData>
    <codemeta:supportingData>
       <codemeta:name>e1071</codemeta:name>
-      <codemeta:identifier>7985</codemeta:identifier>
+      <codemeta:identifier>https://swmath.org/software/7985</codemeta:identifier>
    </codemeta:supportingData>
    <codemeta:supportingData>
       <codemeta:name>GeneralisedCovarianceMeasure</codemeta:name>
-      <codemeta:identifier>35668</codemeta:identifier>
+      <codemeta:identifier>https://swmath.org/software/35668</codemeta:identifier>
    </codemeta:supportingData>
    <codemeta:supportingData>
       <codemeta:name>cpi</codemeta:name>
-      <codemeta:identifier>41086</codemeta:identifier>
+      <codemeta:identifier>https://swmath.org/software/41086</codemeta:identifier>
    </codemeta:supportingData>
    <codemeta:supportingData>
       <codemeta:name>ElemStatLearn</codemeta:name>
-      <codemeta:identifier>11049</codemeta:identifier>
+      <codemeta:identifier>https://swmath.org/software/11049</codemeta:identifier>
    </codemeta:supportingData>
    <codemeta:supportingData>
       <codemeta:name>gbm</codemeta:name>
-      <codemeta:identifier>7994</codemeta:identifier>
+      <codemeta:identifier>https://swmath.org/software/7994</codemeta:identifier>
    </codemeta:supportingData>
    <codemeta:supportingData>
       <codemeta:name>rpart</codemeta:name>
-      <codemeta:identifier>7115</codemeta:identifier>
+      <codemeta:identifier>https://swmath.org/software/7115</codemeta:identifier>
    </codemeta:supportingData>
    <codemeta:referencePublication>
       <codemeta:datePublished>2010</codemeta:datePublished>
