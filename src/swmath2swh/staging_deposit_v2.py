@@ -21,6 +21,8 @@ xml_str = r.content
 dom = DET.fromstring(xml_str)
 formatted_newdom = DET.tostring(dom, encoding='unicode')
 def replace_namespace_prefixes(xml_str, new_prefix='codemeta'):
+
+
     updated_xml = re.sub(r'ns\d+:', f'{new_prefix}:', xml_str)
     return updated_xml
 
