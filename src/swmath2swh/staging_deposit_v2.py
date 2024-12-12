@@ -1,14 +1,15 @@
 from swmath2swh.restApi_software_Json import process_metadata
 from swmath2swh.convertSoftware_from_json_toXml import convert_json_to_xml
 import defusedxml.ElementTree as DET
-import lxml.etree as ET
+
 import pandas as pd
 import subprocess
 import time
 import tempfile
 import os
 import requests
-from io import BytesIO
+import re
+
 env = os.environ.copy()
 env['SWMATH_USER_DEPOSIT'] = os.getenv('SWMATH_USER_DEPOSIT')
 env['SWMATH_PWD_DEPOSIT'] = os.getenv('SWMATH_PWD_DEPOSIT')
@@ -17,19 +18,21 @@ xsl_filename = '../../xslt/software/xslt_SWH_deposit.xslt'
 
 r = requests.get("https://oai.staging.mardi4nfdi.org/oai/OAIHandler?verb=GetRecord&metadataPrefix=codemeta&identifier=oai:swmath.org:4532")
 xml_str = r.content
-det_tree = DET.fromstring(xml_str)
+dom = DET.fromstring(xml_str)
+formatted_newdom = DET.tostring(dom, encoding='unicode')
+def replace_namespace_prefixes(xml_str, new_prefix='codemeta'):
+    updated_xml = re.sub(r'ns\d+:', f'{new_prefix}:', xml_str)
+    return updated_xml
+final_xml = replace_namespace_prefixes(formatted_newdom, new_prefix='codemeta')
 
-xml_bytes = BytesIO(DET.tostring(det_tree))
-dom = ET.parse(xml_bytes)
-xslt = ET.parse(xsl_filename)
-transform = ET.XSLT(xslt)
-newdom = transform(dom)
-formatted_newdom = ET.tostring(newdom, pretty_print=True, encoding='unicode')
-print(formatted_newdom)
-print(xml_str)
+
+print(final_xml)
+
+#print(formatted_newdom)
+#print(xml_str)
 
 with tempfile.NamedTemporaryFile(mode='w', delete=False, suffix='.xml') as temp_file:
-    temp_file.write(formatted_newdom)
+    temp_file.write(final_xml)
     temp_filename = temp_file.name
     print(f"Temporary file created: {temp_filename}")
 # Format current time for deposit status
