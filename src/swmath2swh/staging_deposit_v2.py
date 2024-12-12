@@ -1,7 +1,8 @@
 from swmath2swh.restApi_software_Json import process_metadata
 from swmath2swh.convertSoftware_from_json_toXml import convert_json_to_xml
 import defusedxml.ElementTree as DET  # Using defusedxml for safe XML parsing
-import lxml.etree as ET  # Using lxml for XSLT transformations
+from defusedxml.lxml import fromstring
+import lxml.etree as ET
 import pandas as pd
 import subprocess
 import time
@@ -26,7 +27,7 @@ dom = DET.fromstring(xml_str)
 dom_str = DET.tostring(dom, encoding='unicode')
 
 # Use lxml to parse the XML string for XSLT transformation
-lxml_dom = ET.fromstring(dom_str)
+lxml_dom = fromstring(dom_str)
 
 # Perform XSLT transformation using lxml
 xslt = ET.parse(xsl_filename)
