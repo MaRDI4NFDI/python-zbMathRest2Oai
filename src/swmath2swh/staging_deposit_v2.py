@@ -23,16 +23,13 @@ formatted_newdom = DET.tostring(dom, encoding='unicode')
 def replace_namespace_prefixes(xml_str, new_prefix='codemeta'):
     updated_xml = re.sub(r'ns\d+:', f'{new_prefix}:', xml_str)
     return updated_xml
-final_xml = replace_namespace_prefixes(formatted_newdom, new_prefix='codemeta')
 
 
-print(final_xml)
-
-#print(formatted_newdom)
-#print(xml_str)
+FINAL_XML = replace_namespace_prefixes(formatted_newdom, new_prefix='codemeta')
+print(FINAL_XML)
 
 with tempfile.NamedTemporaryFile(mode='w', delete=False, suffix='.xml') as temp_file:
-    temp_file.write(final_xml)
+    temp_file.write(FINAL_XML)
     temp_filename = temp_file.name
     print(f"Temporary file created: {temp_filename}")
 # Format current time for deposit status
