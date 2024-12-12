@@ -12,16 +12,19 @@ env = os.environ.copy()
 env['SWMATH_USER_DEPOSIT'] = os.getenv('SWMATH_USER_DEPOSIT')
 env['SWMATH_PWD_DEPOSIT'] = os.getenv('SWMATH_PWD_DEPOSIT')
 env['SWMATH_PWD_DEPOSIT'] = os.getenv('SWMATH_PWD_DEPOSIT')
-xsl_filename = '../xslt/software/xslt_SWH_deposit.xslt'
+xsl_filename = '../../xslt/software/xslt_SWH_deposit.xslt'
 
 r = requests.get("https://oai.staging.mardi4nfdi.org/oai/OAIHandler?verb=GetRecord&metadataPrefix=codemeta&identifier=oai:swmath.org:4532")
 xml_str = r.content
-dom = ET.fromstring(xml_str)
+# Parse the XML and remove the processing instruction
+parser = ET.XMLParser(remove_pis=True) # Remove processing instructions
+dom = ET.fromstring(xml_str, parser)
 xslt = ET.parse(xsl_filename)
 transform = ET.XSLT(xslt)
 newdom = transform(dom)
 formatted_newdom = ET.tostring(newdom, pretty_print=True, encoding='unicode')
-print(xml_str)
+#print(formatted_newdom) this print statement is to show in the result that the unwanted header has been removed
+#print(xml_str)
  # Add this before the write statement
 # Write transformed XML to a temporary file
 with tempfile.NamedTemporaryFile(mode='w', delete=False, suffix='.xml') as temp_file:
