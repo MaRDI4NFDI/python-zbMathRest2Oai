@@ -20,17 +20,18 @@ xsl_filename = '../../xslt/software/xslt_SWH_deposit.xslt'
 r = requests.get("https://oai.staging.mardi4nfdi.org/oai/OAIHandler?verb=GetRecord&metadataPrefix=codemeta&identifier=oai:swmath.org:4532")
 xml_str = r.content
 
-# Parse the XML safely using defusedxml
-dom_safe = DET.fromstring(xml_str)
+dom = DET.fromstring(xml_str)
 
-# Convert the defusedxml tree to a string so lxml can parse it
-dom_str = DET.tostring(dom_safe)
-dom = ET.fromstring(dom_str)  # Convert to lxml's Element for XSLT processing
+# Convert the defusedxml-parsed XML to a string for lxml processing
+dom_str = DET.tostring(dom, encoding='unicode')
 
-# Load and apply the XSLT transformation
+# Use lxml to parse the XML string for XSLT transformation
+lxml_dom = ET.fromstring(dom_str)
+
+# Perform XSLT transformation using lxml
 xslt = ET.parse(xsl_filename)
 transform = ET.XSLT(xslt)
-newdom = transform(dom)
+newdom = transform(lxml_dom)
 formatted_newdom = ET.tostring(newdom, pretty_print=True, encoding='unicode')
 formatted_newdom = re.sub(r'xmlns:ns\d+="[^"]+"', '', formatted_newdom)
 formatted_newdom = re.sub(r'ns\d+:', 'codemeta:', formatted_newdom)
