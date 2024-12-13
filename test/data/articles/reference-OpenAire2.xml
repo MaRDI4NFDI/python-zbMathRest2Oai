@@ -8,7 +8,7 @@
           xsi:schemaLocation="http://namespace.openaire.eu/schema/oaire/ https://www.openaire.eu/schema/repo-lit/4.0/openaire.xsd">
    <datacite:identifier IdentifierType="URL">https://zbmath.org/6383667</datacite:identifier>
    <datacite:alternateIdentifiers>
-      <datacite:alternateIdentifier alternateIdentifierType="zbMATH Identifier">1306.11073</datacite:alternateIdentifier>
+      <datacite:alternateIdentifier alternateIdentifierType="URL">https://zbmath.org/1306.11073</datacite:alternateIdentifier>
       <datacite:alternateIdentifier alternateIdentifierType="zbMATH Document ID">Zbl 6383667</datacite:alternateIdentifier>
       <datacite:alternateIdentifier alternateIdentifierType="DOI">10.4007/annals.2015.181.1.7</datacite:alternateIdentifier>
    </datacite:alternateIdentifiers>
