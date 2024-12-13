@@ -3,7 +3,7 @@
        xmlns:swhdeposit="https://www.softwareheritage.org/schema/2018/deposit"
        xmlns:swh="https://www.softwareheritage.org/schema/2018/deposit"
        xmlns:schema="http://schema.org/">
-   <id>https://zbmath.org/8032</id>
+   <id>https://swmath.org/8032</id>
    <swhdeposit:deposit>
        <swhdeposit:reference>
          <swhdeposit:origin url="https://github.com/cran/Boruta"/>
@@ -22,14 +22,6 @@
    <codemeta:description>zbMATH Open Web Interface contents unavailable due to conflicting licenses.</codemeta:description>
    <codemeta:sameAs>http://cran.r-project.org/web/packages/Boruta/index.html</codemeta:sameAs>
    <codemeta:codeRepository>https://github.com/cran/Boruta</codemeta:codeRepository>
-   <schema:categoryCode>62</schema:categoryCode>
-   <schema:categoryCode>68</schema:categoryCode>
-   <schema:categoryCode>74</schema:categoryCode>
-   <schema:categoryCode>91</schema:categoryCode>
-   <schema:categoryCode>92</schema:categoryCode>
-   <schema:categoryCode>65</schema:categoryCode>
-   <schema:categoryCode>86</schema:categoryCode>
-   <schema:categoryCode>90</schema:categoryCode>
  <codemeta:supportingData>
       <codemeta:name>R</codemeta:name>
       <codemeta:identifier>https://swmath.org/software/771</codemeta:identifier>

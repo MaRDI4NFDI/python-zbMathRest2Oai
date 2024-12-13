@@ -4,7 +4,7 @@
                 xmlns:codemeta="https://doi.org/10.5063/SCHEMA/CODEMETA-2.0"
                 xmlns:swhdeposit="https://www.softwareheritage.org/schema/2018/deposit"
                 xmlns:swh="https://www.softwareheritage.org/schema/2018/deposit"
-                xmlns:schema="http://schema.org">
+                xmlns:schema="http://schema.org/">
 
   <!-- Output XML format with indentation -->
   <xsl:output method="xml" indent="yes"/>
@@ -15,7 +15,7 @@
            xmlns:codemeta="https://doi.org/10.5063/SCHEMA/CODEMETA-2.0"
            xmlns:swhdeposit="https://www.softwareheritage.org/schema/2018/deposit"
            xmlns:swh="https://www.softwareheritage.org/schema/2018/deposit"
-           xmlns:schema="http://schema.org"
+           xmlns:schema="http://schema.org/"
            xmlns:oai="http://www.openarchives.org/OAI/2.0/">
 
       <!-- Extract numeric identifier from the oai identifier and generate the id -->

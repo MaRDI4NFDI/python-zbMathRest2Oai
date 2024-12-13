@@ -37,17 +37,7 @@
             <xsl:apply-templates select="root/programming_languages"/>
 
 
-
-            <xsl:apply-templates select="root/classification"/>
-
-
-
-
-
-
-
                 <xsl:apply-templates select="root/related_software"/>
-
 
 
                 <xsl:apply-templates select="root/standard_articles"/>
@@ -62,7 +52,7 @@
 
     <xsl:template match="id"  mode="id">
         <id>
-            <xsl:text>https://zbmath.org/</xsl:text>
+            <xsl:text>https://swmath.org/</xsl:text>
             <xsl:value-of select="."/>
         </id>
     </xsl:template>
@@ -178,16 +168,6 @@
             <xsl:value-of select="."/>
         </codemeta:programmingLanguage>
       </xsl:if>
-    </xsl:template>
-
-
-
-    <xsl:template match="classification">
-     <xsl:if test="normalize-space(.) != '' and . != 'None'">
-            <schema:categoryCode>
-                <xsl:value-of select="."/>
-            </schema:categoryCode>
-     </xsl:if>
     </xsl:template>
 
     <xsl:template match="related_software">
