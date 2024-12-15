@@ -181,7 +181,7 @@ with its own subjectscheme -->
     </oaire:resourceType>
 </xsl:template>
      <xsl:template match="doi[normalize-space()]">
-        <datacite:relatedIdentifier relatedIdentifierType="DOI" relationType="Cites" resourceTypeGeneral="JournalArticle"><xsl:value-of select="normalize-space(.)"/></datacite:relatedIdentifier>
+        <datacite:relatedIdentifier relatedIdentifierType="DOI" relationType="Cites" resourceTypeGeneral="Other"><xsl:value-of select="normalize-space(.)"/></datacite:relatedIdentifier>
     </xsl:template>
 
     <!-- Template to handle references with empty DOI elements and take the value of document_id also adding the url of zbmath to the result -->
