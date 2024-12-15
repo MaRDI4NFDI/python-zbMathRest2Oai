@@ -17,8 +17,6 @@
         <xsl:apply-templates select="root/zbmath_url"/>
 
                 <datacite:alternateIdentifiers>
-                    <xsl:apply-templates select="root/identifier"/>
-                <xsl:apply-templates select="root/id"/>
                 <xsl:apply-templates select="root/links"/>
                 </datacite:alternateIdentifiers>
                <datacite:creators>
