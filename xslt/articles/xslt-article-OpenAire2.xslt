@@ -139,12 +139,16 @@ with its own subjectscheme -->
         </datacite:subject>
         </xsl:template>
 
-    <xsl:template match="datestamp">
-      <datacite:date dateType="Issued">
-        <!-- Extract just the date part (YYYY-MM-DD) from the datestamp -->
-        <xsl:value-of select="substring-before(. , 'T')" />
-      </datacite:date>
-  </xsl:template>
+   <xsl:template match="datestamp">
+  <!-- Check if the year part does not start with '0' -->
+  <xsl:if test="not(starts-with(substring(., 1, 4), '0'))">
+    <datacite:date dateType="Issued">
+      <!-- Extract just the date part (YYYY-MM-DD) from the datestamp -->
+      <xsl:value-of select="substring-before(., 'T')" />
+    </datacite:date>
+  </xsl:if>
+</xsl:template>
+
 
      <xsl:template match="year">
              <datacite:date dateType="Available">
