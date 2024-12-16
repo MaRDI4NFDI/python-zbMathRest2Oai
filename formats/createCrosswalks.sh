@@ -48,7 +48,8 @@ curl --noproxy '*' -X POST -H 'Content-Type: application/json' -H  "Authorizatio
 #curl -X GET 'http://localhost:8081/oai-backend/crosswalk'
 curl --noproxy '*' -X GET -H  "Authorization: Basic $AUTH" $OAI_INPUT
 
-#Delete specific crosswalk
+#Delete specific crosswalk from por
 #curl -v -X DELETE http://localhost:8081/oai-backend/crosswalk/Radar2OAI_DC_v09
-
+#Delete specific crosswalk from local
+#curl -v -X DELETE POST -H "Authorization: Basic $AUTH" -i 'https://oai-input.staging.mardi4nfdi.org/oai-backend/crosswalk/software2codemeta'
 #
