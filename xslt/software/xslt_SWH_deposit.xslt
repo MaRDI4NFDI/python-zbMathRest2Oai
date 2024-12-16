@@ -19,9 +19,7 @@
            xmlns:oai="http://www.openarchives.org/OAI/2.0/">
 
       <!-- Extract numeric identifier from the oai identifier and generate the id -->
-      <id>
-        <xsl:value-of select="concat('https://api.zbmath.org/software/', substring-after(/oai:OAI-PMH/oai:GetRecord/oai:record/oai:header/oai:identifier, ':swmath.org:'))"/>
-      </id>
+
 
 
       <!-- SWH Deposit Metadata -->
@@ -37,6 +35,7 @@
       </swh:deposit>
 
       <!-- Copy additional metadata -->
+       <xsl:copy-of select="/oai:OAI-PMH/oai:GetRecord/oai:record/oai:metadata/*/id"/>
       <xsl:copy-of select="/oai:OAI-PMH/oai:GetRecord/oai:record/oai:metadata/*/codemeta:supportingData"/>
       <xsl:copy-of select="/oai:OAI-PMH/oai:GetRecord/oai:record/oai:metadata/*/codemeta:author"/>
       <xsl:copy-of select="/oai:OAI-PMH/oai:GetRecord/oai:record/oai:metadata/*/codemeta:name"/>

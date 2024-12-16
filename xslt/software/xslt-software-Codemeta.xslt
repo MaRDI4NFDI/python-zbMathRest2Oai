@@ -52,7 +52,7 @@
 
     <xsl:template match="id"  mode="id">
         <id>
-            <xsl:text>https://swmath.org/</xsl:text>
+            <xsl:text>https://swmath.org/software/</xsl:text>
             <xsl:value-of select="."/>
         </id>
     </xsl:template>
