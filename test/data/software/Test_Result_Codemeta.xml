@@ -3,7 +3,7 @@
        xmlns:swhdeposit="https://www.softwareheritage.org/schema/2018/deposit"
        xmlns:swh="https://www.softwareheritage.org/schema/2018/deposit"
        xmlns:schema="http://schema.org/">
-   <id>https://swmath.org/8032</id>
+   <id>https://swmath.org/software/8032</id>
    <swhdeposit:deposit>
        <swhdeposit:reference>
          <swhdeposit:origin url="https://github.com/cran/Boruta"/>
