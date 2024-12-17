@@ -133,19 +133,4 @@
             <xsl:value-of select="id"/>
         </relatedIdentifier>
     </xsl:template>
-
-
-    <xsl:template match="related_software" mode="relatedItems">
-        <relatedItem relatedItemType="Software" relationType="IsCitedBy">
-            <relatedItemIdentifier relatedItemIdentifierType="URL">
-                <xsl:text>https://zbmath.org/software/</xsl:text>
-                <xsl:value-of select="id"/>
-            </relatedItemIdentifier>
-            <titles>
-                <title>
-                    <xsl:value-of select="name"/>
-                </title>
-            </titles>
-        </relatedItem>
-    </xsl:template>
 </xsl:stylesheet>
