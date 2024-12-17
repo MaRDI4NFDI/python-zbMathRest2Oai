@@ -37,24 +37,23 @@
                   <xsl:apply-templates select="root/license_terms"/>
                    <relatedIdentifiers>
                  <xsl:apply-templates select="root/homepage"/>
-                <xsl:apply-templates select="root/related_software"/>
+                <xsl:apply-templates select="root/references"/>
              </relatedIdentifiers>
-             <relatedItems>
-            <xsl:apply-templates select="root/related_software" mode="relatedItems"/>
-            </relatedItems>
 
-</resource>
+             </resource>
+             </xsl:template>
+      <xsl:template match="id">
+        <identifier identifierType="swMATH">
+        <xsl:value-of select="."/>
+         </identifier>
+       </xsl:template>
+       <xsl:template match="zbmath_url">
+    <alternateIdentifier alternateIdentifierType="URL">
+        <xsl:value-of select="concat('https://swmath.org', substring-after(., 'zbmath.org'))"/>
+    </alternateIdentifier>
 </xsl:template>
-<xsl:template match="id">
- <identifier identifierType="swMATH">
-<xsl:value-of select="."/>
- </identifier>
-</xsl:template>
-        <xsl:template match="zbmath_url">
-        <alternateIdentifier alternateIdentifierType="URL">
-            <xsl:value-of select="."/>
-        </alternateIdentifier>
-        </xsl:template>
+
+
  <xsl:template match="authors">
         <creator>
             <creatorName nameType="Personal">
@@ -127,25 +126,10 @@
         </relatedIdentifier>
         </xsl:template>
 
-     <xsl:template match="related_software">
+     <xsl:template match="references">
   <relatedIdentifier relatedIdentifierType="URL" relationType="IsCitedBy">
-            <xsl:text>https://zbmath.org/software/</xsl:text>
-            <xsl:value-of select="id"/>
+            <xsl:text>https://api.zbmath.org/v1/document/</xsl:text>
+            <xsl:value-of select="."/>
         </relatedIdentifier>
-    </xsl:template>
-
-
-    <xsl:template match="related_software" mode="relatedItems">
-        <relatedItem relatedItemType="Software" relationType="IsCitedBy">
-            <relatedItemIdentifier relatedItemIdentifierType="URL">
-                <xsl:text>https://zbmath.org/software/</xsl:text>
-                <xsl:value-of select="id"/>
-            </relatedItemIdentifier>
-            <titles>
-                <title>
-                    <xsl:value-of select="name"/>
-                </title>
-            </titles>
-        </relatedItem>
     </xsl:template>
 </xsl:stylesheet>
