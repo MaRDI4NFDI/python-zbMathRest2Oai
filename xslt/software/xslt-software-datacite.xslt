@@ -40,18 +40,20 @@
                 <xsl:apply-templates select="root/references"/>
              </relatedIdentifiers>
 
-</resource>
+             </resource>
+             </xsl:template>
+      <xsl:template match="id">
+        <identifier identifierType="swMATH">
+        <xsl:value-of select="."/>
+         </identifier>
+       </xsl:template>
+       <xsl:template match="zbmath_url">
+    <alternateIdentifier alternateIdentifierType="URL">
+        <xsl:value-of select="concat('https://swmath.org', substring-after(., 'zbmath.org'))"/>
+    </alternateIdentifier>
 </xsl:template>
-<xsl:template match="id">
- <identifier identifierType="swMATH">
-<xsl:value-of select="."/>
- </identifier>
-</xsl:template>
-        <xsl:template match="zbmath_url">
-        <alternateIdentifier alternateIdentifierType="URL">
-            <xsl:value-of select="."/>
-        </alternateIdentifier>
-        </xsl:template>
+
+
  <xsl:template match="authors">
         <creator>
             <creatorName nameType="Personal">
