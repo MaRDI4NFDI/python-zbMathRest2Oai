@@ -86,7 +86,18 @@ def add_references_to_software(api_uri, dict_res):
                 data = api_doc_endpoint(page).json()
                 if data is None or "result" not in data or not data["result"]:
                     break
-                list_articles_ids_to_soft.extend([entry["id"] for entry in data["result"]])
+
+                list_ids=[]
+                for entry in data["result"]:
+                    list_ids.append(entry["id"])
+                    list_links = []
+                    for alt_dic in entry["link"]:
+                        if alt_dic["type"] == "doi":
+                            list_links.append(alt_dic["identifier"])
+                        elif alt_dic["type"] == "arxiv":
+                            list_links.append(alt_dic["identifier"])
+
+                list_articles_ids_to_soft.extend(list_ids)
                 page+=1
 
         if isinstance(dict_res, dict):
