@@ -17,7 +17,7 @@ class PlainXmlTest(unittest.TestCase):
         newdom = transform(dom)
         real_string = ET.tostring(newdom, pretty_print=True, encoding='utf8').decode()
 
-        expected_string = ET.tostring(ET.parse('test/data/software/reference.xml'))
+        expected_string = ET.tostring(ET.parse('test/data/software/Datacite-software-reference.xml'))
 
         diff = main.diff_texts(expected_string, real_string, {
             'ratio_mode': 'fast',

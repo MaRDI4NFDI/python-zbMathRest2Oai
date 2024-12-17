@@ -18,7 +18,7 @@ if os.path.basename(os.getcwd()) == 'test':
             newdom = transform(dom)
             real_string = ET.tostring(newdom, pretty_print=True, encoding='utf8').decode()
             # test if result is parsable
-            reference = ET.parse('test/data/software/reference.xml')
+            reference = ET.parse('test/data/software/Datacite-software-reference.xml')
 
             expected_string = ET.tostring(reference, pretty_print=True, encoding='utf8').decode()
             diff = main.diff_texts(expected_string, real_string, {
