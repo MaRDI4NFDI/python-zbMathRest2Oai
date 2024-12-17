@@ -37,11 +37,8 @@
                   <xsl:apply-templates select="root/license_terms"/>
                    <relatedIdentifiers>
                  <xsl:apply-templates select="root/homepage"/>
-                <xsl:apply-templates select="root/related_software"/>
+                <xsl:apply-templates select="root/references"/>
              </relatedIdentifiers>
-             <relatedItems>
-            <xsl:apply-templates select="root/related_software" mode="relatedItems"/>
-            </relatedItems>
 
 </resource>
 </xsl:template>
@@ -127,10 +124,10 @@
         </relatedIdentifier>
         </xsl:template>
 
-     <xsl:template match="related_software">
+     <xsl:template match="references">
   <relatedIdentifier relatedIdentifierType="URL" relationType="IsCitedBy">
-            <xsl:text>https://zbmath.org/software/</xsl:text>
-            <xsl:value-of select="id"/>
+            <xsl:text>https://api.zbmath.org/v1/document/</xsl:text>
+            <xsl:value-of select="."/>
         </relatedIdentifier>
     </xsl:template>
 </xsl:stylesheet>
