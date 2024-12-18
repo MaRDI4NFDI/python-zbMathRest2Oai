@@ -109,6 +109,7 @@ def add_references_to_software(api_uri, dict_res):
         if isinstance(dict_res, dict):
             dict_res["references"] = list_articles_ids_to_soft
             # Wrap it in a list to make it iterable for your existing loop
+            dict_res["references_alt"] = list_articles_ids_and_alter_ids_to_soft
             dict_res = [dict_res]
 
     return dict_res
