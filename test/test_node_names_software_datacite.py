@@ -11,13 +11,13 @@ if os.path.basename(os.getcwd()) == 'test':
 
 class PlainXmlTest(unittest.TestCase):
     def test_similarity(self):
-        dom = ET.parse('test/data/software/plain.xml')
+        dom = ET.parse('test/data/software/plain_with_references.xml')
         xslt = ET.parse('xslt/software/xslt-software-datacite.xslt')
         transform = ET.XSLT(xslt)
         newdom = transform(dom)
         real_string = ET.tostring(newdom, pretty_print=True, encoding='utf8').decode()
 
-        expected_string = ET.tostring(ET.parse('test/data/software/reference.xml'))
+        expected_string = ET.tostring(ET.parse('test/data/software/Datacite-software-reference.xml'))
 
         diff = main.diff_texts(expected_string, real_string, {
             'ratio_mode': 'fast',
