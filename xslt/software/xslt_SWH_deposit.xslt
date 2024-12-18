@@ -34,7 +34,7 @@
         </swh:reference>
         <swh:metadata-provenance>
           <schema:url>
-            <xsl:value-of select="concat('https://zbmath.org/software/', substring-after(/oai:OAI-PMH/oai:GetRecord/oai:record/oai:header/oai:identifier, ':swmath.org:'))"/>
+            <xsl:value-of select="concat('https://staging.swmath.org/', substring-after(/oai:OAI-PMH/oai:GetRecord/oai:record/oai:header/oai:identifier, ':swmath.org:'))"/>
           </schema:url>
         </swh:metadata-provenance>
       </swh:deposit>
