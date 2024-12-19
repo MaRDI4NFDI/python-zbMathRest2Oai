@@ -15,10 +15,10 @@ env = os.environ.copy()
 env['SWMATH_USER_DEPOSIT'] = os.getenv('SWMATH_USER_DEPOSIT')
 env['SWMATH_PWD_DEPOSIT'] = os.getenv('SWMATH_PWD_DEPOSIT')
 
-xsl_filename = '../../xslt/software/xslt_SWH_deposit.xslt'
+xsl_filename = '../xslt/software/xslt_SWH_deposit.xslt'
 
 # Fetch XML data
-r = requests.get("https://oai.staging.mardi4nfdi.org/oai/OAIHandler?verb=GetRecord&metadataPrefix=codemeta&identifier=oai:swmath.org:4532")
+r = requests.get("https://oai.portal.mardi4nfdi.de/oai/OAIHandler?verb=GetRecord&metadataPrefix=codemeta&identifier=oai:swmath.org:4532")
 xml_str = r.content
 
 dom = DET.fromstring(xml_str)

@@ -7,7 +7,7 @@ OAI_BASIC_USER=swmath
 AUTH=$(echo -n "$OAI_BASIC_USER:$OAI_BASIC_PASSWORD" | base64)
 OAI_INPUT_STAGING='https://oai-input.staging.mardi4nfdi.org/oai-backend/crosswalk'
 OAI_INPUT_PRODUCTION='https://oai-input.portal.mardi4nfdi.de/oai-backend/crosswalk'
-OAI_INPUT=$OAI_INPUT_STAGING
+OAI_INPUT=$OAI_INPUT_PRODUCTION
 #Create Crosswalk from rest_api to dublin core
 ## Read the xslt file
 XSLT_JSON_ENCODED=`cat ../xslt/articles/xslt-article-DublinCore.xslt | jq -Rsa .`

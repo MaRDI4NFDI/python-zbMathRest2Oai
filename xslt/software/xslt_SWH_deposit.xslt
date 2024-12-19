@@ -19,12 +19,12 @@
            xmlns:oai="http://www.openarchives.org/OAI/2.0/">
 
       <!-- Extract numeric identifier from the oai identifier and generate the id -->
-       <xsl:template match="id">
+
        <id>
       <xsl:text>https://swmath.org/software/</xsl:text>
       <xsl:value-of select="substring-after(., 'oai:swmath.org:')"/>
        </id>
-       </xsl:template>
+
 
 
       <!-- SWH Deposit Metadata -->
@@ -49,7 +49,7 @@
       <xsl:copy-of select="/oai:OAI-PMH/oai:GetRecord/oai:record/oai:metadata/*/codemeta:codeRepository"/>
       <xsl:copy-of select="/oai:OAI-PMH/oai:GetRecord/oai:record/oai:metadata/*/codemeta:citation"/>
       <codemeta:url>
-            <xsl:value-of select="concat('https://api.zbmath.org/software/', substring-after(/oai:OAI-PMH/oai:GetRecord/oai:record/oai:header/oai:identifier, ':swmath.org:'))"/>
+            <xsl:value-of select="concat('https://staging.swmath.org/', substring-after(/oai:OAI-PMH/oai:GetRecord/oai:record/oai:header/oai:identifier, ''))"/>
           </codemeta:url>
 
 
