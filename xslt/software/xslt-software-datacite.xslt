@@ -202,7 +202,7 @@
             <xsl:if test="$text and string-length($text) > 6 and substring($text, 5, 1) = '.'">
 
 
-                <relatedIdentifier relatedIdentifierType="ARXIV" relationType="IsCitedBy">
+                <relatedIdentifier relatedIdentifierType="arXiv" relationType="IsCitedBy">
                     <xsl:value-of select="$text"/>
                 </relatedIdentifier>
             </xsl:if>
