@@ -34,6 +34,9 @@
                 <formats>
                 <format>application/xml</format>
                 </formats>
+             <publisher>
+                 <xsl:call-template name="sourceCodeOrHomepage"/>
+             </publisher>
                   <xsl:apply-templates select="root/license_terms"/>
                    <relatedIdentifiers>
                  <xsl:apply-templates select="root/homepage"/>
@@ -125,6 +128,19 @@
             <xsl:value-of select="."/>
         </relatedIdentifier>
         </xsl:template>
+
+     <xsl:template name="sourceCodeOrHomepage">
+    <xsl:variable name="sourceCode" select="normalize-space(root/source_code)"/>
+    <xsl:choose>
+      <xsl:when test="$sourceCode != '' and $sourceCode != 'none' and $sourceCode != 'null'">
+        <xsl:value-of select="$sourceCode"/>
+      </xsl:when>
+      <xsl:otherwise>
+        <xsl:value-of select="root/homepage"/>
+      </xsl:otherwise>
+    </xsl:choose>
+  </xsl:template>
+
 
      <xsl:template match="references">
   <relatedIdentifier relatedIdentifierType="URL" relationType="IsCitedBy">
