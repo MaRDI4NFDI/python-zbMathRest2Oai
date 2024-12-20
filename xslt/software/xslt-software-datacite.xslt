@@ -174,11 +174,14 @@
             </xsl:if>
 
             <!-- Handle arXiv ID -->
-            <xsl:if test="matches($current, '^\d{4}\.\d{5}')">
+            <xsl:if test="$current and string-length($current) > 6 and substring($current, 5, 1) = '.'">
+
+
                 <relatedIdentifier relatedIdentifierType="ARXIV" relationType="IsCitedBy">
                     <xsl:value-of select="$current"/>
                 </relatedIdentifier>
             </xsl:if>
+
 
             <!-- Recursively process the remaining part -->
             <xsl:call-template name="process-reference">
@@ -196,7 +199,9 @@
             </xsl:if>
 
             <!-- Handle arXiv ID -->
-            <xsl:if test="matches($text, '^\d{4}\.\d{5}')">
+            <xsl:if test="$text and string-length($text) > 6 and substring($text, 5, 1) = '.'">
+
+
                 <relatedIdentifier relatedIdentifierType="ARXIV" relationType="IsCitedBy">
                     <xsl:value-of select="$text"/>
                 </relatedIdentifier>
