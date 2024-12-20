@@ -34,11 +34,16 @@
                 <formats>
                 <format>application/xml</format>
                 </formats>
+             <publisher>
+                 <xsl:call-template name="sourceCodeOrHomepage"/>
+             </publisher>
                   <xsl:apply-templates select="root/license_terms"/>
+
                    <relatedIdentifiers>
-                 <xsl:apply-templates select="root/homepage"/>
-                <xsl:apply-templates select="root/references"/>
-             </relatedIdentifiers>
+                    <xsl:apply-templates select="root/homepage"/>
+                     <xsl:apply-templates select="root/references"/>
+                       <xsl:apply-templates select="root/references_alt"/>
+                      </relatedIdentifiers>
 
              </resource>
              </xsl:template>
@@ -126,10 +131,85 @@
         </relatedIdentifier>
         </xsl:template>
 
+     <xsl:template name="sourceCodeOrHomepage">
+    <xsl:variable name="sourceCode" select="normalize-space(root/source_code)"/>
+    <xsl:choose>
+      <xsl:when test="$sourceCode != '' and $sourceCode != 'none' and $sourceCode != 'null'">
+        <xsl:value-of select="$sourceCode"/>
+      </xsl:when>
+      <xsl:otherwise>
+        <xsl:value-of select="root/homepage"/>
+      </xsl:otherwise>
+    </xsl:choose>
+  </xsl:template>
+
+
      <xsl:template match="references">
   <relatedIdentifier relatedIdentifierType="URL" relationType="IsCitedBy">
             <xsl:text>https://api.zbmath.org/v1/document/</xsl:text>
             <xsl:value-of select="."/>
         </relatedIdentifier>
     </xsl:template>
+
+<xsl:template match="references_alt">
+    <xsl:variable name="reference" select="."/>
+    <xsl:call-template name="process-reference">
+        <xsl:with-param name="text" select="$reference"/>
+    </xsl:call-template>
+</xsl:template>
+
+<xsl:template name="process-reference">
+    <xsl:param name="text"/>
+    <xsl:choose>
+        <!-- Check if there's a semicolon (;) in the text -->
+        <xsl:when test="contains($text, ';')">
+            <xsl:variable name="current" select="substring-before($text, ';')"/>
+            <xsl:variable name="remaining" select="substring-after($text, ';')"/>
+
+            <!-- Handle DOI -->
+            <xsl:if test="starts-with($current, '10.')">
+                <relatedIdentifier relatedIdentifierType="DOI" relationType="IsCitedBy">
+                    <xsl:value-of select="$current"/>
+                </relatedIdentifier>
+            </xsl:if>
+
+            <!-- Handle arXiv ID -->
+            <xsl:if test="$current and string-length($current) > 6 and substring($current, 5, 1) = '.'">
+
+
+                <relatedIdentifier relatedIdentifierType="ARXIV" relationType="IsCitedBy">
+                    <xsl:value-of select="$current"/>
+                </relatedIdentifier>
+            </xsl:if>
+
+
+            <!-- Recursively process the remaining part -->
+            <xsl:call-template name="process-reference">
+                <xsl:with-param name="text" select="$remaining"/>
+            </xsl:call-template>
+        </xsl:when>
+
+        <!-- Handle the last part (no more semicolons) -->
+        <xsl:otherwise>
+            <!-- Handle DOI -->
+            <xsl:if test="starts-with($text, '10.')">
+                <relatedIdentifier relatedIdentifierType="DOI" relationType="IsCitedBy">
+                    <xsl:value-of select="$text"/>
+                </relatedIdentifier>
+            </xsl:if>
+
+            <!-- Handle arXiv ID -->
+            <xsl:if test="$text and string-length($text) > 6 and substring($text, 5, 1) = '.'">
+
+
+                <relatedIdentifier relatedIdentifierType="ARXIV" relationType="IsCitedBy">
+                    <xsl:value-of select="$text"/>
+                </relatedIdentifier>
+            </xsl:if>
+        </xsl:otherwise>
+    </xsl:choose>
+</xsl:template>
+
+
+
 </xsl:stylesheet>
