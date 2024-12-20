@@ -38,10 +38,12 @@
                  <xsl:call-template name="sourceCodeOrHomepage"/>
              </publisher>
                   <xsl:apply-templates select="root/license_terms"/>
+
                    <relatedIdentifiers>
-                 <xsl:apply-templates select="root/homepage"/>
-                <xsl:apply-templates select="root/references"/>
-             </relatedIdentifiers>
+                    <xsl:apply-templates select="root/homepage"/>
+                     <xsl:apply-templates select="root/references"/>
+                       <xsl:apply-templates select="root/references_alt"/>
+                      </relatedIdentifiers>
 
              </resource>
              </xsl:template>
@@ -148,4 +150,61 @@
             <xsl:value-of select="."/>
         </relatedIdentifier>
     </xsl:template>
+
+<xsl:template match="references_alt">
+    <xsl:variable name="reference" select="."/>
+    <xsl:call-template name="process-reference">
+        <xsl:with-param name="text" select="$reference"/>
+    </xsl:call-template>
+</xsl:template>
+
+<xsl:template name="process-reference">
+    <xsl:param name="text"/>
+    <xsl:choose>
+        <!-- Check if there's a semicolon (;) in the text -->
+        <xsl:when test="contains($text, ';')">
+            <xsl:variable name="current" select="substring-before($text, ';')"/>
+            <xsl:variable name="remaining" select="substring-after($text, ';')"/>
+
+            <!-- Handle DOI -->
+            <xsl:if test="starts-with($current, '10.')">
+                <relatedIdentifier relatedIdentifierType="DOI" relationType="IsCitedBy">
+                    <xsl:value-of select="$current"/>
+                </relatedIdentifier>
+            </xsl:if>
+
+            <!-- Handle arXiv ID -->
+            <xsl:if test="matches($current, '^\d{4}\.\d{5}')">
+                <relatedIdentifier relatedIdentifierType="ARXIV" relationType="IsCitedBy">
+                    <xsl:value-of select="$current"/>
+                </relatedIdentifier>
+            </xsl:if>
+
+            <!-- Recursively process the remaining part -->
+            <xsl:call-template name="process-reference">
+                <xsl:with-param name="text" select="$remaining"/>
+            </xsl:call-template>
+        </xsl:when>
+
+        <!-- Handle the last part (no more semicolons) -->
+        <xsl:otherwise>
+            <!-- Handle DOI -->
+            <xsl:if test="starts-with($text, '10.')">
+                <relatedIdentifier relatedIdentifierType="DOI" relationType="IsCitedBy">
+                    <xsl:value-of select="$text"/>
+                </relatedIdentifier>
+            </xsl:if>
+
+            <!-- Handle arXiv ID -->
+            <xsl:if test="matches($text, '^\d{4}\.\d{5}')">
+                <relatedIdentifier relatedIdentifierType="ARXIV" relationType="IsCitedBy">
+                    <xsl:value-of select="$text"/>
+                </relatedIdentifier>
+            </xsl:if>
+        </xsl:otherwise>
+    </xsl:choose>
+</xsl:template>
+
+
+
 </xsl:stylesheet>
