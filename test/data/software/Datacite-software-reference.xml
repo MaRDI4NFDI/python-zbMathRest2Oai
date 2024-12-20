@@ -46,6 +46,7 @@
     <formats>
         <format>application/xml</format>
     </formats>
+    <publisher>http://crd-legacy.lbl.gov/~xiaoye/SuperLU/</publisher>
     <relatedIdentifiers>
       <relatedIdentifier relatedIdentifierType="URL" relationType="IsSourceOf">http://crd-legacy.lbl.gov/~xiaoye/SuperLU/</relatedIdentifier>
       <relatedIdentifier relatedIdentifierType="URL" relationType="IsCitedBy">https://api.zbmath.org/v1/document/2187846</relatedIdentifier>
