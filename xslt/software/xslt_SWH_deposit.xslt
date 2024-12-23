@@ -20,10 +20,11 @@
 
       <!-- Extract numeric identifier from the oai identifier and generate the id -->
 
-       <id>
-      <xsl:text>https://swmath.org/software/</xsl:text>
-      <xsl:value-of select="substring-after(., 'oai:swmath.org:')"/>
-       </id>
+      <id>
+        <xsl:text>https://swmath.org/software/</xsl:text>
+        <!-- Corrected extraction of numeric identifier -->
+        <xsl:value-of select="substring-after(/oai:OAI-PMH/oai:GetRecord/oai:record/oai:header/oai:identifier, 'oai:swmath.org:')"/>
+      </id>
 
 
 
