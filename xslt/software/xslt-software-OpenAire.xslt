@@ -32,10 +32,12 @@
         </datacite:subjects>
            </xsl:if>
 
+             <xsl:if test="root/standard_articles/id[normalize-space(.) != '' and . != 'None'] or root/references[normalize-space(.) != '' and . != 'None']">
              <datacite:relatedIdentifiers>
                 <xsl:apply-templates select="root/standard_articles/id"/>
                  <xsl:apply-templates select="root/references"/>
              </datacite:relatedIdentifiers>
+           </xsl:if>
 
            <datacite:alternateIdentifier alternateIdentifierType="URL">
             <xsl:apply-templates  select="root/homepage"/>
