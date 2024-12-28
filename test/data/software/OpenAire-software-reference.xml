@@ -6,7 +6,7 @@
           xmlns:oaire="http://www.openarchives.org/OAI/2.0/oai_dc/"
           xmlns="http://namespace.openaire.eu/schema/oaire/"
           xsi:schemaLocation="http://namespace.openaire.eu/schema/oaire/ https://www.openaire.eu/schema/repo-lit/4.0/openaire.xsd">
-   <datacite:identifier IdentifierType="URL">https://swmath.org/software/2</datacite:identifier>
+   <datacite:identifier identifierType="URL">https://swmath.org/software/2</datacite:identifier>
    <datacite:creators>
       <datacite:creator>
          <datacite:creatorName nameType="Personal">Li, X. S.</datacite:creatorName>
