@@ -257,46 +257,6 @@ each reference has its own relatedItem node and all of its values goes under thi
         </xsl:otherwise>
     </xsl:choose>
 </relatedItemIdentifier>
-            <!-- the title extracted from a long text to the main  shortcut -->
-           <titles>
-            <xsl:choose>
-                <xsl:when test="contains(text, &quot;''&quot;)">
-                    <!-- Extract text between quotes -->
-                   <title>
-                        <xsl:variable name="text" select="text"/>
-                        <xsl:variable name="title-text" select="substring-before(substring-after($text, &quot;''&quot;), &quot;''&quot;)"/>
-                        <!-- Remove digits and trailing punctuation -->
-                        <xsl:variable name="title-no-digits" select="translate($title-text, '0123456789', '')"/>
-                        <xsl:value-of select="normalize-space(
-                            translate(
-                                $title-no-digits,
-                                ',.',
-                                ''
-                            )
-                        )"/>
-                    </title>
-                </xsl:when>
-                <xsl:otherwise>
-                    <!-- Extract text after the first comma and before the last comma, excluding digits and removing trailing commas/periods -->
-                    <title>
-                        <xsl:variable name="text" select="text"/>
-                        <xsl:variable name="text-no-digits" select="translate($text, '0123456789', '')"/>
-                        <xsl:variable name="first-comma" select="substring-after($text-no-digits, ',')"/>
-                        <xsl:variable name="last-part" select="substring-before($text-no-digits, substring-after($text-no-digits, ', '))"/>
-                        <xsl:variable name="last-comma" select="substring-before($last-part, ',')"/>
-                        <xsl:variable name="result-text" select="normalize-space(concat(substring-before($first-comma, substring-after($first-comma, ', ')), substring-after($first-comma, ', ')))"/>
-                        <xsl:value-of select="normalize-space(
-                            translate(
-                                $result-text,
-                                ',.',
-                                ''
-                            )
-                        )"/>
-                    </title>
-                </xsl:otherwise>
-            </xsl:choose>
-        </titles>
-            <!-- authors name is separted to given and family name , also adding the properties of creator to it -->
             <creators>
                 <xsl:for-each select="zbmath/author_codes">
                     <creator>
@@ -351,6 +311,44 @@ each reference has its own relatedItem node and all of its values goes under thi
                     </creator>
                 </xsl:for-each>
             </creators>
+           <titles>
+            <xsl:choose>
+                <xsl:when test="contains(text, &quot;''&quot;)">
+                    <!-- Extract text between quotes -->
+                   <title>
+                        <xsl:variable name="text" select="text"/>
+                        <xsl:variable name="title-text" select="substring-before(substring-after($text, &quot;''&quot;), &quot;''&quot;)"/>
+                        <!-- Remove digits and trailing punctuation -->
+                        <xsl:variable name="title-no-digits" select="translate($title-text, '0123456789', '')"/>
+                        <xsl:value-of select="normalize-space(
+                            translate(
+                                $title-no-digits,
+                                ',.',
+                                ''
+                            )
+                        )"/>
+                    </title>
+                </xsl:when>
+                <xsl:otherwise>
+                    <!-- Extract text after the first comma and before the last comma, excluding digits and removing trailing commas/periods -->
+                    <title>
+                        <xsl:variable name="text" select="text"/>
+                        <xsl:variable name="text-no-digits" select="translate($text, '0123456789', '')"/>
+                        <xsl:variable name="first-comma" select="substring-after($text-no-digits, ',')"/>
+                        <xsl:variable name="last-part" select="substring-before($text-no-digits, substring-after($text-no-digits, ', '))"/>
+                        <xsl:variable name="last-comma" select="substring-before($last-part, ',')"/>
+                        <xsl:variable name="result-text" select="normalize-space(concat(substring-before($first-comma, substring-after($first-comma, ', ')), substring-after($first-comma, ', ')))"/>
+                        <xsl:value-of select="normalize-space(
+                            translate(
+                                $result-text,
+                                ',.',
+                                ''
+                            )
+                        )"/>
+                    </title>
+                </xsl:otherwise>
+            </xsl:choose>
+        </titles>
             <publicationYear>
                 <xsl:value-of select="zbmath/year"/>
             </publicationYear>

@@ -122,7 +122,7 @@ def json_to_xml(json_data):
     # Add references
     references_elem = ET.SubElement(root, 'references')
     for ref in result.get('references', []):
-        reference_elem = ET.SubElement(references_elem, 'reference')
+        reference_elem = ET.SubElement(references_elem, 'references')
         reference_elem.text = str(ref)
 
     return root

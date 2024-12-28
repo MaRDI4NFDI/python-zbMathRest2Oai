@@ -5,7 +5,7 @@
                 xmlns:codemeta="https://doi.org/10.5063/SCHEMA/CODEMETA-2.0"
                 xmlns:swhdeposit="https://www.softwareheritage.org/schema/2018/deposit"
                 xmlns:swh="https://www.softwareheritage.org/schema/2018/deposit"
-                xmlns:schema="http://schema.org">
+                xmlns:schema="http://schema.org/">
     <xsl:output method="xml" indent="yes"/>
 
     <xsl:template match="/">
@@ -37,18 +37,7 @@
             <xsl:apply-templates select="root/programming_languages"/>
 
 
-
-            <xsl:apply-templates select="root/classification"/>
-
-
-
-
-            <xsl:apply-templates select="root/articles_count"/>
-
-
-
                 <xsl:apply-templates select="root/related_software"/>
-
 
 
                 <xsl:apply-templates select="root/standard_articles"/>
@@ -63,7 +52,7 @@
 
     <xsl:template match="id"  mode="id">
         <id>
-            <xsl:text>https://zbmath.org/</xsl:text>
+            <xsl:text>https://swmath.org/software/</xsl:text>
             <xsl:value-of select="."/>
         </id>
     </xsl:template>
@@ -181,24 +170,6 @@
       </xsl:if>
     </xsl:template>
 
-
-
-    <xsl:template match="classification">
-     <xsl:if test="normalize-space(.) != '' and . != 'None'">
-            <schema:categoryCode>
-                <xsl:value-of select="."/>
-            </schema:categoryCode>
-     </xsl:if>
-    </xsl:template>
-
-    <xsl:template match="articles_count">
-      <xsl:if test="normalize-space(.) != '' and . != 'None'">
-            <schema:numberofItems>
-                <xsl:value-of select="."/>
-            </schema:numberofItems>
-        </xsl:if>
-    </xsl:template>
-
     <xsl:template match="related_software">
   <xsl:if test="normalize-space(.) != '' and . != 'None'">
       <codemeta:supportingData>
@@ -206,6 +177,7 @@
             <xsl:value-of select="name"/>
         </codemeta:name>
         <codemeta:identifier>
+            <xsl:text>https://swmath.org/software/</xsl:text>
             <xsl:value-of select="id"/>
         </codemeta:identifier>
       </codemeta:supportingData>
@@ -213,26 +185,30 @@
     </xsl:template>
 
     <xsl:template match="standard_articles">
-      <codemeta:referencePublication>
-           <xsl:if test="normalize-space(id) != '' and id != 'None'">
-            <codemeta:identifier>
-                <xsl:text>https://zbmath.org/</xsl:text>
-                <xsl:value-of select="id"/>
-            </codemeta:identifier>
-        </xsl:if>
-          <xsl:if test="normalize-space(.) != '' and . != 'None'">
-        <codemeta:datePublished>
-            <xsl:value-of select="year"/>
-        </codemeta:datePublished>
-          </xsl:if>
-      </codemeta:referencePublication>
+    <xsl:if test="normalize-space(.) != '' and . != 'None'">
+        <codemeta:referencePublication>
+            <!-- Check if 'id' exists and is not 'None' or empty -->
+            <xsl:if test="normalize-space(id) != '' and id != 'None'">
+                <codemeta:identifier>
+                    <xsl:text>https://zbmath.org/</xsl:text>
+                    <xsl:value-of select="id"/>
+                </codemeta:identifier>
+            </xsl:if>
 
-    </xsl:template>
+            <!-- Check if 'year' exists and is not 'None' or empty -->
+            <xsl:if test="normalize-space(year) != '' and year != 'None'">
+                <codemeta:datePublished>
+                    <xsl:value-of select="year"/>
+                </codemeta:datePublished>
+            </xsl:if>
+        </codemeta:referencePublication>
+    </xsl:if>
+</xsl:template>
 
          <xsl:template match="references">
   <xsl:if test="normalize-space(.) != '' and . != 'None'">
         <codemeta:citation>
-            <xsl:text>https://api.zbmath.org/v1/</xsl:text>
+            <xsl:text>https://api.zbmath.org/v1/document/</xsl:text>
             <xsl:value-of select="."/>
         </codemeta:citation>
        </xsl:if>

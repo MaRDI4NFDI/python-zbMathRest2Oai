@@ -1,9 +1,9 @@
 {
-    "software": 48848,
+    "software": 0,
     "document": 0,
     "software_perf": {
-        "records": 46500,
-        "time_rest": 655.4564720000002,
-        "time_oai": 247.276840334991
+        "records": 47000,
+        "time_rest": 661.9107540000002,
+        "time_oai": 248.8304477389911
     }
 }

@@ -13,7 +13,8 @@ dependencies = [
     "dict2xml",
     "requests",
     "aiohttp",
-    "lxml"
+    "lxml",
+    "defusedxml"
 ]
 [project.optional-dependencies]
 test = [

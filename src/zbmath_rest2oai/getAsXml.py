@@ -76,6 +76,7 @@ def extract_tags(result):
 
 def add_references_to_software(api_uri, dict_res):
     list_articles_ids_to_soft = []
+    list_articles_ids_and_alter_ids_to_soft = []
     if "software" in api_uri:
         if api_uri.startswith("https://api.zbmath.org/v1/software/_all?start_after=")==False:
             soft_id=api_uri.split("/")[-1]
@@ -86,12 +87,29 @@ def add_references_to_software(api_uri, dict_res):
                 data = api_doc_endpoint(page).json()
                 if data is None or "result" not in data or not data["result"]:
                     break
-                list_articles_ids_to_soft.extend([entry["id"] for entry in data["result"]])
+
+                list_ids=[]
+                list_ids_and_alter = []
+                for entry in data["result"]:
+                    list_ids.append(entry["id"])
+                    list_links = []
+                    for alt_dic in entry["links"]:
+                        if alt_dic["type"] == "doi":
+                            list_links.append(alt_dic["identifier"])
+                        elif alt_dic["type"] == "arxiv":
+                            list_links.append(alt_dic["identifier"])
+
+                    list_ids_and_alter.append(";".join([str(entry["id"])]+list_links))
+
+                list_articles_ids_to_soft.extend(list_ids)
+                list_articles_ids_and_alter_ids_to_soft.extend(list_ids_and_alter)
+
                 page+=1
 
         if isinstance(dict_res, dict):
             dict_res["references"] = list_articles_ids_to_soft
             # Wrap it in a list to make it iterable for your existing loop
+            dict_res["references_alt"] = list_articles_ids_and_alter_ids_to_soft
             dict_res = [dict_res]
 
     return dict_res

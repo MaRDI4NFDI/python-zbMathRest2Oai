@@ -14,7 +14,7 @@ class PlainXmlTest(unittest.TestCase):
         real_string = getAsXml.final_xml2(API_SOURCE, '')[0]['2']
         real_string = [line for line in real_string.splitlines() if line.strip() != '']
         real_string = '\n'.join(real_string)
-        ref_location = os.path.join(os.path.dirname(__file__), 'data/software/plain.xml')
+        ref_location = os.path.join(os.path.dirname(__file__), 'data/software/plain_with_references.xml')
         with open(ref_location) as f:
             expected_string = f.read()
 

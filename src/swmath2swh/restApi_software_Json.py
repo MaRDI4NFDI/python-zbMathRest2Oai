@@ -6,7 +6,7 @@ from swmath2swh.swhid import parse_csv_to_dict
 from zbmath_rest2oai.getAsXml import add_references_to_software
 
 # Main function to handle the API request, CSV parsing, and JSON modification
-def process_metadata(output_log_filename, csv_file_path, api_url, output_path=None):
+def process_metadata(output_log_filename, api_url, output_path=None):
     # Extract the swmathid from the API URL
     swmathid = int(api_url.split('/')[-1])  # This extracts the number after 'software/'
 
@@ -18,23 +18,23 @@ def process_metadata(output_log_filename, csv_file_path, api_url, output_path=No
         # Parse the response JSON content
         data = response.json()
         data["result"]=add_references_to_software(api_url,data["result"])
-
+        print(data)
         #  Parse the CSV and get the dictionary of swmathid to swhid
-        swmathid_to_swhid = parse_csv_to_dict(csv_file_path)
+        #swmathid_to_swhid = parse_csv_to_dict(csv_file_path)
 
         #  Prepare the output log
         output_log = []
 
         #  Check if the swmathid from the API exists in the CSV mapping
-        if swmathid in swmathid_to_swhid:
-            matched_swhid = swmathid_to_swhid[swmathid]
+        #if swmathid in swmathid_to_swhid:
+            #matched_swhid = swmathid_to_swhid[swmathid]
 
-            # Modify the JSON structure with the matched swhid
-            swhdeposit_data = {
+        # Modify the JSON structure with the matched swhid
+        swhdeposit_data = {
                 "swhdeposit:deposit": {
                     "swhdeposit:reference": {
                         "swhdeposit:object": {
-                            "@swhid": matched_swhid
+                            "@swhid": "path"
                         }
                     },
                     "swhdeposit:metadata-provenance": {
@@ -43,17 +43,17 @@ def process_metadata(output_log_filename, csv_file_path, api_url, output_path=No
                 }
             }
 
-            # Merge this into the original JSON
-            data.update(swhdeposit_data)
+        # Merge this into the original JSON
+        data.update(swhdeposit_data)
 
-            # Add a log entry for success
-            output_log.append(f"swmathid {swmathid} matched to swhid: {matched_swhid}")
-        else:
+        # Add a log entry for success
+        #output_log.append(f"swmathid {swmathid} matched to swhid: {matched_swhid}")
+        #else:
             # If no match is found
-            output_log.append(f"swmathid {swmathid} not found in the CSV file.")
+            #output_log.append(f"swmathid {swmathid} not found in the CSV file.")
 
         #  Save the modified JSON data to a file
-        output_json_filename = 'output_with_swhid.json'
+        output_json_filename = 'output_with_swh_deposit.json'
         with open(output_path, 'w') as json_file:
             json.dump(data, json_file, indent=4, ensure_ascii=False)
         print(f"Data successfully saved to {output_json_filename}")
@@ -65,6 +65,7 @@ def process_metadata(output_log_filename, csv_file_path, api_url, output_path=No
                 log_file.write(log_entry + '\n')
         print(f"Log successfully saved to {output_log_filename}")
     else:
+
         print(f"Failed to retrieve data. Status code: {response.status_code}")
 
 
