@@ -94,5 +94,8 @@ def write_oai(api_source, oai_url, prefix, ingest_format):
 
 if __name__ == '__main__':
     import sys
-    oai_url = 'https://oai-input.staging.mardi4nfdi.org/oai-backend/item'
-    write_oai(sys.argv[1], oai_url, sys.argv[2], 'zbmath_rest_api_software')
+    api_source='https://api.zbmath.org/v1/document/_all?start_after=0&results_per_request=500'
+    oai_url = 'https://oai-input.portal.mardi4nfdi.de/oai-backend/item'
+    prefix='oai:zbmath.org:'
+    ingest_format='zbmath_rest_api'
+    write_oai(api_source, oai_url, prefix, ingest_format)
