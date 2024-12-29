@@ -115,7 +115,7 @@ def add_references_to_software(api_uri, dict_res):
     return dict_res
 def final_xml2(api_source, prefix):
     headers = {'Accept': 'application/json'}
-    r = requests.get(api_source, headers=headers)
+    r = requests.get(api_source, headers=headers, timeout=(10, 60))
     if r.status_code == 404:
         json = r.json()
         if json['status']['execution'].startswith('Entry not found!'):
