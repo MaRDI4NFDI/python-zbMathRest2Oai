@@ -21,14 +21,14 @@
   <dependencies/>
   <description>zbMATH Open Web Interface contents unavailable due to conflicting licenses.</description>
   <homepage>http://crd-legacy.lbl.gov/~xiaoye/SuperLU/</homepage>
-  <id>2</id>
+  <id>oai:swmath.org:2</id>
   <keywords>orms</keywords>
   <license_terms/>
   <name>SuperLU-DIST</name>
   <operating_systems/>
   <orms_id>265</orms_id>
   <programming_languages/>
-   <references>2187846</references>
+  <references>2187846</references>
   <references>6042299</references>
   <references>5534910</references>
   <references>5134450</references>
@@ -49,10 +49,10 @@
   <references>5167018</references>
   <references>5128211</references>
   <references>5251239</references>
-  <references>6766231</references>
   <references>5244390</references>
-  <references>7099306</references>
+  <references>6766231</references>
   <references>5706020</references>
+  <references>7099306</references>
   <references>5762200</references>
   <references>7099163</references>
   <references>7687320</references>
@@ -61,25 +61,25 @@
   <references>5670978</references>
   <references>5969946</references>
   <references>6220134</references>
-  <references>6738142</references>
   <references>6537764</references>
+  <references>6738142</references>
   <references>7914911</references>
   <references>7099336</references>
   <references>7123718</references>
   <references>7705305</references>
   <references>5880057</references>
   <references>5458476</references>
-  <references>7704378</references>
   <references>6599805</references>
+  <references>7704378</references>
   <references>5982908</references>
   <references>5784806</references>
   <references>5510606</references>
   <references>7138575</references>
-  <references>6449261</references>
   <references>6669495</references>
+  <references>6449261</references>
   <references>7055073</references>
-  <references>6910452</references>
   <references>6265830</references>
+  <references>6910452</references>
   <references>7073637</references>
   <references>6475762</references>
   <references>6908831</references>
@@ -87,11 +87,11 @@
   <references>6280859</references>
   <references>6128531</references>
   <references>5221096</references>
-  <references>7301661</references>
-  <references>7271902</references>
   <references>6054722</references>
-  <references>5827163</references>
+  <references>7301661</references>
   <references>7308040</references>
+  <references>7271902</references>
+  <references>5827163</references>
   <references>7506624</references>
   <references>5244394</references>
   <references>5187738</references>
@@ -109,8 +109,8 @@
   <references>5801879</references>
   <references>5798197</references>
   <references>7315215</references>
-  <references>7495530</references>
   <references>5693879</references>
+  <references>7495530</references>
   <references>7539438</references>
   <references>7516896</references>
   <references>7720823</references>
@@ -118,28 +118,28 @@
   <references>7405582</references>
   <references>7437405</references>
   <references>7908572</references>
-  <references>6248322</references>
   <references>7937083</references>
-  <references>5777718</references>
+  <references>6248322</references>
   <references>7625416</references>
+  <references>5777718</references>
   <references>7206170</references>
+  <references>7771268</references>
+  <references>6669494</references>
   <references>7256640</references>
   <references>5909607</references>
-  <references>6669494</references>
-  <references>7188252</references>
-  <references>7771268</references>
   <references>7031748</references>
+  <references>7188252</references>
   <references>7235951</references>
   <references>6915848</references>
   <references>7427370</references>
   <references>7860853</references>
   <references>6648376</references>
   <references>7917734</references>
-  <references>6666873</references>
   <references>6994473</references>
+  <references>6666873</references>
   <references>5538352</references>
   <references>2234457</references>
-   <references_alt>2187846;10.1145/779359.779361</references_alt>
+  <references_alt>2187846;10.1145/779359.779361</references_alt>
   <references_alt>6042299;10.1016/j.cma.2011.09.012;1104.0960</references_alt>
   <references_alt>5534910;10.1016/j.cam.2008.05.016</references_alt>
   <references_alt>5134450</references_alt>
@@ -160,8 +160,8 @@
   <references_alt>5167018;10.1017/S0962492904000200</references_alt>
   <references_alt>5128211;10.1016/j.compfluid.2005.07.005</references_alt>
   <references_alt>5251239;10.1137/070707002</references_alt>
-  <references_alt>6766231;10.1137/16M1079221</references_alt>
   <references_alt>5244390;10.1137/050637315</references_alt>
+  <references_alt>6766231;10.1137/16M1079221</references_alt>
   <references_alt>5706020;10.1007/s10287-008-0080-5</references_alt>
   <references_alt>7099306;10.1137/18M1181353</references_alt>
   <references_alt>5762200;10.1016/j.jcp.2010.03.028</references_alt>
@@ -169,19 +169,19 @@
   <references_alt>7687320;10.1007/978-3-031-25820-6</references_alt>
   <references_alt>5187739;10.1007/s00200-007-0037-x</references_alt>
   <references_alt>6669500;10.1002/nme.4729</references_alt>
-  <references_alt>5969946;10.1017/S0022112010005380</references_alt>
   <references_alt>5670978</references_alt>
+  <references_alt>5969946;10.1017/S0022112010005380</references_alt>
   <references_alt>6220134;10.1007/s00158-007-0105-7</references_alt>
-  <references_alt>6738142;10.1145/2830569</references_alt>
   <references_alt>6537764;10.1002/nla.1978</references_alt>
+  <references_alt>6738142;10.1145/2830569</references_alt>
   <references_alt>7914911;10.1007/s10444-024-10176-x;2211.07572</references_alt>
   <references_alt>7099336;10.1137/17M1153674;1710.08779</references_alt>
   <references_alt>7123718;10.1137/18M1219370;1810.03315</references_alt>
   <references_alt>7705305;10.1137/21M1450422;2210.02698</references_alt>
   <references_alt>5880057;10.1137/090747774</references_alt>
   <references_alt>5458476;10.1145/1326548.1326550</references_alt>
-  <references_alt>7704378;10.1137/21M1433253;2107.05613</references_alt>
   <references_alt>6599805;10.1137/15M1010798;1408.6497</references_alt>
+  <references_alt>7704378;10.1137/21M1433253;2107.05613</references_alt>
   <references_alt>5982908;10.1016/j.cma.2009.07.012</references_alt>
   <references_alt>5784806;10.1016/j.jcp.2010.04.049</references_alt>
   <references_alt>5510606;10.1002/gamm.201490037</references_alt>
@@ -189,10 +189,10 @@
   <references_alt>6669495;10.1002/nme.4711</references_alt>
   <references_alt>6449261;10.1137/140980375;1501.06852</references_alt>
   <references_alt>7055073;10.1016/j.cma.2015.07.009</references_alt>
-  <references_alt>6910452;10.1016/j.cam.2017.11.035;1712.08872</references_alt>
   <references_alt>6265830;10.1016/j.jnnfm.2011.06.006</references_alt>
-  <references_alt>6475762;10.1016/j.cam.2013.12.046</references_alt>
+  <references_alt>6910452;10.1016/j.cam.2017.11.035;1712.08872</references_alt>
   <references_alt>7073637;10.1016/j.jcp.2018.03.011;1710.02307</references_alt>
+  <references_alt>6475762;10.1016/j.cam.2013.12.046</references_alt>
   <references_alt>6908831;10.1145/2786977;1404.0447</references_alt>
   <references_alt>6443071;10.1007/978-3-319-17073-2</references_alt>
   <references_alt>6280859;10.1134/S1995423913030038</references_alt>
@@ -200,9 +200,9 @@
   <references_alt>5221096;10.1201/9781584888093</references_alt>
   <references_alt>6054722;10.1016/j.compfluid.2008.10.002</references_alt>
   <references_alt>7301661;10.1016/j.jcp.2019.04.023</references_alt>
+  <references_alt>7308040;10.1016/j.camwa.2021.01.003</references_alt>
   <references_alt>7271902;10.1137/18M1189348;1801.09809</references_alt>
   <references_alt>5827163;10.1007/978-3-642-13872-0_15</references_alt>
-  <references_alt>7308040;10.1016/j.camwa.2021.01.003</references_alt>
   <references_alt>7506624;10.1016/j.jcp.2020.109706;1909.01467</references_alt>
   <references_alt>5244394;10.1137/050622547</references_alt>
   <references_alt>5187738;10.1007/s00200-007-0036-y</references_alt>
@@ -229,17 +229,17 @@
   <references_alt>7405582;10.1051/m2an/2020074;1912.10157</references_alt>
   <references_alt>7437405;10.1137/21M1399658;2101.02116</references_alt>
   <references_alt>7908572;10.1145/3577197</references_alt>
-  <references_alt>6248322;10.1137/120883153</references_alt>
   <references_alt>7937083;10.1007/s00466-024-02460-w;2303.06742</references_alt>
-  <references_alt>5777718;10.1016/j.parco.2010.01.003</references_alt>
+  <references_alt>6248322;10.1137/120883153</references_alt>
   <references_alt>7625416;10.1016/j.jcp.2022.111747;2111.12255</references_alt>
+  <references_alt>5777718;10.1016/j.parco.2010.01.003</references_alt>
   <references_alt>7206170;10.1016/j.cma.2020.113071;1904.10257</references_alt>
   <references_alt>7771268;10.1016/j.jcp.2023.112351;2302.09161</references_alt>
   <references_alt>6669494;10.1002/nme.4727</references_alt>
-  <references_alt>5909607;10.1016/j.compfluid.2010.09.033</references_alt>
   <references_alt>7256640;10.1016/j.camwa.2019.08.019;1812.07167</references_alt>
-  <references_alt>7188252;10.1016/j.cma.2018.04.047</references_alt>
+  <references_alt>5909607;10.1016/j.compfluid.2010.09.033</references_alt>
   <references_alt>7031748;10.1002/nla.2210</references_alt>
+  <references_alt>7188252;10.1016/j.cma.2018.04.047</references_alt>
   <references_alt>7235951;10.1016/j.camwa.2019.09.012</references_alt>
   <references_alt>6915848;10.1016/j.enganabound.2017.07.006</references_alt>
   <references_alt>7427370;10.1016/j.cma.2021.114111;2101.11649</references_alt>
@@ -250,6 +250,117 @@
   <references_alt>6666873;10.1016/j.jcp.2016.06.039</references_alt>
   <references_alt>5538352;10.1007/978-3-540-71992-2_17</references_alt>
   <references_alt>2234457</references_alt>
+  <references_year_alt>2003</references_year_alt>
+  <references_year_alt>2012</references_year_alt>
+  <references_year_alt>2009</references_year_alt>
+  <references_year_alt>2006</references_year_alt>
+  <references_year_alt>2022</references_year_alt>
+  <references_year_alt>2018</references_year_alt>
+  <references_year_alt>2006</references_year_alt>
+  <references_year_alt>2024</references_year_alt>
+  <references_year_alt>2008</references_year_alt>
+  <references_year_alt>2007</references_year_alt>
+  <references_year_alt>2002</references_year_alt>
+  <references_year_alt>2006</references_year_alt>
+  <references_year_alt>2015</references_year_alt>
+  <references_year_alt>2021</references_year_alt>
+  <references_year_alt>2005</references_year_alt>
+  <references_year_alt>2010</references_year_alt>
+  <references_year_alt>2009</references_year_alt>
+  <references_year_alt>2011</references_year_alt>
+  <references_year_alt>2004</references_year_alt>
+  <references_year_alt>2007</references_year_alt>
+  <references_year_alt>2008</references_year_alt>
+  <references_year_alt>2007</references_year_alt>
+  <references_year_alt>2017</references_year_alt>
+  <references_year_alt>2010</references_year_alt>
+  <references_year_alt>2019</references_year_alt>
+  <references_year_alt>2010</references_year_alt>
+  <references_year_alt>2019</references_year_alt>
+  <references_year_alt>2023</references_year_alt>
+  <references_year_alt>2007</references_year_alt>
+  <references_year_alt>2014</references_year_alt>
+  <references_year_alt>2009</references_year_alt>
+  <references_year_alt>2011</references_year_alt>
+  <references_year_alt>2007</references_year_alt>
+  <references_year_alt>2015</references_year_alt>
+  <references_year_alt>2016</references_year_alt>
+  <references_year_alt>2024</references_year_alt>
+  <references_year_alt>2019</references_year_alt>
+  <references_year_alt>2019</references_year_alt>
+  <references_year_alt>2023</references_year_alt>
+  <references_year_alt>2010</references_year_alt>
+  <references_year_alt>2008</references_year_alt>
+  <references_year_alt>2016</references_year_alt>
+  <references_year_alt>2023</references_year_alt>
+  <references_year_alt>2010</references_year_alt>
+  <references_year_alt>2010</references_year_alt>
+  <references_year_alt>2006</references_year_alt>
+  <references_year_alt>2019</references_year_alt>
+  <references_year_alt>2014</references_year_alt>
+  <references_year_alt>2015</references_year_alt>
+  <references_year_alt>2015</references_year_alt>
+  <references_year_alt>2011</references_year_alt>
+  <references_year_alt>2018</references_year_alt>
+  <references_year_alt>2018</references_year_alt>
+  <references_year_alt>2014</references_year_alt>
+  <references_year_alt>2017</references_year_alt>
+  <references_year_alt>2015</references_year_alt>
+  <references_year_alt>2013</references_year_alt>
+  <references_year_alt>2012</references_year_alt>
+  <references_year_alt>2008</references_year_alt>
+  <references_year_alt>2009</references_year_alt>
+  <references_year_alt>2019</references_year_alt>
+  <references_year_alt>2021</references_year_alt>
+  <references_year_alt>2020</references_year_alt>
+  <references_year_alt>2010</references_year_alt>
+  <references_year_alt>2020</references_year_alt>
+  <references_year_alt>2007</references_year_alt>
+  <references_year_alt>2007</references_year_alt>
+  <references_year_alt>2018</references_year_alt>
+  <references_year_alt>2014</references_year_alt>
+  <references_year_alt>2009</references_year_alt>
+  <references_year_alt>2007</references_year_alt>
+  <references_year_alt>2023</references_year_alt>
+  <references_year_alt>2011</references_year_alt>
+  <references_year_alt>2013</references_year_alt>
+  <references_year_alt>2008</references_year_alt>
+  <references_year_alt>2010</references_year_alt>
+  <references_year_alt>2023</references_year_alt>
+  <references_year_alt>2015</references_year_alt>
+  <references_year_alt>2009</references_year_alt>
+  <references_year_alt>2010</references_year_alt>
+  <references_year_alt>2020</references_year_alt>
+  <references_year_alt>2008</references_year_alt>
+  <references_year_alt>2022</references_year_alt>
+  <references_year_alt>2022</references_year_alt>
+  <references_year_alt>2016</references_year_alt>
+  <references_year_alt>2023</references_year_alt>
+  <references_year_alt>2011</references_year_alt>
+  <references_year_alt>2021</references_year_alt>
+  <references_year_alt>2021</references_year_alt>
+  <references_year_alt>2023</references_year_alt>
+  <references_year_alt>2024</references_year_alt>
+  <references_year_alt>2013</references_year_alt>
+  <references_year_alt>2023</references_year_alt>
+  <references_year_alt>2010</references_year_alt>
+  <references_year_alt>2020</references_year_alt>
+  <references_year_alt>2023</references_year_alt>
+  <references_year_alt>2014</references_year_alt>
+  <references_year_alt>2020</references_year_alt>
+  <references_year_alt>2011</references_year_alt>
+  <references_year_alt>2018</references_year_alt>
+  <references_year_alt>2018</references_year_alt>
+  <references_year_alt>2020</references_year_alt>
+  <references_year_alt>2017</references_year_alt>
+  <references_year_alt>2021</references_year_alt>
+  <references_year_alt>2024</references_year_alt>
+  <references_year_alt>2015</references_year_alt>
+  <references_year_alt>2024</references_year_alt>
+  <references_year_alt>2017</references_year_alt>
+  <references_year_alt>2016</references_year_alt>
+  <references_year_alt>2008</references_year_alt>
+  <references_year_alt>2005</references_year_alt>
   <related_software>
     <id>4013</id>
     <name>MUMPS</name>
@@ -259,24 +370,24 @@
     <name>PETSc</name>
   </related_software>
   <related_software>
-    <id>930</id>
-    <name>SuperLU</name>
-  </related_software>
-  <related_software>
     <id>4629</id>
     <name>SparseMatrix</name>
+  </related_software>
+  <related_software>
+    <id>930</id>
+    <name>SuperLU</name>
   </related_software>
   <related_software>
     <id>503</id>
     <name>LAPACK</name>
   </related_software>
   <related_software>
-    <id>426</id>
-    <name>hypre</name>
-  </related_software>
-  <related_software>
     <id>679</id>
     <name>PARDISO</name>
+  </related_software>
+  <related_software>
+    <id>426</id>
+    <name>hypre</name>
   </related_software>
   <related_software>
     <id>4028</id>
@@ -303,6 +414,10 @@
     <name>mctoolbox</name>
   </related_software>
   <related_software>
+    <id>23170</id>
+    <name>GitHub</name>
+  </related_software>
+  <related_software>
     <id>4218</id>
     <name>ARPACK</name>
   </related_software>
@@ -321,10 +436,6 @@
   <related_software>
     <id>3216</id>
     <name>BLAS</name>
-  </related_software>
-  <related_software>
-    <id>23170</id>
-    <name>GitHub</name>
   </related_software>
   <related_software>
     <id>3516</id>
