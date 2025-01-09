@@ -102,7 +102,6 @@ def add_references_to_software(api_uri, dict_res):
                     list_links = []
                     year = "Unknown"
 
-
                     if "year" in entry:
                         year = entry["year"]
 
@@ -112,7 +111,6 @@ def add_references_to_software(api_uri, dict_res):
                             list_links.append(alt_dic["identifier"])
                         elif alt_dic["type"] == "arxiv":
                             list_links.append(alt_dic["identifier"])
-
 
                     list_articles_ids_and_years.append(year)
 
@@ -134,8 +132,8 @@ def add_references_to_software(api_uri, dict_res):
 
 def save_xml_to_file(xml_content, file_path):
 
-    os.makedirs(os.path.dirname(file_path), exist_ok=True)
 
+    os.makedirs(os.path.dirname(file_path), exist_ok=True)
 
     with open(file_path, "w", encoding="utf-8") as file:
         file.write(xml_content)
@@ -168,16 +166,13 @@ def final_xml2(api_source, prefix, output_file_path=None):
         apply_zbmath_api_fixes(result, prefix)
         identifier = result["id"]
 
-
         if "references_alt" in result:
             result["references_alt"] = result["references_alt"]
         if "references_year_alt" in result:
             result["references_year_alt"] = result["references_year_alt"]
 
-
         xml_converter = Converter(wrap="root")
         xml_output = _illegal_xml_chars_RE.sub("", xml_converter.build(result, closed_tags_for=[[], '', [None], None]))
-
 
         if identifier not in dict_math_entities:
             dict_math_entities[identifier] = xml_output
@@ -193,13 +188,13 @@ def final_xml2(api_source, prefix, output_file_path=None):
     return [dict_math_entities, r.elapsed.total_seconds(), tags]
 
 if __name__ == "__main__":
+
+
     if "document" in sys.argv[1]:
         prefix = "oai:zbmath.org:"
     else:
         prefix = "oai:swmath.org:"
 
-
     output_file_path = os.path.join('../../test/data/software/plain_with_references.xml')
-
 
     result = final_xml2(sys.argv[1], prefix, output_file_path)
