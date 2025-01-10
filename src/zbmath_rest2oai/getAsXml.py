@@ -81,7 +81,8 @@ def add_references_to_software(api_uri, dict_res):
     list_articles_ids_and_years = []
 
     if "software" in api_uri:
-        if not api_uri.startswith("https://api.zbmath.org/v1/software/_all?start_after="):
+        if not (api_uri.
+                startswith("https://api.zbmath.org/v1/software/_all?start_after=")):
             soft_id = api_uri.split("/")[-1]
 
             def api_doc_endpoint(page):
@@ -156,7 +157,8 @@ def final_xml2(api_source, prefix, output_file_path=None):
             for ent in range(len(json["result"])):
                 soft_id = json["result"][ent]['id']
                 json["result"][ent] = add_references_to_software(
-                    "https://api.zbmath.org/v1/software/" + str(soft_id), json["result"][ent]
+                    "https://api.zbmath.org/v1/software/"
+                    + str(soft_id), json["result"][ent]
                 )
     for result in json["result"]:
         if isinstance(result, list):
@@ -170,7 +172,8 @@ def final_xml2(api_source, prefix, output_file_path=None):
             result["references_year_alt"] = result["references_year_alt"]
 
         xml_converter = Converter(wrap="root")
-        xml_output = _illegal_xml_chars_RE.sub("", xml_converter.build(result, closed_tags_for=[[], '', [None], None]))
+        xml_output = _illegal_xml_chars_RE.sub("",
+        xml_converter.build(result, closed_tags_for=[[], '', [None], None]))
 
         if identifier not in dict_math_entities:
             dict_math_entities[identifier] = xml_output
@@ -192,6 +195,7 @@ if __name__ == "__main__":
     else:
         prefix = "oai:swmath.org:"
 
-    output_file_path = os.path.join('../../test/data/software/plain_with_references.xml')
+    output_file_path = (os.path
+                        .join('../../test/data/software/plain_with_references.xml'))
 
     result = final_xml2(sys.argv[1], prefix, output_file_path)
