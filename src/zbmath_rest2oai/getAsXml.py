@@ -48,7 +48,7 @@ def apply_zbmath_api_fixes(result, prefix):
                                replace('0001-01-01T00:00:00Z', '0001-01-01T00:00:00'))
 
     if result.get('id'):
-        result['id'] = prefix + str(result['id'])
+        result['id'] = str(result['id']).replace(prefix, "")
     old_states = result.get('states')
     if old_states is None:
         return
@@ -87,7 +87,7 @@ def add_references_to_software(api_uri, dict_res):
 
             def api_doc_endpoint(page):
                 return requests.get(
-                    "https://api.zbmath.org/v1/document/_structured_search?page={}&results_per_page=100&software%20id={}".format(
+            "https://api.zbmath.org/v1/document/_structured_search?page={}&results_per_page=100&software%20id={}".format(
                         page, soft_id
                     )
                 )
@@ -135,7 +135,6 @@ def save_xml_to_file(xml_content, file_path):
     os.makedirs(os.path.dirname(file_path), exist_ok=True)
     with open(file_path, "w", encoding="utf-8") as file:
         file.write(xml_content)
-    print(f"XML content saved to {file_path}")
 
 
 def final_xml2(api_source, prefix, output_file_path=None):
