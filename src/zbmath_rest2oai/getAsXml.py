@@ -131,13 +131,11 @@ def add_references_to_software(api_uri, dict_res):
 
 
 def save_xml_to_file(xml_content, file_path):
-
-
     os.makedirs(os.path.dirname(file_path), exist_ok=True)
-
     with open(file_path, "w", encoding="utf-8") as file:
         file.write(xml_content)
     print(f"XML content saved to {file_path}")
+
 
 def final_xml2(api_source, prefix, output_file_path=None):
     headers = {'Accept': 'application/json'}
@@ -187,9 +185,8 @@ def final_xml2(api_source, prefix, output_file_path=None):
 
     return [dict_math_entities, r.elapsed.total_seconds(), tags]
 
+
 if __name__ == "__main__":
-
-
     if "document" in sys.argv[1]:
         prefix = "oai:zbmath.org:"
     else:
