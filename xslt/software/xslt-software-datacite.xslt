@@ -47,11 +47,12 @@
 
              </resource>
              </xsl:template>
-      <xsl:template match="id">
-        <identifier identifierType="swMATH">
-        <xsl:value-of select="."/>
-         </identifier>
-       </xsl:template>
+    <xsl:template match="id">
+    <identifier identifierType="swMATH">
+        <xsl:value-of select="substring-after(., 'oai:swmath.org:')"/>
+    </identifier>
+</xsl:template>
+
        <xsl:template match="zbmath_url">
     <alternateIdentifier alternateIdentifierType="URL">
         <xsl:value-of select="concat('https://swmath.org', substring-after(., 'zbmath.org'))"/>
