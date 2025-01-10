@@ -21,7 +21,7 @@
   <dependencies/>
   <description>zbMATH Open Web Interface contents unavailable due to conflicting licenses.</description>
   <homepage>http://crd-legacy.lbl.gov/~xiaoye/SuperLU/</homepage>
-  <id>oai:swmath.org:2</id>
+  <id>2</id>
   <keywords>orms</keywords>
   <license_terms/>
   <name>SuperLU-DIST</name>
@@ -58,8 +58,8 @@
   <references>7687320</references>
   <references>5187739</references>
   <references>6669500</references>
-  <references>5670978</references>
   <references>5969946</references>
+  <references>5670978</references>
   <references>6220134</references>
   <references>6537764</references>
   <references>6738142</references>
@@ -90,8 +90,8 @@
   <references>6054722</references>
   <references>7301661</references>
   <references>7308040</references>
-  <references>7271902</references>
   <references>5827163</references>
+  <references>7271902</references>
   <references>7506624</references>
   <references>5244394</references>
   <references>5187738</references>
@@ -118,21 +118,21 @@
   <references>7405582</references>
   <references>7437405</references>
   <references>7908572</references>
-  <references>7937083</references>
   <references>6248322</references>
+  <references>7937083</references>
   <references>7625416</references>
   <references>5777718</references>
   <references>7206170</references>
   <references>7771268</references>
   <references>6669494</references>
-  <references>7256640</references>
   <references>5909607</references>
-  <references>7031748</references>
+  <references>7256640</references>
   <references>7188252</references>
+  <references>7031748</references>
   <references>7235951</references>
   <references>6915848</references>
-  <references>7427370</references>
   <references>7860853</references>
+  <references>7427370</references>
   <references>6648376</references>
   <references>7917734</references>
   <references>6994473</references>
@@ -169,8 +169,8 @@
   <references_alt>7687320;10.1007/978-3-031-25820-6</references_alt>
   <references_alt>5187739;10.1007/s00200-007-0037-x</references_alt>
   <references_alt>6669500;10.1002/nme.4729</references_alt>
-  <references_alt>5670978</references_alt>
   <references_alt>5969946;10.1017/S0022112010005380</references_alt>
+  <references_alt>5670978</references_alt>
   <references_alt>6220134;10.1007/s00158-007-0105-7</references_alt>
   <references_alt>6537764;10.1002/nla.1978</references_alt>
   <references_alt>6738142;10.1145/2830569</references_alt>
@@ -201,8 +201,8 @@
   <references_alt>6054722;10.1016/j.compfluid.2008.10.002</references_alt>
   <references_alt>7301661;10.1016/j.jcp.2019.04.023</references_alt>
   <references_alt>7308040;10.1016/j.camwa.2021.01.003</references_alt>
-  <references_alt>7271902;10.1137/18M1189348;1801.09809</references_alt>
   <references_alt>5827163;10.1007/978-3-642-13872-0_15</references_alt>
+  <references_alt>7271902;10.1137/18M1189348;1801.09809</references_alt>
   <references_alt>7506624;10.1016/j.jcp.2020.109706;1909.01467</references_alt>
   <references_alt>5244394;10.1137/050622547</references_alt>
   <references_alt>5187738;10.1007/s00200-007-0036-y</references_alt>
@@ -229,21 +229,21 @@
   <references_alt>7405582;10.1051/m2an/2020074;1912.10157</references_alt>
   <references_alt>7437405;10.1137/21M1399658;2101.02116</references_alt>
   <references_alt>7908572;10.1145/3577197</references_alt>
-  <references_alt>7937083;10.1007/s00466-024-02460-w;2303.06742</references_alt>
   <references_alt>6248322;10.1137/120883153</references_alt>
+  <references_alt>7937083;10.1007/s00466-024-02460-w;2303.06742</references_alt>
   <references_alt>7625416;10.1016/j.jcp.2022.111747;2111.12255</references_alt>
   <references_alt>5777718;10.1016/j.parco.2010.01.003</references_alt>
   <references_alt>7206170;10.1016/j.cma.2020.113071;1904.10257</references_alt>
   <references_alt>7771268;10.1016/j.jcp.2023.112351;2302.09161</references_alt>
   <references_alt>6669494;10.1002/nme.4727</references_alt>
-  <references_alt>7256640;10.1016/j.camwa.2019.08.019;1812.07167</references_alt>
   <references_alt>5909607;10.1016/j.compfluid.2010.09.033</references_alt>
-  <references_alt>7031748;10.1002/nla.2210</references_alt>
+  <references_alt>7256640;10.1016/j.camwa.2019.08.019;1812.07167</references_alt>
   <references_alt>7188252;10.1016/j.cma.2018.04.047</references_alt>
+  <references_alt>7031748;10.1002/nla.2210</references_alt>
   <references_alt>7235951;10.1016/j.camwa.2019.09.012</references_alt>
   <references_alt>6915848;10.1016/j.enganabound.2017.07.006</references_alt>
-  <references_alt>7427370;10.1016/j.cma.2021.114111;2101.11649</references_alt>
   <references_alt>7860853;10.1137/23M155918X;2301.13351</references_alt>
+  <references_alt>7427370;10.1016/j.cma.2021.114111;2101.11649</references_alt>
   <references_alt>6648376;10.1007/s11831-014-9126-8</references_alt>
   <references_alt>7917734;10.1016/j.cma.2024.117256;2402.18414</references_alt>
   <references_alt>6994473;10.21136/panm.2016.18</references_alt>
@@ -280,8 +280,8 @@
   <references_year_alt>2023</references_year_alt>
   <references_year_alt>2007</references_year_alt>
   <references_year_alt>2014</references_year_alt>
-  <references_year_alt>2009</references_year_alt>
   <references_year_alt>2011</references_year_alt>
+  <references_year_alt>2009</references_year_alt>
   <references_year_alt>2007</references_year_alt>
   <references_year_alt>2015</references_year_alt>
   <references_year_alt>2016</references_year_alt>
@@ -312,8 +312,8 @@
   <references_year_alt>2009</references_year_alt>
   <references_year_alt>2019</references_year_alt>
   <references_year_alt>2021</references_year_alt>
-  <references_year_alt>2020</references_year_alt>
   <references_year_alt>2010</references_year_alt>
+  <references_year_alt>2020</references_year_alt>
   <references_year_alt>2020</references_year_alt>
   <references_year_alt>2007</references_year_alt>
   <references_year_alt>2007</references_year_alt>
@@ -340,21 +340,21 @@
   <references_year_alt>2021</references_year_alt>
   <references_year_alt>2021</references_year_alt>
   <references_year_alt>2023</references_year_alt>
-  <references_year_alt>2024</references_year_alt>
   <references_year_alt>2013</references_year_alt>
+  <references_year_alt>2024</references_year_alt>
   <references_year_alt>2023</references_year_alt>
   <references_year_alt>2010</references_year_alt>
   <references_year_alt>2020</references_year_alt>
   <references_year_alt>2023</references_year_alt>
   <references_year_alt>2014</references_year_alt>
-  <references_year_alt>2020</references_year_alt>
   <references_year_alt>2011</references_year_alt>
+  <references_year_alt>2020</references_year_alt>
   <references_year_alt>2018</references_year_alt>
   <references_year_alt>2018</references_year_alt>
   <references_year_alt>2020</references_year_alt>
   <references_year_alt>2017</references_year_alt>
-  <references_year_alt>2021</references_year_alt>
   <references_year_alt>2024</references_year_alt>
+  <references_year_alt>2021</references_year_alt>
   <references_year_alt>2015</references_year_alt>
   <references_year_alt>2024</references_year_alt>
   <references_year_alt>2017</references_year_alt>
