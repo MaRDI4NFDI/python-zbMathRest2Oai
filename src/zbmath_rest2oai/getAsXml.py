@@ -8,31 +8,20 @@ from dict2xml import Converter
 # from https://stackoverflow.com/a/22273639
 
 _illegal_unichrs = [(0x00, 0x08), (0x0B, 0x0C), (0x0E, 0x1F),
-
                     (0x7F, 0x84), (0x86, 0x9F),
-
                     (0xFDD0, 0xFDDF), (0xFFFE, 0xFFFF)]
 
 if sys.maxunicode >= 0x10000:  # not narrow build
-
     _illegal_unichrs.extend([(0x1FFFE, 0x1FFFF), (0x2FFFE, 0x2FFFF),
-
                              (0x3FFFE, 0x3FFFF), (0x4FFFE, 0x4FFFF),
-
                              (0x5FFFE, 0x5FFFF), (0x6FFFE, 0x6FFFF),
-
                              (0x7FFFE, 0x7FFFF), (0x8FFFE, 0x8FFFF),
-
                              (0x9FFFE, 0x9FFFF), (0xAFFFE, 0xAFFFF),
-
                              (0xBFFFE, 0xBFFFF), (0xCFFFE, 0xCFFFF),
-
                              (0xDFFFE, 0xDFFFF), (0xEFFFE, 0xEFFFF),
-
                              (0xFFFFE, 0xFFFFF), (0x10FFFE, 0x10FFFF)])
 
 _illegal_ranges = ["%s-%s" % (chr(low), chr(high))
-
                    for (low, high) in _illegal_unichrs]
 
 _illegal_xml_chars_RE = re.compile(u'[%s]' % u''.join(_illegal_ranges))
@@ -48,7 +37,9 @@ def apply_zbmath_api_fixes(result, prefix):
                                replace('0001-01-01T00:00:00Z', '0001-01-01T00:00:00'))
 
     if result.get('id'):
-        result['id'] = prefix + str(result['id'])
+        # Remove the prefix from the ID
+        result['id'] = str(result['id']).replace(prefix, "")
+
     old_states = result.get('states')
     if old_states is None:
         return
@@ -74,7 +65,6 @@ def extract_tags(result):
     return tags
 
 
-
 def add_references_to_software(api_uri, dict_res):
     list_articles_ids_to_soft = []
     list_articles_ids_and_alter_ids_to_soft = []
@@ -87,7 +77,7 @@ def add_references_to_software(api_uri, dict_res):
 
             def api_doc_endpoint(page):
                 return requests.get(
-            "https://api.zbmath.org/v1/document/_structured_search?page={}&results_per_page=100&software%20id={}".format(
+                    "https://api.zbmath.org/v1/document/_structured_search?page={}&results_per_page=100&software%20id={}".format(
                         page, soft_id
                     )
                 )
@@ -172,7 +162,7 @@ def final_xml2(api_source, prefix, output_file_path=None):
 
         xml_converter = Converter(wrap="root")
         xml_output = _illegal_xml_chars_RE.sub("",
-        xml_converter.build(result, closed_tags_for=[[], '', [None], None]))
+                                               xml_converter.build(result, closed_tags_for=[[], '', [None], None]))
 
         if identifier not in dict_math_entities:
             dict_math_entities[identifier] = xml_output
