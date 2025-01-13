@@ -48,7 +48,7 @@ def apply_zbmath_api_fixes(result, prefix):
                                replace('0001-01-01T00:00:00Z', '0001-01-01T00:00:00'))
 
     if result.get('id'):
-        result['id'] = str(result['id']).replace(prefix, "")
+        result['id'] = prefix + str(result['id'])
     old_states = result.get('states')
     if old_states is None:
         return
@@ -195,6 +195,6 @@ if __name__ == "__main__":
         prefix = "oai:swmath.org:"
 
     output_file_path = (os.path
-                        .join('../../test/data/software/plain_with_references.xml'))
+                        .join('../../test/data/software/plain_with_references_year.xml'))
 
     result = final_xml2(sys.argv[1], prefix, output_file_path)
