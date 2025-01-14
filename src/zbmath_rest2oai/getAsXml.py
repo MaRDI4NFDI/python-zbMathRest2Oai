@@ -103,7 +103,7 @@ def add_references_to_software(api_uri, dict_res):
                     list_ids_and_alter.append(";".join([str(entry["id"])]+list_links))
 
                     if "datestamp" in entry:
-                        year = entry["datestamp"][:4]  # Extract the first 4 characters (year)
+                        year = entry["datestamp"][:4]
                         list_references_year_alt.append(year)
 
                 list_articles_ids_to_soft.extend(list_ids)
