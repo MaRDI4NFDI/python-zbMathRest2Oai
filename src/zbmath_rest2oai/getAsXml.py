@@ -119,7 +119,7 @@ def add_references_to_software(api_uri, dict_res):
             dict_res = [dict_res]
 
     return dict_res
-def final_xml2(api_source, prefix):
+def final_xml2(api_source, prefix_final_xml2):
     headers = {'Accept': 'application/json'}
     r = requests.get(api_source, headers=headers, timeout=(10, 60))
     if r.status_code == 404:
@@ -141,14 +141,14 @@ def final_xml2(api_source, prefix):
     for result in json["result"]:
         if isinstance(result, list):
             result = result[0]
-            apply_zbmath_api_fixes(result, prefix)
+            apply_zbmath_api_fixes(result, prefix_final_xml2)
             identifier = result["id"]
             dict_math_entities[identifier] = _illegal_xml_chars_RE.sub("", Converter(wrap="root").build(
                 result,
                 closed_tags_for=[[], '', [None], None]))
             tags[identifier] = extract_tags(result)
         elif isinstance(result, dict):  
-            apply_zbmath_api_fixes(result, prefix)
+            apply_zbmath_api_fixes(result, prefix_final_xml2)
             identifier = result["id"]
             dict_math_entities[identifier] = _illegal_xml_chars_RE.sub("", Converter(wrap="root").build(
                 result,
@@ -159,7 +159,7 @@ def final_xml2(api_source, prefix):
 
 if __name__ == "__main__":
     if "document" in sys.argv[1]:
-        prefix="oai:zbmath.org:"
+        prefix_final_xml2="oai:zbmath.org:"
     else:
-        prefix="oai:swmath.org:"
-    print(final_xml2(sys.argv[1], prefix))
+        prefix_final_xml2="oai:swmath.org:"
+    print(final_xml2(sys.argv[1], prefix_final_xml2))
