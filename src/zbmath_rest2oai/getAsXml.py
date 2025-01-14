@@ -41,13 +41,13 @@ class EntryNotFoundException(Exception):
     pass
 
 
-def apply_zbmath_api_fixes(result, prefix):
+def apply_zbmath_api_fixes(result, prefix_get_as_xml):
     if result.get('datestamp'):
         result['datestamp'] = (result['datestamp'].
                                replace('0001-01-01T00:00:00Z', '0001-01-01T00:00:00'))
 
     if result.get('id'):
-        result['id'] = prefix + str(result['id'])
+        result['id'] = prefix_get_as_xml + str(result['id'])
     old_states = result.get('states')
     if old_states is None:
         return
