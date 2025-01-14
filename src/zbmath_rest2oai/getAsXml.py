@@ -77,6 +77,7 @@ def extract_tags(result):
 def add_references_to_software(api_uri, dict_res):
     list_articles_ids_to_soft = []
     list_articles_ids_and_alter_ids_to_soft = []
+    list_references_year_alt = []
     if "software" in api_uri:
         if api_uri.startswith("https://api.zbmath.org/v1/software/_all?start_after=")==False:
             soft_id=api_uri.split("/")[-1]
@@ -101,6 +102,10 @@ def add_references_to_software(api_uri, dict_res):
 
                     list_ids_and_alter.append(";".join([str(entry["id"])]+list_links))
 
+                    if "datestamp" in entry:
+                        year = entry["datestamp"][:4]  # Extract the first 4 characters (year)
+                        list_references_year_alt.append(year)
+
                 list_articles_ids_to_soft.extend(list_ids)
                 list_articles_ids_and_alter_ids_to_soft.extend(list_ids_and_alter)
 
@@ -110,6 +115,7 @@ def add_references_to_software(api_uri, dict_res):
             dict_res["references"] = list_articles_ids_to_soft
             # Wrap it in a list to make it iterable for your existing loop
             dict_res["references_alt"] = list_articles_ids_and_alter_ids_to_soft
+            dict_res["references_year_alt"] = list_references_year_alt
             dict_res = [dict_res]
 
     return dict_res
