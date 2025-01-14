@@ -159,7 +159,7 @@ def final_xml2(api_source, prefix_final_xml2):
 
 if __name__ == "__main__":
     if "document" in sys.argv[1]:
-        prefix_final_xml2="oai:zbmath.org:"
+        prefix_final_xml2 = "oai:zbmath.org:"
     else:
-        prefix_final_xml2="oai:swmath.org:"
+        prefix_final_xml2 = "oai:swmath.org:"
     print(final_xml2(sys.argv[1], prefix_final_xml2))
