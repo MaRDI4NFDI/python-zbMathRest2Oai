@@ -41,13 +41,13 @@ class EntryNotFoundException(Exception):
     pass
 
 
-def apply_zbmath_api_fixes(result, prefix):
+def apply_zbmath_api_fixes(result, prefix_get_as_xml):
     if result.get('datestamp'):
         result['datestamp'] = (result['datestamp'].
                                replace('0001-01-01T00:00:00Z', '0001-01-01T00:00:00'))
 
     if result.get('id'):
-        result['id'] = prefix + str(result['id'])
+        result['id'] = prefix_get_as_xml + str(result['id'])
     old_states = result.get('states')
     if old_states is None:
         return
@@ -77,6 +77,7 @@ def extract_tags(result):
 def add_references_to_software(api_uri, dict_res):
     list_articles_ids_to_soft = []
     list_articles_ids_and_alter_ids_to_soft = []
+    list_references_year_alt = []
     if "software" in api_uri:
         if api_uri.startswith("https://api.zbmath.org/v1/software/_all?start_after=")==False:
             soft_id=api_uri.split("/")[-1]
@@ -101,6 +102,10 @@ def add_references_to_software(api_uri, dict_res):
 
                     list_ids_and_alter.append(";".join([str(entry["id"])]+list_links))
 
+                    if "datestamp" in entry:
+                        year = entry["datestamp"][:4]
+                        list_references_year_alt.append(year)
+
                 list_articles_ids_to_soft.extend(list_ids)
                 list_articles_ids_and_alter_ids_to_soft.extend(list_ids_and_alter)
 
@@ -110,10 +115,11 @@ def add_references_to_software(api_uri, dict_res):
             dict_res["references"] = list_articles_ids_to_soft
             # Wrap it in a list to make it iterable for your existing loop
             dict_res["references_alt"] = list_articles_ids_and_alter_ids_to_soft
+            dict_res["references_year_alt"] = list_references_year_alt
             dict_res = [dict_res]
 
     return dict_res
-def final_xml2(api_source, prefix):
+def final_xml2(api_source, prefix_final_xml2):
     headers = {'Accept': 'application/json'}
     r = requests.get(api_source, headers=headers, timeout=(10, 60))
     if r.status_code == 404:
@@ -135,14 +141,14 @@ def final_xml2(api_source, prefix):
     for result in json["result"]:
         if isinstance(result, list):
             result = result[0]
-            apply_zbmath_api_fixes(result, prefix)
+            apply_zbmath_api_fixes(result, prefix_final_xml2)
             identifier = result["id"]
             dict_math_entities[identifier] = _illegal_xml_chars_RE.sub("", Converter(wrap="root").build(
                 result,
                 closed_tags_for=[[], '', [None], None]))
             tags[identifier] = extract_tags(result)
         elif isinstance(result, dict):  
-            apply_zbmath_api_fixes(result, prefix)
+            apply_zbmath_api_fixes(result, prefix_final_xml2)
             identifier = result["id"]
             dict_math_entities[identifier] = _illegal_xml_chars_RE.sub("", Converter(wrap="root").build(
                 result,
@@ -153,7 +159,7 @@ def final_xml2(api_source, prefix):
 
 if __name__ == "__main__":
     if "document" in sys.argv[1]:
-        prefix="oai:zbmath.org:"
+        prefix_final_xml2_main = "oai:zbmath.org:"
     else:
-        prefix="oai:swmath.org:"
-    print(final_xml2(sys.argv[1], prefix))
+        prefix_final_xml2_main = "oai:swmath.org:"
+    print(final_xml2(sys.argv[1], prefix_final_xml2_main))
