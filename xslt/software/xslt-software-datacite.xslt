@@ -24,7 +24,17 @@
                     <xsl:apply-templates select="root/operating_systems"/>
                     <xsl:apply-templates select="root/programming_languages"/>
                 </descriptions>
-      <xsl:apply-templates select="root/standard_articles/year"/>
+
+            <publicationYear>
+                <xsl:choose>
+                <xsl:when test="root/standard_articles/year[normalize-space(.) != '' and . != 'None']">
+                    <xsl:apply-templates select="root/standard_articles/year"/>
+                </xsl:when>
+                <xsl:otherwise>
+                    <xsl:apply-templates select="root/references_year_alt[1]"/>
+                </xsl:otherwise>
+               </xsl:choose>
+            </publicationYear>
             <subjects>
                 <xsl:apply-templates select="root/classification"/>
                 <xsl:apply-templates select="root/keywords"/>
@@ -100,11 +110,13 @@
         </description>
     </xsl:if>
 </xsl:template>
-  <xsl:template match="year">
-            <!-- Transformation of publicationYear -->
-        <publicationYear>
+         <xsl:template match="year">
          <xsl:value-of select="."/>
-        </publicationYear>
+        </xsl:template>
+       <xsl:template match="root/references_year_alt">
+        <xsl:if test="position() = 1">
+        <xsl:value-of select="//references_year_alt[not(. > //references_year_alt)]" />
+       </xsl:if>
         </xsl:template>
 
         <xsl:template match="classification">
