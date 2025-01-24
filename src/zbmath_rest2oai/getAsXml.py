@@ -72,6 +72,7 @@ def extract_tags(result):
         tags.append('JFM')
     return tags
 
+
 def extract_year_from_source(source):
 
     if isinstance(source, dict):
@@ -84,6 +85,7 @@ def extract_year_from_source(source):
                 if "year" in book:
                     return book["year"]
     return None
+
 
 def add_references_to_software(api_uri, dict_res):
     list_articles_ids_to_soft = []
