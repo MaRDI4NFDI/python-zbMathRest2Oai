@@ -121,7 +121,8 @@ def add_references_to_software(api_uri, dict_res):
                         list_references_year_alt.append(year)
 
                 if "source" in entry:
-                    source_year = extract_year_from_source(entry["source"])
+                    expected_year = extract_year_from_source(entry["source"])
+                    source_year = expected_year
 
                 list_articles_ids_to_soft.extend(list_ids)
                 list_articles_ids_and_alter_ids_to_soft.extend(list_ids_and_alter)
