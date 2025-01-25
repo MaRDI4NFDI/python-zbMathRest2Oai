@@ -26,14 +26,17 @@
                 </descriptions>
 
             <publicationYear>
-                <xsl:choose>
-                <xsl:when test="root/standard_articles/year[normalize-space(.) != '' and . != 'None']">
-                    <xsl:apply-templates select="root/standard_articles/year"/>
-                </xsl:when>
-                <xsl:otherwise>
-                    <xsl:apply-templates select="root/references_year_alt[1]"/>
-                </xsl:otherwise>
-               </xsl:choose>
+               <xsl:choose>
+        <xsl:when test="root/standard_articles/year[normalize-space(.) != '' and . != 'None']">
+            <xsl:value-of select="root/standard_articles/year[not(. > ../../standard_articles/year)]"/>
+        </xsl:when>
+        <xsl:when test="root/references_year_alt[1] and not(starts-with(root/references_year_alt[1], '0'))">
+            <xsl:apply-templates select="root/references_year_alt[1]"/>
+        </xsl:when>
+        <xsl:otherwise>
+            <xsl:apply-templates select="root/source_year"/>
+        </xsl:otherwise>
+    </xsl:choose>
             </publicationYear>
             <subjects>
                 <xsl:apply-templates select="root/classification"/>
@@ -44,9 +47,18 @@
                 <formats>
                 <format>application/xml</format>
                 </formats>
-             <publisher>
-                 <xsl:call-template name="sourceCodeOrHomepage"/>
-             </publisher>
+
+            <publisher>
+              <xsl:choose>
+              <xsl:when test="root/source_code[normalize-space(.) != '' and . != 'none' and . != 'null']">
+              <xsl:value-of select="root/source_code"/>
+              </xsl:when>
+             <xsl:otherwise>
+              <xsl:value-of select="root/homepage"/>
+             </xsl:otherwise>
+             </xsl:choose>
+            </publisher>
+
                   <xsl:apply-templates select="root/license_terms"/>
 
                    <relatedIdentifiers>
@@ -119,6 +131,12 @@
        </xsl:if>
         </xsl:template>
 
+     <xsl:template match="source_year">
+          <xsl:if test="normalize-space(.) != '' and . != 'None'">
+          <xsl:value-of select="."/>
+         </xsl:if>
+    </xsl:template>
+
         <xsl:template match="classification">
         <subject subjectScheme="msc2020" >
             <xsl:value-of select="."/>
@@ -143,17 +161,19 @@
         </relatedIdentifier>
         </xsl:template>
 
-     <xsl:template name="sourceCodeOrHomepage">
+    <!-- Template to get the source code -->
+<xsl:template name="sourceCode">
     <xsl:variable name="sourceCode" select="normalize-space(root/source_code)"/>
-    <xsl:choose>
-      <xsl:when test="$sourceCode != '' and $sourceCode != 'none' and $sourceCode != 'null'">
+    <xsl:if test="$sourceCode != '' and $sourceCode != 'none' and $sourceCode != 'null'">
         <xsl:value-of select="$sourceCode"/>
-      </xsl:when>
-      <xsl:otherwise>
-        <xsl:value-of select="root/homepage"/>
-      </xsl:otherwise>
-    </xsl:choose>
-  </xsl:template>
+    </xsl:if>
+</xsl:template>
+
+<!-- Template to get the homepage -->
+<xsl:template name="homepage">
+    <xsl:value-of select="root/homepage"/>
+</xsl:template>
+
 
 
      <xsl:template match="references">
