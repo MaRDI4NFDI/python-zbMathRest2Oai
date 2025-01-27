@@ -86,7 +86,22 @@ def extract_year_from_source(source):
                     return book["year"]
     return None
 
+def get_datestamp_year(entry):
+    """
+    Returns the year (string) extracted from entry's 'datestamp'
+    if it exists, otherwise returns None.
+    """
+    datestamp = entry.get("datestamp")
+    return datestamp[:4] if datestamp else None
 
+
+def get_source_year(entry):
+    if "source" in entry:
+        extracted_value = extract_year_from_source(entry["source"])
+        if extracted_value is not None:
+            return extracted_value
+    else:
+        return None
 def add_references_to_software(api_uri, dict_res):
     list_articles_ids_to_soft = []
     list_articles_ids_and_alter_ids_to_soft = []
@@ -116,14 +131,11 @@ def add_references_to_software(api_uri, dict_res):
 
                     list_ids_and_alter.append(";".join([str(entry["id"])]+list_links))
 
-                    if "datestamp" in entry:
-                        year = entry["datestamp"][:4]
-                        list_references_year_alt.append(year)
 
-                    if "source" in entry:
-                        extracted_value = extract_year_from_source(entry["source"])
-                        if extracted_value is not None:
-                            source_year = extracted_value
+                    list_references_year_alt.append(get_datestamp_year(entry))
+
+
+                    source_year = get_source_year(entry)
 
                 list_articles_ids_to_soft.extend(list_ids)
                 list_articles_ids_and_alter_ids_to_soft.extend(list_ids_and_alter)
