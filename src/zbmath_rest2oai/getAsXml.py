@@ -73,11 +73,40 @@ def extract_tags(result):
     return tags
 
 
+def extract_year_from_source(source):
 
+    if isinstance(source, dict):
+        if "series" in source and isinstance(source["series"], list):
+            for series in source["series"]:
+                if "year" in series:
+                    return series["year"]
+        elif "book" in source and isinstance(source["book"], list):
+            for book in source["book"]:
+                if "year" in book:
+                    return book["year"]
+    return None
+
+def get_datestamp_year(entry):
+    """
+    Returns the year (string) extracted from entry's 'datestamp'
+    if it exists, otherwise returns None.
+    """
+    datestamp = entry.get("datestamp")
+    return datestamp[:4] if datestamp else None
+
+
+def get_source_year(entry):
+    if "source" in entry:
+        extracted_value = extract_year_from_source(entry["source"])
+        if extracted_value is not None:
+            return extracted_value
+    else:
+        return None
 def add_references_to_software(api_uri, dict_res):
     list_articles_ids_to_soft = []
     list_articles_ids_and_alter_ids_to_soft = []
     list_references_year_alt = []
+    source_year = None
     if "software" in api_uri:
         if api_uri.startswith("https://api.zbmath.org/v1/software/_all?start_after=")==False:
             soft_id=api_uri.split("/")[-1]
@@ -102,9 +131,11 @@ def add_references_to_software(api_uri, dict_res):
 
                     list_ids_and_alter.append(";".join([str(entry["id"])]+list_links))
 
-                    if "datestamp" in entry:
-                        year = entry["datestamp"][:4]
-                        list_references_year_alt.append(year)
+
+                    list_references_year_alt.append(get_datestamp_year(entry))
+
+
+                    source_year = get_source_year(entry)
 
                 list_articles_ids_to_soft.extend(list_ids)
                 list_articles_ids_and_alter_ids_to_soft.extend(list_ids_and_alter)
@@ -113,9 +144,10 @@ def add_references_to_software(api_uri, dict_res):
 
         if isinstance(dict_res, dict):
             dict_res["references"] = list_articles_ids_to_soft
-            # Wrap it in a list to make it iterable for your existing loop
             dict_res["references_alt"] = list_articles_ids_and_alter_ids_to_soft
             dict_res["references_year_alt"] = list_references_year_alt
+            if source_year is not None:  # Add source_year only if it was found
+                dict_res["source_year"] = source_year
             dict_res = [dict_res]
 
     return dict_res
