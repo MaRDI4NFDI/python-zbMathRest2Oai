@@ -38,11 +38,14 @@
                  <xsl:apply-templates select="root/references"/>
              </datacite:relatedIdentifiers>
            </xsl:if>
-           <datacite:alternateIdentifiers>
-           <datacite:alternateIdentifier alternateIdentifierType="URL">
-            <xsl:apply-templates  select="root/homepage"/>
+         <xsl:if test="normalize-space(root/homepage) != '' and root/homepage != 'None' and root/homepage != 'none'">
+    <datacite:alternateIdentifiers>
+        <datacite:alternateIdentifier alternateIdentifierType="URL">
+            <xsl:value-of select="root/homepage"/>
         </datacite:alternateIdentifier>
-           </datacite:alternateIdentifiers>
+    </datacite:alternateIdentifiers>
+       </xsl:if>
+
 
              <xsl:apply-templates select="root/license_terms"/>
 
