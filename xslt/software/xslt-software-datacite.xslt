@@ -74,6 +74,7 @@
         <xsl:value-of select="."/>
          </identifier>
        </xsl:template>
+
        <xsl:template match="zbmath_url">
     <alternateIdentifier alternateIdentifierType="URL">
         <xsl:value-of select="concat('https://swmath.org', substring-after(., 'zbmath.org'))"/>
@@ -99,14 +100,17 @@
     <xsl:value-of select="."/>
     </title>
     </xsl:template>
+
  <xsl:template match="description">
-            <!-- Transformation of  description text -->
+           <xsl:if test="normalize-space(.) != '' and . != 'None'and . != 'none'">
         <description xml:lang="en" descriptionType="Abstract">
          <xsl:value-of select="."/>
         </description>
+           </xsl:if>
         </xsl:template>
+
       <xsl:template match="operating_systems">
-    <xsl:if test=". != ''">
+    <xsl:if test="normalize-space(.) != '' and . != 'None'and . != 'none'">
         <description xml:lang="en" descriptionType="TechnicalInfo">
             <xsl:text>operating systems: </xsl:text>
             <xsl:value-of select="."/>
@@ -115,7 +119,7 @@
 </xsl:template>
 
 <xsl:template match="programming_languages">
-    <xsl:if test=". != ''">
+    <xsl:if test="normalize-space(.) != '' and . != 'None'and . != 'none'">
         <description xml:lang="en" descriptionType="TechnicalInfo">
         <xsl:text>programming languages : </xsl:text>
             <xsl:value-of select="."/>
@@ -138,23 +142,29 @@
     </xsl:template>
 
         <xsl:template match="classification">
+            <xsl:if test="normalize-space(.) != '' and . != 'None' and . != 'none'">
         <subject subjectScheme="msc2020" >
             <xsl:value-of select="."/>
         </subject>
+            </xsl:if>
         </xsl:template>
+
         <xsl:template match="keywords">
-            <!-- Transformation of  keywords -->
+           <xsl:if test="normalize-space(.) != '' and . != 'None'and . != 'none'">
         <subject subjectScheme="keyword">
             <xsl:value-of select="."/>
         </subject>
+           </xsl:if>
         </xsl:template>
+
     <xsl:template match="license_terms">
-    <xsl:if test=". != ''">
+    <xsl:if test="normalize-space(.) != '' and . != 'None'and . != 'none'">
         <rights>
             <xsl:value-of select="."/>
         </rights>
     </xsl:if>
 </xsl:template>
+
      <xsl:template match="homepage">
         <relatedIdentifier  relatedIdentifierType="URL" relationType="IsSourceOf">
             <xsl:value-of select="."/>
