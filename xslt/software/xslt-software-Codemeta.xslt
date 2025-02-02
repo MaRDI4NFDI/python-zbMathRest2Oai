@@ -45,6 +45,7 @@
 
              <xsl:apply-templates select="root/references"/>
 
+
             <xsl:apply-templates select="root/id"/>
 
         </entry>
@@ -176,10 +177,10 @@
         <codemeta:name>
             <xsl:value-of select="name"/>
         </codemeta:name>
-        <codemeta:identifier>
+        <codemeta:id>
             <xsl:text>https://swmath.org/software/</xsl:text>
             <xsl:value-of select="id"/>
-        </codemeta:identifier>
+        </codemeta:id>
       </codemeta:supportingData>
   </xsl:if>
     </xsl:template>
@@ -189,10 +190,10 @@
         <codemeta:referencePublication>
             <!-- Check if 'id' exists and is not 'None' or empty -->
             <xsl:if test="normalize-space(id) != '' and id != 'None'">
-                <codemeta:identifier>
+                <codemeta:id>
                     <xsl:text>https://zbmath.org/</xsl:text>
                     <xsl:value-of select="id"/>
-                </codemeta:identifier>
+                </codemeta:id>
             </xsl:if>
 
             <!-- Check if 'year' exists and is not 'None' or empty -->
@@ -207,10 +208,12 @@
 
          <xsl:template match="references">
   <xsl:if test="normalize-space(.) != '' and . != 'None'">
-        <codemeta:citation>
+      <codemeta:citation>
+        <codemeta:id>
             <xsl:text>https://api.zbmath.org/v1/document/</xsl:text>
             <xsl:value-of select="."/>
-        </codemeta:citation>
+        </codemeta:id>
+      </codemeta:citation>
        </xsl:if>
     </xsl:template>
 
