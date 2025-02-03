@@ -25,39 +25,44 @@
                     <xsl:apply-templates select="root/programming_languages"/>
                 </descriptions>
 
-            <publicationYear>
-               <xsl:choose>
-        <xsl:when test="root/standard_articles/year[normalize-space(.) != '' and . != 'None']">
+          <publicationYear>
+    <xsl:choose>
+        <xsl:when test="normalize-space(root/standard_articles/year) != '' and root/standard_articles/year != 'None' and root/standard_articles/year != 'none' and not(starts-with(root/standard_articles/year, '0'))">
             <xsl:value-of select="root/standard_articles/year[not(. > ../../standard_articles/year)]"/>
         </xsl:when>
-        <xsl:when test="root/references_year_alt[1] and not(starts-with(root/references_year_alt[1], '0'))">
+        <xsl:when test="normalize-space(root/references_year_alt[1]) != '' and root/references_year_alt[1] != 'None' and root/references_year_alt[1] != 'none' and not(starts-with(root/references_year_alt[1], '0'))">
             <xsl:apply-templates select="root/references_year_alt[1]"/>
         </xsl:when>
-        <xsl:otherwise>
+        <xsl:when test="normalize-space(root/source_year) != '' and root/source_year != 'None' and root/source_year != 'none' and not(starts-with(root/source_year, '0'))">
             <xsl:apply-templates select="root/source_year"/>
-        </xsl:otherwise>
+        </xsl:when>
+        <xsl:otherwise>:null</xsl:otherwise>
     </xsl:choose>
-            </publicationYear>
+         </publicationYear>
+
             <subjects>
                 <xsl:apply-templates select="root/classification"/>
                 <xsl:apply-templates select="root/keywords"/>
             </subjects>
              <language>English</language>
-             <resourceType resourceTypeGeneral="Software"/>
+             <resourceType resourceTypeGeneral="Software">:none</resourceType>
+
                 <formats>
                 <format>application/xml</format>
                 </formats>
 
             <publisher>
-              <xsl:choose>
-              <xsl:when test="root/source_code[normalize-space(.) != '' and . != 'none' and . != 'null']">
-              <xsl:value-of select="root/source_code"/>
+               <xsl:choose>
+               <xsl:when test="normalize-space(root/source_code) != '' and root/source_code != 'none' and root/source_code != 'null'">
+               <xsl:value-of select="root/source_code"/>
+                </xsl:when>
+               <xsl:when test="normalize-space(root/homepage) != '' and root/homepage != 'none' and root/homepage != 'null'">
+               <xsl:value-of select="root/homepage"/>
               </xsl:when>
-             <xsl:otherwise>
-              <xsl:value-of select="root/homepage"/>
-             </xsl:otherwise>
-             </xsl:choose>
-            </publisher>
+              <xsl:otherwise>:null</xsl:otherwise>
+            </xsl:choose>
+         </publisher>
+
 
                   <xsl:apply-templates select="root/license_terms"/>
 
@@ -83,31 +88,50 @@
 
 
  <xsl:template match="authors">
-        <creator>
-            <creatorName nameType="Personal">
-                <xsl:value-of select="."/>
-            </creatorName>
-            <givenName>
-                <xsl:value-of select="substring-after(., ', ')"/>
-            </givenName>
-            <familyName>
-                <xsl:value-of select="substring-before(., ', ')"/>
-            </familyName>
-        </creator>
-    </xsl:template>
+    <creator>
+        <creatorName nameType="Personal">
+            <xsl:choose>
+                <xsl:when test="normalize-space(.) = '' or . = 'None' or . = 'none'">:unav</xsl:when>
+                <xsl:otherwise>
+                    <xsl:value-of select="."/>
+                </xsl:otherwise>
+            </xsl:choose>
+        </creatorName>
+        <givenName>
+            <xsl:choose>
+                <xsl:when test="normalize-space(.) = '' or . = 'None' or . = 'none'">:unav</xsl:when>
+                <xsl:otherwise>
+                    <xsl:value-of select="substring-after(., ', ')"/>
+                </xsl:otherwise>
+            </xsl:choose>
+        </givenName>
+        <familyName>
+            <xsl:choose>
+                <xsl:when test="normalize-space(.) = '' or . = 'None' or . = 'none'">:unav</xsl:when>
+                <xsl:otherwise>
+                    <xsl:value-of select="substring-before(., ', ')"/>
+                </xsl:otherwise>
+            </xsl:choose>
+        </familyName>
+    </creator>
+</xsl:template>
+
   <xsl:template match="name">
     <title>
-    <xsl:value-of select="."/>
+        <xsl:choose>
+            <xsl:when test="normalize-space(.) = '' or . = 'None' or . = 'none'">:unav</xsl:when>
+            <xsl:otherwise>
+                <xsl:value-of select="."/>
+            </xsl:otherwise>
+        </xsl:choose>
     </title>
-    </xsl:template>
+</xsl:template>
+
 
  <xsl:template match="description">
-           <xsl:if test="normalize-space(.) != '' and . != 'None'and . != 'none'">
-        <description xml:lang="en" descriptionType="Abstract">
-         <xsl:value-of select="."/>
-        </description>
-           </xsl:if>
-        </xsl:template>
+    <description xml:lang="en" descriptionType="Abstract">:unav</description>
+</xsl:template>
+
 
       <xsl:template match="operating_systems">
     <xsl:if test="normalize-space(.) != '' and . != 'None'and . != 'none'">

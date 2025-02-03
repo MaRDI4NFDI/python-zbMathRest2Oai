@@ -19,7 +19,7 @@
         <title>SuperLU-DIST</title>
     </titles>
     <descriptions>
-        <description xml:lang="en" descriptionType="Abstract">zbMATH Open Web Interface contents unavailable due to conflicting licenses.</description>
+        <description xml:lang="en" descriptionType="Abstract">:unav</description>
     </descriptions>
     <publicationYear>2003</publicationYear>
     <subjects>
@@ -42,7 +42,7 @@
         <subject subjectScheme="keyword">orms</subject>
     </subjects>
     <language>English</language>
-    <resourceType resourceTypeGeneral="Software"/>
+    <resourceType resourceTypeGeneral="Software">:none</resourceType>
     <formats>
         <format>application/xml</format>
     </formats>
