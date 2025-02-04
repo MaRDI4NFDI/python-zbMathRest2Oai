@@ -33,11 +33,11 @@ class PlainXmlTest(unittest.TestCase):
 
         transform = ET.XSLT(xslt)  # is it a reserved word
         newdom = transform(dom)
-        print(newdom)
+
         real_string = ET.tostring(newdom, pretty_print=True, encoding='utf8').decode()
         # test if result is parsable
         reference = ET.parse(r'test/data/articles/Test_Reference-Datacite.xml')
-        print(reference)
+
         expected_string = ET.tostring(reference, pretty_print=True, encoding='utf8').decode()
         diff = main.diff_texts(expected_string, real_string, {
             'ratio_mode': 'fast',  # is that for latency
