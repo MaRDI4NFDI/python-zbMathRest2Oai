@@ -1,0 +1,46 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="root">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element type="xs:byte" name="articles_count"/>
+        <xs:element type="xs:string" name="authors" maxOccurs="unbounded" minOccurs="0"/>
+        <xs:element type="xs:byte" name="classification" maxOccurs="unbounded" minOccurs="0"/>
+        <xs:element type="xs:string" name="dependencies"/>
+        <xs:element type="xs:string" name="description"/>
+        <xs:element type="xs:anyURI" name="homepage"/>
+        <xs:element type="xs:byte" name="id"/>
+        <xs:element type="xs:string" name="keywords"/>
+        <xs:element type="xs:string" name="license_terms"/>
+        <xs:element type="xs:string" name="name"/>
+        <xs:element type="xs:string" name="operating_systems"/>
+        <xs:element type="xs:short" name="orms_id"/>
+        <xs:element type="xs:string" name="programming_languages"/>
+        <xs:element type="xs:int" name="references" maxOccurs="unbounded" minOccurs="0"/>
+        <xs:element type="xs:string" name="references_alt" maxOccurs="unbounded" minOccurs="0"/>
+        <xs:element type="xs:short" name="references_year_alt" maxOccurs="unbounded" minOccurs="0"/>
+        <xs:element name="related_software" maxOccurs="unbounded" minOccurs="0">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element type="xs:short" name="id"/>
+              <xs:element type="xs:string" name="name"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element type="xs:string" name="source_code"/>
+        <xs:element type="xs:short" name="source_year"/>
+        <xs:element name="standard_articles">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element type="xs:string" name="authors"/>
+              <xs:element type="xs:int" name="id"/>
+              <xs:element type="xs:string" name="source"/>
+              <xs:element type="xs:string" name="title"/>
+              <xs:element type="xs:short" name="year"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element type="xs:string" name="zbmath_url"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
