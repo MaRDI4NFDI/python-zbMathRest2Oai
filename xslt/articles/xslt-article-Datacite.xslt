@@ -316,6 +316,11 @@ each reference has its own relatedItem node and all of its values goes under thi
                     <creator>
                          <creatorName nameType="Personal">
                 <xsl:choose>
+                     <xsl:when test="normalize-space(.) = '' or . = 'None' or . = 'none'">
+                        <xsl:text>:unav</xsl:text>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:choose>
                     <xsl:when test="contains(translate(substring-after(., '.'), '0123456789.', ''), '-')">
                         <xsl:value-of select="concat(
                             translate(substring(translate(substring-before(., '.'), '0123456789.', ''), 1, 1), 'abcdefghijklmnopqrstuvwxyz', 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'),
@@ -337,9 +342,16 @@ each reference has its own relatedItem node and all of its values goes under thi
                             substring(translate(substring-after(., '.'), '0123456789.', ''), 2)
                         )"/>
                     </xsl:otherwise>
+                            </xsl:choose>
+                    </xsl:otherwise>
                 </xsl:choose>
             </creatorName>
                         <givenName>
+                            <xsl:choose>
+                                 <xsl:when test="normalize-space(.) = '' or . = 'None' or . = 'none'">
+                                    <xsl:text>:unav</xsl:text>
+                                </xsl:when>
+                            <xsl:otherwise>
                             <xsl:choose>
                                 <xsl:when test="contains(translate(substring-after(., '.'), '0123456789.', ''), '-')">
                                     <xsl:value-of select="substring-before(
@@ -354,19 +366,31 @@ each reference has its own relatedItem node and all of its values goes under thi
                                         substring(translate(substring-after(., '.'), '0123456789.', ''), 2)
                                     )"/>
                                 </xsl:otherwise>
+                                </xsl:choose>
+                                </xsl:otherwise>
                             </xsl:choose>
                         </givenName>
                         <familyName>
+                              <xsl:choose>
+                               <xsl:when test="normalize-space(.) = '' or . = 'None' or . = 'none'">
+                                    <xsl:text>:unav</xsl:text>
+                                </xsl:when>
+                              <xsl:otherwise>
                             <xsl:value-of select="concat(
                                 translate(substring(translate(substring-before(., '.'), '0123456789.', ''), 1, 1), 'abcdefghijklmnopqrstuvwxyz', 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'),
                                 substring(translate(substring-before(., '.'), '0123456789.', ''), 2)
                             )"/>
+                              </xsl:otherwise>
+                            </xsl:choose>
                         </familyName>
                     </creator>
                 </xsl:for-each>
             </creators>
            <titles>
-            <xsl:choose>
+                 <xsl:choose>
+                <xsl:when test="normalize-space(text) = '' or text = 'None' or text = 'none'">
+                    <title>:unav</title>
+                </xsl:when>
                 <xsl:when test="contains(text, &quot;''&quot;)">
                     <!-- Extract text between quotes -->
                    <title>
@@ -404,7 +428,14 @@ each reference has its own relatedItem node and all of its values goes under thi
             </xsl:choose>
         </titles>
             <publicationYear>
-                <xsl:value-of select="zbmath/year"/>
+                <xsl:choose>
+                    <xsl:when test="normalize-space(zbmath/year) = '' or zbmath/year = 'None' or zbmath/year = 'none'">
+                        <xsl:text>:unav</xsl:text>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:value-of select="zbmath/year"/>
+                    </xsl:otherwise>
+                </xsl:choose>
             </publicationYear>
         </relatedItem>
     </xsl:template>
