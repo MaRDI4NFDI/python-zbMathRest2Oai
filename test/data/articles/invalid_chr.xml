@@ -6,7 +6,7 @@
       <aliases/>
       <checked>0</checked>
       <codes>jasinski.jakub</codes>
-      <name>Jasiński, Jakub</name>
+       <name>JasiÅ„ski, Jakub</name>
     </authors>
     <authors>
       <aliases/>
@@ -18,7 +18,7 @@
       <aliases/>
       <checked>1</checked>
       <codes>nguyen-van-the.lionel</codes>
-      <name>Thé, Lionel Nguyen Van</name>
+      <name>ThÃ©, Lionel Nguyen Van</name>
     </authors>
     <authors>
       <aliases/>
@@ -61,7 +61,7 @@
   <links>
     <identifier>1310.6466</identifier>
     <type>arxiv</type>
-    <url/>
+    <url>https://arxiv.org/abs/1310.6466</url>
   </links>
   <links>
     <identifier/>
@@ -122,7 +122,7 @@
   <references>
     <doi/>
     <position>3</position>
-    <text>∗as the disjoint union of n copies of T∗, for which each copy of T∗ corresponds to a unary predicate, and which is equipped with a convex linear order that orders the parts in a given specific pattern. More formally, the universe of In</text>
+      <text>âˆ—as the disjoint union of n copies of Tâˆ—, for which each copy of Tâˆ— corresponds to a unary predicate, and which is equipped with a convex linear order that orders the parts in a given specific pattern. More formally, the universe of In</text>
     <zbmath>
       <author_codes/>
       <document_id/>
@@ -1069,7 +1069,7 @@
       <issue_id>337431</issue_id>
       <parallel_title/>
       <part/>
-      <publisher>Prof. André Kündgen c/o California State University San Marcos, Deptartment of Mathematics, San Marcos, CA</publisher>
+      <publisher>Prof. AndrÃ© KÃ¼ndgen c/o California State University San Marcos, Deptartment of Mathematics, San Marcos, CA</publisher>
       <series_id>2064</series_id>
       <short_title>Electron. J. Comb.</short_title>
       <title>The Electronic Journal of Combinatorics</title>
