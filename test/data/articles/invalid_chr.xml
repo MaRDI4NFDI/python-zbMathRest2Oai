@@ -6,7 +6,7 @@
       <aliases/>
       <checked>0</checked>
       <codes>jasinski.jakub</codes>
-       <name>JasiÅ„ski, Jakub</name>
+      <name>JasiÃ…â€žski, Jakub</name>
     </authors>
     <authors>
       <aliases/>
@@ -18,7 +18,7 @@
       <aliases/>
       <checked>1</checked>
       <codes>nguyen-van-the.lionel</codes>
-      <name>ThÃ©, Lionel Nguyen Van</name>
+      <name>ThÃƒÂ©, Lionel Nguyen Van</name>
     </authors>
     <authors>
       <aliases/>
@@ -122,7 +122,7 @@
   <references>
     <doi/>
     <position>3</position>
-      <text>âˆ—as the disjoint union of n copies of Tâˆ—, for which each copy of Tâˆ— corresponds to a unary predicate, and which is equipped with a convex linear order that orders the parts in a given specific pattern. More formally, the universe of In</text>
+    <text>Ã¢Ë†â€”as the disjoint union of n copies of TÃ¢Ë†â€”, for which each copy of TÃ¢Ë†â€” corresponds to a unary predicate, and which is equipped with a convex linear order that orders the parts in a given specific pattern. More formally, the universe of In</text>
     <zbmath>
       <author_codes/>
       <document_id/>
@@ -135,7 +135,7 @@
   <references>
     <doi/>
     <position>4</position>
-    <text>∗is made of all pairs (i, x) with i ∈ [n] and x ∈ T∗. When R is a relational symbol in LT∗r {&lt;}, set RT[In]∗(~u) iff RT∗(~x), where ~u = ((k, x1), . . . , (k, xn)), for some k. As for &lt;, interpret it as the lexicographical ordering of the usual order on [n] and &lt;∗as per T∗. Finally, add to the resulting structure n new unary predicates (PiIn</text>
+     <text>âˆ—is made of all pairs (i, x) with i âˆˆ [n] and x âˆˆ Tâˆ—. When R is a relational symbol in LTâˆ—r {&lt;}, set RT[In]âˆ—(~u) iff RTâˆ—(~x), where ~u = ((k, x1), . . . , (k, xn)), for some k. As for &lt;, interpret it as the lexicographical ordering of the usual order on [n] and &lt;âˆ—as per Tâˆ—. Finally, add to the resulting structure n new unary predicates (PiIn</text>
     <zbmath>
       <author_codes/>
       <document_id/>
@@ -148,7 +148,7 @@
   <references>
     <doi/>
     <position>5</position>
-    <text>∗)i∈[n]defined by PiIn</text>
+    <text>âˆ—)iâˆˆ[n]defined by PiIn</text>
     <zbmath>
       <author_codes/>
       <document_id/>
@@ -161,7 +161,7 @@
   <references>
     <doi/>
     <position>6</position>
-    <text>∗(j, x) iff j = i. Note that therefore P0In</text>
+     <text>âˆ—(j, x) iff j = i. Note that therefore P0In</text>
     <zbmath>
       <author_codes/>
       <document_id/>
@@ -174,7 +174,7 @@
   <references>
     <doi/>
     <position>7</position>
-    <text>∗&lt;In</text>
+    <text>âˆ—&lt;In</text>
     <zbmath>
       <author_codes/>
       <document_id/>
@@ -187,7 +187,7 @@
   <references>
     <doi/>
     <position>8</position>
-    <text>∗· · · &lt;In</text>
+     <text>âˆ—Â· Â· Â· &lt;In</text>
     <zbmath>
       <author_codes/>
       <document_id/>
@@ -200,7 +200,7 @@
   <references>
     <doi/>
     <position>9</position>
-    <text>∗Pn−1In</text>
+    <text>âˆ—Pnâˆ’1In</text>
     <zbmath>
       <author_codes/>
       <document_id/>
