@@ -61,12 +61,12 @@
   <links>
     <identifier>1310.6466</identifier>
     <type>arxiv</type>
-    <url/>
+    <url>https://arxiv.org/abs/1310.6466</url>
   </links>
   <links>
-    <identifier/>
+    <identifier>www.combinatorics.org/ojs/index.php/eljc/article/view/v21i4p42</identifier>
     <type>http</type>
-    <url>www.combinatorics.org/ojs/index.php/eljc/article/view/v21i4p42</url>
+    <url>http://www.combinatorics.org/ojs/index.php/eljc/article/view/v21i4p42</url>
   </links>
   <msc>
     <code>05C55</code>
