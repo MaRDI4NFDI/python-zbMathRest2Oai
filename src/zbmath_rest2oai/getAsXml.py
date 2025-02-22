@@ -42,6 +42,12 @@ class EntryNotFoundException(Exception):
 
 
 def apply_zbmath_api_fixes(result, prefix_get_as_xml):
+    if result.get('links'):
+        replace_tup = (('#','.'), ('.info',''),('https','http'))
+        for dic in result.get('links'):
+            if dic["type"]=="dlmf":
+                for tup in replace_tup:
+                    dic["url"]=dic["url"].replace(*tup)
     if result.get('datestamp'):
         result['datestamp'] = (result['datestamp'].
                                replace('0001-01-01T00:00:00Z', '0001-01-01T00:00:00'))
