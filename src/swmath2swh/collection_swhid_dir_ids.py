@@ -20,9 +20,8 @@ def get_swhid_dir(snaphot_url):
         object_id = match.group(1)
         print(f"Object ID: {object_id}")
         return "swh:1:dir:"+object_id.split("Object ID: ")[0]
-    else:
-        print("Object ID not found")
-        return 0
+    print("Object ID not found")
+    return 0
 list_swhid_dir=list()
 for snapshot in df.swhid:
     #print(snapshot)
