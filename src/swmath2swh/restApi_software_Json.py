@@ -1,8 +1,6 @@
 import json
 
 import requests
-
-from swmath2swh.swhid import parse_csv_to_dict
 from zbmath_rest2oai.getAsXml import add_references_to_software
 
 # Main function to handle the API request, CSV parsing, and JSON modification
