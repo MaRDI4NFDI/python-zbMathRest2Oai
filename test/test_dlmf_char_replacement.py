@@ -1,4 +1,5 @@
 import unittest
+from zbmath_rest2oai.getAsXml import apply_zbmath_api_fixes
 
 class TestLinkReplacement(unittest.TestCase):
 
@@ -9,16 +10,7 @@ class TestLinkReplacement(unittest.TestCase):
                 {"type": "dlmf", "url": "https://dlmf.nist.gov/25.2#E11.info"},
             ]
         }
-
-        # Function to replace the links (as per your code)
-        replace_tup = (('#', '.'), ('.info', ''), ('https', 'http'))
-
-        # Process the links
-        if result.get('links'):
-            for dic in result.get('links'):
-                if dic["type"] == "dlmf":
-                    for tup in replace_tup:
-                        dic["url"] = dic["url"].replace(*tup)
+        apply_zbmath_api_fixes(result, '')
         
         # Expected output after transformation
         expected_result = [
