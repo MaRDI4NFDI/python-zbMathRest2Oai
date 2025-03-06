@@ -27,16 +27,28 @@
 
           <publicationYear>
     <xsl:choose>
-        <xsl:when test="normalize-space(root/standard_articles/year) != '' and root/standard_articles/year != 'None' and root/standard_articles/year != 'none' and not(starts-with(root/standard_articles/year, '0'))">
+        <xsl:when test="normalize-space(root/standard_articles/year) != ''
+                        and root/standard_articles/year != 'None'
+                        and root/standard_articles/year != 'none'
+                        and not(starts-with(root/standard_articles/year, '0'))
+                        and not(contains(root/standard_articles/year, 'zbMATH Open Web Interface contents unavailable due to conflicting licenses'))">
             <xsl:value-of select="root/standard_articles/year[not(. > ../../standard_articles/year)]"/>
         </xsl:when>
-        <xsl:when test="normalize-space(root/references_year_alt[1]) != '' and root/references_year_alt[1] != 'None' and root/references_year_alt[1] != 'none' and not(starts-with(root/references_year_alt[1], '0'))">
+        <xsl:when test="normalize-space(root/references_year_alt[1]) != ''
+                        and root/references_year_alt[1] != 'None'
+                        and root/references_year_alt[1] != 'none'
+                        and not(starts-with(root/references_year_alt[1], '0'))
+                        and not(contains(root/references_year_alt[1], 'zbMATH Open Web Interface contents unavailable due to conflicting licenses'))">
             <xsl:apply-templates select="root/references_year_alt[1]"/>
         </xsl:when>
-        <xsl:when test="normalize-space(root/source_year) != '' and root/source_year != 'None' and root/source_year != 'none' and not(starts-with(root/source_year, '0'))">
+        <xsl:when test="normalize-space(root/source_year) != ''
+                        and root/source_year != 'None'
+                        and root/source_year != 'none'
+                        and not(starts-with(root/source_year, '0'))
+                        and not(contains(root/source_year, 'zbMATH Open Web Interface contents unavailable due to conflicting licenses'))">
             <xsl:apply-templates select="root/source_year"/>
         </xsl:when>
-        <xsl:otherwise>:null</xsl:otherwise>
+        <xsl:otherwise>:unav</xsl:otherwise>
     </xsl:choose>
          </publicationYear>
 
@@ -53,14 +65,20 @@
 
             <publisher>
                <xsl:choose>
-               <xsl:when test="normalize-space(root/source_code) != '' and root/source_code != 'none' and root/source_code != 'null'">
-               <xsl:value-of select="root/source_code"/>
-                </xsl:when>
-               <xsl:when test="normalize-space(root/homepage) != '' and root/homepage != 'none' and root/homepage != 'null'">
-               <xsl:value-of select="root/homepage"/>
-              </xsl:when>
-              <xsl:otherwise>:null</xsl:otherwise>
-            </xsl:choose>
+        <xsl:when test="normalize-space(root/source_code) != ''
+                        and root/source_code != 'none'
+                        and root/source_code != 'null'
+                        and not(contains(root/source_code, 'zbMATH Open Web Interface contents unavailable due to conflicting licenses'))">
+            <xsl:value-of select="root/source_code"/>
+        </xsl:when>
+        <xsl:when test="normalize-space(root/homepage) != ''
+                        and root/homepage != 'none'
+                        and root/homepage != 'null'
+                        and not(contains(root/homepage, 'zbMATH Open Web Interface contents unavailable due to conflicting licenses'))">
+            <xsl:value-of select="root/homepage"/>
+        </xsl:when>
+        <xsl:otherwise>:unav</xsl:otherwise>
+    </xsl:choose>
          </publisher>
 
 
