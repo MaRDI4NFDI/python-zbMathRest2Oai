@@ -91,7 +91,7 @@
     <creator>
         <creatorName nameType="Personal">
             <xsl:choose>
-                <xsl:when test="normalize-space(.) = '' or . = 'None' or . = 'none'">:unav</xsl:when>
+                <xsl:when test="normalize-space(.) = '' or . = 'None' or . = 'none' or contains(., 'zbMATH Open Web Interface contents unavailable due to conflicting licenses')">:unav</xsl:when>
                 <xsl:otherwise>
                     <xsl:value-of select="."/>
                 </xsl:otherwise>
@@ -99,7 +99,7 @@
         </creatorName>
         <givenName>
             <xsl:choose>
-                <xsl:when test="normalize-space(.) = '' or . = 'None' or . = 'none'">:unav</xsl:when>
+                <xsl:when test="normalize-space(.) = '' or . = 'None' or . = 'none' or contains(., 'zbMATH Open Web Interface contents unavailable due to conflicting licenses')">:unav</xsl:when>
                 <xsl:otherwise>
                     <xsl:value-of select="substring-after(., ', ')"/>
                 </xsl:otherwise>
@@ -107,7 +107,7 @@
         </givenName>
         <familyName>
             <xsl:choose>
-                <xsl:when test="normalize-space(.) = '' or . = 'None' or . = 'none'">:unav</xsl:when>
+                <xsl:when test="normalize-space(.) = '' or . = 'None' or . = 'none' or contains(., 'zbMATH Open Web Interface contents unavailable due to conflicting licenses')">:unav</xsl:when>
                 <xsl:otherwise>
                     <xsl:value-of select="substring-before(., ', ')"/>
                 </xsl:otherwise>
@@ -119,7 +119,7 @@
   <xsl:template match="name">
     <title>
         <xsl:choose>
-            <xsl:when test="normalize-space(.) = '' or . = 'None' or . = 'none'">:unav</xsl:when>
+            <xsl:when test="normalize-space(.) = '' or . = 'None' or . = 'none' or contains(., 'zbMATH Open Web Interface contents unavailable due to conflicting licenses')">:unav</xsl:when>
             <xsl:otherwise>
                 <xsl:value-of select="."/>
             </xsl:otherwise>
@@ -129,12 +129,21 @@
 
 
  <xsl:template match="description">
-    <description xml:lang="en" descriptionType="Abstract">:unav</description>
+     <xsl:choose>
+        <xsl:when test="normalize-space(.) = '' or . = 'None' or . = 'none' or contains(., 'zbMATH Open Web Interface contents unavailable due to conflicting licenses')">
+            <description xml:lang="en" descriptionType="Abstract">:unav</description>
+        </xsl:when>
+        <xsl:otherwise>
+            <description xml:lang="en" descriptionType="Abstract">
+                <xsl:value-of select="."/>
+            </description>
+        </xsl:otherwise>
+    </xsl:choose>
 </xsl:template>
 
 
       <xsl:template match="operating_systems">
-    <xsl:if test="normalize-space(.) != '' and . != 'None'and . != 'none'">
+    <xsl:if test="normalize-space(.) != '' and . != 'None' and . != 'none' and not(contains(., 'zbMATH Open Web Interface contents unavailable due to conflicting licenses'))">
         <description xml:lang="en" descriptionType="TechnicalInfo">
             <xsl:text>operating systems: </xsl:text>
             <xsl:value-of select="."/>
@@ -143,7 +152,7 @@
 </xsl:template>
 
 <xsl:template match="programming_languages">
-    <xsl:if test="normalize-space(.) != '' and . != 'None'and . != 'none'">
+    <xsl:if test="normalize-space(.) != '' and . != 'None'and . != 'none' and not(contains(., 'zbMATH Open Web Interface contents unavailable due to conflicting licenses'))">
         <description xml:lang="en" descriptionType="TechnicalInfo">
         <xsl:text>programming languages : </xsl:text>
             <xsl:value-of select="."/>
@@ -166,7 +175,7 @@
     </xsl:template>
 
         <xsl:template match="classification">
-            <xsl:if test="normalize-space(.) != '' and . != 'None' and . != 'none'">
+            <xsl:if test="normalize-space(.) != '' and . != 'None' and . != 'none' and not(contains(., 'zbMATH Open Web Interface contents unavailable due to conflicting licenses'))">
         <subject subjectScheme="msc2020" >
             <xsl:value-of select="."/>
         </subject>
@@ -174,7 +183,7 @@
         </xsl:template>
 
         <xsl:template match="keywords">
-           <xsl:if test="normalize-space(.) != '' and . != 'None'and . != 'none'">
+           <xsl:if test="normalize-space(.) != '' and . != 'None'and . != 'none' and not(contains(., 'zbMATH Open Web Interface contents unavailable due to conflicting licenses'))">
         <subject subjectScheme="keyword">
             <xsl:value-of select="."/>
         </subject>
@@ -182,7 +191,7 @@
         </xsl:template>
 
     <xsl:template match="license_terms">
-    <xsl:if test="normalize-space(.) != '' and . != 'None'and . != 'none'">
+    <xsl:if test="normalize-space(.) != '' and . != 'None' and . != 'none' and not(contains(., 'zbMATH Open Web Interface contents unavailable due to conflicting licenses'))">
         <rights>
             <xsl:value-of select="."/>
         </rights>
