@@ -53,3 +53,5 @@ curl --noproxy '*' -X GET -H  "Authorization: Basic $AUTH" $OAI_INPUT
 #Delete specific crosswalk from local
 #curl -v -X DELETE POST -H "Authorization: Basic $AUTH" -i 'https://oai-input.staging.mardi4nfdi.org/oai-backend/crosswalk/software2codemeta'
 #
+
+#curl --noproxy '*' -X POST -H "Authorization: Basic $AUTH" -i 'https://oai-input.portal.mardi4nfdi.de/oai-backend/crosswalk/article2datacite/process'
