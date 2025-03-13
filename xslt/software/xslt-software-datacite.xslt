@@ -216,11 +216,17 @@
     </xsl:if>
 </xsl:template>
 
-     <xsl:template match="homepage">
-        <relatedIdentifier  relatedIdentifierType="URL" relationType="IsSourceOf">
+    <xsl:template match="homepage">
+    <xsl:if test="normalize-space(.) != ''
+                  and normalize-space(.) != 'none'
+                  and normalize-space(.) != 'None'
+                  and not(contains(., 'zbMATH Open Web Interface contents unavailable due to conflicting licenses'))">
+        <relatedIdentifier relatedIdentifierType="URL" relationType="IsSourceOf">
             <xsl:value-of select="."/>
         </relatedIdentifier>
-        </xsl:template>
+    </xsl:if>
+    </xsl:template>
+
 
     <!-- Template to get the source code -->
 <xsl:template name="sourceCode">
@@ -238,18 +244,29 @@
 
 
      <xsl:template match="references">
+         <xsl:if test="normalize-space(.) != ''
+                  and normalize-space(.) != 'none'
+                  and normalize-space(.) != 'None'
+                  and not(contains(., 'zbMATH Open Web Interface contents unavailable due to conflicting licenses'))">
   <relatedIdentifier relatedIdentifierType="URL" relationType="IsCitedBy">
             <xsl:text>https://api.zbmath.org/v1/document/</xsl:text>
             <xsl:value-of select="."/>
         </relatedIdentifier>
+         </xsl:if>
     </xsl:template>
 
 <xsl:template match="references_alt">
     <xsl:variable name="reference" select="."/>
-    <xsl:call-template name="process-reference">
-        <xsl:with-param name="text" select="$reference"/>
-    </xsl:call-template>
+    <xsl:if test="normalize-space($reference) != ''
+                  and normalize-space($reference) != 'none'
+                  and normalize-space($reference) != 'None'
+                  and not(contains($reference, 'zbMATH Open Web Interface contents unavailable due to conflicting licenses'))">
+        <xsl:call-template name="process-reference">
+            <xsl:with-param name="text" select="$reference"/>
+        </xsl:call-template>
+    </xsl:if>
 </xsl:template>
+
 
 <xsl:template name="process-reference">
     <xsl:param name="text"/>
