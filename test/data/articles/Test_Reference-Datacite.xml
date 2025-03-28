@@ -48,6 +48,9 @@
       <relatedIdentifier relatedIdentifierType="URL" relationType="IsCitedBy">https://zbmath.org/6587992</relatedIdentifier>
     <relatedIdentifier relatedIdentifierType="URL" relationType="IsCitedBy">https://zbmath.org/195021</relatedIdentifier>
     <relatedIdentifier relatedIdentifierType="DOI" relationType="Cites" resourceTypeGeneral="JournalArticle">10.4007/annals.2014.179.3.7</relatedIdentifier>
+        <relatedIdentifier relatedIdentifierType="ARXIV"
+                         relationType="IsPartOf"
+                         resourceTypeGeneral="JournalArticle">1311.4600</relatedIdentifier>
    </relatedIdentifiers>
       <rightsList>
     <rights xml:lang="en" schemeURI="https://api.zbmath.org/v1/" rightsIdentifierScheme="zbMATH" rightsIdentifier="CC-BY-SA 4.0" rightsURI="https://creativecommons.org/licenses/by-sa/4.0/">
