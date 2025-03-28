@@ -30,6 +30,7 @@ Made by Shiraz Malla Mohamad member of zbmath Team-->
             <descriptions>
                 <xsl:apply-templates select="root/editorial_contributions/text"/>
             </descriptions>
+           </xsl:if>
           <xsl:if test="root/title[
              normalize-space(.) != ''
                 and . != 'None'
@@ -40,16 +41,16 @@ Made by Shiraz Malla Mohamad member of zbmath Team-->
         </xsl:if>
 
 
-<xsl:if test="not(root/title[
+           <xsl:if test="not(root/title[
              normalize-space(.) != ''
                 and . != 'None'
                 and . != 'none'
                 and not(contains(., 'zbMATH Open Web Interface contents unavailable due to conflicting licenses'))
             ])">
-    <titles>
-        <title>:unav</title>
-    </titles>
-</xsl:if>
+             <titles>
+            <title>:unav</title>
+             </titles>
+           </xsl:if>
             <xsl:apply-templates select="root/source/series/publisher"/>
             <xsl:apply-templates select="root/year"/>
            <xsl:if test="root/msc[normalize-space(.) != '' and normalize-space(.) != 'None' and normalize-space(.) != 'none' and not(contains(., 'zbMATH Open Web Interface contents unavailable due to conflicting licenses'))]
