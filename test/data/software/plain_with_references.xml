@@ -1,23 +1,8 @@
 <root>
-  <articles_count>113</articles_count>
+  <articles_count>118</articles_count>
   <authors>Li, X. S.</authors>
   <authors>Demmel, J. W.</authors>
-  <classification>35</classification>
-  <classification>65</classification>
-  <classification>68</classification>
-  <classification>74</classification>
-  <classification>76</classification>
-  <classification>05</classification>
-  <classification>15</classification>
-  <classification>60</classification>
-  <classification>78</classification>
-  <classification>80</classification>
-  <classification>81</classification>
-  <classification>82</classification>
-  <classification>85</classification>
-  <classification>86</classification>
-  <classification>90</classification>
-  <classification>92</classification>
+  <classification/>
   <dependencies/>
   <description>zbMATH Open Web Interface contents unavailable due to conflicting licenses.</description>
   <homepage>http://crd-legacy.lbl.gov/~xiaoye/SuperLU/</homepage>
