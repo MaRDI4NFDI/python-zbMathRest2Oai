@@ -23,22 +23,6 @@
       <datacite:title>SuperLU-DIST</datacite:title>
    </datacite:titles>
    <datacite:subjects>
-      <datacite:subject subjectScheme="msc2020">35</datacite:subject>
-      <datacite:subject subjectScheme="msc2020">65</datacite:subject>
-      <datacite:subject subjectScheme="msc2020">68</datacite:subject>
-      <datacite:subject subjectScheme="msc2020">74</datacite:subject>
-      <datacite:subject subjectScheme="msc2020">76</datacite:subject>
-      <datacite:subject subjectScheme="msc2020">05</datacite:subject>
-      <datacite:subject subjectScheme="msc2020">15</datacite:subject>
-      <datacite:subject subjectScheme="msc2020">60</datacite:subject>
-      <datacite:subject subjectScheme="msc2020">78</datacite:subject>
-      <datacite:subject subjectScheme="msc2020">80</datacite:subject>
-      <datacite:subject subjectScheme="msc2020">81</datacite:subject>
-      <datacite:subject subjectScheme="msc2020">82</datacite:subject>
-      <datacite:subject subjectScheme="msc2020">85</datacite:subject>
-      <datacite:subject subjectScheme="msc2020">86</datacite:subject>
-      <datacite:subject subjectScheme="msc2020">90</datacite:subject>
-      <datacite:subject subjectScheme="msc2020">92</datacite:subject>
       <datacite:subject subjectScheme="keyword">orms</datacite:subject>
    </datacite:subjects>
    <datacite:relatedIdentifiers>
@@ -55,110 +39,116 @@
       <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/5288535</datacite:relatedIdentifier>
       <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/2188015</datacite:relatedIdentifier>
       <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/6499501</datacite:relatedIdentifier>
-      <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/6449264</datacite:relatedIdentifier>
       <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/7348524</datacite:relatedIdentifier>
       <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/5290725</datacite:relatedIdentifier>
-      <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/5934727</datacite:relatedIdentifier>
+      <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/6449264</datacite:relatedIdentifier>
       <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/5801897</datacite:relatedIdentifier>
       <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/5987065</datacite:relatedIdentifier>
+      <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/5934727</datacite:relatedIdentifier>
       <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/5167018</datacite:relatedIdentifier>
       <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/5128211</datacite:relatedIdentifier>
       <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/5251239</datacite:relatedIdentifier>
       <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/6766231</datacite:relatedIdentifier>
-      <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/5244390</datacite:relatedIdentifier>
-      <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/7099306</datacite:relatedIdentifier>
       <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/5706020</datacite:relatedIdentifier>
+      <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/5244390</datacite:relatedIdentifier>
       <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/5762200</datacite:relatedIdentifier>
+      <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/7099306</datacite:relatedIdentifier>
       <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/7099163</datacite:relatedIdentifier>
-      <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/7687320</datacite:relatedIdentifier>
-      <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/5187739</datacite:relatedIdentifier>
       <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/6669500</datacite:relatedIdentifier>
+      <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/5187739</datacite:relatedIdentifier>
       <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/5670978</datacite:relatedIdentifier>
       <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/5969946</datacite:relatedIdentifier>
-      <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/6220134</datacite:relatedIdentifier>
-      <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/6738142</datacite:relatedIdentifier>
-      <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/6537764</datacite:relatedIdentifier>
+      <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/7687320</datacite:relatedIdentifier>
       <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/7914911</datacite:relatedIdentifier>
+      <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/6220134</datacite:relatedIdentifier>
       <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/7099336</datacite:relatedIdentifier>
+      <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/6738142</datacite:relatedIdentifier>
       <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/7123718</datacite:relatedIdentifier>
-      <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/7705305</datacite:relatedIdentifier>
+      <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/6537764</datacite:relatedIdentifier>
       <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/5880057</datacite:relatedIdentifier>
-      <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/5458476</datacite:relatedIdentifier>
-      <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/7704378</datacite:relatedIdentifier>
+      <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/7705305</datacite:relatedIdentifier>
       <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/6599805</datacite:relatedIdentifier>
-      <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/5982908</datacite:relatedIdentifier>
+      <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/7704378</datacite:relatedIdentifier>
+      <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/5458476</datacite:relatedIdentifier>
       <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/5784806</datacite:relatedIdentifier>
       <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/5510606</datacite:relatedIdentifier>
+      <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/5982908</datacite:relatedIdentifier>
       <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/7138575</datacite:relatedIdentifier>
-      <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/6449261</datacite:relatedIdentifier>
       <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/6669495</datacite:relatedIdentifier>
+      <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/6449261</datacite:relatedIdentifier>
       <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/7055073</datacite:relatedIdentifier>
       <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/6910452</datacite:relatedIdentifier>
       <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/6265830</datacite:relatedIdentifier>
+      <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/6908831</datacite:relatedIdentifier>
       <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/7073637</datacite:relatedIdentifier>
       <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/6475762</datacite:relatedIdentifier>
-      <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/6908831</datacite:relatedIdentifier>
-      <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/6443071</datacite:relatedIdentifier>
       <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/6280859</datacite:relatedIdentifier>
+      <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/6443071</datacite:relatedIdentifier>
       <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/6128531</datacite:relatedIdentifier>
-      <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/5221096</datacite:relatedIdentifier>
-      <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/7301661</datacite:relatedIdentifier>
       <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/7271902</datacite:relatedIdentifier>
-      <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/6054722</datacite:relatedIdentifier>
-      <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/5827163</datacite:relatedIdentifier>
+      <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/5221096</datacite:relatedIdentifier>
       <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/7308040</datacite:relatedIdentifier>
+      <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/6054722</datacite:relatedIdentifier>
+      <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/7301661</datacite:relatedIdentifier>
       <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/7506624</datacite:relatedIdentifier>
+      <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/5827163</datacite:relatedIdentifier>
       <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/5244394</datacite:relatedIdentifier>
-      <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/5187738</datacite:relatedIdentifier>
       <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/6897553</datacite:relatedIdentifier>
       <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/6327173</datacite:relatedIdentifier>
       <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/5537689</datacite:relatedIdentifier>
-      <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/5187737</datacite:relatedIdentifier>
+      <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/5187738</datacite:relatedIdentifier>
       <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/7644848</datacite:relatedIdentifier>
       <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/5862151</datacite:relatedIdentifier>
       <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/6911772</datacite:relatedIdentifier>
       <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/5947775</datacite:relatedIdentifier>
       <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/5762238</datacite:relatedIdentifier>
+      <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/5187737</datacite:relatedIdentifier>
       <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/7908567</datacite:relatedIdentifier>
       <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/7631087</datacite:relatedIdentifier>
       <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/5801879</datacite:relatedIdentifier>
       <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/5798197</datacite:relatedIdentifier>
-      <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/7315215</datacite:relatedIdentifier>
-      <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/7495530</datacite:relatedIdentifier>
+      <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/7981588</datacite:relatedIdentifier>
       <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/5693879</datacite:relatedIdentifier>
+      <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/7315215</datacite:relatedIdentifier>
       <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/7539438</datacite:relatedIdentifier>
+      <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/7495530</datacite:relatedIdentifier>
       <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/7516896</datacite:relatedIdentifier>
       <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/7720823</datacite:relatedIdentifier>
       <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/5969837</datacite:relatedIdentifier>
       <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/7405582</datacite:relatedIdentifier>
       <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/7437405</datacite:relatedIdentifier>
-      <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/7908572</datacite:relatedIdentifier>
-      <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/6248322</datacite:relatedIdentifier>
-      <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/7937083</datacite:relatedIdentifier>
-      <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/5777718</datacite:relatedIdentifier>
       <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/7625416</datacite:relatedIdentifier>
+      <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/7908572</datacite:relatedIdentifier>
+      <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/7937083</datacite:relatedIdentifier>
+      <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/7976970</datacite:relatedIdentifier>
+      <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/6248322</datacite:relatedIdentifier>
+      <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/5777718</datacite:relatedIdentifier>
+      <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/7878339</datacite:relatedIdentifier>
       <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/7206170</datacite:relatedIdentifier>
+      <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/7771268</datacite:relatedIdentifier>
+      <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/6669494</datacite:relatedIdentifier>
       <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/7256640</datacite:relatedIdentifier>
       <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/5909607</datacite:relatedIdentifier>
-      <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/6669494</datacite:relatedIdentifier>
-      <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/7188252</datacite:relatedIdentifier>
-      <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/7771268</datacite:relatedIdentifier>
-      <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/7031748</datacite:relatedIdentifier>
+      <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/7996038</datacite:relatedIdentifier>
       <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/7235951</datacite:relatedIdentifier>
-      <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/6915848</datacite:relatedIdentifier>
-      <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/7427370</datacite:relatedIdentifier>
+      <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/7188252</datacite:relatedIdentifier>
+      <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/7031748</datacite:relatedIdentifier>
       <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/7860853</datacite:relatedIdentifier>
+      <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/7427370</datacite:relatedIdentifier>
+      <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/6915848</datacite:relatedIdentifier>
       <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/6648376</datacite:relatedIdentifier>
       <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/7917734</datacite:relatedIdentifier>
-      <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/6666873</datacite:relatedIdentifier>
       <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/6994473</datacite:relatedIdentifier>
+      <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/6666873</datacite:relatedIdentifier>
+      <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/8008568</datacite:relatedIdentifier>
       <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/5538352</datacite:relatedIdentifier>
       <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/2234457</datacite:relatedIdentifier>
    </datacite:relatedIdentifiers>
    <datacite:alternateIdentifiers>
-   <datacite:alternateIdentifier alternateIdentifierType="URL">http://crd-legacy.lbl.gov/~xiaoye/SuperLU/</datacite:alternateIdentifier>
+      <datacite:alternateIdentifier alternateIdentifierType="URL">http://crd-legacy.lbl.gov/~xiaoye/SuperLU/</datacite:alternateIdentifier>
    </datacite:alternateIdentifiers>
-   <oaire:resourceType resourceTypeGeneral="software" uri="http://purl.org/coar/resource_type/c_5ce6"/>
+   <oaire:resourceType resourceTypeGeneral="software"
+                       uri="http://purl.org/coar/resource_type/c_5ce6"/>
    <datacite:rightsList>
       <datacite:rights rightsURI="http://purl.org/coar/access_right/c_14cb">metadata only access</datacite:rights>
       <datacite:rights xml:lang="en"
