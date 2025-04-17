@@ -51,12 +51,21 @@
         </entry>
     </xsl:template>
 
-    <xsl:template match="id"  mode="id">
-        <id>
-            <xsl:text>https://swmath.org/software/</xsl:text>
-            <xsl:value-of select="."/>
-        </id>
-    </xsl:template>
+  <xsl:template match="id" mode="id">
+  <id>
+    <xsl:text>https://swmath.org/software/</xsl:text>
+    <xsl:choose>
+      <xsl:when test="starts-with(., 'oai:swmath.org:')">
+        <xsl:value-of select="substring-after(., 'oai:swmath.org:')"/>
+      </xsl:when>
+      <xsl:otherwise>
+        <xsl:value-of select="."/>
+      </xsl:otherwise>
+    </xsl:choose>
+  </id>
+</xsl:template>
+
+
 
     <xsl:template match="swhdeposit:deposit">
         <swhdeposit:deposit>
@@ -217,13 +226,22 @@
        </xsl:if>
     </xsl:template>
 
-    <xsl:template match="id">
-  <xsl:if test="normalize-space(.) != '' and . != 'None'">
+   <xsl:template match="id">
+    <xsl:if test="normalize-space(.) != '' and . != 'None'">
         <codemeta:url>
-            <xsl:text>https://api.zbmath.org/v1/software/</xsl:text>
-            <xsl:value-of select="."/>
+      <xsl:text>https://api.zbmath.org/v1/software/</xsl:text>
+      <xsl:choose>
+        <xsl:when test="starts-with(., 'oai:swmath.org:')">
+          <xsl:value-of select="substring-after(., 'oai:swmath.org:')"/>
+        </xsl:when>
+          <xsl:otherwise>
+          <xsl:value-of select="."/>
+          </xsl:otherwise>
+        </xsl:choose>
         </codemeta:url>
-       </xsl:if>
-    </xsl:template>
+      </xsl:if>
+   </xsl:template>
+
+
 
 </xsl:stylesheet>
