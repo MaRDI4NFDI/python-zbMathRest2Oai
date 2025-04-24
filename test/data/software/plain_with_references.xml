@@ -56,8 +56,8 @@
   <references>7099306</references>
   <references>7099163</references>
   <references>6669500</references>
-  <references>5187739</references>
   <references>5670978</references>
+  <references>5187739</references>
   <references>7687320</references>
   <references>5969946</references>
   <references>7914911</references>
@@ -143,6 +143,7 @@
   <references>6666873</references>
   <references>8008568</references>
   <references>5538352</references>
+  <references>8019138</references>
   <references>2234457</references>
   <references_alt>2187846;10.1145/779359.779361</references_alt>
   <references_alt>6042299;10.1016/j.cma.2011.09.012;1104.0960</references_alt>
@@ -172,8 +173,8 @@
   <references_alt>7099306;10.1137/18M1181353</references_alt>
   <references_alt>7099163;10.1017/S0962492919000035</references_alt>
   <references_alt>6669500;10.1002/nme.4729</references_alt>
-  <references_alt>5187739;10.1007/s00200-007-0037-x</references_alt>
   <references_alt>5670978</references_alt>
+  <references_alt>5187739;10.1007/s00200-007-0037-x</references_alt>
   <references_alt>7687320;10.1007/978-3-031-25820-6</references_alt>
   <references_alt>5969946;10.1017/S0022112010005380</references_alt>
   <references_alt>7914911;10.1007/s10444-024-10176-x;2211.07572</references_alt>
@@ -259,6 +260,7 @@
   <references_alt>6666873;10.1016/j.jcp.2016.06.039</references_alt>
   <references_alt>8008568;10.1016/j.cam.2025.116515</references_alt>
   <references_alt>5538352;10.1007/978-3-540-71992-2_17</references_alt>
+  <references_alt>8019138;10.46298/arima.1945</references_alt>
   <references_alt>2234457</references_alt>
   <references_year_alt>2005</references_year_alt>
   <references_year_alt>2012</references_year_alt>
@@ -288,8 +290,8 @@
   <references_year_alt>2019</references_year_alt>
   <references_year_alt>2019</references_year_alt>
   <references_year_alt>2016</references_year_alt>
-  <references_year_alt>2007</references_year_alt>
   <references_year_alt>2010</references_year_alt>
+  <references_year_alt>2007</references_year_alt>
   <references_year_alt>2023</references_year_alt>
   <references_year_alt>2011</references_year_alt>
   <references_year_alt>2024</references_year_alt>
@@ -375,6 +377,7 @@
   <references_year_alt>2016</references_year_alt>
   <references_year_alt>2025</references_year_alt>
   <references_year_alt>2009</references_year_alt>
+  <references_year_alt>2025</references_year_alt>
   <references_year_alt>2005</references_year_alt>
   <related_software>
     <id>4013</id>
