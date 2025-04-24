@@ -77,8 +77,8 @@
       <relatedIdentifier relatedIdentifierType="URL" relationType="IsCitedBy">https://api.zbmath.org/v1/document/7099306</relatedIdentifier>
       <relatedIdentifier relatedIdentifierType="URL" relationType="IsCitedBy">https://api.zbmath.org/v1/document/7099163</relatedIdentifier>
       <relatedIdentifier relatedIdentifierType="URL" relationType="IsCitedBy">https://api.zbmath.org/v1/document/6669500</relatedIdentifier>
-      <relatedIdentifier relatedIdentifierType="URL" relationType="IsCitedBy">https://api.zbmath.org/v1/document/5187739</relatedIdentifier>
       <relatedIdentifier relatedIdentifierType="URL" relationType="IsCitedBy">https://api.zbmath.org/v1/document/5670978</relatedIdentifier>
+      <relatedIdentifier relatedIdentifierType="URL" relationType="IsCitedBy">https://api.zbmath.org/v1/document/5187739</relatedIdentifier>
       <relatedIdentifier relatedIdentifierType="URL" relationType="IsCitedBy">https://api.zbmath.org/v1/document/7687320</relatedIdentifier>
       <relatedIdentifier relatedIdentifierType="URL" relationType="IsCitedBy">https://api.zbmath.org/v1/document/5969946</relatedIdentifier>
       <relatedIdentifier relatedIdentifierType="URL" relationType="IsCitedBy">https://api.zbmath.org/v1/document/7914911</relatedIdentifier>
@@ -164,6 +164,7 @@
       <relatedIdentifier relatedIdentifierType="URL" relationType="IsCitedBy">https://api.zbmath.org/v1/document/6666873</relatedIdentifier>
       <relatedIdentifier relatedIdentifierType="URL" relationType="IsCitedBy">https://api.zbmath.org/v1/document/8008568</relatedIdentifier>
       <relatedIdentifier relatedIdentifierType="URL" relationType="IsCitedBy">https://api.zbmath.org/v1/document/5538352</relatedIdentifier>
+      <relatedIdentifier relatedIdentifierType="URL" relationType="IsCitedBy">https://api.zbmath.org/v1/document/8019138</relatedIdentifier>
       <relatedIdentifier relatedIdentifierType="URL" relationType="IsCitedBy">https://api.zbmath.org/v1/document/2234457</relatedIdentifier>
       <relatedIdentifier relatedIdentifierType="DOI" relationType="IsCitedBy">10.1145/779359.779361</relatedIdentifier>
       <relatedIdentifier relatedIdentifierType="DOI" relationType="IsCitedBy">10.1016/j.cma.2011.09.012</relatedIdentifier>
@@ -307,5 +308,6 @@
       <relatedIdentifier relatedIdentifierType="DOI" relationType="IsCitedBy">10.1016/j.jcp.2016.06.039</relatedIdentifier>
       <relatedIdentifier relatedIdentifierType="DOI" relationType="IsCitedBy">10.1016/j.cam.2025.116515</relatedIdentifier>
       <relatedIdentifier relatedIdentifierType="DOI" relationType="IsCitedBy">10.1007/978-3-540-71992-2_17</relatedIdentifier>
+      <relatedIdentifier relatedIdentifierType="DOI" relationType="IsCitedBy">10.46298/arima.1945</relatedIdentifier>
    </relatedIdentifiers>
 </resource>
