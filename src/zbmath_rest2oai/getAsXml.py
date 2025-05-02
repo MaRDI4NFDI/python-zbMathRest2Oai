@@ -74,8 +74,12 @@ def extract_tags(result):
         if msc not in tags:
             tags.append(msc)
     tags.sort()
-    if result.get('database') == 'JFM':
+    db = result.get('database')
+    if db == 'JFM':
         tags.append('JFM')
+    elif db == 'Zbl':
+        tags.append('openaire')
+
     return tags
 
 
