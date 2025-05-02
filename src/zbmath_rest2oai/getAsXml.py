@@ -78,7 +78,7 @@ def extract_tags(result):
     if db == 'JFM':
         tags.append('JFM')
     elif db == 'Zbl':
-        tags.append('ZBL')
+        tags.append('openaire')
 
     return tags
 
