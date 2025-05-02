@@ -6,7 +6,7 @@
           xmlns="http://namespace.openaire.eu/schema/oaire/"
           xmlns:oaire="http://www.openarchives.org/OAI/2.0/oai_dc/"
           xsi:schemaLocation="http://namespace.openaire.eu/schema/oaire/ https://www.openaire.eu/schema/repo-lit/4.0/openaire.xsd">
-   <datacite:identifier IdentifierType="URL">https://zbmath.org/6383667</datacite:identifier>
+   <datacite:identifier identifierType="URL">https://zbmath.org/6383667</datacite:identifier>
    <datacite:alternateIdentifiers>
       <datacite:alternateIdentifier alternateIdentifierType="DOI">10.4007/annals.2015.181.1.7</datacite:alternateIdentifier>
    </datacite:alternateIdentifiers>
