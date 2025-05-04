@@ -80,6 +80,12 @@ def extract_tags(result):
     elif db == 'Zbl':
         tags.append('openaire')
 
+    def add_software():
+        zbmath_url = result.get("result", {}).get("zbmath_url","")
+        return zbmath_url.startswith("https://zbmath.org/software/")
+    if add_software():
+        tags.append('openaire')
+
     return tags
 
 
