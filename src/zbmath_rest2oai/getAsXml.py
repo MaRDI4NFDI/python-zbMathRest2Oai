@@ -64,6 +64,11 @@ def apply_zbmath_api_fixes(result, prefix_get_as_xml):
     result['states'] = states
 
 
+def add_software(result):
+    zbmath_url = result.get("result", {}).get("zbmath_url", "")
+    return zbmath_url.startswith("https://zbmath.org/software/")
+
+
 def extract_tags(result):
     tags = []
     for msc in result.get('msc', []):
@@ -78,6 +83,9 @@ def extract_tags(result):
     if db == 'JFM':
         tags.append('JFM')
     elif db == 'Zbl':
+        tags.append('openaire')
+
+    if add_software(result):
         tags.append('openaire')
 
     return tags
