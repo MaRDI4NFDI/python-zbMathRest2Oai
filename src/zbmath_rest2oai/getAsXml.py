@@ -63,6 +63,9 @@ def apply_zbmath_api_fixes(result, prefix_get_as_xml):
         states[k] = v
     result['states'] = states
 
+def add_software(result):
+     zbmath_url = result.get("result", {}).get("zbmath_url", "")
+     return zbmath_url.startswith("https://zbmath.org/software/")
 
 def extract_tags(result):
     tags = []
@@ -80,10 +83,7 @@ def extract_tags(result):
     elif db == 'Zbl':
         tags.append('openaire')
 
-    def add_software():
-        zbmath_url = result.get("result", {}).get("zbmath_url", "")
-        return zbmath_url.startswith("https://zbmath.org/software/")
-    if add_software():
+    if add_software(result):
         tags.append('openaire')
 
     return tags
