@@ -10,7 +10,8 @@ def get_sets():
     mscs = {'JFM': 'JFM: Jahrbuch für Mathematik',
             'openaire': 'openaire Required set for OpenAIRE, cf.'
                         + 'https://guidelines.openaire.eu/en/latest/literature'
-                        + '/use_of_oai_pmh.html'}
+                        + '/use_of_oai_pmh.html',
+            'datacite': 'Datacite: for metadata supported with Doi and arXiv identifiers'}
     for result in results:
         code = result['code'][:2]
         mscs[code] = code + '-XX:' + result['short_title']
