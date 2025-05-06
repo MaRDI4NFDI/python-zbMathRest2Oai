@@ -69,6 +69,14 @@ def add_software(result):
     return zbmath_url.startswith("https://zbmath.org/software/")
 
 
+def datacite_records(result: dict) -> bool:
+    links = result.get("links", [])
+    for link in links:
+        if link.get("type") in ("doi", "arxiv") and link.get("identifier"):
+            return True
+    return False
+
+
 def extract_tags(result):
     tags = []
     for msc in result.get('msc', []):
@@ -87,6 +95,9 @@ def extract_tags(result):
 
     if add_software(result):
         tags.append('openaire')
+
+    if datacite_records(result):
+        tags.append('datacite')
 
     return tags
 
