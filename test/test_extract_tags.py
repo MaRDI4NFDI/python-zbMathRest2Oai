@@ -12,7 +12,7 @@ class PlainXmlTest(unittest.TestCase):
             'https://api.zbmath.org/v1/document/_structured_search?page=0&results_per_page=10&zbmath%20id=2500495',
             headers=headers)
         real_tags = extract_tags(r.json()['result'][0])
-        assert real_tags == ['11', 'JFM']
+        assert real_tags == ['11', 'JFM', 'datacite']
 
     @staticmethod
     def test_software():
