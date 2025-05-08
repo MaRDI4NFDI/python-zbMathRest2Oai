@@ -78,8 +78,8 @@ def datacite_records(result: dict) -> bool:
 
 
 def software_codemeta(result: dict) -> bool:
-    src = result.get("source_code", {})
-    return bool(src)
+    source_code = result.get("source_code", "")
+    return isinstance(source_code, str) and source_code.strip() != ""
 
 
 def extract_tags(result):
