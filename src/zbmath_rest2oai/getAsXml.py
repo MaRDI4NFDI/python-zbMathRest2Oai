@@ -78,7 +78,7 @@ def datacite_records(result: dict) -> bool:
 
 
 def software_codemeta(result: dict) -> bool:
-    src= result.get("source_code", {})
+    src = result.get("source_code", {})
     return bool(src)
 
 
