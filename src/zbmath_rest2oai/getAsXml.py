@@ -77,6 +77,11 @@ def datacite_records(result: dict) -> bool:
     return False
 
 
+def software_codemeta(result: dict) -> bool:
+    src= result.get("source_code", {})
+    return bool(src)
+
+
 def extract_tags(result):
     tags = []
     for msc in result.get('msc', []):
@@ -95,6 +100,9 @@ def extract_tags(result):
 
     if add_software(result):
         tags.append('openaire')
+
+    if software_codemeta(result):
+        tags.append('SWH')
 
     if datacite_records(result):
         tags.append('datacite')
