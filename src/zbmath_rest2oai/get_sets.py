@@ -16,7 +16,7 @@ def get_sets():
             'Datacite: for metadata supported with Doi and '
             'arXiv identifiers'
         ),
-        'software heritage': (
+        'SWH': (
          'Software heritage required set'
          'to store all softwares that have source code')
     }
