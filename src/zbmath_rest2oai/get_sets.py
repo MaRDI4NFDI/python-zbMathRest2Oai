@@ -17,8 +17,9 @@ def get_sets():
             'arXiv identifiers'
         ),
         'SWH': (
-         'Software heritage required set'
-         'to store all softwares that have source code')
+            'Required set for Software Heritage: includes all entries that provide '
+            'software artifacts with accessible source code.'
+        )
     }
 
     for result in results:
