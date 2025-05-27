@@ -197,33 +197,50 @@ def final_xml2(api_source, prefix_final_xml2):
             raise EntryNotFoundException(Exception(r.text))
     if r.status_code != 200:
         raise Exception(f"Unexpected response with status code {r.status_code}: {r.text}")
+    
     json = r.json()
     dict_math_entities = {}
     tags = {}
-    if "software" in api_source:
-        if isinstance(json["result"], dict):
-            json["result"] = add_references_to_software(api_source, json["result"])
-        elif isinstance(json["result"], list):
-            for ent in range(len(json["result"])):
-                soft_id = json["result"][ent]['id']
-                json["result"][ent] = add_references_to_software("https://api.zbmath.org/v1/software/"+str(soft_id), json["result"][ent])
-    for result in json["result"]:
-        if isinstance(result, list):
+
+    # Normalize result to always be a list
+    results = json.get("result")
+    if isinstance(results, dict):
+        # Handle software references if applicable
+        if "software" in api_source:
+            results = add_references_to_software(api_source, results)
+            if isinstance(results, list):
+                pass  # already a list now
+            else:
+                results = [results]
+        else:
+            results = [results]
+    elif isinstance(results, list):
+        if "software" in api_source:
+            for ent in range(len(results)):
+                soft_id = results[ent].get('id')
+                if soft_id:
+                    results[ent] = add_references_to_software(f"https://api.zbmath.org/v1/software/{soft_id}", results[ent])
+    else:
+        raise ValueError("Unexpected format for json['result']")
+
+    # Process each result
+    for result in results:
+        if isinstance(result, list) and result:
             result = result[0]
+        if isinstance(result, dict):
             apply_zbmath_api_fixes(result, prefix_final_xml2)
-            identifier = result["id"]
-            dict_math_entities[identifier] = _illegal_xml_chars_RE.sub("", Converter(wrap="root").build(
-                result,
-                closed_tags_for=[[], '', [None], None]))
-            tags[identifier] = extract_tags(result)
-        elif isinstance(result, dict):  
-            apply_zbmath_api_fixes(result, prefix_final_xml2)
-            identifier = result["id"]
-            dict_math_entities[identifier] = _illegal_xml_chars_RE.sub("", Converter(wrap="root").build(
-                result,
-                closed_tags_for=[[], '', [None], None]))
-            tags[identifier] = extract_tags(result)
+            identifier = result.get("id")
+            if identifier is not None:
+                xml_string = Converter(wrap="root").build(
+                    result,
+                    closed_tags_for=[[], '', [None], None]
+                )
+                xml_string_cleaned = _illegal_xml_chars_RE.sub("", xml_string)
+                dict_math_entities[identifier] = xml_string_cleaned
+                tags[identifier] = extract_tags(result)
+
     return [dict_math_entities, r.elapsed.total_seconds(), tags]
+
 
 
 if __name__ == "__main__":
