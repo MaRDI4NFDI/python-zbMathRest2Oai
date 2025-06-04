@@ -65,7 +65,7 @@ def apply_zbmath_api_fixes(result, prefix_get_as_xml):
 
 
 def add_software(result):
-    zbmath_url = result.get("result", {}).get("zbmath_url", "")
+    zbmath_url = result.get("zbmath_url", "")
     return zbmath_url.startswith("https://zbmath.org/software/")
 
 
@@ -95,7 +95,7 @@ def extract_tags(result):
     db = result.get('database')
     if db == 'JFM':
         tags.append('JFM')
-    elif db == 'Zbl':
+    if db == 'Zbl':
         tags.append('openaire')
 
     if add_software(result):
