@@ -106,7 +106,6 @@ def extract_tags(result):
 
     if datacite_records(result):
         tags.append('datacite')
-
     return tags
 
 

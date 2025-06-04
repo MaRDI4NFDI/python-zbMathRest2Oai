@@ -18,7 +18,12 @@ def content_differs(current, content) -> bool:
         # Content is None
         return True
 
-
+def tags_differs(current, tags) -> bool:
+    try:
+        return tags != current['tags']
+    except TypeError:
+        # Content is None
+        return True
 async def sync_item(session, identifier, oai_url, tags, ingest_format, content):
     async with session.get(oai_url + '/' + str(identifier) + '?content=true', auth=AUTH) as resp:
         if resp.status == 404:
@@ -30,7 +35,7 @@ async def sync_item(session, identifier, oai_url, tags, ingest_format, content):
                 return response
         if resp.status == 200:
             current = await resp.json()
-            if content_differs(current, content):
+            if content_differs(current, content) or tags_differs(current, tags):
                 data = await format_data(content, identifier, ingest_format, tags)
                 async with session.put(oai_url + '/' + str(identifier), data=data, auth=AUTH) as response:
                     if response.status not in [200]:
@@ -95,8 +100,8 @@ if __name__ == '__main__':
     import sys
     #api_source='https://api.zbmath.org/v1/document/_all?start_after=0&results_per_request=500'
     oai_url = 'https://oai-input.portal.mardi4nfdi.de/oai-backend/item'
-    api_source = "https://api.zbmath.org/software/27000"
+    api_source = "https://api.zbmath.org/v1/document/7944830"
 
-    prefix='oai:swmath.org:'
-    ingest_format='zbmath_rest_api_software'
+    prefix='oai:zbmath.org:'
+    ingest_format='zbmath_rest_api'
     write_oai(api_source, oai_url, prefix, ingest_format)
