@@ -32,7 +32,7 @@
 
            <xsl:apply-templates select="root/editorial_contributions/text"/>
 
-                   <datacite:rights rightsURI="http://purl.org/coar/access_right/c_14cb">metadata only access</datacite:rights>
+           <datacite:rights rightsURI="http://purl.org/coar/access_right/c_14cb">metadata only access</datacite:rights>
 
 
    <dc:format>application/xml</dc:format>
