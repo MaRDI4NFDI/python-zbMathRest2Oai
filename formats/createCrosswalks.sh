@@ -1,57 +1,57 @@
 #!/bin/bash
 
-#The examples below use the linux command jq for encoding teh XSLT to JSON for adding it into the curl command
-#The package can be installed via yum install jq
-#Get the password and export it as OAI_BASIC_PASSWORD
-OAI_BASIC_USER=swmath
+# The examples below use the linux command jq for encoding the XSLT to JSON
+# The package can be installed via: yum install jq
+# Ensure that OAI_BASIC_PASSWORD is set in the environment
+
+# Get the username and password, then export it as OAI_BASIC_PASSWORD
+OAI_BASIC_USER="swmath"
 AUTH=$(echo -n "$OAI_BASIC_USER:$OAI_BASIC_PASSWORD" | base64)
-OAI_INPUT_STAGING='https://oai-input.staging.mardi4nfdi.org/oai-backend/crosswalk'
-OAI_INPUT_PRODUCTION='https://oai-input.portal.mardi4nfdi.de/oai-backend/crosswalk'
-OAI_INPUT=$OAI_INPUT_PRODUCTION
-#Create Crosswalk from rest_api to dublin core
-## Read the xslt file
-XSLT_JSON_ENCODED=`cat ../xslt/articles/xslt-article-DublinCore.xslt | jq -Rsa .`
-curl --noproxy '*' -X POST -H 'Content-Type: application/json' -H  "Authorization: Basic $AUTH" -i $OAI_INPUT --data '{"name":"article2dc","formatFrom":"zbmath_rest_api","formatTo":"oai_dc","xsltStylesheet":'"$XSLT_JSON_ENCODED}"'}'
 
-#Create Crosswalk from rest_api to oai_zb_preview
-XSLT_JSON_ENCODED=`cat ../xslt/articles/xslt-article-oai_zb_preview.xslt | jq -Rsa .`
-curl --noproxy '*' -X POST -H 'Content-Type: application/json' -H  "Authorization: Basic $AUTH" -i $OAI_INPUT --data '{"name":"rest2preview","formatFrom":"zbmath_rest_api","formatTo":"oai_zb_preview","xsltStylesheet":'"$XSLT_JSON_ENCODED}"'}'
+# Base URL for OAI input
+OAI_INPUT="https://oai-input.portal.mardi4nfdi.de/oai-backend/crosswalk"
 
-#Create Crosswalk from rest_api to datacite_articles
-XSLT_JSON_ENCODED=`cat ../xslt/articles/xslt-article-Datacite.xslt | jq -Rsa .`
-curl --noproxy '*' -X POST -H 'Content-Type: application/json' -H  "Authorization: Basic $AUTH" -i $OAI_INPUT --data '{"name":"article2datacite","formatFrom":"zbmath_rest_api","formatTo":"datacite_articles","xsltStylesheet":'"$XSLT_JSON_ENCODED}"'}'
+# Function to execute a crosswalk creation request
+create_crosswalk() {
+    local name="$1"
+    local formatFrom="$2"
+    local formatTo="$3"
+    local xsltFile="$4"
 
-#Create Crosswalk from zbmath_rest_api_software to datacite_software
-XSLT_JSON_ENCODED=$(cat ../xslt/software/xslt-software-datacite.xslt | jq -Rsa .)
-curl --noproxy '*' -X POST -H 'Content-Type: application/json' -H  "Authorization: Basic $AUTH" -i $OAI_INPUT --data '{"name":"swmath2datacite","formatFrom":"zbmath_rest_api_software","formatTo":"datacite_swmath","xsltStylesheet":'"$XSLT_JSON_ENCODED}"'}'
+    # Encode the XSLT file to JSON
+    XSLT_JSON_ENCODED=$(cat "$xsltFile" | jq -Rsa .)
 
-#Create Crosswalk from rest_api to oai_openaire
-XSLT_JSON_ENCODED=`cat ../xslt/articles/xslt-article-OpenAire2.xslt | jq -Rsa .`
-curl --noproxy '*' -X POST -H 'Content-Type: application/json' -H  "Authorization: Basic $AUTH" -i $OAI_INPUT --data '{"name":"articles2openaire","formatFrom":"zbmath_rest_api","formatTo":"oai_openaire","xsltStylesheet":'"$XSLT_JSON_ENCODED}"'}'
+    # Execute the curl command
+    response=$(curl --noproxy '*' -X POST -H 'Content-Type: application/json' \
+                     -H "Authorization: Basic $AUTH" -i $OAI_INPUT \
+                     --data "{\"name\":\"$name\",\"formatFrom\":\"$formatFrom\",\"formatTo\":\"$formatTo\",\"xsltStylesheet\":$XSLT_JSON_ENCODED}")
 
-#Create Crosswalk from zbmath_rest_api_software to oai_openaire
-XSLT_JSON_ENCODED=`cat ../xslt/software/xslt-software-OpenAire.xslt | jq -Rsa .`
-curl --noproxy '*' -X POST -H 'Content-Type: application/json' -H  "Authorization: Basic $AUTH" -i $OAI_INPUT --data '{"name":"software2openaire","formatFrom":"zbmath_rest_api_software","formatTo":"oai_openaire","xsltStylesheet":'"$XSLT_JSON_ENCODED}"'}'
+    # Check if the request was successful
+    if echo "$response" | grep -q "HTTP/2 200"; then
+        echo "Crosswalk $name created successfully."
+    else
+        echo "Error creating crosswalk $name."
+        echo "$response"
+    fi
+}
 
+# Crosswalk Creation Calls
+create_crosswalk "article2dc" "zbmath_rest_api" "oai_dc" "../xslt/articles/xslt-article-DublinCore.xslt"
+create_crosswalk "rest2preview" "zbmath_rest_api" "oai_zb_preview" "../xslt/articles/xslt-article-oai_zb_preview.xslt"
+create_crosswalk "article2datacite" "zbmath_rest_api" "datacite_articles" "../xslt/articles/xslt-article-Datacite.xslt"
+create_crosswalk "swmath2datacite" "zbmath_rest_api_software" "datacite_swmath" "../xslt/software/xslt-software-datacite.xslt"
+create_crosswalk "articles2openaire" "zbmath_rest_api" "oai_openaire" "../xslt/articles/xslt-article-OpenAire2.xslt"
+create_crosswalk "software2openaire" "zbmath_rest_api_software" "oai_openaire" "../xslt/software/xslt-software-OpenAire.xslt"
+create_crosswalk "software2codemeta" "zbmath_rest_api_software" "codemeta" "../xslt/software/xslt-software-Codemeta.xslt"
 
-#Create Crosswalk from zbmath_rest_api_software to codemeta
-XSLT_JSON_ENCODED=`cat ../xslt/software/xslt-software-Codemeta.xslt | jq -Rsa .`
-curl --noproxy '*' -X POST -H 'Content-Type: application/json' -H  "Authorization: Basic $AUTH" -i $OAI_INPUT --data '{"name":"software2codemeta","formatFrom":"zbmath_rest_api_software","formatTo":"codemeta","xsltStylesheet":'"$XSLT_JSON_ENCODED}"'}'
-
-
-
-#Update the data after recreating or push
+# Optional: Update the data after recreation or push
 # curl --noproxy '*' -X PUT -H  "Authorization: Basic $AUTH" -i 'https://oai-input.portal.mardi4nfdi.de/oai-backend/crosswalk/article2datacite/process?updateItemTimestamp=true&from=0000-00-00T00:00:00Z&until=2030-05-27T07:05:02Z'
+
+# Optional: Start reindexing
 # curl --noproxy '*' -X POST -H "Authorization: Basic $AUTH" -i 'https://oai-input.portal.mardi4nfdi.de/oai-backend/reindex/start'
 
-#Read all crosswalk
-#curl -X GET 'http://localhost:8081/oai-backend/crosswalk'
-curl --noproxy '*' -X GET -H  "Authorization: Basic $AUTH" $OAI_INPUT
+# Optional: Read all crosswalks
+# curl --noproxy '*' -X GET -H  "Authorization: Basic $AUTH" $OAI_INPUT
 
-#Delete specific crosswalk from por
-#curl -v -X DELETE http://localhost:8081/oai-backend/crosswalk/Radar2OAI_DC_v09
-#Delete specific crosswalk from local
-#curl -v -X DELETE POST -H "Authorization: Basic $AUTH" -i 'https://oai-input.staging.mardi4nfdi.org/oai-backend/crosswalk/software2codemeta'
-#
-
-#curl --noproxy '*' -X POST -H "Authorization: Basic $AUTH" -i 'https://oai-input.portal.mardi4nfdi.de/oai-backend/crosswalk/article2datacite/process'
+# Optional: Delete a specific crosswalk
+# curl -v -X DELETE -H "Authorization: Basic $AUTH" -i 'https://oai-input.portal.mardi4nfdi.de/oai-backend/crosswalk/software2codemeta'
