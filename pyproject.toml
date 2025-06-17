@@ -15,7 +15,7 @@ dependencies = [
     "aiohttp",
     "lxml",
     "defusedxml",
-    "sickle"
+    "pyoai"
 ]
 [project.optional-dependencies]
 test = [
