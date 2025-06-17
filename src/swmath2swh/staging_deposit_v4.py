@@ -144,6 +144,7 @@ def main():
             print(f"Successfully processed ID: {swmath_id}")
         except Exception as e:
             print(f"Error processing ID {swmath_id}: {str(e)}")
+        break
 
 
 if __name__ == "__main__":
