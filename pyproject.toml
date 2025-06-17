@@ -14,7 +14,8 @@ dependencies = [
     "requests",
     "aiohttp",
     "lxml",
-    "defusedxml"
+    "defusedxml",
+    "sickle"
 ]
 [project.optional-dependencies]
 test = [
