@@ -10,3 +10,14 @@ Hint for a proper installation:
 * navigate to the directory
 * execute `pip install -e .`
 * execute `pip install .[test]` to install the dependencies for the test
+
+## Project Structure
+
+- **`src/swmath2swh`**: Handles integration with [Software Heritage (SWH)](https://www.softwareheritage.org/).
+- **`zbmath_rest2oai`**: Ingests metadata into the OAI-PMH server at [oai.portal.mardi4nfdi.de/oai/](https://oai.portal.mardi4nfdi.de/oai/).
+
+## Deployment
+The project is containerized and managed via [Portainer](https://portainer.portal.mardi4nfdi.de/#!/home).
+
+## Support
+For inquiries, contact **[support@zbmath.org](mailto:support@zbmath.org)**.
