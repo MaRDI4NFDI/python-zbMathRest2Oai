@@ -15,8 +15,8 @@ from pathlib import Path
 deposited_software_file = Path("./deposited_software.txt")
 # Load environment variables
 env = os.environ.copy()
-env['SWMATH_USER_DEPOSIT'] = os.getenv('SWMATH_USER_DEPOSIT')
-env['SWMATH_PWD_DEPOSIT'] = os.getenv('SWMATH_PWD_DEPOSIT')
+env['SWMATH_USER_DEPOSIT_PRODUCTION'] = os.getenv('SWMATH_USER_DEPOSIT_PRODUCTION')
+env['SWMATH_PWD_DEPOSIT_PRODUCTION'] = os.getenv('SWMATH_PWD_DEPOSIT_PRODUCTION')
 
 xsl_filename = './xslt/software/xslt_SWH_deposit.xslt'
 
@@ -99,6 +99,7 @@ def process_swmath_record(swmath_id):
     # Write transformed XML to a temporary file
     with tempfile.NamedTemporaryFile(mode='w', delete=False, suffix='.xml') as temp_file:
         temp_file.write(formatted_newdom)
+        print(f"formatted_newdom: /n {formatted_newdom}")
         temp_filename = temp_file.name
         print(f"Temporary file created: {temp_filename}")
 
@@ -111,12 +112,14 @@ def process_swmath_record(swmath_id):
         "deposit_date": formatted_time
     })
 
+
+
     # Run the command with the temporary XML file
     subprocess.run([
         "swh", "deposit", "metadata-only",
-        "--username", env["SWMATH_USER_DEPOSIT"],
-        "--password", env["SWMATH_PWD_DEPOSIT"],
-        "--url", "https://deposit.staging.swh.network/1",
+        "--username", env["SWMATH_USER_DEPOSIT_PRODUCTION"],
+        "--password", env["SWMATH_PWD_DEPOSIT_PRODUCTION"],
+        "--url", "https://deposit.softwareheritage.org/",
         "--metadata", temp_filename,
         "--format", "json"
     ])
