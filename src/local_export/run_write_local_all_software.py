@@ -24,7 +24,7 @@ def write_local(api_source):
             print(f"Response: {response.text[:200]}...")
             return (False, 0)
 
-        with open('software_data.csv', mode='a', newline='', encoding='utf-8') as f:
+        with open('./src/local_export/software_data.csv', mode='a', newline='', encoding='utf-8') as f:
             writer = csv.writer(f)
 
             # Write headers if file is empty
