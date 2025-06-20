@@ -4,7 +4,6 @@ import os
 import subprocess
 import time
 
-
 class Swhid:
     def __init__(self, url, token):
         self.url = url
@@ -83,6 +82,7 @@ def append_archived_url(url, archived_file_path):
 
 # Example usage
 if __name__ == "__main__":
+
     # Load environment variables from .bashrc
     result = subprocess.run(['bash', '-c', 'source ~/.bashrc && export -p'], stdout=subprocess.PIPE, text=True,
                             check=True)
@@ -106,8 +106,8 @@ if __name__ == "__main__":
     root_dir = os.path.abspath(os.path.join(current_dir, "../../"))
 
     # Construct the desired file paths
-    file_path = os.path.abspath(os.path.join(root_dir, "test/data/software/swh_swmath.csv"))
-    archived_file_path = os.path.abspath(os.path.join(root_dir, "test/data/software/swh_swmath_archived.csv"))
+    file_path = os.path.abspath(os.path.join(root_dir,'./src/local_export/software_data.csv'))
+    archived_file_path = os.path.abspath(os.path.join(root_dir, "./src/swmath2swh/archived_software.csv"))
 
     # Check if file exists
     if not os.path.exists(file_path):
@@ -119,8 +119,9 @@ if __name__ == "__main__":
         total_software = len(reader) - 1  # Skip header row count
     current_index = 0
     for row in reader[1:]:
+
         current_index += 1
-        swmathid, url, swhid = row
+        swmathid, url = row
 
         # Check if URL is already archived
         if url_already_archived(url, archived_file_path):
