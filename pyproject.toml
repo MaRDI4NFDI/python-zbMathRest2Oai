@@ -15,7 +15,9 @@ dependencies = [
     "aiohttp",
     "lxml",
     "defusedxml",
-    "pyoai"
+    "pyoai",
+    "swh.deposit",
+    "swh.auth"
 ]
 [project.optional-dependencies]
 test = [
