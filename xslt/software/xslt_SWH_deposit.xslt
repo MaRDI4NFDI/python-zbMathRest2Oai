@@ -35,7 +35,7 @@
         </swh:reference>
         <swh:metadata-provenance>
           <schema:url>
-            <xsl:value-of select="concat('https://staging.swmath.org/', substring-after(/oai:OAI-PMH/oai:GetRecord/oai:record/oai:header/oai:identifier, ':swmath.org:'))"/>
+            <xsl:value-of select="concat('https://swmath.org/software/', substring-after(/oai:OAI-PMH/oai:GetRecord/oai:record/oai:header/oai:identifier, ':swmath.org:'))"/>
           </schema:url>
         </swh:metadata-provenance>
       </swh:deposit>
@@ -51,7 +51,7 @@
       <xsl:copy-of select="/oai:OAI-PMH/oai:GetRecord/oai:record/oai:metadata/*/codemeta:citation"/>
       <xsl:copy-of select="/oai:OAI-PMH/oai:GetRecord/oai:record/oai:metadata/*/codemeta:referencePublication"/>
       <codemeta:url>
-        <xsl:value-of select="concat('https://staging.swmath.org/', substring-after(/oai:OAI-PMH/oai:GetRecord/oai:record/oai:header/oai:identifier, 'oai:swmath.org:'))"/>
+        <xsl:value-of select="concat('https://swmath.org/software/', substring-after(/oai:OAI-PMH/oai:GetRecord/oai:record/oai:header/oai:identifier, 'oai:swmath.org:'))"/>
       </codemeta:url>
 
 
