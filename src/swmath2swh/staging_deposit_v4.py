@@ -1,5 +1,5 @@
 import io
-
+import csv
 import defusedxml.ElementTree as DET  # Using defusedxml for safe XML parsing
 from defusedxml.lxml import fromstring
 import lxml.etree as ET
@@ -11,8 +11,8 @@ import requests
 import re
 from io import BytesIO
 from pathlib import Path
-
-deposited_software_file = Path("./deposited_software.txt")
+archived_software_file = Path("src/swmath2swh/archived_software.csv")
+deposited_software_file = Path("src/swmath2swh/deposited_software.txt")
 # Load environment variables
 env = os.environ.copy()
 env['SWMATH_USER_DEPOSIT_PRODUCTION'] = os.getenv('SWMATH_USER_DEPOSIT_PRODUCTION')
@@ -21,52 +21,27 @@ env['SWMATH_PWD_DEPOSIT_PRODUCTION'] = os.getenv('SWMATH_PWD_DEPOSIT_PRODUCTION'
 xsl_filename = './xslt/software/xslt_SWH_deposit.xslt'
 
 
-def get_swmath_ids_from_oai():
-    """Retrieve all SWMath IDs from the OAI-PMH SWH set"""
-    OAI_URL = "https://oai.portal.mardi4nfdi.de/oai/OAIHandler"
-    params = {
-        "verb": "ListRecords",
-        "metadataPrefix": "codemeta",
-        "set": "SWH"
-    }
+def get_swmath_ids_from_archived():
+    """Retrieve all SWMath IDs from the archived_software.csv file"""
     swmath_ids = []
+
+    # Read already deposited IDs
     if deposited_software_file.is_file():
         with open(deposited_software_file, "r") as f:
-            deposited_software = f.readlines()
-            f.close()
+            deposited_software = [line.strip() for line in f.readlines()]
     else:
         deposited_software = []
 
+    # Read from archived_software.csv
+    if archived_software_file.is_file():
+        with open(archived_software_file, 'r') as f:
+            reader = csv.reader(f)
+            next(reader)  # Skip header
+            for row in reader:
+                if len(row) > 0 and row[0] not in deposited_software:
+                    swmath_ids.append(row[0])
 
-    while True:
-        r = requests.get(OAI_URL, params=params)
-        context = DET.iterparse(BytesIO(r.content), events=("end",))
-
-        resumption_token = None
-
-        for event, elem in context:
-            tag = elem.tag.split("}")[-1]  # Remove namespace
-            if tag == "identifier":
-                # Extract SWMath ID from identifier (format: oai:swmath.org:123)
-                if "oai:swmath.org:" in elem.text:
-                    swmath_id = elem.text.split(":")[-1]
-                    swmath_ids.append(swmath_id)
-            elif tag == "resumptionToken":
-                resumption_token = elem.text.strip() if elem.text else None
-            elem.clear()
-
-        if resumption_token:
-            # Update params to fetch next page
-            params = {
-                "verb": "ListRecords",
-                "resumptionToken": resumption_token
-            }
-        else:
-            break
-
-    return list(set(swmath_ids)-set(deposited_software))
-
-
+    return swmath_ids
 def process_swmath_record(swmath_id):
     """Process a single SWMath record and deposit it"""
     # Fetch XML data
@@ -137,7 +112,7 @@ def process_swmath_record(swmath_id):
 
 def main():
     print("Fetching SWMath IDs from OAI-PMH SWH set...")
-    swmath_ids = get_swmath_ids_from_oai()
+    swmath_ids = get_swmath_ids_from_archived()
     print(f"Found {len(swmath_ids)} SWMath records to process")
 
     for i, swmath_id in enumerate(swmath_ids, 1):
