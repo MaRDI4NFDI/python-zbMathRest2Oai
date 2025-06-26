@@ -49,7 +49,7 @@
                                  and . != 'None'
                                  and . != 'none'
                                  and not(contains(., 'zbMATH Open Web Interface contents unavailable due to conflicting licenses'))]">
-            <datacite:date dateType="Available">
+            <datacite:date dateType="Issued">
                 <xsl:value-of select="root/year"/>
             </datacite:date>
         </xsl:when>
@@ -59,7 +59,7 @@
                                                   and . != 'None'
                                                   and . != 'none'
                                                   and not(contains(., 'zbMATH Open Web Interface contents unavailable due to conflicting licenses'))]">
-                <datacite:date dateType="Available">
+                <datacite:date dateType="Issued">
                     <xsl:value-of select="root/source/series/year"/>
                 </datacite:date>
             </xsl:if>
@@ -212,7 +212,7 @@
                         and . != 'None'
                         and . != 'none'
                         and not(contains(., 'zbMATH Open Web Interface contents unavailable due to conflicting licenses'))">
-            <datacite:date dateType="Available">
+            <datacite:date dateType="Issued">
                 <xsl:value-of select="."/>
             </datacite:date>
         </xsl:when>
@@ -221,7 +221,7 @@
                           and $seriesYear != 'None'
                           and $seriesYear != 'none'
                           and not(contains($seriesYear, 'zbMATH Open Web Interface contents unavailable due to conflicting licenses'))">
-                <datacite:date dateType="Available">
+                <datacite:date dateType="Issued">
                     <xsl:value-of select="$seriesYear"/>
                 </datacite:date>
             </xsl:if>
