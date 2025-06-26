@@ -49,14 +49,14 @@
   <links>
     <identifier>10.4007/annals.2015.181.1.7</identifier>
     <type>doi</type>
-  <url>https://doi.org/10.4007/annals.2015.181.1.7</url>
+    <url>https://doi.org/10.4007/annals.2015.181.1.7</url>
   </links>
   <links>
     <identifier>1311.4600</identifier>
     <type>arxiv</type>
     <url>https://arxiv.org/abs/1311.4600</url>
   </links>
-    <links>
+  <links>
     <identifier>A1097</identifier>
     <type>oeis</type>
     <url>https://oeis.org/A1097</url>
@@ -132,10 +132,10 @@
     <position>3</position>
     <text>D. A. Goldston, S. W. Graham, J. Pintz, and C. Y. Yildirim, ''Small gaps between products of two primes,'' Proc. Lond. Math. Soc., vol. 98, iss. 3, pp. 741-774, 2009.</text>
     <zbmath>
+      <author_codes>pintz.janos</author_codes>
       <author_codes>graham.sidney-w</author_codes>
       <author_codes>yildirim.cem-yalcin</author_codes>
       <author_codes>goldston.daniel-alan</author_codes>
-      <author_codes>pintz.janos</author_codes>
       <document_id>5551831</document_id>
       <msc>11N25</msc>
       <msc>11N36</msc>
@@ -149,8 +149,8 @@
     <position>4</position>
     <text>D. A. Goldston, J. Pintz, and C. Y. Yildirim, ''Primes in tuples. III. On the difference \(p_{n+\nu}-p_n\),'' Funct. Approx. Comment. Math., vol. 35, pp. 79-89, 2006.</text>
     <zbmath>
-      <author_codes>yildirim.cem-yalcin</author_codes>
       <author_codes>pintz.janos</author_codes>
+      <author_codes>yildirim.cem-yalcin</author_codes>
       <author_codes>goldston.daniel-alan</author_codes>
       <document_id>5135166</document_id>
       <msc>11N05</msc>
@@ -165,8 +165,8 @@
     <position>5</position>
     <text>D. A. Goldston, J. Pintz, and C. Y. Yildirim, ''Primes in tuples. I,'' Ann. of Math., vol. 170, iss. 2, pp. 819-862, 2009.</text>
     <zbmath>
-      <author_codes>yildirim.cem-yalcin</author_codes>
       <author_codes>pintz.janos</author_codes>
+      <author_codes>yildirim.cem-yalcin</author_codes>
       <author_codes>goldston.daniel-alan</author_codes>
       <document_id>5610431</document_id>
       <msc>11N05</msc>

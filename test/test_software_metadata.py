@@ -17,11 +17,13 @@ class PlainXmlTest(unittest.TestCase):
         ref_location = os.path.join(os.path.dirname(__file__), 'data/software/plain_with_references.xml')
         with open(ref_location) as f:
             expected_string = f.read()
-
+            print("expected result" , expected_string)
+            print("real result" , real_string)
             diff = main.diff_texts(expected_string, real_string, {
                 'ratio_mode': 'fast',
                 'F': 1,
             })
+            print(diff)
             essentials = list(filter(lambda e: not isinstance(e, MoveNode), diff))
             self.assertLessEqual(len(essentials), 0)
 

@@ -12,14 +12,16 @@ API_SOURCE = 'https://api.zbmath.org/v1/document/_structured_search?page=0&resul
 class PlainXmlTest(unittest.TestCase):
     def test_similarity(self):
         real_string = getAsXml.final_xml2(API_SOURCE, 'Zbl ')[0]['Zbl 6383667']
-
+        print("real",real_string)
         ref_location = os.path.join(os.path.dirname(__file__), 'data/articles/plain.xml')
         with open(ref_location) as f:
             expected_string = f.read()
+            print("expected",expected_string)
             diff = main.diff_texts(expected_string, real_string, {
                 'ratio_mode': 'fast',
                 'F': 1,
             })
+            print(diff)
             essentials = list(filter(lambda e: not isinstance(e, MoveNode), diff))
             self.assertLessEqual(len(essentials), 0)
 
