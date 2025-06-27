@@ -58,7 +58,6 @@ def get_last_id():
         pass
     return 0
 
-
 def update_last_id(last_id):
     """Update the last processed ID in the file."""
     with open('last_id.txt', 'a') as f:
