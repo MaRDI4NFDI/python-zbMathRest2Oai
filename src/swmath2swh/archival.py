@@ -165,7 +165,7 @@ def main():
     # File paths
     current_dir = os.path.dirname(os.path.abspath(__file__))
     root_dir = os.path.abspath(os.path.join(current_dir, "../../"))
-    input_csv = os.path.join(root_dir, "src/local_export/software_data.csv")
+    input_csv = os.path.join(root_dir, "src/swmath2swh/software_data.csv")
     archived_csv = os.path.join(root_dir, "src/swmath2swh/archived_software.csv")
 
     # Load API token

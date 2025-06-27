@@ -164,8 +164,4 @@ cython_debug/
 #  and can be added to the global gitignore or merged into this file.  For a more nuclear
 #  option (not recommended) you can uncomment the following to ignore the entire idea folder.
 .idea/
-test/data/software/swh_swmath_archived.csv
 
-test/data/software/logfile.txt
-test/data/software/software_with_swhid.json
-test/data/software/software_with_swhid.xml
