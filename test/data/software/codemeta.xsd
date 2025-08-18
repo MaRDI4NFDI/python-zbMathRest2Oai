@@ -1,0 +1,38 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="https://doi.org/10.5063/SCHEMA/CODEMETA-2.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="author">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element type="xs:string" name="name"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="name" type="xs:string"/>
+  <xs:element name="description" type="xs:string"/>
+  <xs:element name="sameAs" type="xs:anyURI"/>
+  <xs:element name="keywords" type="xs:string"/>
+  <xs:element name="relatedLink" type="xs:string"/>
+  <xs:element name="supportingData">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element type="xs:string" name="name"/>
+        <xs:element type="xs:string" name="id"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="referencePublication">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element type="xs:string" name="id"/>
+        <xs:element type="xs:short" name="datePublished"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="citation">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element type="xs:string" name="id"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="url" type="xs:string"/>
+</xs:schema>
