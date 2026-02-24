@@ -1,0 +1,54 @@
+{
+  "articles_count": 42,
+  "authors": [
+    "Stein, William"
+  ],
+  "classification": [
+    "68",
+    "11",
+    "14"
+  ],
+  "dependencies": "",
+  "description": "SageMath is a free open-source mathematics software system.",
+  "homepage": "https://www.sagemath.org/",
+  "id": 825,
+  "keywords": "orms",
+  "license_terms": "GPL",
+  "name": "SageMath",
+  "operating_systems": "Linux, macOS",
+  "orms_id": 825,
+  "programming_languages": "Python",
+  "related_software": [
+    {
+      "id": 1,
+      "name": "Mathematica"
+    },
+    {
+      "id": 2,
+      "name": "PARI/GP"
+    }
+  ],
+  "source_code": "https://github.com/sagemath/sage",
+  "standard_articles": [
+    {
+      "authors": "Stein, William; Joyner, David",
+      "id": 2187000,
+      "source": "ACM SIGSAM Bull. 39, No. 2, 61-64 (2005).",
+      "title": "SAGE: system for algebra and geometry experimentation",
+      "year": 2005
+    }
+  ],
+  "references": [
+    3000001,
+    3000002
+  ],
+  "references_alt": [
+    "3000001;10.1000/test.001",
+    "3000002"
+  ],
+  "references_year_alt": [
+    "2010",
+    "2012"
+  ],
+  "zbmath_url": "https://zbmath.org/software/825"
+}
