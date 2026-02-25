@@ -1,54 +1,182 @@
 {
-  "articles_count": 42,
+  "articles_count": 3439,
   "authors": [
-    "Stein, William"
+    "The Sage Developers",
+    "Stein, William",
+    "Joyner, David",
+    "Kohel, David",
+    "Cremona, John",
+    "Eröcal, Burçin"
   ],
   "classification": [
-    "68",
+    "05",
     "11",
-    "14"
+    "14",
+    "20",
+    "68",
+    "00",
+    "01",
+    "03",
+    "06",
+    "08",
+    "12",
+    "13",
+    "15",
+    "16",
+    "17",
+    "18",
+    "19",
+    "22",
+    "26",
+    "28",
+    "30",
+    "31",
+    "32",
+    "33",
+    "34",
+    "35",
+    "37",
+    "39",
+    "40",
+    "41",
+    "42",
+    "43",
+    "44",
+    "46",
+    "47",
+    "49",
+    "51",
+    "52",
+    "53",
+    "54",
+    "55",
+    "57",
+    "58",
+    "60",
+    "62",
+    "65",
+    "70",
+    "74",
+    "76",
+    "78",
+    "80",
+    "81",
+    "82",
+    "83",
+    "85",
+    "86",
+    "90",
+    "91",
+    "92",
+    "93",
+    "94",
+    "97"
   ],
-  "dependencies": "",
-  "description": "SageMath is a free open-source mathematics software system.",
+  "dependencies": null,
+  "description": "zbMATH Open Web Interface contents unavailable due to conflicting licenses.",
   "homepage": "https://www.sagemath.org/",
   "id": 825,
-  "keywords": "orms",
-  "license_terms": "GPL",
+  "keywords": [
+    "orms",
+    "Python",
+    "Cython",
+    "Sage",
+    "Open Source",
+    "Interfaces"
+  ],
+  "license_terms": "GPL (≥ 3)",
   "name": "SageMath",
-  "operating_systems": "Linux, macOS",
-  "orms_id": 825,
-  "programming_languages": "Python",
+  "operating_systems": null,
+  "orms_id": "255",
+  "programming_languages": null,
   "related_software": [
-    {
-      "id": 1,
-      "name": "Mathematica"
-    },
-    {
-      "id": 2,
-      "name": "PARI/GP"
-    }
+    {"id": 540, "name": "Magma"},
+    {"id": 23170, "name": "GitHub"},
+    {"id": 320, "name": "GAP"},
+    {"id": 7248, "name": "OEIS"},
+    {"id": 680, "name": "PARI/GP"},
+    {"id": 866, "name": "SINGULAR"},
+    {"id": 537, "name": "Macaulay2"},
+    {"id": 554, "name": "Mathematica"},
+    {"id": 16448, "name": "Sage-Combinat"},
+    {"id": 7249, "name": "LMFDB"},
+    {"id": 545, "name": "Maple"},
+    {"id": 14460, "name": "Python"},
+    {"id": 27596, "name": "ecdata"},
+    {"id": 611, "name": "nauty"},
+    {"id": 7823, "name": "Traces"},
+    {"id": 23728, "name": "MathOverflow"},
+    {"id": 4968, "name": "DLMF"},
+    {"id": 724, "name": "polymake"},
+    {"id": 560, "name": "Maxima"},
+    {"id": 6874, "name": "SnapPy"}
   ],
   "source_code": "https://github.com/sagemath/sage",
   "standard_articles": [
     {
-      "authors": "Stein, William; Joyner, David",
-      "id": 2187000,
-      "source": "ACM SIGSAM Bull. 39, No. 2, 61-64 (2005).",
-      "title": "SAGE: system for algebra and geometry experimentation",
-      "year": 2005
+      "authors": [],
+      "id": 7045592,
+      "source": "zbMATH Open Web Interface contents unavailable due to conflicting licenses.",
+      "title": "zbMATH Open Web Interface contents unavailable due to conflicting licenses.",
+      "year": "2019"
+    },
+    {
+      "authors": [],
+      "id": 6418360,
+      "source": "zbMATH Open Web Interface contents unavailable due to conflicting licenses.",
+      "title": "zbMATH Open Web Interface contents unavailable due to conflicting licenses.",
+      "year": "2015"
+    },
+    {
+      "authors": [],
+      "id": 6532438,
+      "source": "zbMATH Open Web Interface contents unavailable due to conflicting licenses.",
+      "title": "zbMATH Open Web Interface contents unavailable due to conflicting licenses.",
+      "year": "2013"
+    },
+    {
+      "authors": [],
+      "id": 6462232,
+      "source": "zbMATH Open Web Interface contents unavailable due to conflicting licenses.",
+      "title": "zbMATH Open Web Interface contents unavailable due to conflicting licenses.",
+      "year": "2013"
+    },
+    {
+      "authors": [],
+      "id": 6114556,
+      "source": "zbMATH Open Web Interface contents unavailable due to conflicting licenses.",
+      "title": "zbMATH Open Web Interface contents unavailable due to conflicting licenses.",
+      "year": "2012"
+    },
+    {
+      "authors": [],
+      "id": 5785538,
+      "source": "zbMATH Open Web Interface contents unavailable due to conflicting licenses.",
+      "title": "zbMATH Open Web Interface contents unavailable due to conflicting licenses.",
+      "year": "2010"
+    },
+    {
+      "authors": [],
+      "id": 5380273,
+      "source": "zbMATH Open Web Interface contents unavailable due to conflicting licenses.",
+      "title": "zbMATH Open Web Interface contents unavailable due to conflicting licenses.",
+      "year": "2008"
     }
   ],
   "references": [
-    3000001,
-    3000002
+    6383667,
+    6414141,
+    6462232
   ],
   "references_alt": [
-    "3000001;10.1000/test.001",
-    "3000002"
+    "6383667;10.1145/2930266",
+    "6414141",
+    "6462232"
   ],
   "references_year_alt": [
-    "2010",
-    "2012"
+    "2016",
+    "2015",
+    "2013"
   ],
   "zbmath_url": "https://zbmath.org/software/825"
 }
