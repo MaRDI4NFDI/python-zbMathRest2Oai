@@ -6,12 +6,12 @@ from xmldiff.actions import MoveNode
 
 from zbmath_rest2oai import getAsXml
 
-API_SOURCE = 'https://api.zbmath.org/v1/document/_structured_search?page=0&results_per_page=10&zbmath%20id=6383667'
+API_SOURCE = "https://api.zbmath.org/v1/document/6383667"
 
 
 class PlainXmlTest(unittest.TestCase):
     def test_similarity(self):
-        real_string = getAsXml.final_xml2(API_SOURCE, 'Zbl ')[0]['Zbl 6383667']
+        real_string = getAsXml.final_xml2(API_SOURCE, 'oai:zbmath.org:')[0]['oai:zbmath.org:6383667']
 
         ref_location = os.path.join(os.path.dirname(__file__), 'data/articles/plain.xml')
         with open(ref_location) as f:
