@@ -39,7 +39,7 @@ from zbmath_rest2oai.software_quickstatements import (
 
 
 _API_BASE = "https://api.zbmath.org/v1/software"
-_DEFAULT_PAGE_SIZE = 500
+_DEFAULT_PAGE_SIZE = 100
 
 
 def _fetch_software_by_id(sw_id: int) -> dict:
