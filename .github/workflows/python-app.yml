@@ -11,6 +11,7 @@ on:
 
 permissions:
   contents: read
+  id-token: write # IMPORTANT for code coverage action
 env:
   OAI_BASIC_PASSWORD: ${{ secrets.OAI_BASIC_PASSWORD }}
 
@@ -39,3 +40,7 @@ jobs:
         run: |
           coverage run -m pytest
           coverage report -m
+      - uses: qltysh/qlty-action/coverage@v2
+        with:
+          oidc: true
+          files: coverage/lcov.info
