@@ -147,7 +147,7 @@ def add_references_to_software(api_uri, dict_res):
         if api_uri.startswith("https://api.zbmath.org/v1/software/_all?start_after=")==False:
             soft_id=api_uri.split("/")[-1]
             def api_doc_endpoint(page):
-                return requests.get("https://api.zbmath.org/v1/document/_structured_search?page={}&results_per_page=100&software%20id={}".format(page,soft_id))
+                return requests.get("https://api.zbmath.org/v1/document/_structured_search?page={}&results_per_page=100&Software%20ID={}".format(page,soft_id))
             page=0
             while True:
                 data = api_doc_endpoint(page).json()

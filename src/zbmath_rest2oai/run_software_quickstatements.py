@@ -97,12 +97,12 @@ def _add_references(result: dict) -> dict:
     while True:
         url = (
             f"https://api.zbmath.org/v1/document/_structured_search"
-            f"?page={page}&results_per_page=100&software%20id={sw_id}"
+            f"?page={page}&results_per_page=100&Software%20ID={sw_id}"
         )
         r = requests.get(
             url, headers={"Accept": "application/json"}, timeout=(10, 60)
         )
-        r.raise_for_status()
+        #r.raise_for_status()
         data = r.json()
         page_results = data.get("result", [])
         if not page_results:
@@ -110,6 +110,7 @@ def _add_references(result: dict) -> dict:
         for entry in page_results:
             references.append(entry["id"])
         page += 1
+        print("page", page)
 
     result["references"] = references
     return result
