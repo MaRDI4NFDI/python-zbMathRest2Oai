@@ -138,10 +138,10 @@ class TestBuildMetadataJson(unittest.TestCase):
     def test_structure(self):
         results = [{"id": 1, "name": "A"}, {"id": 2, "name": "B"}]
         output = build_metadata_json(results)
-        self.assertIn("rows", output)
-        self.assertEqual(len(output["rows"]), 2)
-        self.assertEqual(output["rows"][0]["qP13"], "1")
-        self.assertEqual(output["rows"][1]["qP13"], "2")
+        self.assertIsInstance(output, list)
+        self.assertEqual(len(output), 2)
+        self.assertEqual(output[0]["qP13"], "1")
+        self.assertEqual(output[1]["qP13"], "2")
 
 
 class TestBuildReferencesJson(unittest.TestCase):
@@ -153,8 +153,8 @@ class TestBuildReferencesJson(unittest.TestCase):
             {"id": 2, "references": [20]},
         ]
         output = build_references_json(results)
-        self.assertIn("rows", output)
-        self.assertEqual(len(output["rows"]), 3)
+        self.assertIsInstance(output, list)
+        self.assertEqual(len(output), 3)
 
 
 class TestSageMath825Fixture(unittest.TestCase):
@@ -179,19 +179,19 @@ class TestSageMath825Fixture(unittest.TestCase):
 
     def test_metadata_qp13_is_825(self):
         result = build_metadata_json([self.raw])
-        self.assertEqual(result["rows"][0]["qP13"], "825")
+        self.assertEqual(result[0]["qP13"], "825")
 
     def test_metadata_label_is_sagemath(self):
         result = build_metadata_json([self.raw])
-        self.assertEqual(result["rows"][0]["Len"], "SageMath")
+        self.assertEqual(result[0]["Len"], "SageMath")
 
     def test_metadata_homepage_present(self):
         result = build_metadata_json([self.raw])
-        self.assertIn("P29", result["rows"][0])
+        self.assertIn("P29", result[0])
 
     def test_metadata_source_code_present(self):
         result = build_metadata_json([self.raw])
-        self.assertIn("P339", result["rows"][0])
+        self.assertIn("P339", result[0])
 
 
 if __name__ == "__main__":

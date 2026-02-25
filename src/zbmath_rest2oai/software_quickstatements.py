@@ -8,7 +8,7 @@ Produces two JSON output files:
 
 JSON schema::
 
-    {"rows": [{"qP13": "825", "Len": "SageMath", "P29": "...", ...}, ...]}
+    [{"qP13": "825", "Len": "SageMath", "P29": "...", ...}, ...]
 
 Key conventions (matching MathSearch QuickStatements job):
 - ``qP<id>`` – look up item whose property P<id> equals the value.
@@ -124,7 +124,7 @@ def to_reference_rows(result: dict) -> list[dict]:
     return rows
 
 
-def build_metadata_json(results: list[dict]) -> dict:
+def build_metadata_json(results: list[dict]) -> list[dict]:
     """Build the metadata QuickStatements JSON structure.
 
     Parameters
@@ -134,13 +134,13 @@ def build_metadata_json(results: list[dict]) -> dict:
 
     Returns
     -------
-    dict
-        ``{"rows": [...]}`` ready to be serialised with ``json.dumps``.
+    list[dict]
+        List of rows ready to be serialised with ``json.dumps``.
     """
-    return {"rows": [to_metadata_row(r) for r in results]}
+    return [to_metadata_row(r) for r in results]
 
 
-def build_references_json(results: list[dict]) -> dict:
+def build_references_json(results: list[dict]) -> list[dict]:
     """Build the references QuickStatements JSON structure.
 
     Parameters
@@ -150,10 +150,10 @@ def build_references_json(results: list[dict]) -> dict:
 
     Returns
     -------
-    dict
-        ``{"rows": [...]}`` ready to be serialised with ``json.dumps``.
+    list[dict]
+        List of rows ready to be serialised with ``json.dumps``.
     """
     rows: list[dict] = []
     for r in results:
         rows.extend(to_reference_rows(r))
-    return {"rows": rows}
+    return rows
