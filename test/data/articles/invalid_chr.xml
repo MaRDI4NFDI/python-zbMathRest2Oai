@@ -48,7 +48,7 @@
 
      In this paper, we show that the age of any homogeneous directed graph allows a Ramsey precompact expansion. Moreover, we verify the relative expansion properties and consequently describe the respective universal minimal flows.</text>
   </editorial_contributions>
-  <id>Zbl 6389213</id>
+  <id>oai:zbmath.org:6389213</id>
   <identifier>1305.05139</identifier>
   <keywords>Ramsey theory</keywords>
   <keywords>homogeneous directed graphs</keywords>
@@ -67,6 +67,11 @@
     <identifier>www.combinatorics.org/ojs/index.php/eljc/article/view/v21i4p42</identifier>
     <type>http</type>
     <url>http://www.combinatorics.org/ojs/index.php/eljc/article/view/v21i4p42</url>
+  </links>
+  <links>
+    <identifier>31621</identifier>
+    <type>emis</type>
+    <url>http://www.emis.de/31621</url>
   </links>
   <msc>
     <code>05C55</code>
@@ -1061,7 +1066,7 @@
     <book/>
     <pages>Research Paper P4.42, 31 p.</pages>
     <series>
-      <acronym/>
+      <acronym>EJC</acronym>
       <issn>
         <number>1077-8926</number>
         <type>electronic</type>
