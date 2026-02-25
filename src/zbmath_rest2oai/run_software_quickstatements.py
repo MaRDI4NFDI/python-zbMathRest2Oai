@@ -19,7 +19,8 @@ Usage examples::
     python -m zbmath_rest2oai.run_software_quickstatements --phase references
 
     # Write to a specific directory
-    python -m zbmath_rest2oai.run_software_quickstatements --output-dir /tmp/out
+    python -m zbmath_rest2oai.run_software_quickstatements \
+        --output-dir /tmp/out
 """
 
 from __future__ import annotations
@@ -31,7 +32,10 @@ import sys
 
 import requests
 
-from zbmath_rest2oai.software_quickstatements import build_metadata_json, build_references_json
+from zbmath_rest2oai.software_quickstatements import (
+    build_metadata_json,
+    build_references_json,
+)
 
 
 _API_BASE = "https://api.zbmath.org/v1/software"
@@ -53,11 +57,16 @@ def _fetch_software_by_id(sw_id: int) -> dict:
     raise ValueError(f"Unexpected result format for id {sw_id}: {data!r}")
 
 
-def _iter_all_software(start_after: int = 0, page_size: int = _DEFAULT_PAGE_SIZE):
+def _iter_all_software(
+    start_after: int = 0, page_size: int = _DEFAULT_PAGE_SIZE
+):
     """Yield software result dicts from the zbMath REST API (paged)."""
     cursor = start_after
     while True:
-        url = f"{_API_BASE}/_all?start_after={cursor}&results_per_request={page_size}"
+        url = (
+            f"{_API_BASE}/_all"
+            f"?start_after={cursor}&results_per_request={page_size}"
+        )
         headers = {"Accept": "application/json"}
         r = requests.get(url, headers=headers, timeout=(10, 120))
         r.raise_for_status()
@@ -76,7 +85,8 @@ def _iter_all_software(start_after: int = 0, page_size: int = _DEFAULT_PAGE_SIZE
 def _add_references(result: dict) -> dict:
     """Augment a software result dict with its citing articles.
 
-    Mirrors the logic in :func:`zbmath_rest2oai.getAsXml.add_references_to_software`.
+    Mirrors the logic in
+    :func:`zbmath_rest2oai.getAsXml.add_references_to_software`.
     """
     sw_id = result.get("id")
     if sw_id is None:
@@ -89,7 +99,9 @@ def _add_references(result: dict) -> dict:
             f"https://api.zbmath.org/v1/document/_structured_search"
             f"?page={page}&results_per_page=100&software%20id={sw_id}"
         )
-        r = requests.get(url, headers={"Accept": "application/json"}, timeout=(10, 60))
+        r = requests.get(
+            url, headers={"Accept": "application/json"}, timeout=(10, 60)
+        )
         r.raise_for_status()
         data = r.json()
         page_results = data.get("result", [])
@@ -118,22 +130,29 @@ def main(argv: list[str] | None = None) -> None:
         type=int,
         default=0,
         metavar="ID",
-        help="Start exporting records after this id (for full-dump mode). Default: 0.",
+        help=(
+            "Start exporting records after this id"
+            " (for full-dump mode). Default: 0."
+        ),
     )
     parser.add_argument(
         "--phase",
         choices=["metadata", "references", "all"],
         default="all",
         help=(
-            "Which output file(s) to produce: 'metadata', 'references', or 'all'. "
-            "Default: all."
+            "Which output file(s) to produce:"
+            " 'metadata', 'references', or 'all'."
+            " Default: all."
         ),
     )
     parser.add_argument(
         "--output-dir",
         default=".",
         metavar="DIR",
-        help="Directory to write output JSON files to. Default: current directory.",
+        help=(
+            "Directory to write output JSON files to."
+            " Default: current directory."
+        ),
     )
     parser.add_argument(
         "--no-references",
@@ -166,14 +185,18 @@ def main(argv: list[str] | None = None) -> None:
     print(f"Building JSON for {len(results)} record(s) …", file=sys.stderr)
 
     if args.phase in ("metadata", "all"):
-        meta_path = os.path.join(args.output_dir, "software_quickstatements_metadata.json")
+        meta_path = os.path.join(
+            args.output_dir, "software_quickstatements_metadata.json"
+        )
         meta_json = build_metadata_json(results)
         with open(meta_path, "w", encoding="utf-8") as f:
             json.dump(meta_json, f, indent=2, ensure_ascii=False)
         print(f"Wrote {meta_path}", file=sys.stderr)
 
     if args.phase in ("references", "all"):
-        refs_path = os.path.join(args.output_dir, "software_quickstatements_references.json")
+        refs_path = os.path.join(
+            args.output_dir, "software_quickstatements_references.json"
+        )
         refs_json = build_references_json(results)
         with open(refs_path, "w", encoding="utf-8") as f:
             json.dump(refs_json, f, indent=2, ensure_ascii=False)

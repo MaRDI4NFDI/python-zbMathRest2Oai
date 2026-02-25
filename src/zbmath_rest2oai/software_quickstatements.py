@@ -16,7 +16,8 @@ Key conventions (matching MathSearch QuickStatements job):
   stored as wikibase-item value of property P<x>.
 - ``L<lang>`` / ``D<lang>`` – label / description in that language.
 - ``qal<P<id>`` – qualifier.
-- Multi-valued fields use ``_1``, ``_2``, … suffixes (the job strips ``_(\\d+)``).
+- Multi-valued fields use ``_1``, ``_2``, … suffixes (the job strips
+  numeric suffixes).
 """
 
 from __future__ import annotations
@@ -76,7 +77,9 @@ def to_metadata_row(result: dict) -> dict:
     if isinstance(related, dict):
         related = [related]
     rel_ids = [
-        str(r["id"]) for r in related if isinstance(r, dict) and r.get("id") is not None
+        str(r["id"])
+        for r in related
+        if isinstance(r, dict) and r.get("id") is not None
     ]
     _add_multi(row, "P1458q13", rel_ids)
 

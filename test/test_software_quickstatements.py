@@ -23,14 +23,22 @@ class TestToMetadataRow(unittest.TestCase):
     """Unit tests for to_metadata_row."""
 
     def test_basic_fields(self):
-        result = {"id": 825, "name": "SageMath", "homepage": "https://www.sagemath.org/"}
+        result = {
+            "id": 825,
+            "name": "SageMath",
+            "homepage": "https://www.sagemath.org/",
+        }
         row = to_metadata_row(result)
         self.assertEqual(row["qP13"], "825")
         self.assertEqual(row["Len"], "SageMath")
         self.assertEqual(row["P29"], "https://www.sagemath.org/")
 
     def test_source_code(self):
-        result = {"id": 1, "name": "Foo", "source_code": "https://github.com/foo/bar"}
+        result = {
+            "id": 1,
+            "name": "Foo",
+            "source_code": "https://github.com/foo/bar",
+        }
         row = to_metadata_row(result)
         self.assertEqual(row["P339"], "https://github.com/foo/bar")
 
@@ -55,7 +63,10 @@ class TestToMetadataRow(unittest.TestCase):
         result = {
             "id": 1,
             "name": "Foo",
-            "related_software": [{"id": 10, "name": "A"}, {"id": 20, "name": "B"}],
+            "related_software": [
+                {"id": 10, "name": "A"},
+                {"id": 20, "name": "B"},
+            ],
         }
         row = to_metadata_row(result)
         self.assertEqual(row["P1458q13_1"], "10")
@@ -65,7 +76,10 @@ class TestToMetadataRow(unittest.TestCase):
         result = {
             "id": 1,
             "name": "Foo",
-            "standard_articles": [{"id": 100, "title": "T1"}, {"id": 200, "title": "T2"}],
+            "standard_articles": [
+                {"id": 100, "title": "T1"},
+                {"id": 200, "title": "T2"},
+            ],
         }
         row = to_metadata_row(result)
         self.assertEqual(row["P286q1459_1"], "100")
@@ -144,7 +158,7 @@ class TestBuildReferencesJson(unittest.TestCase):
 
 
 class TestSageMath825Fixture(unittest.TestCase):
-    """Integration test: verify deterministic JSON output for SageMath (id=825).
+    """Integration test: verify deterministic JSON output for SageMath.
 
     The raw fixture (sagemath_825_raw.json) is compared against the expected
     output fixtures (sagemath_825_metadata.json, sagemath_825_references.json).
