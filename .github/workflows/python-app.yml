@@ -40,6 +40,7 @@ jobs:
         run: |
           coverage run -m pytest
           coverage report -m
+          coverage lcov -o coverage/lcov.info
       - uses: qltysh/qlty-action/coverage@v2
         with:
           oidc: true
