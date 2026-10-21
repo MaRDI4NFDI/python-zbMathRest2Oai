@@ -25,7 +25,7 @@
       <reviewer_id>11807</reviewer_id>
       <sign>Jonas Šiaulys (Vilnius)</sign>
     </reviewer>
-    <text>The prime \(k\)-tuples and small gaps between prime numbers are considered. Using a refinement of the Goldston-Pintz-Yildirim sieve method [\textit{D. A. Goldston} et al., Ann. Math. (2) 170, No. 2, 819--862 (2009; Zbl 1207.11096)] the author proves, for instance, the following estimates 
+    <text>The prime \(k\)-tuples and small gaps between prime numbers are considered. Using a refinement of the Goldston-Pintz-Yildirim sieve method [\textit{D. A. Goldston} et al., Ann. Math. (2) 170, No. 2, 819--862 (2009; Zbl 1207.11096)] the author proves, for instance, the following estimates
     \[
      \liminf_{n\to\infty}\,(p_{n+m}-p_n)\ll m^3\text{{e}}^{4m}, \quad \liminf_{n\to\infty}\,(p_{n+1}-p_n)\leq 600
     \]
@@ -56,20 +56,25 @@
     <type>arxiv</type>
     <url>https://arxiv.org/abs/1311.4600</url>
   </links>
-    <links>
-    <identifier>A1097</identifier>
-    <type>oeis</type>
-    <url>https://oeis.org/A1097</url>
+  <links>
+    <identifier>10_4007_annals_2015_181_1_7/</identifier>
+    <type>geodesic</type>
+    <url>https://geodesic.mathdoc.fr/item/10_4007_annals_2015_181_1_7/</url>
   </links>
   <links>
-    <identifier>A38664</identifier>
+    <identifier>A001097</identifier>
     <type>oeis</type>
-    <url>https://oeis.org/A38664</url>
+    <url>https://oeis.org/A001097</url>
   </links>
   <links>
-    <identifier>A46133</identifier>
+    <identifier>A038664</identifier>
     <type>oeis</type>
-    <url>https://oeis.org/A46133</url>
+    <url>https://oeis.org/A038664</url>
+  </links>
+  <links>
+    <identifier>A046133</identifier>
+    <type>oeis</type>
+    <url>https://oeis.org/A046133</url>
   </links>
   <links>
     <identifier>A231607</identifier>
@@ -274,6 +279,7 @@
   <states>
     <c>is cited</c>
     <r>item has references</r>
+    <o>has open version</o>
     <s>item with single author</s>
   </states>
   <title>
