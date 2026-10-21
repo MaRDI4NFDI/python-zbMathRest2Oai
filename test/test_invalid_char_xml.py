@@ -20,6 +20,7 @@ class PlainXmlTest(unittest.TestCase):
                 'ratio_mode': 'fast',
                 'F': 1,
             })
+            print(diff)
             essentials = list(filter(lambda e: not isinstance(e, MoveNode), diff))
             self.assertLessEqual(len(essentials), 1)  # TODO: find a way to store trailing spaces
 

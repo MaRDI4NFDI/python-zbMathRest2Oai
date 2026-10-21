@@ -69,9 +69,14 @@
     <url>http://www.combinatorics.org/ojs/index.php/eljc/article/view/v21i4p42</url>
   </links>
   <links>
+    <identifier>10_37236_3840/</identifier>
+    <type>geodesic</type>
+    <url>https://geodesic.mathdoc.fr/item/10_37236_3840/</url>
+  </links>
+  <links>
     <identifier>31621</identifier>
     <type>emis</type>
-    <url>http://www.emis.de/31621</url>
+    <url>https://emis.de/ft/31621</url>
   </links>
   <msc>
     <code>05C55</code>
@@ -1064,7 +1069,7 @@
   </references>
   <source>
     <book/>
-    <pages>Research Paper P4.42, 31 p.</pages>
+    <pages>Paper No. P4.42, 31 p.</pages>
     <series>
       <acronym>EJC</acronym>
       <issn>
@@ -1082,9 +1087,10 @@
       <volume>21</volume>
       <year>2014</year>
     </series>
-    <source>Electron. J. Comb. 21, No. 4, Research Paper P4.42, 31 p. (2014).</source>
+    <source>Electron. J. Comb. 21, No. 4, Paper No. P4.42, 31 p. (2014).</source>
   </source>
   <states>
+    <o>has open version</o>
     <c>is cited</c>
     <r>item has references</r>
   </states>
