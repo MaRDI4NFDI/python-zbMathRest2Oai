@@ -34,6 +34,7 @@
     <datacite:subject subjectScheme="msc2020">86</datacite:subject>
     <datacite:subject subjectScheme="msc2020">90</datacite:subject>
     <datacite:subject subjectScheme="msc2020">92</datacite:subject>
+    <datacite:subject subjectScheme="msc2020">49</datacite:subject>
     <datacite:subject subjectScheme="keyword">orms</datacite:subject>
   </datacite:subjects>
   <datacite:relatedIdentifiers>
@@ -99,6 +100,7 @@
     <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/6910452</datacite:relatedIdentifier>
     <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/7644848</datacite:relatedIdentifier>
     <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/7308040</datacite:relatedIdentifier>
+    <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/8176278</datacite:relatedIdentifier>
     <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/6128531</datacite:relatedIdentifier>
     <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/5982908</datacite:relatedIdentifier>
     <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/7631087</datacite:relatedIdentifier>
@@ -131,7 +133,7 @@
     <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/7720823</datacite:relatedIdentifier>
     <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/6054722</datacite:relatedIdentifier>
     <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/5798197</datacite:relatedIdentifier>
-    <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/5969837</datacite:relatedIdentifier>
+    <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/5693879</datacite:relatedIdentifier>
     <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/7427370</datacite:relatedIdentifier>
     <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/7315215</datacite:relatedIdentifier>
     <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/5538352</datacite:relatedIdentifier>
@@ -147,7 +149,7 @@
     <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/7996038</datacite:relatedIdentifier>
     <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/7405582</datacite:relatedIdentifier>
     <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/7256640</datacite:relatedIdentifier>
-    <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/5693879</datacite:relatedIdentifier>
+    <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/5969837</datacite:relatedIdentifier>
     <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/5801879</datacite:relatedIdentifier>
     <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/7188252</datacite:relatedIdentifier>
     <datacite:relatedIdentifier relatedIdentifierType="URL" relationType="IsSupplementedBy">https://api.zbmath.org/v1/document/7976970</datacite:relatedIdentifier>
