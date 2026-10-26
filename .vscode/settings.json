@@ -1,0 +1,7 @@
+{
+    "editor.formatOnType": false,
+    "editor.renderWhitespace": "trailing",
+    "editor.trimAutoWhitespace": false,
+    "files.trimTrailingWhitespaceInRegexAndStrings": false,
+    "editor.smartSelect.selectLeadingAndTrailingWhitespace": false
+}
