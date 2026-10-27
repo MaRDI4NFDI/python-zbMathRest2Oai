@@ -131,7 +131,7 @@
                                 <xsl:value-of select="concat('https://www.digizeitschriften.de/dms/resolveppn/?PPN=', identifier)"/>
                             </xsl:when>
                                 <xsl:when test="type = 'emis'">
-                                    <xsl:value-of select="concat('http://www.emis.de/', identifier)"/>
+                                    <xsl:value-of select="concat('https://emis.de/ft/', identifier)"/>
                             </xsl:when>
                             <xsl:when test="type = 'eudml'">
                                 <xsl:value-of select="concat('https://eudml.org/doc/', identifier)"/>
