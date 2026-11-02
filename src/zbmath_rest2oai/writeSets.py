@@ -7,7 +7,7 @@ from aiohttp import ClientSession
 
 from zbmath_rest2oai.get_sets import get_sets
 
-AUTH = aiohttp.BasicAuth('swmath', os.environ.get('OAI_BASIC_PASSWORD'))
+AUTH = aiohttp.BasicAuth(os.environ.get('OAI_BASIC_USERNAME'), os.environ.get('OAI_BASIC_PASSWORD'))
 
 URL = "https://oai-input.portal.mardi4nfdi.de/oai-backend/set/"
 
